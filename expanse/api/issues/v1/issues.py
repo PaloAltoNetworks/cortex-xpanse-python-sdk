@@ -462,6 +462,9 @@ class IssuesEndpoint(ExEndpoint):
                 Returns only results modified after the provided timestamp (YYYY-MM-DDTHH:MM:SSZ).
             modifiedBefore (str, optional):
                 Returns only results modified before the provided timestamp (YYYY-MM-DDTHH:MM:SSZ).
+            cloudManagementStatus (str, optional):
+                Comma-separated string; Returns only results whose cloud management status matches one of the given values.
+                Allowed values are `NotApplicable`, `ManagedCloud`, `UnmanagedCloud`.
             sort (str, optional):
                 Sort by specified properties.
                 Allowed values are `created`, `-created`, `modified`, `-modified`, `assigneeUsername`, `-assigneeUsername`,
