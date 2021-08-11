@@ -1,0 +1,195 @@
+interactions:
+- request:
+    body: '{"startAddress": "2.117.113.128", "endAddress": "2.117.113.135", "parentId":
+      "09ce0303-94e5-4037-8226-e708b6e4874f", "annotations": {}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '135'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - 'Expanse SDK/0.0.10 (Darwin Kernel Version 19.4.0: Wed Mar  4 22:28:40 PST
+        2020; root:xnu-6153.101.6~15/RELEASE_X86_64) Python/3.7.3 Expanse'
+    method: POST
+    uri: https://api.expander.expanse.co/api/v2/ip-range
+  response:
+    body:
+      string: '{"id":"b14e7ac3-2175-4f09-baa4-896ea3a600d5","created":"2020-07-23","modified":"2020-07-23","ipVersion":"4","startAddress":"2.117.113.128","endAddress":"2.117.113.135","businessUnits":[{"id":"a1f0f39b-f358-3c8c-947b-926887871b88","name":"VanDelay
+        Import-Export"}],"rangeSize":8,"responsiveIpCount":0,"rangeIntroduced":"2020-07-23","rangeType":"custom","parentId":"09ce0303-94e5-4037-8226-e708b6e4874f"}'
+    headers:
+      Allow:
+      - GET, POST, HEAD, OPTIONS
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '402'
+      Content-Security-Policy:
+      - 'default-src ''none''; connect-src ''self'' https://*.auth0.com https://www.google-analytics.com
+        https://qadium-staging-django-staticfiles-us-east-1.s3.amazonaws.com https://api.rollbar.com;
+        frame-src ''self'' https://qadium.auth0.com; font-src ''self'' data: https://qadium-staging-django-staticfiles-us-east-1.s3.amazonaws.com
+        https://fonts.gstatic.com https://*.auth0.com; img-src ''self'' data: https://api.mapbox.com
+        https://api.tiles.mapbox.com https://www.google-analytics.com https://www.gravatar.com
+        https://online.swagger.io https://cdn.auth0.com; script-src ''self'' https://qadium-staging-django-staticfiles-us-east-1.s3.amazonaws.com
+        https://cdnjs.cloudflare.com https://unpkg.com https://cdn.polyfill.io https://cdn.rollbar.com
+        https://*.duosecurity.com https://*.googleapis.com https://www.google-analytics.com
+        https://*.auth0.com; style-src ''self'' blob: https://qadium-staging-django-staticfiles-us-east-1.s3.amazonaws.com
+        https://cdnjs.cloudflare.com https://fonts.googleapis.com ''unsafe-inline'';
+        frame-ancestors ''none'''
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 23 Jul 2020 14:15:40 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - gunicorn/19.9.0
+      Strict-Transport-Security:
+      - '"max-age=31536000; includeSubDomains" always'
+      Vary:
+      - Accept, Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      x-content-type-options:
+      - nosniff
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - 'Expanse SDK/0.0.10 (Darwin Kernel Version 19.4.0: Wed Mar  4 22:28:40 PST
+        2020; root:xnu-6153.101.6~15/RELEASE_X86_64) Python/3.7.3 Expanse'
+    method: DELETE
+    uri: https://api.expander.expanse.co/api/v2/ip-range/b14e7ac3-2175-4f09-baa4-896ea3a600d5
+  response:
+    body:
+      string: ''
+    headers:
+      Allow:
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Content-Security-Policy:
+      - 'default-src ''none''; connect-src ''self'' https://*.auth0.com https://www.google-analytics.com
+        https://qadium-staging-django-staticfiles-us-east-1.s3.amazonaws.com https://api.rollbar.com;
+        frame-src ''self'' https://qadium.auth0.com; font-src ''self'' data: https://qadium-staging-django-staticfiles-us-east-1.s3.amazonaws.com
+        https://fonts.gstatic.com https://*.auth0.com; img-src ''self'' data: https://api.mapbox.com
+        https://api.tiles.mapbox.com https://www.google-analytics.com https://www.gravatar.com
+        https://online.swagger.io https://cdn.auth0.com; script-src ''self'' https://qadium-staging-django-staticfiles-us-east-1.s3.amazonaws.com
+        https://cdnjs.cloudflare.com https://unpkg.com https://cdn.polyfill.io https://cdn.rollbar.com
+        https://*.duosecurity.com https://*.googleapis.com https://www.google-analytics.com
+        https://*.auth0.com; style-src ''self'' blob: https://qadium-staging-django-staticfiles-us-east-1.s3.amazonaws.com
+        https://cdnjs.cloudflare.com https://fonts.googleapis.com ''unsafe-inline'';
+        frame-ancestors ''none'''
+      Date:
+      - Thu, 23 Jul 2020 14:15:41 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - gunicorn/19.9.0
+      Strict-Transport-Security:
+      - '"max-age=31536000; includeSubDomains" always'
+      Vary:
+      - Accept, Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      x-content-type-options:
+      - nosniff
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - 'Expanse SDK/0.0.10 (Darwin Kernel Version 19.4.0: Wed Mar  4 22:28:40 PST
+        2020; root:xnu-6153.101.6~15/RELEASE_X86_64) Python/3.7.3 Expanse'
+    method: DELETE
+    uri: https://api.expander.expanse.co/api/v2/ip-range/b14e7ac3-2175-4f09-baa4-896ea3a600d5
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6tWSkktSczMUbJSCslIVShKLSxNLS5JTQGyivNLi5JTFVLyU4sV8vJLFFIrMotL
+        9JRqAWcLDtgzAAAA
+    headers:
+      Allow:
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '69'
+      Content-Security-Policy:
+      - 'default-src ''none''; connect-src ''self'' https://*.auth0.com https://www.google-analytics.com
+        https://qadium-staging-django-staticfiles-us-east-1.s3.amazonaws.com https://api.rollbar.com;
+        frame-src ''self'' https://qadium.auth0.com; font-src ''self'' data: https://qadium-staging-django-staticfiles-us-east-1.s3.amazonaws.com
+        https://fonts.gstatic.com https://*.auth0.com; img-src ''self'' data: https://api.mapbox.com
+        https://api.tiles.mapbox.com https://www.google-analytics.com https://www.gravatar.com
+        https://online.swagger.io https://cdn.auth0.com; script-src ''self'' https://qadium-staging-django-staticfiles-us-east-1.s3.amazonaws.com
+        https://cdnjs.cloudflare.com https://unpkg.com https://cdn.polyfill.io https://cdn.rollbar.com
+        https://*.duosecurity.com https://*.googleapis.com https://www.google-analytics.com
+        https://*.auth0.com; style-src ''self'' blob: https://qadium-staging-django-staticfiles-us-east-1.s3.amazonaws.com
+        https://cdnjs.cloudflare.com https://fonts.googleapis.com ''unsafe-inline'';
+        frame-ancestors ''none'''
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 23 Jul 2020 14:15:41 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - gunicorn/19.9.0
+      Strict-Transport-Security:
+      - '"max-age=31536000; includeSubDomains" always'
+      Vary:
+      - Accept, Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      x-content-type-options:
+      - nosniff
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 404
+      message: Not Found
+version: 1

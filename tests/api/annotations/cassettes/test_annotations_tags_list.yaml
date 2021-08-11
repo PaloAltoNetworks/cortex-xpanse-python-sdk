@@ -1,0 +1,86 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - 'Expanse (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST 2020; root:xnu-6153.81.5~1/RELEASE_X86_64)
+        Expanse SDK/0.0.7 Python/3.7.3'
+    method: GET
+    uri: https://api.expander.expanse.co/api/v3/annotations/tags
+  response:
+    body:
+      string: !!binary |
+        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
+        wL/jU31cf6s43TtFXtz8+fN/6UXTsX8cAAA=
+    headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '1850'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Tue, 07 Jul 2020 14:34:48 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - JSESSIONID=95EA6FE93CD76B606023F755FED5BC07; Path=/; HttpOnly
+      Strict-Transport-Security:
+      - '"max-age=31536000; includeSubDomains" always'
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1

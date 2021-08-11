@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - 'Expanse SDK/0.2.1 (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST
+        2020; root:xnu-6153.81.5~1/RELEASE_X86_64) Python/3.7.3 Expanse'
+    method: GET
+    uri: https://api.expander.expanse.co/api/v1/issues/policies/count
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6tWyi9LLUrLyS9XskpLzClO1VFKzi/NK1GyMjQxqwUASy9HhB4AAAA=
+    headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '50'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Mon, 28 Dec 2020 17:04:50 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - JSESSIONID=64F79E950A78558A2EF5F341C5087E4D; Path=/; HttpOnly
+      Strict-Transport-Security:
+      - '"max-age=31536000; includeSubDomains" always'
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1

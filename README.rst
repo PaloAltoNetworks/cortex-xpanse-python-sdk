@@ -1,0 +1,77 @@
+Expanse Python SDK
+==================
+.. image:: https://github.q-internal.tech/qadium/python-sdk/raw/master/docs/_source/_static/expanse_banner.png
+   :width: 800
+   :target: https://expanse.co/
+
+.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
+   :target: https://github.com/psf/black
+
+Overview
+--------
+
+This library is intended to be an interface to the `Expanse Expander API <https://knowledgebase.expanse.co/expander-apis/>`_.
+
+Install
+-------
+.. code-block:: python
+
+    pip install expanse   
+
+Requirements
+------------
+
+Python 3.7+
+
+Usage
+-----
+
+.. code-block:: python
+
+    # Import client
+    from expanse.client import ExClient
+
+    # initialize client
+    client = ExClient()
+
+    # get ip_range iterator object and dump to a list
+    ranges = client.assets.ip_range.list().dump()
+
+You can view more example code in the `examples <https://github.com/expanseco/python-sdk/tree/master/examples>`_ directory.
+
+Configuration
+-------------
+
+A valid Bearer token or JWT is required for use. Bearer tokens are suggested as JWTs have a limited lifespan. 
+
+RECOMMENDED
+***********
+You can supply them as environment variables using the variable names ``EXPANSE_BEARER_TOKEN`` and/or ``EXPANSE_JWT_TOKEN``.
+
+.. code-block:: python
+
+    export EXPANSE_BEARER_TOKEN=<Bearer Token>
+    # or
+    export EXPANSE_JWT_TOKEN=<JWT> 
+    
+
+NOT RECOMMENDED
+***************
+You can also provided these keys directly at client initialization by doing
+
+.. code-block:: python
+
+    client = ExClient(jwt=<JWT>)
+    # or
+    client = ExClient(bearer=<Bearer>) 
+
+Logging
+-------
+Logging is handled through the python logging package. To enable different levels of verbosity in your scripts you can do the following:
+
+.. code-block:: python
+
+    import logging
+    logging.basicConfig(level=logging.DEBUG)
+
+You can read more at `<https://docs.python.org/3/library/logging.html>`_.

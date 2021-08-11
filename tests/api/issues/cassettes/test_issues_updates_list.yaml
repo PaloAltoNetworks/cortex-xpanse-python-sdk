@@ -1,0 +1,64 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - 'Expanse SDK/0.0.10 (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST
+        2020; root:xnu-6153.81.5~1/RELEASE_X86_64) Python/3.7.3 Expanse'
+    method: GET
+    uri: https://api.expander.expanse.co/api/v1/issues/updates?createdAfter=2020-07-20T00%3A00%3A00Z&createdBefore=2020-07-21T00%3A00%3A00Z&limit=5
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA9WUXW/aMBSG/0uk9aoGf8Q4Rqq2ri0MVEJRUyiZdmE7TjGYBCUBSqv+9zmUaq16
+        00smRTlOfHxyHsfv++wlohJe+/ezt165ofbaz55JvLYH/dRXCW0BipQCPgkU4MxnQEnJW1RQigLt
+        nR5WRbuVW+ndFPlDocvythLVunSzG2HX9USot+5pVeiNydfl+MPbdamL+qt1zMSyTq+MzIvGQhcy
+        L9Xsh35ciazUJlMNlS+9l1NPFdr1WreJIYYAMoBhhEmbcnc1GCWEwLhONGVZN5CtrX05/cQoOUco
+        DRKACNTAl0ELcJ8LkAqEGMSKpwodKSMmHHL8BcZUBgHWTAPYohL4lKRApDABlPtaphInLh4lY9Bg
+        KCA0+AKjL3yMWYCAENCd1bTlRlQmgGnt/iARGupjZcSEwYB9gVEyqqnPOGAMCeD7vnKM1AcM8TTh
+        EhGdHicja7Q4Zhh9YvzjHEE8mExUJs9qB8j0Y+UkPauqVdluNveyT3TROOjfib8pVqa5Qc29rMvm
+        q2WV3w92cJ5Wujh75wgQfiPnh1t8csj6qdO80P/SUPQxzZqlqc7oietNR/lCZ2d6159LvDVD05+r
+        5XiWdMeLntka2e08JZ14Ji96rd78Cg2ju93wcuGiwsOoRwbzq+3g8txcX/TL6X0Ix11rR1nfTifV
+        ZDrZ1zPh09iG0YgMbyEJnzqz62gEw+6gmkZ3KLyAZBDZZXxpzSAKbby8q2vt4vvYqiy0vfkKqmxs
+        6/piQovxL7uNb10vC9qZdEYmHR1M980AvaWuzf51p2/e+NyW//eE72D2Xv/yF5A3FyXZBgAA
+    headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '624'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Mon, 27 Jul 2020 18:26:33 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - JSESSIONID=EA8FBDE200EFE43EF578752C49BF7C9A; Path=/; HttpOnly
+      Strict-Transport-Security:
+      - '"max-age=31536000; includeSubDomains" always'
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1

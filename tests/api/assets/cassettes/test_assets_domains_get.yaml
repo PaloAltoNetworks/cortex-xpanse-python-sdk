@@ -1,0 +1,88 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - 'Expanse (Darwin Kernel Version 18.5.0: Mon Mar 11 20:40:32 PDT 2019; root:xnu-4903.251.3~3/RELEASE_X86_64)
+        Expanse SDK/0.0.1 Python/3.7.4'
+    method: GET
+    uri: https://api.expander.expanse.co/api/v2/assets/domains/www.blockbuster.com
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA+1WW2vrOBD+K8HPsZFv8eVpcxzDMZtLqZ0+7KEE2VIaUUcOvjTtlvz3HVl24iY9
+        sAcOLAsFE6KZT6PRzDejeVcYUXyF2inJHNNQbcPAqulOLNXdbk3VRA4x7S3aIoyUsUJwTaeEULHF
+        QLqn6rpq6AnyfN3yDUdzJqbjen8JZLHHjAPseDxqaV5kz2lT1bTUsmIP6ppyzGvFf5fHIyu1dQtR
+        NU2poZrUy1TP1F0Vmx42U9tyKLFhF8d7CiYfMJ/RHL+NIk7AaMlodTYZCdf+lbnTWAGXGKdVteas
+        rhT/x3/pzeNYOZTFCyO0HLiyqne0vNxcLk+A3bKyqldpRcuXQTYMVXcTw/Dhs02RhhxfoQykIkNF
+        ToIc37R9ZGqOYwvkDldzxp8pCfKiIfe0Kpoyg8D6W5xXdKzI9axP621Kj7uCSc/Pub8FlfSJQcbe
+        pB2RLN7k+VhpDoJaZAY/kloT8FHVzZZaE99oL5OVFNes4B1K9zxbRa6q2wmyfITgExfpjwhfDwwO
+        Olt0W6x1ha1onkOEOze6vRgE7z3bFrh8XhTAkKIEwmUaHNFeNRahB6BcaXuA7SWs43hT5r1dhjm+
+        XLY/Rdyl9XJwKxkODMykQcFrnNUhFNLZ0FBxtys4REvsAC7LoMc1rmGryIOS5YzyGiqF1vSuLHYs
+        ZRDikRQnJebVlpY3inWbiYtYAbKJupPXbQ0vYxXp2iyKv2vBagHxEALjWmBeC6yLAGz2QZBdoKts
+        SYvRlOwZFzzBEHSwX5RPmLO/2zBBwL9d2snoDlgK1GX8aTyazwMAwzZKobUo3gTpo1gbLWjJCGRg
+        9C1/IWNAZKx+A33In3J6LAoCorb0eCbIF6zEuqhqnAcFERIX6boh9hUNB+6CZL2MknA2ipNpEsYC
+        LlKxbPZpSwjdMRC0M9f1rF4XvkLHqyDfsBlkW/z6EzRorrBU5B+abgmNCnYfaYpFeP4grNp1TOsp
+        31MM6NBiBiz+iuzvimxNs90lsLJePxJUynoeypXknPx/IVu3HpCtQ/dM6wBDeg1EA6ZI6YBXZ8EN
+        6COhJO4TBhFeVTTr+gsULKuCIs/xoRLvTfcoiOclxvtDTkl0AHJOJpruIM2wkSaoT2gN3AXWvkO5
+        Z9CMooNoIPDMfgbun5afTAxvB1GLs9ViGi0392G8mq+TaLWEYzA4WidDfS/8k4pq/dxgmwV4bYV3
+        TEwNn7+1v/KGfk01VyPb6fE0vsq25Upq/N+yPUmQ7ZuOb3iaZbcj7le2b7MNfSK7mh9/AAfaOTRu
+        UjmkLKAtwLiH++kIOo2YN/NGDERyghHzy/dpvJkt42Gtg3kx8bKMfoRNgyR6CDdxeP8QBSFU/3K1
+        6WSr5ebuPlwMdMJupwzmq/XsrHo8/QN+oiNpDg0AAA==
+    headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - inline;filename=f.txt
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '1057'
+      Content-Security-Policy:
+      - 'default-src ''none''; connect-src ''self'' https://*.auth0.com https://www.google-analytics.com
+        https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com https://api.rollbar.com;
+        frame-src ''self'' https://qadium.auth0.com; font-src ''self'' data: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://fonts.gstatic.com https://*.auth0.com; img-src ''self'' data: https://api.mapbox.com
+        https://api.tiles.mapbox.com https://www.google-analytics.com https://www.gravatar.com
+        https://online.swagger.io https://cdn.auth0.com; script-src ''self'' https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://cdnjs.cloudflare.com https://unpkg.com https://cdn.polyfill.io https://cdn.rollbar.com
+        https://*.duosecurity.com https://*.googleapis.com https://www.google-analytics.com
+        https://*.auth0.com; style-src ''self'' blob: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://cdnjs.cloudflare.com https://fonts.googleapis.com ''unsafe-inline'';
+        frame-ancestors ''none'''
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Sat, 08 Feb 2020 16:16:54 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - same-origin
+      Set-Cookie:
+      - JSESSIONID=EC032500A0703FE760DB6F0C96BD8B5E; Path=/; HttpOnly
+      Strict-Transport-Security:
+      - '"max-age=31536000; includeSubDomains" always'
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1

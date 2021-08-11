@@ -1,0 +1,166 @@
+interactions:
+- request:
+    body: '{"tags": [{"name": "sdk_test"}], "note": "SDK NOTE TEST", "contacts": [{"email":
+      "QA@testing.com"}]}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '100'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - 'Expanse (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST 2020; root:xnu-6153.81.5~1/RELEASE_X86_64)
+        Expanse SDK/0.0.7 Python/3.7.3'
+    method: PUT
+    uri: https://api.expander.expanse.co/api/v2/assets/certificates/cc5de40e-286f-303b-be57-d155b3bd4611/annotations
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA03MPQ+CMBSF4b9C7sw1hdryMWEik4nGwGaMub0thChloBvhvwtOrifveRbgyQfi
+        MEP5WGCwUILMcutUkmOas8ajFgLJaouSmbUxxknVQQxupOGz5fdTFdwcBt8feBphfcYQqP/zlCSn
+        th+KpGOUolBYkCJM2WbSsnGGds/T6DZutu/X7v0gP4V9a86X6Hpr66itmxbWL8tz7nu1AAAA
+    headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '168'
+      Content-Security-Policy:
+      - 'default-src ''none''; connect-src ''self'' https://*.auth0.com https://www.google-analytics.com
+        https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com https://api.rollbar.com;
+        frame-src ''self'' https://qadium.auth0.com; font-src ''self'' data: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://fonts.gstatic.com https://*.auth0.com; img-src ''self'' data: https://api.mapbox.com
+        https://api.tiles.mapbox.com https://www.google-analytics.com https://www.gravatar.com
+        https://online.swagger.io https://cdn.auth0.com; script-src ''self'' https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://cdnjs.cloudflare.com https://unpkg.com https://cdn.polyfill.io https://cdn.rollbar.com
+        https://*.duosecurity.com https://*.googleapis.com https://www.google-analytics.com
+        https://*.auth0.com; style-src ''self'' blob: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://cdnjs.cloudflare.com https://fonts.googleapis.com ''unsafe-inline'';
+        frame-ancestors ''none'''
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Tue, 07 Jul 2020 15:35:10 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - same-origin
+      Set-Cookie:
+      - JSESSIONID=824CB576D97BDF19CCBC2EB6B4B6D93E; Path=/; HttpOnly
+      Strict-Transport-Security:
+      - '"max-age=31536000; includeSubDomains" always'
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Cookie:
+      - JSESSIONID=824CB576D97BDF19CCBC2EB6B4B6D93E
+      User-Agent:
+      - 'Expanse (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST 2020; root:xnu-6153.81.5~1/RELEASE_X86_64)
+        Expanse SDK/0.0.7 Python/3.7.3'
+    method: GET
+    uri: https://api.expander.expanse.co/api/v2/assets/certificates/1MZVcFeLBLab3jC-_z9t5Q==
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6VWa2/iuhb9K1W+DpkT23EelSrdENI0UwiFANN2dIT8pCkhoXkwpaP+92NT2mnn
+        zEhX937gA957Ly97L6+dH0bOjVODMcyFbQkTeo40kYWoSQV2TQ4wpohy2wHA6BmtKEnZGqc/Xqos
+        m2KgqygV0ETCZ6aPgGcS5BNEse0KjlVVSTZC7bEg5UAUZH+SlLxr2joXzRtkokn8V3DPPYN2TV6K
+        ppmXedsYp9+ObBzqIiEdZlKILBO5vmtSBIHJbIJsCzi+oO5PNgHbiJMhacXjSdZtt8X+f+Hyd8/g
+        CiLgXOgDQAv4JgAmBDPLPwXw1AafHdeFDrxV6DKvm3ZMG1HvdHbZFUXPKMi/17Z1tcu5qN+dbV6u
+        y+p7+ZN+WpXCeFb7M1G3ucyZoqH7suH4gjR3igwY3S7YuRj2h4Si+9BcPvktnpydKYxDy7nNHIxd
+        y8SuR01kU8f0KReq+VRIiaTDhW5e3jSdqBVeeBamvWx2Ft/2hmfxoDc+Cy+SNDCTLOmN5+/+hOkZ
+        sD5DbL/+3lCCohV1Sdp8J1KlCXU+4y0WVl3Z1nu9Ufq2GG1IXrxe1QuTYcVIkbc6MR68JWo4tfKH
+        fcf1SuO+0n2rUutaQ7+NZe3hRo1Yt27b0SJnl0LvOkpiOQqsOMwe4iyhaDCJ+sFkHgR2nAaDsJ9P
+        LvurSbi6uPraFFMGwS62oodNur+4yhM0WokaB9H1lwjczDO4sMsyi8pV5Esc391fN3RT7Nvq8mrS
+        uu1eomJjfcoWY+/J/et73t3kD3fNYFLbyfcNtVp/m9yffzov/7pwBp0/ksnqRlR8ba8/fenPn7bI
+        m+Qg8OxJXM5vB/ePqwnC83aRPl7btp2OdjVwVxLerSfJIJgE/ffHDIpVVeft3Uadd5oF70PThkSP
+        W6U+7QNKQMjtGU2+Ul3tavG+LrsIIHa+K5QXhKaj94IdLvv/UdIR5vdSOgZ/0dJx9YOYjmu/qum4
+        /Cc5HcP/1tPPwG8EdQx+UJRygZwUabehh8cFoOXYCPvqpndK3jyt2r6QVa1FrVwFaVcB3syyTpF/
+        ioDW5GteINWj0mkAQNNyTAA/pikfyatSJaD3bewfrBNY0FbqFpvsjqhmqaS9OzA53FdhXKTL2/Lq
+        q5xdrct7ku1mTvulvW4fHgb9Mrlf3jbaSV5KgSrcxMKSX8t0cX/5VKwvu9VjJMDoSVTn1SHx9QWN
+        Kt4VnX76xAJMYsJ8DFzkcEcCagNIfI8zTzk5hMhF0HIJVYMJABfaNsceBpD7WEDX5xBA17NsiaWw
+        Hc9BWDBHOL4LqeNBT9qQC8GZL5WP+dSWvnIkIZEaEZJBSH3PI8RzmMUtIj01MXzlfpBLx1cbA1cA
+        x5XMFR6ilCMgoWoQEARwH3m+ImcDjBBxXQksj2ILMQEsQFwMfEsg5lg2cgVW41G9D4ClJ5CHbEYF
+        5S71gOQE+HqevvlKtl3n6kpuHlF8TQa1ZYUZuMm/loSJ/W52kybN5mYcj2cothOUPYbEOjPUJGTV
+        ZlOVf1KrmiNbPR200X4zhuM0XkbXV8k0mCVj7bFZNDxfZkmcRtpIs4vxdLa8jG4MNVXuSDPMy7Xg
+        YVF1fCqaqquZxpGkaMSHqRPwnd6kERtlCVrjurnfjHS8DKPpLDlPwmAWLYPBQv/LolGUzvQOegzm
+        THwoCMJZsoiWWTRdJGGkOCmQ49o4XV5No9FvY+FwPB+8RRQ2F62aG4rGD6MWTNFKtpqTirBfjvPt
+        7+eeQcqyUrzVKzmUsKpsCXv/ZYFcT4lIfdhAjzmm7ViWSbjDTcQYc6j6+EFYKrbiZVoZk+A/rWja
+        vFx9Vg06TOmWrDSD45cKRkRgVWdaQDI1cH1s+gQTEzLuIq5lQjRe+TLUGr5earwDkGKqPSEbXJ6k
+        41l0MouymfH8/A8NodUQxwkAAA==
+    headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '1444'
+      Content-Security-Policy:
+      - 'default-src ''none''; connect-src ''self'' https://*.auth0.com https://www.google-analytics.com
+        https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com https://api.rollbar.com;
+        frame-src ''self'' https://qadium.auth0.com; font-src ''self'' data: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://fonts.gstatic.com https://*.auth0.com; img-src ''self'' data: https://api.mapbox.com
+        https://api.tiles.mapbox.com https://www.google-analytics.com https://www.gravatar.com
+        https://online.swagger.io https://cdn.auth0.com; script-src ''self'' https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://cdnjs.cloudflare.com https://unpkg.com https://cdn.polyfill.io https://cdn.rollbar.com
+        https://*.duosecurity.com https://*.googleapis.com https://www.google-analytics.com
+        https://*.auth0.com; style-src ''self'' blob: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://cdnjs.cloudflare.com https://fonts.googleapis.com ''unsafe-inline'';
+        frame-ancestors ''none'''
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Tue, 07 Jul 2020 15:35:11 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - same-origin
+      Set-Cookie:
+      - JSESSIONID=CBB35E967663A775EE858FAC4D8AFB1D; Path=/; HttpOnly
+      Strict-Transport-Security:
+      - '"max-age=31536000; includeSubDomains" always'
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1

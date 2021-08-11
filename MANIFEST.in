@@ -1,0 +1,5 @@
+recursive-include docs *.txt *.md Makefile
+prune docs/_build
+recursive-include docs/_source *.txt *.py *.md *.rst *.png
+
+recursive-include examples *.txt *.py *.md

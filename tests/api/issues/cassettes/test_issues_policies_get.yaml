@@ -1,0 +1,57 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - 'Expanse SDK/0.2.1 (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST
+        2020; root:xnu-6153.81.5~1/RELEASE_X86_64) Python/3.7.3 Expanse'
+    method: GET
+    uri: https://api.expander.expanse.co/api/v1/issues/policies/ColocatedPptpServer
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA43OTU/DMAyA4b8S5UxRWzZV9EYRB6Rqq2h34WYar4q6xVHiMibEf8dhfFw5xnr8
+        Ou/axrjgcPb4aHSt7+lAIzCazrPvMbxi0Fd/ZgNH/FJZe2Gq64ZO/UKI0U4OcRcxuIvdue+hkVBK
+        TxTO0rhjhnFW/RL2MKJ6QrOMbMmJmh2dDmgmbCBia90sPC0HTD+TR5mXeVYUWVEOeV4XVb1eX9/e
+        rKpV9SzOB0vBcjrS0kkG6OBFej0DL1Gm23TkSMbu7T9yP7BJwYc3Dy6iaoj1xycae03bPQEAAA==
+    headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '226'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Mon, 28 Dec 2020 17:07:07 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - JSESSIONID=603004936033E63507C8560645732FE1; Path=/; HttpOnly
+      Strict-Transport-Security:
+      - '"max-age=31536000; includeSubDomains" always'
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1

@@ -1,0 +1,57 @@
+interactions:
+- request:
+    body: '{"name": "sdk_test4", "description": "This is a test tag created by the
+      SDK", "disabled": true}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '95'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - 'Expanse (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST 2020; root:xnu-6153.81.5~1/RELEASE_X86_64)
+        Expanse SDK/0.0.7 Python/3.7.3'
+    method: POST
+    uri: https://api.expander.expanse.co/api/v3/annotations/tags
+  response:
+    body:
+      string: '{"id":"6f7ba05e-971b-3869-bea0-2634ae2e6ef6","tenantId":"04b5140e-bbe2-3e9c-9318-a39a3b547ed5","name":"sdk_test4","description":"This
+        is a test tag created by the SDK","disabled":true,"created":"2020-07-07T14:43:19.771496Z","modified":"2020-07-07T14:43:19.771496Z"}'
+    headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '265'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Tue, 07 Jul 2020 14:43:19 GMT
+      Expires:
+      - '0'
+      Location:
+      - https://api.expander.expanse.co/api/v3/annotations/tags/6f7ba05e-971b-3869-bea0-2634ae2e6ef6
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - JSESSIONID=4A7A1C1709D730698EF45D70A677449D; Path=/; HttpOnly
+      Strict-Transport-Security:
+      - '"max-age=31536000; includeSubDomains" always'
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: ''
+version: 1

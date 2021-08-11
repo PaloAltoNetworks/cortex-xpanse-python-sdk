@@ -1,0 +1,91 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - 'Expanse (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST 2020; root:xnu-6153.81.5~1/RELEASE_X86_64)
+        Expanse SDK/0.0.1 Python/3.7.3'
+    method: GET
+    uri: https://api.expander.expanse.co/api/v2/assets/certificates/1MZVcFeLBLab3jC-_z9t5Q==
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6VV23LaOhT9lY5fi1tdfM0MD8Y4jhswAQMJ6XQYyZKIibGJLySkk38/UkJo0qYz
+        Z8558IP3Ze0t7aW1f2oZ0060NDUZNwDXkWMJHQNMdcpNW2fQNCmmzLAg1DpawwtSNNrJz5csYFAT
+        qixKOdIxd1PdxdDRCXYJpqZhc2bKrIJsuKwxJ0Wf52T/KSpYWzdVxusjZKSa+FdwTx2NtnVW8Lqe
+        FVlTayffD91Y1MZcWKlOEQY6tl1bpxhBPTUINgC0XE7tX9146YZ/GpCGP3xK2u023/+XXn50NCYh
+        PMa4OgAC0NUh1BGcAvcEohMDfrFsG1noWqKLrKqbEa15tVPRRZvnHS0nf9q2VbnLGK/enG1W3Bbl
+        ffGr/bgsuPYk66e8ajKRpbINNZcNM89IfSObgcPreXrKB70BoXjt68tHtzHH3a7EeB45M1LLNG2g
+        m7ZDdWxQS3cp43L4lAuBhcW4Gl5W1y2vJJ7f9eNOMu2G151BN+x3Rl3/LIo9PUqizmj25sePuxB8
+        Qabx+h1RvLzhVUGabMdjyQl5Pu3o88u2aKq9KhQfjcGGZPnrVb10MihTkmeNCgz7x0AFJy1/qTuq
+        Vgr3td1jlrQrDn3oS5rnG9VCNbptS/MsPeeq6jAKxdADoZ/chUlEcX8c9LzxzPOMMPb6fi8bn/dW
+        Y391dnFZ55MUwV0IgrtNvD+7yCI8XPHK9IKrbwFczBI0N4oiCYpV4AozvFlf1XST75vy/GLc2M1e
+        4HwDPifzkfNof73P2kV2d1P3x5UR3W8oaNxttD79fFp8PbP6rTsU0WrBS3Zr3H7+1ps9brEzzqDn
+        GOOwmF331w+rMTZnzTx+uDIMIx7uKmivBLq5HUd9b+z13h7Ty1dllTU3G3neSeK9dU1qEjxsJfuU
+        DkgCYbuj1dlKTrWt+Nu85MxDpnUvUV4Q6pauefp82f+HSQeYj6l0cP7GpYP1HZkOtt/ZdDD/jU4H
+        9598+uX4gFAH5ztGSRXISB63G/r8uCACloFNV970TtKbxWXT46KsFKmlqmClKtCZAnCC3RMMFSdf
+        4zwhH5UKgxDpwNIheh8mdSQrCxmA346x9yydECBDsptvkhsihyWD9nZfZ2hf+mEeL6+Li0sxvbgt
+        1iTZTa3mW3PV3N31e0W0Xl7XSkleUqFM3IQciMsinq/PH/Pb83b1EHA4fOTlafkc+PqChiVr81Y9
+        fQJgKkySuia0scUsAakBEXEdljpSyRHCNkbAJlQuJghtZBjMdEyImGtyZLsMQWQ7wBCm4IblWNjk
+        qcUt10bUcpAjDMQ4Z6krpI651BCuVCQusFwRIkWIuo5DiGOlgAEiHLkxXKl+iAnLlYWhzaFli9Tm
+        DqaUYSiQHBDkBDIXO65szoAmxsS2BQQONQFOOQSQ2CZ0AcepBQxsc1OuR/k+oCkcjh1spJRTZlMH
+        Ckagq/bpUVeS7W0mr2TxgMMr0q8A8BO4yC4LkvL9brqIo3qzGIWjKQ6NCCcPPgFdTW7CtNxsyuJv
+        bJV7ZKu2gxLa79pgFIfL4OoimnjTaKQ0NgkGp8skCuNACWlyNppMl+fBQpNb5YbUg6y45czPy5ZN
+        eF22VapwBMlr/m7reGynitR8IyVBcVwN97sWj5Z+MJlGp5HvTYOl15+rvyQYBvFUVVBrMEv5uwTP
+        n0bzYJkEk3nkB7InCXKwjeLlxSQYfujzB6NZ/+iR2Iw3cm/INn5qFU9lW9FW9SQ96W/H+f7j6ekf
+        o0AGGgMJAAA=
+    headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '1319'
+      Content-Security-Policy:
+      - 'default-src ''none''; connect-src ''self'' https://*.auth0.com https://www.google-analytics.com
+        https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com https://api.rollbar.com;
+        frame-src ''self'' https://qadium.auth0.com; font-src ''self'' data: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://fonts.gstatic.com https://*.auth0.com; img-src ''self'' data: https://api.mapbox.com
+        https://api.tiles.mapbox.com https://www.google-analytics.com https://www.gravatar.com
+        https://online.swagger.io https://cdn.auth0.com; script-src ''self'' https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://cdnjs.cloudflare.com https://unpkg.com https://cdn.polyfill.io https://cdn.rollbar.com
+        https://*.duosecurity.com https://*.googleapis.com https://www.google-analytics.com
+        https://*.auth0.com; style-src ''self'' blob: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://cdnjs.cloudflare.com https://fonts.googleapis.com ''unsafe-inline'';
+        frame-ancestors ''none'''
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 27 Feb 2020 22:56:48 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - same-origin
+      Set-Cookie:
+      - JSESSIONID=2FF0FF9014E4343A1BF54FD442B41E79; Path=/; HttpOnly
+      Strict-Transport-Security:
+      - '"max-age=31536000; includeSubDomains" always'
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1

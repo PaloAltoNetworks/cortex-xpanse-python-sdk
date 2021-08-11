@@ -1,0 +1,58 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - 'Expanse SDK/0.0.10 (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST
+        2020; root:xnu-6153.81.5~1/RELEASE_X86_64) Python/3.7.3 Expanse'
+    method: GET
+    uri: https://api.expander.expanse.co/api/v1/issues/providers
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA12RTUvEMBCG/0qYc297600qiuCyCxX2IB6m7dgG8yFpWsTS/276sZnYW+Z5nwyT
+        yQQNeoT8fQLZQA4PSlZYYaHs0EAGBjUxFRues7t8KxNH46814kaVKMmNsqYeoll0RB47jVLxjRQm
+        pjR4tpVUlJoBip3+Vw35g7cQdpaHPCl0aTdm0XuUrfSoLjWh4X47FRuO8rO1bTreXsf8lUZSJ26z
+        1uLEU52Ll8JqPRhZo5fW9OyGSByy2Pdiro40uxcjVsCC78gl+VrGtERF/ad1dbKLhM0fGXxjGza9
+        jAT5BIZ+PORmUCokjsbtPGegw2fehSu29Ga/KNxg8wDn+Q8kqQIQaAIAAA==
+    headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '271'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Mon, 27 Jul 2020 19:42:39 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - JSESSIONID=110CBA9B8238FD47F499D009854D60FF; Path=/; HttpOnly
+      Strict-Transport-Security:
+      - '"max-age=31536000; includeSubDomains" always'
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1

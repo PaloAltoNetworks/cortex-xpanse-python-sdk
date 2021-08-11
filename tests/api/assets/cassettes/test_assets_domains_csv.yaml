@@ -1,0 +1,90 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      Connection:
+      - keep-alive
+      Content-Type:
+      - text/csv
+      User-Agent:
+      - 'Expanse (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST 2020; root:xnu-6153.81.5~1/RELEASE_X86_64)
+        Expanse SDK/0.0.1 Python/3.7.3'
+    method: GET
+    uri: https://api.expander.expanse.co/api/v2/assets/domains/csv?domainSearch=api
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA+1YS2/jNhC+91cIPMsCqYdt6dSs7bYGEidYK02bogdaYmIiMmmQch672P/eoehY
+        tBxvG/SwRdeB4EjDGZKa+WY+jhYbzQXT+lrwekZXTPslrdlZWbLSL+WKcuHfcaXry4Vm6hGES6rP
+        uXhg5aiSm/Ij03KjCjDjeiSriq416FTUMVgr+chLpuzsit1zXSuqfGs4tmvUTFDRbMB/Wsqp/gH9
+        SsWYVfTFm67WUtW9ybP5h3wU4hD3cNQjUU7iLE4yQoI0CtNBcot8uua9kj0GipZc6iUtHoJCrvwQ
+        k7RHwh6JcxJlUZhFURBHw1v/jlaabX93E4c5jjKYO4yCwZDc+uhsRT9J4d2whTcHL3B4X9jIBVUP
+        FxL8JpU3FUWA/M6qzjuIcgNvzRu7zwjVrFgilMFdwesXuBObqvIREhCB9gksGKvb50JuRK0c9ca1
+        onBM7ujzbLNaMNVaraWuaTWSpaO2jcLLtHT0llKwrjEDBFSABgUQaVVhlckzhExzKVqpVPdU8E+0
+        3pOuzbRd7S/wrrRccWPdOgGhnyDE3g38gHdadyBkUeKdWRMY2bkGoQhj76MJ99yE2xtxVVQMVOBq
+        HYbQ9WyaT8bePD/LJ/Nm1PEeQvlvjcz1H0JkSAYxSfpJmFgL15UIDfoEh83A3/vzcLKOaxFS2iZc
+        45gf97H0ujnXkQj+4CU7bkfoZyaYopV3wxWrIG7e5RqeTVS0xamxOgiLmc2EpRRas6KNqt0TPMMG
+        95Jq++KaVZULt12C29BuVNXOtYU3OkwdsyVOBXUBCYWAa5NvzfQINc/BCrJuZbPOpHazC7rYaDaS
+        oqZFPTGIbZd0h64MFNuh150az0B14dZHYyh/Wx3jjlclYfLwBNWmCvxXoGrgZPFhatMfUCZmcxLk
+        Z7Px78Ho8qKBBohCV/QnxHSzNhxXbiONgFHI0DBKGOZhmJEkC/FtY1wo1uTNTpOkab+HQTnNcZxh
+        DJfVtFkyr2kNSNzuRj4gZJZ7LQ62iLkIfx1p0PeyW8XuB1YZuqt8QS4puoSyIy7LiGkWJQEeRHEa
+        ASMioMRgTVUNRSFYVLJ4gGSp4d4kz44YQ2yWiobGNErj48QYZphkBAdx3H8HMXbW9U/MCLg4KMHm
+        EGBqzlvMOBH3FXuSEggbNHaF1GLKEmNzroLDSKPhEGTax8SbB94FU7yEIut9qB5LmASudxDk6LKx
+        6BDkIMQJiYfDNG5G984aCA0xIe8gyM5kBwT5xBaWG0uul7vi3zmMHGPFDy30vSs4ssI5lot73zs/
+        H9mtd88p/4AQO7Bu5oGT0nfKiCeIwhnlm0D0gAhn8x4mwXg6/2VHhEYUHoqiQ1HsiI7QJZDgwDRg
+        OM1IH/qk43SZGLokiUtkUHfeosui4kzU0POxml0pueQLDiTtWXGuqNB3TB0MXDdc3or/JeVCg+gQ
+        +z7lfqUPTTIMxIgDHMcp7ts+9Gs9KIEGFNg2CHF0nGqjDENzGwdkCHx86kFPPehbFHvqQeF8/b0y
+        7ulzCXyf/LafSw6o9//eg/4F/vZTtTEWAAA=
+    headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - attachment; filename=expanse-domain-assets-export-1584116298316.csv
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '1166'
+      Content-Security-Policy:
+      - 'default-src ''none''; connect-src ''self'' https://*.auth0.com https://www.google-analytics.com
+        https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com https://api.rollbar.com;
+        frame-src ''self'' https://qadium.auth0.com; font-src ''self'' data: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://fonts.gstatic.com https://*.auth0.com; img-src ''self'' data: https://api.mapbox.com
+        https://api.tiles.mapbox.com https://www.google-analytics.com https://www.gravatar.com
+        https://online.swagger.io https://cdn.auth0.com; script-src ''self'' https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://cdnjs.cloudflare.com https://unpkg.com https://cdn.polyfill.io https://cdn.rollbar.com
+        https://*.duosecurity.com https://*.googleapis.com https://www.google-analytics.com
+        https://*.auth0.com; style-src ''self'' blob: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://cdnjs.cloudflare.com https://fonts.googleapis.com ''unsafe-inline'';
+        frame-ancestors ''none'''
+      Content-Type:
+      - text/csv
+      Date:
+      - Fri, 13 Mar 2020 16:18:17 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - same-origin
+      Set-Cookie:
+      - JSESSIONID=A2DBEBD1784FFC0D1B5DB0A835CA06B4; Path=/; HttpOnly
+      Strict-Transport-Security:
+      - '"max-age=31536000; includeSubDomains" always'
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1

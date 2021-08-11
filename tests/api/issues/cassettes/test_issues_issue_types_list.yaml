@@ -1,0 +1,67 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      User-Agent:
+      - 'Expanse SDK/0.0.10 (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST
+        2020; root:xnu-6153.81.5~1/RELEASE_X86_64) Python/3.7.3 Expanse'
+    method: GET
+    uri: https://api.expander.expanse.co/api/v1/issues/issueTypes
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA31W23LaMBD9FY2fyQ/wZiBpaLm4iEBnOn0Q9gJq7JUrCxpPhn/vCozteJ2+afac
+        XR3tzX4PEuVUMPz5HugkGAbh71yCPYMNBgGqDLwpV/ERxFdvF5E1zsQmFRXrMqgcRyedJhoPY4PO
+        mlSWhYOsCXKHRYWLilD7T0iGdMaqA4SYhKjSstBFE8DjoiKICZx1DEHjDGdITZ4Bukc8a2vQH1vO
+        DS7ahCaAyZTGSttGpZqyAskYrNN7HdO5FetKrd9Rk0WbXQd+zHaQJJB083G3szw8vuXaQrI9AspY
+        IX6ioqL1XzrFAuKTBakPqBwd2tLqut5Zoqb9P9p6Jpss1M7eWr92ig4slW4ahUlioSjChFrJ6QI+
+        1uPOE9NIVMwmyMzg4fo85bTBXumeIq6Z167sVz2HLPZ9m3TbuQZYC891bE1h9m6CBfO6Y2KykNyT
+        9Bjm4o2TEScXxZ+UkaX8PuPUU+qo/YpeRXesX1HZd0nZd8kC3EibYkHT3lXloelSCo8xcQT+NfaV
+        Zp4GVvqGo2JMcW9Jrz3Fvu+afmnIokOpm2eZA44ObP14sxh9idj9kcJlUW2CuqmjcPFAgrsLIjKF
+        O1BDdh94t7Pgq4QJWU24hhUkmgW9GnnEPB5pn6iP23UVjUfTxYTTixJjRvZGRpUqp/RuQdGshXme
+        +oVFk9N1lmEkap5oEXlASPd+KXyyeyTBDze8f/bkUVnIjUbHNHgk8gi/9Gis+wZl78BLD4rotKPH
+        CSJ9cq9mRZO0YSoRdaPJbMd0zfmcSsx4uMWcx1tDCrHBPVjA+DYOY5OmakdfM1+IZgo+mFmTUhwE
+        lrKblT3iBekyW+b0mXpyTGcLFU9rLrmFz8xBtyS2EHGD6ry95MgvipBH32C8pF58dlzYZjEWHhPP
+        6x5Z5NitjHfoFnCTY3fuN9GC5XNLfySxsv2f8TvY30lbY5Pcf8C6cmqAifqR5Sw7P+ZRk51fgyBX
+        lOtbTwzfA4Q3FwzxlKaEWDjfzpdBkIH/JbsRIvohWptXwDazY7xc/gHzf7FwxwkAAA==
+    headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '790'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Mon, 27 Jul 2020 19:42:39 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - JSESSIONID=1D147AC758A5EA17CCE840B3B72CBCC7; Path=/; HttpOnly
+      Strict-Transport-Security:
+      - '"max-age=31536000; includeSubDomains" always'
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1
