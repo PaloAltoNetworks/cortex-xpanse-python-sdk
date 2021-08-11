@@ -23,8 +23,8 @@ jobs:
         run: |
           black --check expanse/
       - name: Test types with mypy
-          run: |
-            mypy expanse/**/*.py
+        run: |
+          mypy expanse/**/*.py
       - name: Test with pytest
         run: |
           python -m pytest --vcr-record=none tests/
