@@ -1,6 +1,6 @@
 name: Python package
 
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   build:
@@ -22,9 +22,9 @@ jobs:
       - name: Lint with black
         run: |
           black --check expanse/
+      - name: Test types with mypy
+          run: |
+            mypy expanse/**/*.py
       - name: Test with pytest
         run: |
           python -m pytest --vcr-record=none tests/
-      - name: Test types with mypy
-        run: |
-          mypy expanse/*
