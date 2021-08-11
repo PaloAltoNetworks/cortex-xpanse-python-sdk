@@ -49,6 +49,17 @@ class CloudResourcesEndpoint(ExEndpoint):
                 If not set, results will include anything regardless of region.
             minLastObservedDate (str, optional):
                 Filter by last observed timestamp. Date formatted string (YYYY-MM-DD).
+            tagId (str, optional):
+                Comma-separated string; Returns any assets with a tagId in the provided set.
+            tagName (str, optional):
+                Comma-separated string; Returns any assets with a tagName in the provided set.
+            serviceStatus (str, optional):
+                Comma-separated string; Returns only result whose asset's service statuses fall in the provided list.
+                Valid values are `HAS_ACTIVE_SERVICE`, `NO_ACTIVE_SERVICE`, `HAS_ACTIVE_CLOUD_SERVICE`, `NO_ACTIVE_CLOUD_SERVICE`,
+                `HAS_ACTIVE_ON_PREM_SERVICE`, and `NO_ACTIVE_ON_PREM_SERVICE`.
+            issueStatus (str, optional):
+                Comma-separated string; Returns only result whose asset's issue statuses fall in the provided list.
+                Valid values are `New`, `Investigating`, `In Progress`, `No Risk`, `Acceptable Risk`, `Resolved`
             sort (str, optional):
                 Sort by specified properties.
 
@@ -99,6 +110,17 @@ class CloudResourcesEndpoint(ExEndpoint):
                 If not set, results will include anything regardless of region.
             minLastObservedDate (str, optional):
                 Filter by last observed timestamp. Date formatted string (YYYY-MM-DD).
+            tagId (str, optional):
+                Comma-separated string; Returns any assets with a tagId in the provided set.
+            tagName (str, optional):
+                Comma-separated string; Returns any assets with a tagName in the provided set.
+            serviceStatus (str, optional):
+                Comma-separated string; Returns only result whose asset's service statuses fall in the provided list.
+                Valid values are `HAS_ACTIVE_SERVICE`, `NO_ACTIVE_SERVICE`, `HAS_ACTIVE_CLOUD_SERVICE`, `NO_ACTIVE_CLOUD_SERVICE`,
+                `HAS_ACTIVE_ON_PREM_SERVICE`, and `NO_ACTIVE_ON_PREM_SERVICE`.
+            issueStatus (str, optional):
+                Comma-separated string; Returns only result whose asset's issue statuses fall in the provided list.
+                Valid values are `New`, `Investigating`, `In Progress`, `No Risk`, `Acceptable Risk`, `Resolved`
 
         Returns:
             :int:
@@ -173,6 +195,17 @@ class CloudResourcesEndpoint(ExEndpoint):
                 If not set, results will include anything regardless of region.
             minLastObservedDate (str, optional):
                 Filter by last observed timestamp. Date formatted string (YYYY-MM-DD).
+            tagId (str, optional):
+                Comma-separated string; Returns any assets with a tagId in the provided set.
+            tagName (str, optional):
+                Comma-separated string; Returns any assets with a tagName in the provided set.
+            serviceStatus (str, optional):
+                Comma-separated string; Returns only result whose asset's service statuses fall in the provided list.
+                Valid values are `HAS_ACTIVE_SERVICE`, `NO_ACTIVE_SERVICE`, `HAS_ACTIVE_CLOUD_SERVICE`, `NO_ACTIVE_CLOUD_SERVICE`,
+                `HAS_ACTIVE_ON_PREM_SERVICE`, and `NO_ACTIVE_ON_PREM_SERVICE`.
+            issueStatus (str, optional):
+                Comma-separated string; Returns only result whose asset's issue statuses fall in the provided list.
+                Valid values are `New`, `Investigating`, `In Progress`, `No Risk`, `Acceptable Risk`, `Resolved`
 
         Returns:
             :obj:`boolean`:

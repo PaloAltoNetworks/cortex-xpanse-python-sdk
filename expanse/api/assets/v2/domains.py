@@ -24,12 +24,17 @@ class DomainsEndpoint(ExEndpoint):
                 Returns results starting at this Page Token.
             domainSearch (str, optional):
                 Search for given domain value via substring match.
+            recentIp (str, optional):
+                Filter by IP; Returns only assets with a recent IP matching the provided filter.
             providerId (str, optional):
                 Comma-separated string; Returns only results that were found on the given providers.
                 If not set, results will include anything regardless of provider status.
             providerName (str, optional):
                 Comma-separated string; Returns only results that were found on the given providers.
                 If not set, results will include anything regardless of provider status.
+            formattedRegistrarName (str, optional):
+                Comma-separated string; Returns only results that were found on the given formatted registrar names.
+                If not set, filter is ignored.
             businessUnitId (str, optional):
                 Comma-separated string; Returns only results whose Business Unit's ID falls in the provided list.
                 NOTE: If omitted, API will return results for all Business Units the user has permissions to view.
@@ -45,8 +50,13 @@ class DomainsEndpoint(ExEndpoint):
                 Comma-separated string; Returns only result whose asset's service statuses fall in the provided list.
                 Valid values are `HAS_ACTIVE_SERVICE`, `NO_ACTIVE_SERVICE`, `HAS_ACTIVE_CLOUD_SERVICE`, `NO_ACTIVE_CLOUD_SERVICE`,
                 `HAS_ACTIVE_ON_PREM_SERVICE`, `NO_ACTIVE_ON_PREM_SERVICE`.
+            issueStatus (str, optional):
+                Comma-separated string; Returns only result whose asset's issue statuses fall in the provided list.
+                Valid values are `New`, `Investigating`, `In Progress`, `No Risk`, `Acceptable Risk`, `Resolved`
             hostingEnvironment (str, optional):
                 Filter by Hosting Environment. Allowed values are `ON_PREM`, `CLOUD`, `NONE`, `RESERVED_IPS`.
+            hasRelatedCloudResources (str, optional):
+                Filter by whether the asset has a related cloud resource asset
             sort (str, optional):
                 Comma-separated string; orders results by the given fields. If the field name is
                 prefixed by a -, then the ordering will be descending for that field.
@@ -80,12 +90,17 @@ class DomainsEndpoint(ExEndpoint):
         Args:
             domainSearch (str, optional):
                 Search for given domain value via substring match.
+            recentIp (str, optional):
+                Filter by IP; Returns only assets with a recent IP matching the provided filter.
             providerId (str, optional):
                 Comma-separated string; Returns only results that were found on the given providers.
                 If not set, results will include anything regardless of provider status.
             providerName (str, optional):
                 Comma-separated string; Returns only results that were found on the given providers.
                 If not set, results will include anything regardless of provider status.
+            formattedRegistrarName (str, optional):
+                Comma-separated string; Returns only results that were found on the given formatted registrar names.
+                If not set, filter is ignored.
             businessUnitId (str, optional):
                 Comma-separated string; Returns only results whose Business Unit's ID falls in the provided list.
                 NOTE: If omitted, API will return results for all Business Units the user has permissions to view.
@@ -101,8 +116,24 @@ class DomainsEndpoint(ExEndpoint):
                 Comma-separated string; Returns only result whose asset's service statuses fall in the provided list.
                 Valid values are `HAS_ACTIVE_SERVICE`, `NO_ACTIVE_SERVICE`, `HAS_ACTIVE_CLOUD_SERVICE`, `NO_ACTIVE_CLOUD_SERVICE`,
                 `HAS_ACTIVE_ON_PREM_SERVICE`, `NO_ACTIVE_ON_PREM_SERVICE`.
+            issueStatus (str, optional):
+                Comma-separated string; Returns only result whose asset's issue statuses fall in the provided list.
+                Valid values are `New`, `Investigating`, `In Progress`, `No Risk`, `Acceptable Risk`, `Resolved`.
             hostingEnvironment (str, optional):
                 Filter by Hosting Environment. Allowed values are `ON_PREM`, `CLOUD`, `NONE`, `RESERVED_IPS`.
+            hasRelatedCloudResources (str, optional):
+                Filter by whether the asset has a related cloud resource asset.
+            sort (str, optional):
+                Comma-separated string; orders results by the given fields. If the field name is
+                prefixed by a -, then the ordering will be descending for that field.
+                Allowed values are `domain`, `-domain`, `dateAdded`, `-dateAdded`, `lastObserved`, `-lastObserved`.
+            tagId (str, optional):
+                Comma-separated string; Returns any assets with a tagId in the provided set.
+            tagName (str, optional):
+                Comma-separated string; Returns any assets with a tagName in the provided set.
+            isPaidLevelDomain (bool, optional):
+                `True` will return only top-level or paid level domains (i.e. example.com), `False` will return any
+                subdomains(i.e. api.example.com). If omitted all domains will be returned.
 
         Returns:
             :int:
@@ -151,12 +182,17 @@ class DomainsEndpoint(ExEndpoint):
                 Returns at most this many results.
             domainSearch (str, optional):
                 Search for given domain value via substring match.
+            recentIp (str, optional):
+                Filter by IP; Returns only assets with a recent IP matching the provided filter.
             providerId (str, optional):
                 Comma-separated string; Returns only results that were found on the given providers.
                 If not set, results will include anything regardless of provider status.
             providerName (str, optional):
                 Comma-separated string; Returns only results that were found on the given providers.
                 If not set, results will include anything regardless of provider status.
+            formattedRegistrarName (str, optional):
+                Comma-separated string; Returns only results that were found on the given formatted registrar names.
+                If not set, filter is ignored.
             businessUnitId (str, optional):
                 Comma-separated string; Returns only results whose Business Unit's ID falls in the provided list.
                 NOTE: If omitted, API will return results for all Business Units the user has permissions to view.
@@ -172,8 +208,20 @@ class DomainsEndpoint(ExEndpoint):
                 Comma-separated string; Returns only result whose asset's service statuses fall in the provided list.
                 Valid values are `HAS_ACTIVE_SERVICE`, `NO_ACTIVE_SERVICE`, `HAS_ACTIVE_CLOUD_SERVICE`, `NO_ACTIVE_CLOUD_SERVICE`,
                 `HAS_ACTIVE_ON_PREM_SERVICE`, `NO_ACTIVE_ON_PREM_SERVICE`.
+            issueStatus (str, optional):
+                Comma-separated string; Returns only result whose asset's issue statuses fall in the provided list.
+                Valid values are `New`, `Investigating`, `In Progress`, `No Risk`, `Acceptable Risk`, `Resolved`.
             hostingEnvironment (str, optional):
                 Filter by Hosting Environment. Allowed values are `ON_PREM`, `CLOUD`, `NONE`, `RESERVED_IPS`.
+            hasRelatedCloudResources (str, optional):
+                Filter by whether the asset has a related cloud resource asset.
+            isPaidLevelDomain (bool, optional):
+                `True` will return only top-level or paid level domains (i.e. example.com), `False` will return any
+                subdomains(i.e. api.example.com). If omitted all domains will be returned.
+            tagId (str, optional):
+                Comma-separated string; Returns any assets with a tagId in the provided set.
+            tagName (str, optional):
+                Comma-separated string; Returns any assets with a tagName in the provided set.
 
         Returns:
             :obj:`boolean`:
