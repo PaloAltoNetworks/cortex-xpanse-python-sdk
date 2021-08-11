@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -f dev-requirements.txt
+          pip install -r dev-requirements.txt
       - name: Lint with black
         run: |
           black --check expanse/
