@@ -168,7 +168,7 @@ class IssuesEndpoint(ExEndpoint):
 
         Examples:
             >>> # Return total issue count for assets with the `validated` tag.
-            >>> bus =  client.issues.v1.issues.count(tag="validated")
+            >>> bus =  client.issues.issues.v1.count(tag="validated")
         """
         return self._api.get(f"{V1_PREFIX}/issues/issues/count", params=kwargs).json()
 
@@ -243,7 +243,7 @@ class IssuesEndpoint(ExEndpoint):
 
         Examples:
             >>> # Return total issue counts
-            >>> bus =  client.issues.v1.issues.counts()
+            >>> bus =  client.issues.issues.v1.counts()
         """
         kwargs["include"] = include
         return self._api.get(f"{V1_PREFIX}/issues/issues/counts", params=kwargs).json()
