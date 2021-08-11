@@ -29,6 +29,6 @@ class ProvidersEndpoint(ExEndpoint):
 
         Examples:
             >>> # Return all issues providers dumped to a list:
-            >>> providers =  client.issues.v1.providers.list().dump()
+            >>> providers =  client.issues.providers.v1.list().dump()
         """
         return ExResultIterator(self._api, f"{V1_PREFIX}/issues/providers", kwargs)

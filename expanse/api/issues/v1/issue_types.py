@@ -29,6 +29,6 @@ class IssueTypesEndpoint(ExEndpoint):
 
         Examples:
             >>> # Return all issue types dumped to a list:
-            >>> bus =  client.issues.v1.issue_types.list().dump()
+            >>> bus =  client.issues.issue_types.v1.list().dump()
         """
         return ExResultIterator(self._api, f"{V1_PREFIX}/issues/issueTypes", kwargs)

@@ -29,6 +29,6 @@ class BusinessUnitsEndpoint(ExEndpoint):
 
         Examples:
             >>> # Return all issues business units dumped to a list:
-            >>> bus =  client.issues.v1.business_units.list().dump()
+            >>> bus =  client.issues.business_units.v1.list().dump()
         """
         return ExResultIterator(self._api, f"{V1_PREFIX}/issues/businessUnits", kwargs)

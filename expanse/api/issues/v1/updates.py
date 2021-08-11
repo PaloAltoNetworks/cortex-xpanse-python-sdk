@@ -39,7 +39,7 @@ class UpdatesEndpoint(ExEndpoint):
 
         Examples:
             >>> # Return all issues updates between two dates:
-            >>> for res in client.issues.v1.updates.list(createdAfter="2020-07-20T00:00:00Z", createdBefore="2020-07-21T00:00:00Z")
+            >>> for res in client.issues.updates.v1.list(createdAfter="2020-07-20T00:00:00Z", createdBefore="2020-07-21T00:00:00Z")
             ...     for issue_update in res:
             ...         print(issue_update)
         """

@@ -128,11 +128,13 @@ class ServicesEndpoint(ExEndpoint):
                 Cannot be used with cloudManagementStatus.
                 Allowed values are `NotApplicable`, `ManagedCloud`, `UnmanagedCloud`.
             hostingEnvironment (str, optional):
-                Comma-separated string; Returns only services whose hosting environment (OnPrem, Cloud) matches one of the given value(s).
-                Cannot be used with hostingEnvironment_neq.
-            hostingEnvironment_neq (str, optional):
-                Comma-separated string; Returns only services whose hosting environment (OnPrem, Cloud) is other than the given value(s).
+                Comma-separated string; Returns only services whose hosting environment matches one of the given value(s).
+                Cannot be used with hostingEnvironment!.
+                Allowed values are 'OnPrem', 'Cloud'.
+            hostingEnvironment_neg (str, optional):
+                Comma-separated string; Returns only services whose hosting environment is other than the given value(s).
                 Cannot be used with hostingEnvironment.
+                Allowed values are 'OnPrem', 'Cloud'.
             sort (str, optional):
                 Sort by specified properties.
 
@@ -265,11 +267,13 @@ class ServicesEndpoint(ExEndpoint):
                 Cannot be used with cloudManagementStatus.
                 Allowed values are `NotApplicable`, `ManagedCloud`, `UnmanagedCloud`.
             hostingEnvironment (str, optional):
-                Comma-separated string; Returns only services whose hosting environment (OnPrem, Cloud) matches one of the given value(s).
-                Cannot be used with hostingEnvironment_neq.
-            hostingEnvironment_neq (str, optional):
-                Comma-separated string; Returns only services whose hosting environment (OnPrem, Cloud) is other than the given value(s).
+                Comma-separated string; Returns only services whose hosting environment matches one of the given value(s).
+                Cannot be used with hostingEnvironment!.
+                Allowed values are 'OnPrem', 'Cloud'.
+            hostingEnvironment_neg (str, optional):
+                Comma-separated string; Returns only services whose hosting environment is other than the given value(s).
                 Cannot be used with hostingEnvironment.
+                Allowed values are 'OnPrem', 'Cloud'.
 
         Returns:
             :obj:`dict`:
@@ -415,6 +419,22 @@ class ServicesEndpoint(ExEndpoint):
             portNumber_neq (str, optional):
                 Comma separated string; Returns assets located on a port other than the specified port(s).
                 Cannot be used with portNumber.
+            cloudManagementStatus (str, optional):
+                Comma-separated string; Returns only results whose cloud management status matches one of the given values.
+                Cannot be used with cloudManagementStatus_neq.
+                Allowed values are `NotApplicable`, `ManagedCloud`, `UnmanagedCloud`.
+            cloudManagementStatus_neq (str, optional):
+                Comma-separated string; Returns only services whose cloud management status is other than given value(s).
+                Cannot be used with cloudManagementStatus.
+                Allowed values are `NotApplicable`, `ManagedCloud`, `UnmanagedCloud`.
+            hostingEnvironment (str, optional):
+                Comma-separated string; Returns only services whose hosting environment matches one of the given value(s).
+                Cannot be used with hostingEnvironment!.
+                Allowed values are 'OnPrem', 'Cloud'.
+            hostingEnvironment_neg (str, optional):
+                Comma-separated string; Returns only services whose hosting environment is other than the given value(s).
+                Cannot be used with hostingEnvironment.
+                Allowed values are 'OnPrem', 'Cloud'.
             sort (str, optional):
                 Sort by specified properties.
 

@@ -29,6 +29,6 @@ class AssigneesEndpoint(ExEndpoint):
 
         Examples:
             >>> # Return all issue assignees dumped to a list:
-            >>> assignees =  client.issues.v1.assignees.list().dump()
+            >>> assignees =  client.issues.assignees.v1.list().dump()
         """
         return ExResultIterator(self._api, f"{V1_PREFIX}/issues/assignees", kwargs)
