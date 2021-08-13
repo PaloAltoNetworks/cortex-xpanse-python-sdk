@@ -47,7 +47,7 @@ class IpRangeEndpoint(ExEndpoint):
                 Cannot be used with the tags parameter.
             include (str, optional):
                 Comma-separated string; Include the provided fields as part of the serialized result. Allowed values are
-                `annotations`, `severityCounts`, `attributionReasons`, `relatedRegistrationInformation`, and `locationInformation`
+                `annotations`, `severityCounts`, `attributionReasons`, `relatedRegistrationInformation`, `certDetails`, and `locationInformation`
 
         Returns:
             :obj:`ExResultIterator`:

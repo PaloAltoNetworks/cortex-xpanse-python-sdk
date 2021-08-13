@@ -24,6 +24,8 @@ class CertificatesEndpoint(ExEndpoint):
                 Returns results starting at this page Token.
             commonNameSearch (str, optional):
                 Search for given domain value via substring match.
+            recentIp (str, optional):
+                Filter by IP; Returns only assets with a recent IP matching the provided filter.
             providerId (str, optional):
                 Comma-separated string; Returns only results that were found on the given providers.
                 If not set, results will include anything regardless of provider status.
@@ -56,6 +58,11 @@ class CertificatesEndpoint(ExEndpoint):
                 Comma-separated string; Returns any assets with a tagId in the provided set.
             tagName (str, optional):
                 Comma-separated string; Returns any assets with a tagName in the provided set.
+            include (str, optional:
+                Comma-separated string; Include the provided fields as part of the serialized result.
+                Allowed Values:
+                    certDetails: populate all elements in data[*].details.
+                    Note: If param is not specified, data[*].details will be empty.
             sort (str, optional):
                 Comma-separated string; orders results by the given fields. If the field name is
                 prefixed by a -, then the ordering will be descending for that field.
@@ -80,14 +87,21 @@ class CertificatesEndpoint(ExEndpoint):
         is not returned in an otherwise valid response payload.
 
         Args:
+            pageToken (str, optional):
+                Returns results starting at this page Token.
             commonNameSearch (str, optional):
                 Search for given domain value via substring match.
+            recentIp (str, optional):
+                Filter by IP; Returns only assets with a recent IP matching the provided filter.
             providerId (str, optional):
                 Comma-separated string; Returns only results that were found on the given providers.
                 If not set, results will include anything regardless of provider status.
             providerName (str, optional):
                 Comma-separated string; Returns only results that were found on the given providers.
                 If not set, results will include anything regardless of provider status.
+            formattedIssuerOrg (str, optional):
+                Comma-separated string; Returns only results that were found on the given formatted issuer orgs.
+                If not set, filter is ignored.
             businessUnitId (str, optional):
                 Comma-separated string; Returns only results whose Business Unit's ID falls in the provided list.
                 NOTE: If omitted, API will return results for all Business Units the user has permissions to view.
@@ -106,6 +120,9 @@ class CertificatesEndpoint(ExEndpoint):
                 Comma-separated string; Returns only result whose asset's service statuses fall in the provided list.
                 Valid values are `HAS_ACTIVE_SERVICE`, `NO_ACTIVE_SERVICE`, `HAS_ACTIVE_CLOUD_SERVICE`, `NO_ACTIVE_CLOUD_SERVICE`,
                 `HAS_ACTIVE_ON_PREM_SERVICE`, and `NO_ACTIVE_ON_PREM_SERVICE`.
+            issueStatus (str, optional):
+                Comma-separated string; Returns only result whose asset's issue statuses fall in the provided list.
+                Valid values are `New`, `Investigating`, `In Progress`, `No Risk`, `Acceptable Risk`, `Resolved`
             hostingEnvironment (str, optional):
                 Filter by Hosting Environment. Allowed values are `ON_PREM`, `CLOUD`, `NONE`, `RESERVED_IPS`.
             hasRelatedCloudResources (boolean, optional):
@@ -164,12 +181,17 @@ class CertificatesEndpoint(ExEndpoint):
                 Returns at most this many results.
             commonNameSearch (str, optional):
                 Search for given domain value via substring match.
+            recentIp (str, optional):
+                Filter by IP; Returns only assets with a recent IP matching the provided filter.
             providerId (str, optional):
                 Comma-separated string; Returns only results that were found on the given providers.
                 If not set, results will include anything regardless of provider status.
             providerName (str, optional):
                 Comma-separated string; Returns only results that were found on the given providers.
                 If not set, results will include anything regardless of provider status.
+            formattedIssuerOrg (str, optional):
+                Comma-separated string; Returns only results that were found on the given formatted issuer orgs.
+                If not set, filter is ignored.
             businessUnitId (str, optional):
                 Comma-separated string; Returns only results whose Business Unit's ID falls in the provided list.
                 NOTE: If omitted, API will return results for all Business Units the user has permissions to view.
@@ -188,6 +210,9 @@ class CertificatesEndpoint(ExEndpoint):
                 Comma-separated string; Returns only result whose asset's service statuses fall in the provided list.
                 Valid values are `HAS_ACTIVE_SERVICE`, `NO_ACTIVE_SERVICE`, `HAS_ACTIVE_CLOUD_SERVICE`, `NO_ACTIVE_CLOUD_SERVICE`,
                 `HAS_ACTIVE_ON_PREM_SERVICE`, and `NO_ACTIVE_ON_PREM_SERVICE`.
+            issueStatus (str, optional):
+                Comma-separated string; Returns only result whose asset's issue statuses fall in the provided list.
+                Valid values are `New`, `Investigating`, `In Progress`, `No Risk`, `Acceptable Risk`, `Resolved`
             hostingEnvironment (str, optional):
                 Filter by Hosting Environment. Allowed values are `ON_PREM`, `CLOUD`, `NONE`, `RESERVED_IPS`.
             hasRelatedCloudResources (boolean, optional):
