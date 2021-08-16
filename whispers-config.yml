@@ -1,0 +1,28 @@
+include:
+  files:
+    - "**/*.yaml"
+
+rules:
+  jwtvalue:
+    message: POTENTIAL JWT DETECTED
+    severity: MAJOR
+    key:
+      regex: .*Authorization$
+      ignorecase: True
+      isUri: False
+    value:
+      regex: ^(?!.*bearer)(?!JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww)(?!JWT expired-jwt)(?!JWT new-jwt).*$
+      ignorecase: True
+      isUri: False
+
+  bearervalue:
+    message: POTENTIAL BEARER TOKEN DETECTED
+    severity: MAJOR
+    key:
+      regex: .*Authorization$
+      ignorecase: True
+      isUri: False
+    value:
+      regex: (?=.*Bearer)(?!Bearer bearer-token)(?!Bearer wrong-token).*$
+      ignorecase: True
+      isUri: False
