@@ -5,3 +5,4 @@ sphinx==4.1.2
 rst2pdf==0.98
 black==21.7b0
 mypy==0.910
+whispers==1.4.9

@@ -28,3 +28,6 @@ jobs:
       - name: Test with pytest
         run: |
           python -m pytest --vcr-record=none tests/
+      - name: Test with whispers
+        run: |
+          whispers --config whispers-config.yml --rules jwtvalue,bearervalue tests
