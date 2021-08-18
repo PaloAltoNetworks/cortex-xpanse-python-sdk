@@ -29,7 +29,7 @@ Usage
 .. code-block:: python
 
     # Import client
-    fromxpanse.client import ExClient
+    from xpanse.client import ExClient
 
     # initialize client
     client = ExClient()
