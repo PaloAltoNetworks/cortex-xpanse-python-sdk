@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-from xpanseimport __version__, __license__, __author__, __email__
+from xpanse import __version__, __license__, __author__, __email__
 
 try:
     description = open(
