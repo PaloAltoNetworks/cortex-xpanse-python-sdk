@@ -1,10 +1,10 @@
-Expanse Entities API
+Xpanse Entities API
 ====================
 
-expanse.api.entities.v1.entities module
+xpanse.api.entities.v1.entities module
 ---------------------------------------
 
-.. automodule:: expanse.api.entities.v1.entities
+.. automodule:: xpanse.api.entities.v1.entities
     :members:
     :undoc-members:
     :show-inheritance:

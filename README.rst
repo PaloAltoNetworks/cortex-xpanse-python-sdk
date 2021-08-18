@@ -1,4 +1,4 @@
-Expanse Python SDK
+Xpanse Python SDK
 ==================
 .. image:: https://github.q-internal.tech/qadium/python-sdk/raw/master/docs/_source/_static/expanse_banner.png
    :width: 800
@@ -10,13 +10,13 @@ Expanse Python SDK
 Overview
 --------
 
-This library is intended to be an interface to the `Expanse Expander API <https://knowledgebase.expanse.co/expander-apis/>`_.
+This library is intended to be an interface to the `Xpanse Expander API <https://knowledgebase.expanse.co/expander-apis/>`_.
 
 Install
 -------
 .. code-block:: python
 
-    pip install expanse   
+    pip install xpanse
 
 Requirements
 ------------
@@ -29,7 +29,7 @@ Usage
 .. code-block:: python
 
     # Import client
-    from expanse.client import ExClient
+    fromxpanse.client import ExClient
 
     # initialize client
     client = ExClient()
@@ -50,9 +50,9 @@ You can supply them as environment variables using the variable names ``EXPANSE_
 
 .. code-block:: python
 
-    export EXPANSE_BEARER_TOKEN=<Bearer Token>
+    exportxpanse_BEARER_TOKEN=<Bearer Token>
     # or
-    export EXPANSE_JWT_TOKEN=<JWT> 
+    exportxpanse_JWT_TOKEN=<JWT>
     
 
 NOT RECOMMENDED

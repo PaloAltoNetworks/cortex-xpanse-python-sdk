@@ -1,10 +1,10 @@
-Expanse Targeted IPs API
+Xpanse Targeted IPs API
 ========================
 
-expanse.api.targeted_ips.v1.targeted_ips module
+xpanse.api.targeted_ips.v1.targeted_ips module
 -----------------------------------------------
 
-.. automodule:: expanse.api.targeted_ips.v1.targeted_ips
+.. automodule:: xpanse.api.targeted_ips.v1.targeted_ips
     :members:
     :undoc-members:
     :show-inheritance:

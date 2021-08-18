@@ -19,7 +19,7 @@ interactions:
       - 'Expanse (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST 2020; root:xnu-6153.81.5~1/RELEASE_X86_64)
         Expanse SDK/0.0.1 Python/3.7.3'
     method: POST
-    uri: https://api.expander.expanse.co/api/v2/annotation/point-of-contact
+    uri: https://expander.expanse.co/api/v2/annotation/point-of-contact
   response:
     body:
       string: '{"id":"e569a5a6-601b-4876-9292-eaeafeee133b","created":"2020-03-09T20:04:06.155615Z","modified":"2020-03-09T20:04:06.156243Z","firstName":"SDK","lastName":"Tester","phone":"555-555-5555","email":"sdk.tester@expanse.co","role":"QA"}'
@@ -84,7 +84,7 @@ interactions:
       - 'Expanse (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST 2020; root:xnu-6153.81.5~1/RELEASE_X86_64)
         Expanse SDK/0.0.1 Python/3.7.3'
     method: PATCH
-    uri: https://api.expander.expanse.co/api/v2/annotation/point-of-contact/e569a5a6-601b-4876-9292-eaeafeee133b
+    uri: https://expander.expanse.co/api/v2/annotation/point-of-contact/e569a5a6-601b-4876-9292-eaeafeee133b
   response:
     body:
       string: !!binary |
@@ -155,7 +155,7 @@ interactions:
       - 'Expanse (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST 2020; root:xnu-6153.81.5~1/RELEASE_X86_64)
         Expanse SDK/0.0.1 Python/3.7.3'
     method: DELETE
-    uri: https://api.expander.expanse.co/api/v2/annotation/point-of-contact/e569a5a6-601b-4876-9292-eaeafeee133b
+    uri: https://expander.expanse.co/api/v2/annotation/point-of-contact/e569a5a6-601b-4876-9292-eaeafeee133b
   response:
     body:
       string: ''

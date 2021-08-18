@@ -1,0 +1,6 @@
+__version__ = "0.3.5"
+__author__ = "Palo Alto Cortex Xpanse"
+__license__ = "Not open source"
+__maintainer__ = "Palo Alto Cortex Xpanse"
+__email__ = "help@expanseinc.com"
+__status__ = "Development"

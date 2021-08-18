@@ -2,7 +2,7 @@ from sys import exit
 from csv import DictWriter
 
 import click
-from expanse.client import ExClient
+from xpanse.client import ExClient
 
 
 def flatten_rf(flow):
@@ -40,7 +40,7 @@ def flatten_rf(flow):
     help='Returns the risky flows that match the specified internal CIDR/IP Range/Address.')
 def cli(file_name, created_before, created_after, tags, ip):
 
-    # Initialize the Expanse Client
+    # Initialize thexpanse Client
     client = ExClient()
 
     # Filter and dump all Risky Flows into a list

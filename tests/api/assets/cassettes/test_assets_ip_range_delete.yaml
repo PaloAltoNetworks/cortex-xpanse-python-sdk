@@ -19,7 +19,7 @@ interactions:
       - 'Expanse SDK/0.0.10 (Darwin Kernel Version 19.4.0: Wed Mar  4 22:28:40 PST
         2020; root:xnu-6153.101.6~15/RELEASE_X86_64) Python/3.7.3 Expanse'
     method: POST
-    uri: https://api.expander.expanse.co/api/v2/ip-range
+    uri: https://expander.expanse.co/api/v2/ip-range
   response:
     body:
       string: '{"id":"b14e7ac3-2175-4f09-baa4-896ea3a600d5","created":"2020-07-23","modified":"2020-07-23","ipVersion":"4","startAddress":"2.117.113.128","endAddress":"2.117.113.135","businessUnits":[{"id":"a1f0f39b-f358-3c8c-947b-926887871b88","name":"VanDelay
@@ -83,7 +83,7 @@ interactions:
       - 'Expanse SDK/0.0.10 (Darwin Kernel Version 19.4.0: Wed Mar  4 22:28:40 PST
         2020; root:xnu-6153.101.6~15/RELEASE_X86_64) Python/3.7.3 Expanse'
     method: DELETE
-    uri: https://api.expander.expanse.co/api/v2/ip-range/b14e7ac3-2175-4f09-baa4-896ea3a600d5
+    uri: https://expander.expanse.co/api/v2/ip-range/b14e7ac3-2175-4f09-baa4-896ea3a600d5
   response:
     body:
       string: ''
@@ -144,7 +144,7 @@ interactions:
       - 'Expanse SDK/0.0.10 (Darwin Kernel Version 19.4.0: Wed Mar  4 22:28:40 PST
         2020; root:xnu-6153.101.6~15/RELEASE_X86_64) Python/3.7.3 Expanse'
     method: DELETE
-    uri: https://api.expander.expanse.co/api/v2/ip-range/b14e7ac3-2175-4f09-baa4-896ea3a600d5
+    uri: https://expander.expanse.co/api/v2/ip-range/b14e7ac3-2175-4f09-baa4-896ea3a600d5
   response:
     body:
       string: !!binary |

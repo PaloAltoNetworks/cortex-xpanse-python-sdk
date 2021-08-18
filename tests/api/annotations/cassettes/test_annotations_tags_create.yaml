@@ -17,9 +17,9 @@ interactions:
       - application/json
       User-Agent:
       - 'Expanse (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST 2020; root:xnu-6153.81.5~1/RELEASE_X86_64)
-        Expanse SDK/0.0.7 Python/3.7.3'
+       Expanse SDK/0.0.7 Python/3.7.3'
     method: POST
-    uri: https://api.expander.expanse.co/api/v3/annotations/tags
+    uri: https://expander.expanse.co/api/v3/annotations/tags
   response:
     body:
       string: '{"id":"6f7ba05e-971b-3869-bea0-2634ae2e6ef6","tenantId":"04b5140e-bbe2-3e9c-9318-a39a3b547ed5","name":"sdk_test4","description":"This
@@ -38,7 +38,7 @@ interactions:
       Expires:
       - '0'
       Location:
-      - https://api.expander.expanse.co/api/v3/annotations/tags/6f7ba05e-971b-3869-bea0-2634ae2e6ef6
+      - https://expander.expanse.co/api/v3/annotations/tags/6f7ba05e-971b-3869-bea0-2634ae2e6ef6
       Pragma:
       - no-cache
       Set-Cookie:

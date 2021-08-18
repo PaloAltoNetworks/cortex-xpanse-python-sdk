@@ -2,7 +2,7 @@ from csv import DictWriter
 from json import dump
 
 import click
-from expanse.client import ExClient
+from xpanse.client import ExClient
 
 
 def flatten(obj):

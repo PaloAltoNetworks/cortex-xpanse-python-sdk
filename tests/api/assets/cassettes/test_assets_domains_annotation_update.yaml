@@ -19,7 +19,7 @@ interactions:
       - 'Expanse (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST 2020; root:xnu-6153.81.5~1/RELEASE_X86_64)
         Expanse SDK/0.0.7 Python/3.7.3'
     method: PUT
-    uri: https://api.expander.expanse.co/api/v2/assets/domains/e5bdc732-522a-3864-8ff3-307d35f0f0a0/annotations
+    uri: https://expander.expanse.co/api/v2/assets/domains/e5bdc732-522a-3864-8ff3-307d35f0f0a0/annotations
   response:
     body:
       string: !!binary |
@@ -89,7 +89,7 @@ interactions:
       - 'Expanse (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST 2020; root:xnu-6153.81.5~1/RELEASE_X86_64)
         Expanse SDK/0.0.7 Python/3.7.3'
     method: GET
-    uri: https://api.expander.expanse.co/api/v2/assets/domains/www.blockbuster.com
+    uri: https://expander.expanse.co/api/v2/assets/domains/www.blockbuster.com
   response:
     body:
       string: !!binary |

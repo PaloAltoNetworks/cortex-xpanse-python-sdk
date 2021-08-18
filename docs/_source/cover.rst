@@ -1,4 +1,4 @@
-Expanse Python SDK
+Xpanse Python SDK
 ==================
 .. image:: _static/expanse_banner.png
    :width: 600
@@ -7,14 +7,14 @@ Expanse Python SDK
 Overview
 --------
 
-This library is intended to be an interface to the `Expanse Expander API <https://knowledgebase.expanse.co/expander-apis/>`_.
+This library is intended to be an interface to the `Xpanse Expander API <https://knowledgebase.expanse.co/expander-apis/>`_.
 
 Install
 -------
 .. code-block:: python
 
 
-    pip install expanse-<version>.tar.gz
+    pip install xpanse-<version>.tar.gz
 
 
 Requirements
@@ -28,7 +28,7 @@ Usage
 .. code-block:: python
 
     # Import client
-    from expanse.client import ExClient
+    from xpanse.client import ExClient
 
     # initialize client
     client = ExClient()

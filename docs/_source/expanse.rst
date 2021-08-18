@@ -1,4 +1,4 @@
-Expanse
+Xpanse
 =======
 
 Subpackages
@@ -6,52 +6,52 @@ Subpackages
 
 .. toctree::
     cover
-    expanse.api
+    xpanse.api
 
-expanse.client module
+xpanse.client module
 ---------------------
 
-.. automodule:: expanse.client
+.. automodule:: xpanse.client
     :members:
     :undoc-members:
     :show-inheritance:
 
-expanse.const module
+xpanse.const module
 --------------------
 
-.. automodule:: expanse.const
+.. automodule:: xpanse.const
     :members:
     :undoc-members:
     :show-inheritance:
 
-expanse.error module
+xpanse.error module
 ---------------------
 
-.. automodule:: expanse.error
+.. automodule:: xpanse.error
     :members:
     :undoc-members:
     :show-inheritance:
 
-expanse.endpoint module
+xpanse.endpoint module
 -----------------------
 
-.. automodule:: expanse.endpoint
+.. automodule:: xpanse.endpoint
     :members:
     :undoc-members:
     :show-inheritance:
 
-expanse.iterator module
+xpanse.iterator module
 -----------------------
 
-.. automodule:: expanse.iterator
+.. automodule:: xpanse.iterator
     :members:
     :undoc-members:
     :show-inheritance:
 
-expanse.utils module
+xpanse.utils module
 --------------------
 
-.. automodule:: expanse.utils
+.. automodule:: xpanse.utils
     :members:
     :undoc-members:
     :show-inheritance:

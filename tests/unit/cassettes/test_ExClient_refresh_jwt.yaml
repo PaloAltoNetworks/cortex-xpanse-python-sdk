@@ -16,7 +16,7 @@ interactions:
       - 'Expanse SDK/0.0.10 (Darwin Kernel Version 19.4.0: Wed Mar  4 22:28:40 PST
         2020; root:xnu-6153.101.6~15/RELEASE_X86_64) Python/3.7.3 Expanse'
     method: GET
-    uri: https://api.expander.expanse.co/api/v2/assets/domains/count
+    uri: https://expander.expanse.co/api/v2/assets/domains/count
   response:
     body:
       string: '{"detail":"Signature has expired."}'
@@ -64,7 +64,7 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://api.expander.expanse.co/api/v1/idtoken
+    uri: https://expander.expanse.co/api/v1/idtoken
   response:
     body:
       string: ''
@@ -120,7 +120,7 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://api.expander.expanse.co/api/v1/idtoken/
+    uri: https://expander.expanse.co/api/v1/idtoken/
   response:
     body:
       string: !!binary |
@@ -184,7 +184,7 @@ interactions:
       - 'Expanse SDK/0.0.10 (Darwin Kernel Version 19.4.0: Wed Mar  4 22:28:40 PST
         2020; root:xnu-6153.101.6~15/RELEASE_X86_64) Python/3.7.3 Expanse'
     method: GET
-    uri: https://api.expander.expanse.co/api/v2/assets/domains/count
+    uri: https://expander.expanse.co/api/v2/assets/domains/count
   response:
     body:
       string: !!binary |

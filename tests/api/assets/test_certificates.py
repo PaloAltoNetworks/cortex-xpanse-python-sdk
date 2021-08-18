@@ -2,7 +2,7 @@ import os
 
 import pytest
 
-from expanse.iterator import ExResultIterator
+from xpanse.iterator import ExResultIterator
 from conftest import TEST_POC_ID, TEST_POC_EMAIL, TEST_TAG_ID, TEST_TAG_NAME
 
 

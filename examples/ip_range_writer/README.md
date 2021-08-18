@@ -1,6 +1,6 @@
-# Expanse IP Range Writer
+#xpanse IP Range Writer
 
-This script can be used for exporting Expanse IP Range Data to CSV or JSON.
+This script can be used for exportingxpanse IP Range Data to CSV or JSON.
 
 ## Install
 ```
@@ -11,9 +11,9 @@ pip install -r requirements.txt
 This script expects the Bearer token or JWT for the account to be declared as an Environment variable.
 ex:
 ```
-export EXPANSE_BEARER_TOKEN=<Refresh Token>
+exportxpanse_BEARER_TOKEN=<Refresh Token>
 or
-export EXPANSE_JWT_TOKEN=<JWT>
+exportxpanse_JWT_TOKEN=<JWT>
 ```
 
 Example: download all IP Ranges with the `validated` tag within the `8.8.0.0/16`

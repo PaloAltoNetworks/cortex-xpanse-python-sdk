@@ -18,7 +18,7 @@ interactions:
       - 'Expanse (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST 2020; root:xnu-6153.81.5~1/RELEASE_X86_64)
         Expanse SDK/0.0.1 Python/3.7.3'
     method: POST
-    uri: https://api.expander.expanse.co/api/v2/annotation/tag
+    uri: https://expander.expanse.co/api/v2/annotation/tag
   response:
     body:
       string: '{"id":"300c5185-25e6-4552-b4f7-42d6f800162c","created":"2020-03-09T19:16:57.048162Z","modified":"2020-03-09T19:16:57.048709Z","name":"sdk_test"}'
@@ -81,7 +81,7 @@ interactions:
       - 'Expanse (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST 2020; root:xnu-6153.81.5~1/RELEASE_X86_64)
         Expanse SDK/0.0.1 Python/3.7.3'
     method: GET
-    uri: https://api.expander.expanse.co/api/v2/annotation/tag/300c5185-25e6-4552-b4f7-42d6f800162c
+    uri: https://expander.expanse.co/api/v2/annotation/tag/300c5185-25e6-4552-b4f7-42d6f800162c
   response:
     body:
       string: !!binary |
@@ -151,7 +151,7 @@ interactions:
       - 'Expanse (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST 2020; root:xnu-6153.81.5~1/RELEASE_X86_64)
         Expanse SDK/0.0.1 Python/3.7.3'
     method: DELETE
-    uri: https://api.expander.expanse.co/api/v2/annotation/tag/300c5185-25e6-4552-b4f7-42d6f800162c
+    uri: https://expander.expanse.co/api/v2/annotation/tag/300c5185-25e6-4552-b4f7-42d6f800162c
   response:
     body:
       string: ''

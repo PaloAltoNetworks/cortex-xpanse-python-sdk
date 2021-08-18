@@ -1,6 +1,6 @@
-# Expanse Bulk Issue Updater
+#xpanse Bulk Issue Updater
 
-This script can be used for running bulk update operations on Issues in Expanse.
+This script can be used for running bulk update operations on Issues inxpanse.
 
 ## Install
 ```
@@ -11,9 +11,9 @@ pip install -r requirements.txt
 This script expects the Bearer token or JWT for the account to be declared as an Environment variable.
 ex:
 ```
-export EXPANSE_BEARER_TOKEN=<Refresh Token>
+exportxpanse_BEARER_TOKEN=<Refresh Token>
 or
-export EXPANSE_JWT_TOKEN=<JWT>
+exportxpanse_JWT_TOKEN=<JWT>
 ```
 
 Example: 
