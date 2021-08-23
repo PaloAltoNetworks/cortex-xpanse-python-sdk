@@ -10,7 +10,7 @@ Xpanse Python SDK
 Overview
 --------
 
-This library is intended to be an interface to the `Xpanse Expander API <https://knowledgebase.xpanse.co/expander-apis/>`_.
+This library is intended to be an interface to the `Xpanse Expander API <https://knowledgebase.expanse.co/expander-apis/>`_.
 
 Install
 -------
