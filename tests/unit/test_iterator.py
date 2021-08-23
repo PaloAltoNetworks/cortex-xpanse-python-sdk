@@ -3,7 +3,7 @@ from unittest.mock import MagicMock
 import pytest
 
 from expanse.client import ExClient
-from expanse.iterator import ExResultIterator
+from xpanse.iterator import ExResultIterator
 
 
 def test_ExResultIterator_clean_params(api):

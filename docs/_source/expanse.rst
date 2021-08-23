@@ -40,10 +40,10 @@ expanse.endpoint module
     :undoc-members:
     :show-inheritance:
 
-expanse.iterator module
+xpanse.iterator module
 -----------------------
 
-.. automodule:: expanse.iterator
+.. automodule:: xpanse.iterator
     :members:
     :undoc-members:
     :show-inheritance:

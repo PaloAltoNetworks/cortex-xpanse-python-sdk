@@ -1,7 +1,7 @@
 from typing import Any
 from expanse.const import V2_PREFIX
 from expanse.endpoint import ExEndpoint
-from expanse.iterator import ExResultIterator
+from xpanse.iterator import ExResultIterator
 
 
 class AssetEntitiesEndpoint(ExEndpoint):

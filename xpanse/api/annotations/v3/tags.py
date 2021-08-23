@@ -2,7 +2,7 @@ from typing import Any, Dict, Optional
 
 from expanse.const import V3_PREFIX
 from expanse.endpoint import ExEndpoint
-from expanse.iterator import ExResultIterator
+from xpanse.iterator import ExResultIterator
 
 
 class TagsEndpoint(ExEndpoint):
