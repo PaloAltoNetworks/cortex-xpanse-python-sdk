@@ -32,10 +32,10 @@ expanse.error module
     :undoc-members:
     :show-inheritance:
 
-expanse.endpoint module
+xpanse.endpoint module
 -----------------------
 
-.. automodule:: expanse.endpoint
+.. automodule:: xpanse.endpoint
     :members:
     :undoc-members:
     :show-inheritance:
