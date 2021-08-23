@@ -1,4 +1,4 @@
-# Expanse Bulk Issue Updater
+# Xpanse Bulk Issue Updater
 
 This script can be used for running bulk update operations on Issues in Expanse.
 

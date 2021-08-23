@@ -1,4 +1,4 @@
-Expanse APIs
+Xpanse APIs
 ============
 
 Subpackages

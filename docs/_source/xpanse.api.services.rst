@@ -1,4 +1,4 @@
-Expanse Services API
+Xpanse Services API
 ====================
 
 xpanse.api.services.v1.classifications module

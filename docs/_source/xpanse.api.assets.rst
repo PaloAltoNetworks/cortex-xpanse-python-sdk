@@ -1,4 +1,4 @@
-Expanse Assets API
+Xpanse Assets API
 ==================
 
 xpanse.api.assets.v2.account_integrations module

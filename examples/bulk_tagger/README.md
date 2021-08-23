@@ -1,4 +1,4 @@
-# Expanse Bulk Tagger
+# Xpanse Bulk Tagger
 
 This script can be used for running bulk tagging operations for domains, certificates, and cloud resources.
 

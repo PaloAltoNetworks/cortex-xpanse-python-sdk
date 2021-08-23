@@ -1,4 +1,4 @@
-Expanse Entities API
+Xpanse Entities API
 ====================
 
 xpanse.api.entities.v1.entities module

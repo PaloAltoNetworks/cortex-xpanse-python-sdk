@@ -1,4 +1,4 @@
-Expanse Issues API
+Xpanse Issues API
 ==================
 
 xpanse.api.issues.v1.assignees module

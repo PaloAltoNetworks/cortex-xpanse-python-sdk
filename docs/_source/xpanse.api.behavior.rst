@@ -1,4 +1,4 @@
-Expanse Behavior API
+Xpanse Behavior API
 ====================
 
 xpanse.api.behavior.v1.risky_flows module

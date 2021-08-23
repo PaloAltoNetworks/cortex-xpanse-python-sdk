@@ -1,4 +1,4 @@
-Expanse Annotations API
+Xpanse Annotations API
 =======================
 
 xpanse.api.annotations.v3.tags module
