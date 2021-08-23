@@ -13,7 +13,7 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - 'XpanseSDK/0.2.1 (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST
+      - 'Expanse SDK/0.2.1 (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST
         2020; root:xnu-6153.81.5~1/RELEASE_X86_64) Python/3.7.3 Expanse'
     method: GET
     uri: https://api.expander.expanse.co/api/v1/behavior/risky-flows/6b73ef6c-b230-3797-b321-c4a340169eb7

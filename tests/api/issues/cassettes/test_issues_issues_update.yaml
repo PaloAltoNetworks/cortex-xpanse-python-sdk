@@ -15,7 +15,7 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - 'XpanseSDK/0.0.10 (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST
+      - 'Expanse SDK/0.0.10 (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST
         2020; root:xnu-6153.81.5~1/RELEASE_X86_64) Python/3.7.3 Expanse'
     method: POST
     uri: https://api.expander.expanse.co/api/v1/issues/issues/fe40de75-5e66-3b1f-a49d-898205b52a50/updates
@@ -69,7 +69,7 @@ interactions:
       Cookie:
       - JSESSIONID=200C11A60E6582085D7D85A181820082
       User-Agent:
-      - 'XpanseSDK/0.0.10 (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST
+      - 'Expanse SDK/0.0.10 (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST
         2020; root:xnu-6153.81.5~1/RELEASE_X86_64) Python/3.7.3 Expanse'
     method: GET
     uri: https://api.expander.expanse.co/api/v1/issues/issues/fe40de75-5e66-3b1f-a49d-898205b52a50/updates/088d5914-257c-466f-a828-7138d5fea971

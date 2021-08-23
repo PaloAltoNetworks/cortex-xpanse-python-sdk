@@ -16,7 +16,7 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - 'XpanseSDK/0.0.10 (Darwin Kernel Version 19.4.0: Wed Mar  4 22:28:40 PST
+      - 'Expanse SDK/0.0.10 (Darwin Kernel Version 19.4.0: Wed Mar  4 22:28:40 PST
         2020; root:xnu-6153.101.6~15/RELEASE_X86_64) Python/3.7.3 Expanse'
     method: POST
     uri: https://api.expander.expanse.co/api/v2/ip-range
@@ -80,7 +80,7 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - 'XpanseSDK/0.0.10 (Darwin Kernel Version 19.4.0: Wed Mar  4 22:28:40 PST
+      - 'Expanse SDK/0.0.10 (Darwin Kernel Version 19.4.0: Wed Mar  4 22:28:40 PST
         2020; root:xnu-6153.101.6~15/RELEASE_X86_64) Python/3.7.3 Expanse'
     method: DELETE
     uri: https://api.expander.expanse.co/api/v2/ip-range/3a713cb8-3ee4-46f9-b679-309b7c855d35

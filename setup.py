@@ -30,7 +30,7 @@ setup(
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
     ],
-    keywords="xpanse iom",
+    keywords="expanse iom",
     packages=["docs", "examples", *find_packages(exclude=["tests"])],
     install_requires=["requests>=2.23.0", "deprecated>=1.2.0"],
     include_package_data=True,
