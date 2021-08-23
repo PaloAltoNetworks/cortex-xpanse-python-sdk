@@ -1,6 +1,6 @@
 from typing import Any, Dict
 
-from expanse.const import V2_PREFIX
+from xpanse.const import V2_PREFIX
 from xpanse.endpoint import ExEndpoint
 from xpanse.iterator import ExResultIterator
 

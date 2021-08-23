@@ -16,10 +16,10 @@ expanse.client module
     :undoc-members:
     :show-inheritance:
 
-expanse.const module
+xpanse.const module
 --------------------
 
-.. automodule:: expanse.const
+.. automodule:: xpanse.const
     :members:
     :undoc-members:
     :show-inheritance:

@@ -1,5 +1,5 @@
 from typing import Any, Dict, List
-from expanse.const import V1_PREFIX
+from xpanse.const import V1_PREFIX
 from xpanse.endpoint import ExEndpoint
 from xpanse.iterator import ExResultIterator
 

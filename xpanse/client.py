@@ -9,7 +9,7 @@ from requests.exceptions import ConnectionError
 from urllib3.exceptions import NewConnectionError
 
 from . import __version__
-from expanse.const import (
+from xpanse.const import (
     EXPANSE_BEARER_TOKEN,
     EXPANSE_JWT_TOKEN,
     HTTPVerb,

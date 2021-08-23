@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Union
 
-from expanse.const import V2_PREFIX
+from xpanse.const import V2_PREFIX
 from xpanse.endpoint import ExEndpoint
 from expanse.error import UnexpectedValueError
 from xpanse.iterator import ExResultIterator
