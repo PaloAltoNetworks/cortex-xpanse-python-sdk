@@ -1,7 +1,7 @@
 import pytest
 
 from expanse.client import ExClient
-from expanse.error import UnexpectedValueError
+from xpanse.error import UnexpectedValueError
 
 
 @pytest.mark.vcr()

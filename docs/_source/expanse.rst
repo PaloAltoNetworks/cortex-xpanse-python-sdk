@@ -24,10 +24,10 @@ xpanse.const module
     :undoc-members:
     :show-inheritance:
 
-expanse.error module
+xpanse.error module
 ---------------------
 
-.. automodule:: expanse.error
+.. automodule:: xpanse.error
     :members:
     :undoc-members:
     :show-inheritance:

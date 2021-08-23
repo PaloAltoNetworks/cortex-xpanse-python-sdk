@@ -2,7 +2,7 @@ from typing import Any, Dict, List, Tuple
 
 from xpanse.const import V1_PREFIX
 from xpanse.endpoint import ExEndpoint
-from expanse.error import UnexpectedValueError
+from xpanse.error import UnexpectedValueError
 from xpanse.iterator import ExResultIterator
 
 VALID_UPDATE_TYPES = {

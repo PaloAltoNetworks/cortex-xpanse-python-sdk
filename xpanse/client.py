@@ -15,7 +15,7 @@ from xpanse.const import (
     HTTPVerb,
     ID_TOKEN_URL,
 )
-from expanse.error import (
+from xpanse.error import (
     UnexpectedValueError,
     JWTExpiredError,
     ExpanseException,

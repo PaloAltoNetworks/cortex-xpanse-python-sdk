@@ -1,7 +1,7 @@
 import logging
 from typing import Any, Dict, List, Optional
 
-from expanse.error import UnexpectedResponseError
+from xpanse.error import UnexpectedResponseError
 
 
 class ExResultIterator:
