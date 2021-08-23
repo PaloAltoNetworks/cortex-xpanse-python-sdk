@@ -8,10 +8,10 @@ Subpackages
     cover
     xpanse.api
 
-expanse.client module
+xpanse.client module
 ---------------------
 
-.. automodule:: expanse.client
+.. automodule:: xpanse.client
     :members:
     :undoc-members:
     :show-inheritance:

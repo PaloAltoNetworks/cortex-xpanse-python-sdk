@@ -1,7 +1,7 @@
 from csv import reader
 
 import click
-from expanse.client import ExClient
+from xpanse.client import ExClient
 
 
 

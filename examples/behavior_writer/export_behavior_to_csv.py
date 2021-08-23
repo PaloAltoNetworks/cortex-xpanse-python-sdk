@@ -2,7 +2,7 @@ from sys import exit
 from csv import DictWriter
 
 import click
-from expanse.client import ExClient
+from xpanse.client import ExClient
 
 
 def flatten_rf(flow):

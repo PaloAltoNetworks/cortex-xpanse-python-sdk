@@ -28,7 +28,7 @@ Usage
 .. code-block:: python
 
     # Import client
-    from expanse.client import ExClient
+    from xpanse.client import ExClient
 
     # initialize client
     client = ExClient()

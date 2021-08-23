@@ -1,7 +1,7 @@
 from sys import exit
 
 import click
-from expanse.client import ExClient
+from xpanse.client import ExClient
 
 ALLOWED_PRIORITIES = ["Critical", "High", "Medium", "Low"]
 ALLOWED_STATUSES = ["New", "Investigating", "InProgress", "AcceptableRisk", "Resolved"]

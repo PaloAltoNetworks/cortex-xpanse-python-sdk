@@ -1,6 +1,6 @@
 import pytest
 
-from expanse.client import ExClient
+from xpanse.client import ExClient
 from xpanse.error import UnexpectedValueError
 
 
