@@ -3,12 +3,12 @@
    :hidden:
 
    expanse
-   expanse.api.annotations
-   expanse.api.assets
-   expanse.api.behavior
-   expanse.api.entities
-   expanse.api.issues
-   expanse.api.services
-   expanse.api.targeted_ips
+   xpanse.api.annotations
+   xpanse.api.assets
+   xpanse.api.behavior
+   xpanse.api.entities
+   xpanse.api.issues
+   xpanse.api.services
+   xpanse.api.targeted_ips
 
 .. include:: cover.rst

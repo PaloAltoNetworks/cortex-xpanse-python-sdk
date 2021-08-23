@@ -1,15 +1,15 @@
 from expanse.base_api import ExApi
-from expanse.api.assets.v2.account_integrations import AccountIntegrationsEndpoint
-from expanse.api.assets.v2.annotations import AnnotationsEndpoint
-from expanse.api.assets.v2.entities import AssetEntitiesEndpoint
-from expanse.api.assets.v2.certificates import CertificatesEndpoint
-from expanse.api.assets.v2.certificate_properties import CertificatePropertiesEndpoint
-from expanse.api.assets.v2.cloud_resources import CloudResourcesEndpoint
-from expanse.api.assets.v2.domains import DomainsEndpoint
-from expanse.api.assets.v2.ip_range import IpRangeEndpoint
-from expanse.api.assets.v2.ips import IpsEndpoint
-from expanse.api.assets.v2.providers import ProvidersEndpoint
-from expanse.api.assets.v2.regions import RegionsEndpoint
+from xpanse.api.assets.v2.account_integrations import AccountIntegrationsEndpoint
+from xpanse.api.assets.v2.annotations import AnnotationsEndpoint
+from xpanse.api.assets.v2.entities import AssetEntitiesEndpoint
+from xpanse.api.assets.v2.certificates import CertificatesEndpoint
+from xpanse.api.assets.v2.certificate_properties import CertificatePropertiesEndpoint
+from xpanse.api.assets.v2.cloud_resources import CloudResourcesEndpoint
+from xpanse.api.assets.v2.domains import DomainsEndpoint
+from xpanse.api.assets.v2.ip_range import IpRangeEndpoint
+from xpanse.api.assets.v2.ips import IpsEndpoint
+from xpanse.api.assets.v2.providers import ProvidersEndpoint
+from xpanse.api.assets.v2.regions import RegionsEndpoint
 
 
 class AccountIntegrationsApi(ExApi, AccountIntegrationsEndpoint):

@@ -1,6 +1,6 @@
 from expanse.base_api import ExApi
-from expanse.api.behavior.v1.risky_flows import RiskyFlowsEndpoint
-from expanse.api.behavior.v1.risk_rules import RiskRulesEndpoint
+from xpanse.api.behavior.v1.risky_flows import RiskyFlowsEndpoint
+from xpanse.api.behavior.v1.risk_rules import RiskRulesEndpoint
 
 
 class RiskyFlowsApi(ExApi, RiskyFlowsEndpoint):

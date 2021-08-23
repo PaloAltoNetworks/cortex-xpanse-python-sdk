@@ -6,7 +6,7 @@ Subpackages
 
 .. toctree::
     cover
-    expanse.api
+    xpanse.api
 
 expanse.client module
 ---------------------

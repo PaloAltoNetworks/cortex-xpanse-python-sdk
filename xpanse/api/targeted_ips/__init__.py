@@ -1,5 +1,5 @@
 from expanse.base_api import ExApi
-from expanse.api.targeted_ips.v1.targeted_ips import TargetedIPsEndpoint
+from xpanse.api.targeted_ips.v1.targeted_ips import TargetedIPsEndpoint
 
 
 class TargetedIPsInnerApi(ExApi, TargetedIPsEndpoint):

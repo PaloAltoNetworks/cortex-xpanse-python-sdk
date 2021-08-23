@@ -20,13 +20,13 @@ from expanse.error import (
     JWTExpiredError,
     ExpanseException,
 )
-from expanse.api.annotations import AnnotationsApi
-from expanse.api.assets import AssetsApi
-from expanse.api.behavior import BehaviorApi
-from expanse.api.entities import EntitiesApi
-from expanse.api.issues import IssuesApi
-from expanse.api.services import ServicesApi
-from expanse.api.targeted_ips import TargetedIPsApi
+from xpanse.api.annotations import AnnotationsApi
+from xpanse.api.assets import AssetsApi
+from xpanse.api.behavior import BehaviorApi
+from xpanse.api.entities import EntitiesApi
+from xpanse.api.issues import IssuesApi
+from xpanse.api.services import ServicesApi
+from xpanse.api.targeted_ips import TargetedIPsApi
 from expanse.utils import normalize_param_names
 
 

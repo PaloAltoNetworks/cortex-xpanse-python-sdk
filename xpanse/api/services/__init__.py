@@ -1,7 +1,7 @@
 from expanse.base_api import ExApi
-from expanse.api.services.v1.classifications import ClassificationsEndpoint
-from expanse.api.services.v1.country_codes import CountryCodesEndpoint
-from expanse.api.services.v1.services import ServicesEndpoint
+from xpanse.api.services.v1.classifications import ClassificationsEndpoint
+from xpanse.api.services.v1.country_codes import CountryCodesEndpoint
+from xpanse.api.services.v1.services import ServicesEndpoint
 
 
 class ClassificationsAPI(ExApi, ClassificationsEndpoint):

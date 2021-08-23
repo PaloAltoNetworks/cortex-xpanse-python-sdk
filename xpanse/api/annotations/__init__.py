@@ -1,5 +1,5 @@
 from expanse.base_api import ExApi
-from expanse.api.annotations.v3.tags import TagsEndpoint
+from xpanse.api.annotations.v3.tags import TagsEndpoint
 
 
 class TagsApi(ExApi, TagsEndpoint):

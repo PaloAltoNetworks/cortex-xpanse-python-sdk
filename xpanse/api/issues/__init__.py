@@ -1,11 +1,11 @@
 from expanse.base_api import ExApi
-from expanse.api.issues.v1.assignees import AssigneesEndpoint
-from expanse.api.issues.v1.business_units import BusinessUnitsEndpoint
-from expanse.api.issues.v1.issues import IssuesEndpoint
-from expanse.api.issues.v1.issue_types import IssueTypesEndpoint
-from expanse.api.issues.v1.policies import PoliciesEndpoint
-from expanse.api.issues.v1.providers import ProvidersEndpoint
-from expanse.api.issues.v1.updates import UpdatesEndpoint
+from xpanse.api.issues.v1.assignees import AssigneesEndpoint
+from xpanse.api.issues.v1.business_units import BusinessUnitsEndpoint
+from xpanse.api.issues.v1.issues import IssuesEndpoint
+from xpanse.api.issues.v1.issue_types import IssueTypesEndpoint
+from xpanse.api.issues.v1.policies import PoliciesEndpoint
+from xpanse.api.issues.v1.providers import ProvidersEndpoint
+from xpanse.api.issues.v1.updates import UpdatesEndpoint
 
 
 class IssuesAssigneesAPI(ExApi, AssigneesEndpoint):

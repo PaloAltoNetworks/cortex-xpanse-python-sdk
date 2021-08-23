@@ -1,5 +1,5 @@
 from expanse.base_api import ExApi
-from expanse.api.entities.v1.entities import EntitiesEndpoint
+from xpanse.api.entities.v1.entities import EntitiesEndpoint
 
 
 class EntitiesInnerApi(ExApi, EntitiesEndpoint):
