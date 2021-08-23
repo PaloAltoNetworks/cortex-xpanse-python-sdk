@@ -1,4 +1,4 @@
-from expanse.base_api import ExApi
+from xpanse.base_api import ExApi
 from xpanse.api.behavior.v1.risky_flows import RiskyFlowsEndpoint
 from xpanse.api.behavior.v1.risk_rules import RiskRulesEndpoint
 

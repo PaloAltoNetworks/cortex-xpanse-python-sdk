@@ -23,5 +23,5 @@ def vcr_config():
 @pytest.fixture
 def api():
     return ExClient(
-        jwt=os.getenv("EXPANSE_TEST_JWT_TOKEN", "wwwwwwwwwwwwwwwwwwwwwwwwwwwww")
+        jwt=os.getenv("XPANSE_TEST_JWT_TOKEN", "wwwwwwwwwwwwwwwwwwwwwwwwwwwww")
     )

@@ -1,4 +1,4 @@
-from expanse.base_api import ExApi
+from xpanse.base_api import ExApi
 from xpanse.api.annotations.v3.tags import TagsEndpoint
 
 

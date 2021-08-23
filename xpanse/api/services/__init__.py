@@ -1,4 +1,4 @@
-from expanse.base_api import ExApi
+from xpanse.base_api import ExApi
 from xpanse.api.services.v1.classifications import ClassificationsEndpoint
 from xpanse.api.services.v1.country_codes import CountryCodesEndpoint
 from xpanse.api.services.v1.services import ServicesEndpoint

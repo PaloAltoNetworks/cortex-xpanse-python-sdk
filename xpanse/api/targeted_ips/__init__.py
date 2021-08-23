@@ -1,4 +1,4 @@
-from expanse.base_api import ExApi
+from xpanse.base_api import ExApi
 from xpanse.api.targeted_ips.v1.targeted_ips import TargetedIPsEndpoint
 
 

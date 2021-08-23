@@ -17,11 +17,11 @@ sys.path.insert(0, os.path.abspath("../.."))
 
 
 # -- Project information -----------------------------------------------------
-import expanse
+import xpanse
 
-project = "Expanse"
-copyright = "2020, " + expanse.__author__
-author = expanse.__author__
+project = "Xpanse"
+copyright = "2020, " + xpanse.__author__
+author = xpanse.__author__
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -29,7 +29,7 @@ author = expanse.__author__
 
 
 # The short X.Y version.
-version = expanse.__version__
+version = xpanse.__version__
 # The full version, including alpha/beta/rc tags.
 release = version
 
@@ -77,11 +77,11 @@ napoleon_numpy_docstring = False
 # -- Options for HTML output -------------------------------------------------
 
 html_theme_options = {
-    "description": "The Python interface to the Expanse Expander API",
+    "description": "The Python interface to the Xpanse Expander API",
     "fixed_sidebar": False,
-    "logo": "expanse.png",
-    "touch_icon": "expanse.png",
-    "logo_name": "Expanse",
+    "logo": "xpanse.png",
+    "touch_icon": "xpanse.png",
+    "logo_name": "Xpanse",
 }
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for

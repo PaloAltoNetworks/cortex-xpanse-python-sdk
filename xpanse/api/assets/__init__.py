@@ -1,4 +1,4 @@
-from expanse.base_api import ExApi
+from xpanse.base_api import ExApi
 from xpanse.api.assets.v2.account_integrations import AccountIntegrationsEndpoint
 from xpanse.api.assets.v2.annotations import AnnotationsEndpoint
 from xpanse.api.assets.v2.entities import AssetEntitiesEndpoint

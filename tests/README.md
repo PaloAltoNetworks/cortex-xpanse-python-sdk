@@ -1,1 +1,1 @@
-# Testing Expanse Python SDK
+# Testing Xpanse Python SDK

@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-from expanse import __version__, __license__, __author__, __email__
+from xpanse import __version__, __license__, __author__, __email__
 
 try:
     description = open(
@@ -14,7 +14,7 @@ except:
 setup(
     name="expanse",
     version=__version__,
-    description="Python library is an interface to the Expanse Expander API.",
+    description="Python library is an interface to the Xpanse Expander API.",
     author=__author__,
     long_description=description,
     author_email=__email__,

@@ -1,4 +1,4 @@
-from expanse.base_api import ExApi
+from xpanse.base_api import ExApi
 from xpanse.api.issues.v1.assignees import AssigneesEndpoint
 from xpanse.api.issues.v1.business_units import BusinessUnitsEndpoint
 from xpanse.api.issues.v1.issues import IssuesEndpoint
