@@ -44,7 +44,7 @@ Configuration
 A valid Bearer token or JWT is required for use. Bearer tokens are suggested as JWTs have a limited lifespan. 
 
 **RECOMMENDED**
-or you can supply them as environment variables using the variable names ``EXPANSE_BEARER_TOKEN`` and/or ``EXPANSE_JWT_TOKEN``.
+or you can supply them as environment variables using the variable names ``XPANSE_BEARER_TOKEN`` and/or ``XPANSE_JWT_TOKEN``.
 
 **NOT RECOMMENDED**
 You can either provided these keys directly at client initialization by doing
