@@ -1,6 +1,6 @@
 Xpanse Python SDK
 ==================
-.. image:: _static/expanse_banner.png
+.. image:: _static/xpanse_banner.png
    :width: 600
    :target: https://expanse.co/
 

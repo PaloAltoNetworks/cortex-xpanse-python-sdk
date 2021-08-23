@@ -1,6 +1,6 @@
 # Xpanse Bulk Issue Updater
 
-This script can be used for running bulk update operations on Issues in Expanse.
+This script can be used for running bulk update operations on Issues in Xpanse.
 
 ## Install
 ```

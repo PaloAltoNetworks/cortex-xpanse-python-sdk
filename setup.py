@@ -12,7 +12,7 @@ except:
     print("! could not read README.rst file.")
 
 setup(
-    name="expanse",
+    name="xpanse",
     version=__version__,
     description="Python library is an interface to the Xpanse Expander API.",
     author=__author__,
