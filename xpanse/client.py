@@ -18,7 +18,7 @@ from xpanse.const import (
 from xpanse.error import (
     UnexpectedValueError,
     JWTExpiredError,
-    ExpanseException,
+    XpanseException,
 )
 from xpanse.api.annotations import AnnotationsApi
 from xpanse.api.assets import AssetsApi
@@ -302,7 +302,7 @@ class ExClient:
                 self._log.error(err)
                 retries += 1
                 continue
-            except ExpanseException as err:
+            except XpanseException as err:
                 self._log.error(err)
                 break
         return None

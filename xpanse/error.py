@@ -4,7 +4,7 @@ from typing import Optional
 from requests import Response
 
 
-class ExpanseException(Exception):
+class XpanseException(Exception):
     """
     Base exception class.
     """
@@ -24,7 +24,7 @@ class ExpanseException(Exception):
         return repr(self.__str__())
 
 
-class UnexpectedValueError(ExpanseException):
+class UnexpectedValueError(XpanseException):
     """
     An unexpected value error is thrown whenever the value specified for a
     parameter is outside the bounds of what is expected or is missing.
@@ -33,7 +33,7 @@ class UnexpectedValueError(ExpanseException):
     pass
 
 
-class UnexpectedResponseError(ExpanseException):
+class UnexpectedResponseError(XpanseException):
     """
     Response from the server was unexpected and requires further investigation.
     """
@@ -41,7 +41,7 @@ class UnexpectedResponseError(ExpanseException):
     pass
 
 
-class JWTExpiredError(ExpanseException):
+class JWTExpiredError(XpanseException):
     """
     JWT has expired.
     """
