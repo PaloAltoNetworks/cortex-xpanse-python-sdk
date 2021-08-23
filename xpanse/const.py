@@ -20,10 +20,10 @@ class HTTPVerb(Enum):
     """HTTP DELETE Verb"""
 
 
-EXPANSE_BEARER_TOKEN = "EXPANSE_BEARER_TOKEN"
+XPANSE_BEARER_TOKEN = "XPANSE_BEARER_TOKEN"
 """Env Variable for Bearer Token"""
 
-EXPANSE_JWT_TOKEN = "EXPANSE_JWT_TOKEN"
+XPANSE_JWT_TOKEN = "XPANSE_JWT_TOKEN"
 """Env Variable for JWT"""
 
 ID_TOKEN_URL = "api/v1/idtoken"

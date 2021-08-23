@@ -10,8 +10,8 @@ from urllib3.exceptions import NewConnectionError
 
 from . import __version__
 from xpanse.const import (
-    EXPANSE_BEARER_TOKEN,
-    EXPANSE_JWT_TOKEN,
+    XPANSE_BEARER_TOKEN,
+    XPANSE_JWT_TOKEN,
     HTTPVerb,
     ID_TOKEN_URL,
 )
@@ -133,7 +133,7 @@ class ExClient:
         if bearer_token is not None:
             self._bt = bearer_token
         else:
-            self._bt = os.environ.get(EXPANSE_BEARER_TOKEN, None)
+            self._bt = os.environ.get(XPANSE_BEARER_TOKEN, None)
 
         if proxies is not None:
             self._proxies = proxies
@@ -145,7 +145,7 @@ class ExClient:
             self._jwt = jwt
             self._jwt_valid = True
         else:
-            env_jwt = os.environ.get(EXPANSE_JWT_TOKEN, None)
+            env_jwt = os.environ.get(XPANSE_JWT_TOKEN, None)
             if env_jwt is not None:
                 self._jwt = env_jwt
                 self._jwt_valid = True

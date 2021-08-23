@@ -108,6 +108,6 @@ html_sidebars = {"**": ["about.html", "navigation.html", "searchbox.html",]}
 
 # PDF Setup
 # pdf_documents = [
-#     ("index", "Expanse_SDK_Docs", "Expanse", expanse.__author__),
+#     ("index", "XPANSE_SDK_Docs", "Expanse", expanse.__author__),
 # ]
 # pdf_break_level = 0
