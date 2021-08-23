@@ -8,7 +8,7 @@ from xpanse.iterator import ExResultIterator
 class AnnotationsEndpoint(ExEndpoint):
     """
     Part of the Assets v2 API for handling Annotations.
-    See: https://expander.expanse.co/api/v1/docs/
+    See: https://api.expander.expanse.co/api/v1/docs/
     """
 
     def list_poc(self, **kwargs: Any) -> ExResultIterator:

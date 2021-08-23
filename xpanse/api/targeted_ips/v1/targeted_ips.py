@@ -6,7 +6,7 @@ from xpanse.endpoint import ExEndpoint
 class TargetedIPsEndpoint(ExEndpoint):
     """
     Part of the Targeted IPs v1 API for accessing scan origination IPs.
-    See: https://expander.expanse.co/api/v1/docs/
+    See: https://api.expander.expanse.co/api/v1/docs/
     """
 
     def list(self) -> Dict[str, Any]:

@@ -8,7 +8,7 @@ from xpanse.iterator import ExResultIterator
 class BusinessUnitsEndpoint(ExEndpoint):
     """
     Part of the Issues V1 API.
-    See: https://expander.expanse.co/api/v1/docs/
+    See: https://api.expander.expanse.co/api/v1/docs/
     """
 
     def list(self, **kwargs: Any) -> ExResultIterator:

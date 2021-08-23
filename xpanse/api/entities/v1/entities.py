@@ -30,7 +30,7 @@ class EntityIterator(ExResultIterator):
 class EntitiesEndpoint(ExEndpoint):
     """
     Part of the Entities v1 API for accessing entities.
-    See: https://expander.expanse.co/api/v1/docs/
+    See: https://api.expander.expanse.co/api/v1/docs/
     """
 
     def id_token(self):

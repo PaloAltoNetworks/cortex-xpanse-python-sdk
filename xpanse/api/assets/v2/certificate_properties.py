@@ -8,7 +8,7 @@ from xpanse.iterator import ExResultIterator
 class CertificatePropertiesEndpoint(ExEndpoint):
     """
     Part of the Assets v2 API for handling Asset Certificate Properties.
-    See: https://expander.expanse.co/api/v1/docs/
+    See: https://api.expander.expanse.co/api/v1/docs/
     """
 
     def list(self, **kwargs: Any) -> ExResultIterator:

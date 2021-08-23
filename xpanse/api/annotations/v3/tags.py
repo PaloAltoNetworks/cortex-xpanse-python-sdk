@@ -8,7 +8,7 @@ from xpanse.iterator import ExResultIterator
 class TagsEndpoint(ExEndpoint):
     """
     Part of the Annotations v3 API for tagging assets.
-    See: https://expander.expanse.co/api/v1/docs/
+    See: https://api.expander.expanse.co/api/v1/docs/
     """
 
     def list(self, **kwargs: Any) -> ExResultIterator:

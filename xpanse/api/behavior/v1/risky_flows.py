@@ -8,7 +8,7 @@ from xpanse.iterator import ExResultIterator
 class RiskyFlowsEndpoint(ExEndpoint):
     """
     Part of the Behvaior v1 API for access risky flows.
-    See: https://expander.expanse.co/api/v1/docs/
+    See: https://api.expander.expanse.co/api/v1/docs/
     """
 
     def list(self, **kwargs: Any) -> ExResultIterator:

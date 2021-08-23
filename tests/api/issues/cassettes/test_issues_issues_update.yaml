@@ -37,7 +37,7 @@ interactions:
       Expires:
       - '0'
       Location:
-      - http://expander.expanse.co/api/v1/issues/issues/fe40de75-5e66-3b1f-a49d-898205b52a50/updates/088d5914-257c-466f-a828-7138d5fea971
+      - http://api.expander.expanse.co/api/v1/issues/issues/fe40de75-5e66-3b1f-a49d-898205b52a50/updates/088d5914-257c-466f-a828-7138d5fea971
       Pragma:
       - no-cache
       Set-Cookie:

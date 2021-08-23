@@ -8,7 +8,7 @@ from xpanse.iterator import ExResultIterator
 class ProvidersEndpoint(ExEndpoint):
     """
     Part of the Assets v2 API for handling Asset Providers.
-    See: https://expander.expanse.co/api/v1/docs/
+    See: https://api.expander.expanse.co/api/v1/docs/
     """
 
     def list(self, **kwargs: Any) -> ExResultIterator:
