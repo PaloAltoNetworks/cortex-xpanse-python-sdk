@@ -40,7 +40,7 @@ def flatten_rf(flow):
     help='Returns the risky flows that match the specified internal CIDR/IP Range/Address.')
 def cli(file_name, created_before, created_after, tags, ip):
 
-    # Initialize the XpanseClient
+    # Initialize the Xpanse Client
     client = ExClient()
 
     # Filter and dump all Risky Flows into a list

@@ -1,6 +1,6 @@
-# XpanseBehavior CVS Writer
+# Xpanse Behavior CVS Writer
 
-This script can be used for exporting XpanseBehavior data to CSV.
+This script can be used for exporting Xpanse Behavior data to CSV.
 
 ## Install
 ```

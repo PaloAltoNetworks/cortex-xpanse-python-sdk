@@ -11,7 +11,7 @@ class TargetedIPsEndpoint(ExEndpoint):
 
     def list(self) -> Dict[str, Any]:
         """
-        Returns a list of IPs used in XpanseScanning.
+        Returns a list of IPs used in Xpanse Scanning.
 
         Returns:
             :obj:`dict`:

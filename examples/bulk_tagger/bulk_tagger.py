@@ -66,7 +66,7 @@ def assign_tags(client, assetType, assetKey, tags, tag_map, operation):
 @click.argument('file_name', type=click.File('r'))
 def cli(file_name):
 
-    # Initialize the XpanseClient
+    # Initialize the Xpanse Client
     client = ExClient()
 
     # Populate our tag map from name to id
