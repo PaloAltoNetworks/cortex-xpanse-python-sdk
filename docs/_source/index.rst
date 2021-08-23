@@ -2,7 +2,7 @@
    :maxdepth: 4
    :hidden:
 
-   expanse
+   xpanse
    xpanse.api.annotations
    xpanse.api.assets
    xpanse.api.behavior

@@ -1,6 +1,6 @@
-# XpanseIP Range Writer
+# Xpanse IP Range Writer
 
-This script can be used for exporting XpanseIP Range Data to CSV or JSON.
+This script can be used for exporting Xpanse IP Range Data to CSV or JSON.
 
 ## Install
 ```

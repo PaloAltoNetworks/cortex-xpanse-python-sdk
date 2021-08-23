@@ -14,7 +14,7 @@ Install
 .. code-block:: python
 
 
-    pip install expanse-<version>.tar.gz
+    pip install xpanse-<version>.tar.gz
 
 
 Requirements
