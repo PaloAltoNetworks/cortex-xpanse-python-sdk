@@ -1,4 +1,4 @@
-Expanse Targeted IPs API
+XpanseTargeted IPs API
 ========================
 
 xpanse.api.targeted_ips.v1.targeted_ips module

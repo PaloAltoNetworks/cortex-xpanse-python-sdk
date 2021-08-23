@@ -32,22 +32,22 @@ from xpanse.utils import normalize_param_names
 
 class ExClient:
     """
-    Interface for Expanse APIs.
+    Interface for XpanseAPIs.
 
     Args:
         url (str, optional):
             The base URL that the paths will be appended onto.  The default
             is ``https://api.expander.expanse.co``
         bearer_token (str, optional):
-            The Bearer token for the Expanse API, which is used to request emphemeral JWT tokens.
+            The Bearer token for the XpanseAPI, which is used to request emphemeral JWT tokens.
             More details at ``https://knowledgebase.expanse.co/expander-apis/#getting``
         jwt (str, optional):
-            The JWT for the Expanse API. Note JWTs are temporary so they are not intended for use
+            The JWT for the XpanseAPI. Note JWTs are temporary so they are not intended for use
             with long-running applications.
             More details at ``https://knowledgebase.expanse.co/expander-apis/#getting``
         custom_ua (str, optional):
             A custom string can be provided that will be sent within the user-agent header on all
-            requests to Expanse. Final format will be `Expanse SDK+<custom_ua>/__version__ ...`
+            requests to Expanse. Final format will be `XpanseSDK+<custom_ua>/__version__ ...`
         proxies (dict, optional):
             A dictionary detailing what proxy should be used for what transport protocol.
             This value will be passed to the session object after it has been either attached or
@@ -59,7 +59,7 @@ class ExClient:
             See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings InsecureRequestWarning
     """
 
-    """Expanse URL"""
+    """XpanseURL"""
     _url: str = "https://api.expander.expanse.co"
 
     """Bearer Token"""
@@ -87,9 +87,9 @@ class ExClient:
     _vendor: str = "Expanse"
 
     """Product Name for UA"""
-    _product: str = "Expanse SDK"
+    _product: str = "XpanseSDK"
 
-    """Expanse SDK Build # for UA"""
+    """XpanseSDK Build # for UA"""
     _build: str = "unknown"
 
     """Python version for UA"""
@@ -154,7 +154,7 @@ class ExClient:
 
         if not self._bt and not self._jwt_valid:
             raise UnexpectedValueError(
-                "A valid Expanse Bearer token or JWT token is required."
+                "A valid XpanseBearer token or JWT token is required."
             )
 
         # create Session
@@ -185,7 +185,7 @@ class ExClient:
                     self._jwt = resp["token"]
             else:
                 raise UnexpectedValueError(
-                    "A valid Expanse Bearer token or JWT token is required."
+                    "A valid XpanseBearer token or JWT token is required."
                 )
         except ConnectionError as request_exception:
             if is_retry:
@@ -224,7 +224,7 @@ class ExClient:
         Refresh JWT auth if the old token expires.
         """
         if not self._bt:
-            raise UnexpectedValueError("No valid Expanse Bearer token was found.")
+            raise UnexpectedValueError("No valid XpanseBearer token was found.")
         self._refresh_jwt()
         self._session.headers.update({"Authorization": f"JWT {self._jwt}"})
 

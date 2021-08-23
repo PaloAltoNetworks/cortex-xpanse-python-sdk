@@ -43,7 +43,7 @@ def flatten(obj):
     help='Whether or not severity details should be included with results.')
 def cli(file_name, tags, ip, include_attribution, include_location, include_annotation, include_registration, include_severity):
 
-    # Initialize the Expanse Client
+    # Initialize the XpanseClient
     client = ExClient()
 
     # Prepare arguments

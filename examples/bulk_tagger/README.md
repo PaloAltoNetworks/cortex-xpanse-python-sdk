@@ -21,9 +21,9 @@ domain,my.example.domain.com,dmz|content-validated,ASSIGN
 This script expects the Bearer token or JWT for the account to be declared as an Environment variable.
 ex:
 ```
-export EXPANSE_BEARER_TOKEN=<Refresh Token>
+export XPANSE_BEARER_TOKEN=<Refresh Token>
 or
-export EXPANSE_JWT_TOKEN=<JWT>
+export XPANSE_JWT_TOKEN=<JWT>
 ```
 
 Example: Bulk tag a group of domains

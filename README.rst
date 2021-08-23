@@ -50,9 +50,9 @@ You can supply them as environment variables using the variable names ``EXPANSE_
 
 .. code-block:: python
 
-    export EXPANSE_BEARER_TOKEN=<Bearer Token>
+    export XPANSE_BEARER_TOKEN=<Bearer Token>
     # or
-    export EXPANSE_JWT_TOKEN=<JWT> 
+    export XPANSE_JWT_TOKEN=<JWT>
     
 
 NOT RECOMMENDED
