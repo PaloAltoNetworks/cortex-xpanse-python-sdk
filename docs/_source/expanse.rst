@@ -48,10 +48,10 @@ xpanse.iterator module
     :undoc-members:
     :show-inheritance:
 
-expanse.utils module
+xpanse.utils module
 --------------------
 
-.. automodule:: expanse.utils
+.. automodule:: xpanse.utils
     :members:
     :undoc-members:
     :show-inheritance:

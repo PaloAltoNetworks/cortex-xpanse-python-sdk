@@ -27,7 +27,7 @@ from xpanse.api.entities import EntitiesApi
 from xpanse.api.issues import IssuesApi
 from xpanse.api.services import ServicesApi
 from xpanse.api.targeted_ips import TargetedIPsApi
-from expanse.utils import normalize_param_names
+from xpanse.utils import normalize_param_names
 
 
 class ExClient:
