@@ -31,7 +31,7 @@ jobs:
           black --check xpanse/
       - name: Test types with mypy
         run: |
-          mypy expanse/**/*.py
+          mypy xpanse/**/*.py
       - name: Test with pytest
         run: |
           python -m pytest --vcr-record=none tests/
