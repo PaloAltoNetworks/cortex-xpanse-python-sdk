@@ -2,7 +2,7 @@ import os
 
 import pytest
 
-from expanse.client import ExClient
+from xpanse.client import ExClient
 
 TEST_POC_ID = "378de518-28c6-4600-ad6d-3ccc6bbbe35f"
 TEST_POC_EMAIL = "QA@testing.com"
@@ -23,5 +23,5 @@ def vcr_config():
 @pytest.fixture
 def api():
     return ExClient(
-        jwt=os.getenv("EXPANSE_TEST_JWT_TOKEN", "wwwwwwwwwwwwwwwwwwwwwwwwwwwww")
+        jwt=os.getenv("XPANSE_TEST_JWT_TOKEN", "wwwwwwwwwwwwwwwwwwwwwwwwwwwww")
     )

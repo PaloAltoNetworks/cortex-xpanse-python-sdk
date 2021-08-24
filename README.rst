@@ -1,6 +1,6 @@
-Expanse Python SDK
+Xpanse Python SDK
 ==================
-.. image:: https://github.q-internal.tech/qadium/python-sdk/raw/master/docs/_source/_static/expanse_banner.png
+.. image:: https://github.q-internal.tech/qadium/python-sdk/raw/master/docs/_source/_static/xpanse_banner.png
    :width: 800
    :target: https://expanse.co/
 
@@ -10,13 +10,13 @@ Expanse Python SDK
 Overview
 --------
 
-This library is intended to be an interface to the `Expanse Expander API <https://knowledgebase.expanse.co/expander-apis/>`_.
+This library is intended to be an interface to the `Xpanse Expander API <https://knowledgebase.xpanse.co/expander-apis/>`_.
 
 Install
 -------
 .. code-block:: python
 
-    pip install expanse   
+    pip install xpanse
 
 Requirements
 ------------
@@ -29,7 +29,7 @@ Usage
 .. code-block:: python
 
     # Import client
-    from expanse.client import ExClient
+    from xpanse.client import ExClient
 
     # initialize client
     client = ExClient()
@@ -46,13 +46,13 @@ A valid Bearer token or JWT is required for use. Bearer tokens are suggested as 
 
 RECOMMENDED
 ***********
-You can supply them as environment variables using the variable names ``EXPANSE_BEARER_TOKEN`` and/or ``EXPANSE_JWT_TOKEN``.
+You can supply them as environment variables using the variable names ``XPANSE_BEARER_TOKEN`` and/or ``XPANSE_JWT_TOKEN``.
 
 .. code-block:: python
 
-    export EXPANSE_BEARER_TOKEN=<Bearer Token>
+    export XPANSE_BEARER_TOKEN=<Bearer Token>
     # or
-    export EXPANSE_JWT_TOKEN=<JWT> 
+    export XPANSE_JWT_TOKEN=<JWT>
     
 
 NOT RECOMMENDED

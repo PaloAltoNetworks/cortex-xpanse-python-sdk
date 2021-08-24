@@ -1,7 +1,7 @@
 import os
 import pytest
 
-from expanse.iterator import ExResultIterator
+from xpanse.iterator import ExResultIterator
 from conftest import TEST_ISSUE_ID, TEST_ISSUE_UPDATE_ID
 
 

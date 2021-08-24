@@ -1,6 +1,6 @@
 import pytest
 
-from expanse.api.entities.v1.entities import EntityIterator
+from xpanse.api.entities.v1.entities import EntityIterator
 
 
 @pytest.mark.vcr()
