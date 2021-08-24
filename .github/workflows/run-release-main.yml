@@ -52,8 +52,8 @@ jobs:
           draft: true
           prerelease: true
       - name: Install twine
-          run: |
-            pip install --upgrade setuptools wheel twine
+        run: |
+          pip install --upgrade setuptools wheel twine
       - name: Build new dist package
         run: |
           python setup.py sdist bdist_wheel
