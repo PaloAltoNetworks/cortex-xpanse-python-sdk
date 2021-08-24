@@ -1,7 +1,7 @@
 from sys import exit
 
 import click
-from expanse.client import ExClient
+from xpanse.client import ExClient
 
 ALLOWED_PRIORITIES = ["Critical", "High", "Medium", "Low"]
 ALLOWED_STATUSES = ["New", "Investigating", "InProgress", "AcceptableRisk", "Resolved"]
@@ -24,7 +24,7 @@ def cli(issue_type, tags, status, priority):
         exit("Script only supports a single update during each run. Supply --priority OR --status.")
     if status is None and priority is None:
         exit("Script was not supplied an update command. Supply --priority OR --status.")
-    # Initialize the Expanse Client
+    # Initialize the Xpanse Client
     client = ExClient()
 
     # Map issue types from friendly name to id and join to str
