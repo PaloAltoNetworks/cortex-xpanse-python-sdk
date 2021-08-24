@@ -47,7 +47,7 @@ class ExClient:
             More details at ``https://knowledgebase.expanse.co/expander-apis/#getting``
         custom_ua (str, optional):
             A custom string can be provided that will be sent within the user-agent header on all
-            requests to Expanse. Final format will be `Xpanse SDK+<custom_ua>/__version__ ...`
+            requests to Xpanse. Final format will be `Xpanse SDK+<custom_ua>/__version__ ...`
         proxies (dict, optional):
             A dictionary detailing what proxy should be used for what transport protocol.
             This value will be passed to the session object after it has been either attached or
@@ -84,7 +84,7 @@ class ExClient:
     _retry_error_codes: List[int] = [503]
 
     """Vendor Name for UA"""
-    _vendor: str = "Expanse"
+    _vendor: str = "Xpanse"
 
     """Product Name for UA"""
     _product: str = "Xpanse SDK"
