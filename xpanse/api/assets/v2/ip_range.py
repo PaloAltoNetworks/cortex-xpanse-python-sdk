@@ -88,7 +88,7 @@ class IpRangeEndpoint(ExEndpoint):
     ) -> Dict[str, Any]:
         """
         Creates a new custom IP Range.
-        NOTE: A validation error will be returned if the start and end addresses of the custom range do not fit within a top level range defined by Expanse.
+        NOTE: A validation error will be returned if the start and end addresses of the custom range do not fit within a top level range defined by Xpanse.
 
         Args:
             startAddress (str):
