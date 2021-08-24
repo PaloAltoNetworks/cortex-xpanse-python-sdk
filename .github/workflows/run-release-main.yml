@@ -40,7 +40,7 @@ jobs:
           whispers --config whispers-config.yml --rules jwtvalue,bearervalue tests
       - name: Create Release
         id: create_release
-        uses: actions/create-release@main_test
+        uses: actions/create-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
