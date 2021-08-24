@@ -53,9 +53,9 @@ jobs:
             - Updates to match new logo and branding
           draft: true
           prerelease: true
-      - name: Build
+      - name: Build distribution
         run: |
-          python3 -m build
+         python setup.py sdist bdist_wheel
       - name: Publish Package to PyPI
         run: |
-          python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps XpanseV2-cachukwu
+          python -m twine upload -u ${{secrets.PYPI_API_TOKEN}} dist/*
