@@ -1,6 +1,6 @@
 name: Python package
 
-on: push
+on: [push]
 
 jobs:
   build-n-publish:
@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.6, 3.7, 3.8, 3.9]
+        python-version: [3.9]
 
     steps:
       - uses: actions/checkout@main
@@ -32,9 +32,25 @@ jobs:
       - name: Test with whispers
         run: |
           whispers --config whispers-config.yml --rules jwtvalue,bearervalue tests
-      - name: Publish package
-        if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
-        uses: pypa/gh-action-pypi-publish@release/v1
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          user: __token__
-          password: ${{ secrets.PYPI_API_TOKEN }}
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: |
+            Changes in this Release
+            - Updates to match new logo and branding
+          draft: true
+          prerelease: true
+      - name: Build new dist package
+        run: |
+          python setup.py sdist bdist_wheel
+      - name: Install twine
+        run: |
+          pip install --upgrade setuptools wheel twine
+      - name: Publish a Python distribution to PyPI
+        run: |
+          python -m twine upload -u ${{secrets.PYPI_API_TOKEN}} dist/*
