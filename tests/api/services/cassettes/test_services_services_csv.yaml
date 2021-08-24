@@ -12,7 +12,7 @@ interactions:
       - keep-alive
       User-Agent:
       - 'Xpanse SDK/0.2.1 (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST
-        2020; root:xnu-6153.81.5~1/RELEASE_X86_64) Python/3.7.3 Expanse'
+        2020; root:xnu-6153.81.5~1/RELEASE_X86_64) Python/3.7.3 Xpanse'
     method: GET
     uri: https://api.expander.expanse.co/api/v1/services/services/csv?classificationId=DnsServer&filename=dns_server_service.csv
   response:
