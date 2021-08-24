@@ -1,6 +1,12 @@
 name: Python package Release and Publish
 
-on: [pull_request]
+on:
+  push:
+    branches:
+      - GNY-223
+  pull_request:
+    branches:
+      - GNY-223
 
 jobs:
   build-n-publish:
