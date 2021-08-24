@@ -26,9 +26,6 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements-dev.txt
-          pip install setuptools wheel twine
-          python3 -m pip install --upgrade build
-          python3 -m build
       - name: Lint with black
         run: |
           black --check xpanse/
@@ -54,13 +51,14 @@ jobs:
             - Updates to match new logo and branding
           draft: true
           prerelease: true
-      - name: Build and publish
-        env:
-          TWINE_USERNAME: __token__
-          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+      - name: Build
         run: |
-          python setup.py sdist bdist_wheel
-          twine upload dist/*
+          python3 -m pip install --upgrade build
+          python3 -m build
+      - name: Install twine
+        run: |
+          python3 -m pip install --upgrade twine
+          python3 -m twine upload -r testpypi dist/*
       - name: Publish Package to PyPI
         run: |
           python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps Xpanse-ganymede
