@@ -28,7 +28,7 @@ jobs:
           pip install -r requirements-dev.txt
       - name: Lint with black
         run: |
-          black --check expanse/
+          black --check xpanse/
       - name: Test types with mypy
         run: |
           mypy expanse/**/*.py
