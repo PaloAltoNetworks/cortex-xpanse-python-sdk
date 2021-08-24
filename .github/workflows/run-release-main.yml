@@ -61,7 +61,7 @@ jobs:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
         run: |
-          python3 -m twine upload -r testpypi dist/*
+          python3 -m twine upload -r Xpanse dist/*
       - name: Publish Package to PyPI
         run: |
           python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps Xpanse-cachukwu
