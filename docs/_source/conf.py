@@ -79,8 +79,8 @@ napoleon_numpy_docstring = False
 html_theme_options = {
     "description": "The Python interface to the Xpanse Expander API",
     "fixed_sidebar": False,
-    "logo": "xpanse.png",
-    "touch_icon": "xpanse.png",
+    "logo": "xpanse_banner.png",
+    "touch_icon": "xpanse_banner.png",
     "logo_name": "Xpanse",
 }
 
