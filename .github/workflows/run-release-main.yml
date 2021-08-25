@@ -3,7 +3,7 @@ name: Python Package Release and Publish
 on:
   push:
     branch:
-      - main_test
+      - main
     tags:
       - '*'
 
@@ -47,6 +47,6 @@ jobs:
       - name: Publish Package to PyPI
         env:
           TWINE_USERNAME: __token__
-          TWINE_PASSWORD: ${{ secrets.TEST_PYPI_API_TOKEN }}
+          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
         run: |
-          twine upload --repository testpypi dist/*
+          twine upload --repository pypi dist/*
