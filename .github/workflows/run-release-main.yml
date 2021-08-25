@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main_test
-    tags:
-      - '*'
 
 jobs:
   build-n-publish:
