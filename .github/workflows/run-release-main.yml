@@ -2,13 +2,14 @@ name: Release and Publish Python SDK
 
 on:
   push:
-    tags:
-      - 'v*.*.*'
+    branch:
+      main_test
 
 jobs:
   build-n-publish:
     name: Create Release
     runs-on: ubuntu-latest
+    if: contains(github.event.head_commit.message, ‘publish’)
     strategy:
       matrix:
         python-version: [3.9]
