@@ -13,7 +13,7 @@ except:
 
 setup(
     name="xpanse",
-    # version=__version__,
+    version=__version__,
     description="Python library is an interface to the Xpanse Expander API.",
     author=__author__,
     long_description=description,
