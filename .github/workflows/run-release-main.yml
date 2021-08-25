@@ -2,10 +2,8 @@ name: Release and Publish Python SDK
 
 on:
   push:
-    branches:
-      - main_test
     tags:
-      - '*'
+      - 'v*.*.*'
 
 jobs:
   build-n-publish:
