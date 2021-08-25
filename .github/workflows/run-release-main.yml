@@ -3,12 +3,13 @@ name: Release and Publish
 on:
   push:
     branch:
-      main_test
+      - main_test
+    tag:
+      - '*'
 
 jobs:
   build-n-publish:
     name: Create Release
-    if: ${{ github.event.label.name == publish }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
