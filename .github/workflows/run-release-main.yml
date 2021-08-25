@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main_test
+    tags:
+      - '*'
 
 jobs:
   build-n-publish:
@@ -21,11 +23,11 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install dependencies
         run: |
-          python3 -m pip install --upgrade pip
+          python -m pip install --upgrade pip
           pip install -r requirements-dev.txt
           pip install setuptools wheel twine
-          python3 -m pip install --upgrade twine
-          python3 -m pip install --upgrade build
+          python -m pip install --upgrade twine
+          python -m pip install --upgrade build
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -45,6 +47,6 @@ jobs:
       - name: Publish Package to PyPI
         env:
           TWINE_USERNAME: __token__
-          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+          TWINE_PASSWORD: ${{ secrets.TEST_PYPI_API_TOKEN }}
         run: |
           twine upload --repository testpypi dist/*
