@@ -11,6 +11,7 @@ jobs:
   build-n-publish:
     name: Create Release
     runs-on: ubuntu-latest
+    if: ${{ startsWith('refs/tags/v', github.ref) }}
     strategy:
       matrix:
         python-version: [3.9]
