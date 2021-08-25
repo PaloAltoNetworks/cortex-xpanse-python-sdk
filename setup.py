@@ -13,7 +13,9 @@ except:
 
 setup(
     name="xpanse",
-    version=__version__,
+    # version=__version__,
+    use_incremental=True,
+    setup_requires=['incremental'],
     description="Python library is an interface to the Xpanse Expander API.",
     author=__author__,
     long_description=description,
@@ -32,7 +34,7 @@ setup(
     ],
     keywords="xpanse iom",
     packages=["docs", "examples", *find_packages(exclude=["tests"])],
-    install_requires=["requests>=2.23.0", "deprecated>=1.2.0"],
+    install_requires=["requests>=2.23.0", "deprecated>=1.2.0", 'incremental'],
     include_package_data=True,
     python_requires=">=3.6",
 )
