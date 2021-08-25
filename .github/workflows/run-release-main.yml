@@ -2,13 +2,12 @@ name: Release and Publish Python SDK
 
 on:
   push:
-    branch:
-      main_test
+    tags:
+      - 'v*.*.*'
 
 jobs:
   build-n-publish:
     name: Create Release
-    if: ${{github.event.head_commit.message == ‘publish to pypi’ }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
