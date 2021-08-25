@@ -2,12 +2,13 @@ name: Release and Publish Python SDK
 
 on:
   push:
-    tags:
-      - '*'
+    branch:
+      main_test
 
 jobs:
   build-n-publish:
     name: Create Release
+    if: ${{ github.event.label.name == 'publish' }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
