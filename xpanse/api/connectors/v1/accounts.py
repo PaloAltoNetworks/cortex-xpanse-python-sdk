@@ -3,7 +3,12 @@ from xpanse.const import V1_PREFIX
 from xpanse.endpoint import ExEndpoint
 from xpanse.iterator import ExResultIterator
 
+
 class ConnectorsAccountsEndpoint(ExEndpoint):
+    """
+    Part of the Connectors V1 API.
+    See: https://api.expander.expanse.co/api/v1/docs/
+    """
 
     def list(self, **kwargs: Any) -> ExResultIterator:
         """
@@ -26,9 +31,7 @@ class ConnectorsAccountsEndpoint(ExEndpoint):
             >>> bus =  client.connectors.accounts.list().dump()
         """
 
-        return ExResultIterator(
-            self._api, f"{V1_PREFIX}/connectors/accounts", kwargs
-        )
+        return ExResultIterator(self._api, f"{V1_PREFIX}/connectors/accounts", kwargs)
 
     def get(self, id: str, **kwargs: Any) -> Dict[str, Any]:
         """
@@ -47,4 +50,6 @@ class ConnectorsAccountsEndpoint(ExEndpoint):
             >>> # Return Issue.
             >>> issue = client.connector.accounts.get(<id>)
         """
-        return self._api.get(f"{V1_PREFIX}/connectors/accounts/{id}", params=kwargs).json()
+        return self._api.get(
+            f"{V1_PREFIX}/connectors/accounts/{id}", params=kwargs
+        ).json()
