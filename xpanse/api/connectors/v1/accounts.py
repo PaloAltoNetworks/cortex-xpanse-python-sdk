@@ -54,7 +54,9 @@ class ConnectorsAccountsEndpoint(ExEndpoint):
             f"{V1_PREFIX}/connectors/accounts/{id}", params=kwargs
         ).json()
 
-    def create(self, businessUnitId: str, name: str, dataSourceId: str, credentials: str) -> Dict[str, Any]:
+    def create(
+        self, businessUnitId: str, name: str, dataSourceId: str, credentials: str
+    ) -> Dict[str, Any]:
         """
         Creates a new Connector Account
 
@@ -76,12 +78,20 @@ class ConnectorsAccountsEndpoint(ExEndpoint):
             >>> # Return updates for issue and dump to list.
             >>> connector_account = client.connectors.accounts.create(businessUnitId=<id>, name=<account_name>, dataSourceId=<data_source_id>, credentials=<{"api_key": 'test_key'}>)
         """
-        if businessUnitId is None or name is None or dataSourceId is None or credentials is None:
+        if (
+            businessUnitId is None
+            or name is None
+            or dataSourceId is None
+            or credentials is None
+        ):
             raise UnexpectedValueError("A required connector account value was missing")
-        payload = {"businessUnitId": businessUnitId, "name": name, "dataSourceId": dataSourceId, "credentials": credentials}
-        return self._api.post(
-            f"{V1_PREFIX}/connectors/accounts", json=payload
-        ).json()
+        payload = {
+            "businessUnitId": businessUnitId,
+            "name": name,
+            "dataSourceId": dataSourceId,
+            "credentials": credentials,
+        }
+        return self._api.post(f"{V1_PREFIX}/connectors/accounts", json=payload).json()
 
     def update(self, id: str, **kwargs: Any) -> Dict[str, Any]:
         """
@@ -129,6 +139,7 @@ class ConnectorsAccountsEndpoint(ExEndpoint):
         """
         return (
             True
-            if self._api.delete(f"{V1_PREFIX}/connectors/accounts/{id}").status_code == 204
+            if self._api.delete(f"{V1_PREFIX}/connectors/accounts/{id}").status_code
+            == 204
             else False
         )
