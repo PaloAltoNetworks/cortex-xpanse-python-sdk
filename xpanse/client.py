@@ -27,6 +27,7 @@ from xpanse.api.entities import EntitiesApi
 from xpanse.api.issues import IssuesApi
 from xpanse.api.services import ServicesApi
 from xpanse.api.targeted_ips import TargetedIPsApi
+from xpanse.api.connectors import ConnectorsApi
 from xpanse.utils import normalize_param_names
 
 
@@ -485,3 +486,8 @@ class ExClient:
     def targeted_ips(self):
         """Targeted IPs API"""
         return TargetedIPsApi(self)
+
+    @property
+    def connectors(self):
+        """Connectors API"""
+        return ConnectorsApi(self)

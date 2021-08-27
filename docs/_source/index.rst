@@ -10,5 +10,6 @@
    xpanse.api.issues
    xpanse.api.services
    xpanse.api.targeted_ips
+   xpanse.api.connectors
 
 .. include:: cover.rst
