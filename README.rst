@@ -25,7 +25,7 @@ Python 3.6+
 
 Usage
 -----
-
+`Documentation <https://cortex-xpanse-python-sdk.readthedocs.io/en/latest/>`_
 .. code-block:: python
 
     # Import client
