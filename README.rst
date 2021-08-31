@@ -21,7 +21,7 @@ Install
 Requirements
 ------------
 
-Python 3.7+
+Python 3.6+
 
 Usage
 -----
@@ -37,7 +37,7 @@ Usage
     # get ip_range iterator object and dump to a list
     ranges = client.assets.ip_range.list().dump()
 
-You can view more example code in the `examples <https://github.com/expanseco/python-sdk/tree/master/examples>`_ directory.
+You can view more example code in the `examples <https://github.com/PaloAltoNetworks/cortex-xpanse-python-sdk/tree/main/examples>`_ directory.
 
 Configuration
 -------------
