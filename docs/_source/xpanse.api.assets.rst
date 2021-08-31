@@ -88,3 +88,19 @@ xpanse.api.assets.v2.regions module
     :members:
     :undoc-members:
     :show-inheritance:
+
+xpanse.api.assets.v2.certificate_issuers module
+---------------------------------------------------
+
+.. automodule:: xpanse.api.assets.v2.certificate_issuers
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+xpanse.api.assets.v2.domain_registrars module
+---------------------------------------------------
+
+.. automodule:: xpanse.api.assets.v2.domain_registrars
+    :members:
+    :undoc-members:
+    :show-inheritance:
