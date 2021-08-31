@@ -3,6 +3,9 @@
 ## Install Dependencies
 1. Install `requirements-docs.txt` using `pip install -r requirements-docs.txt`.
 
+## Documentation
+1. Go to `https://cortex-xpanse-python-sdk.readthedocs.io/en/latest/`
+
 ## HTML Docs
 1. Run `make html` from this directory.
 2. You should see a bunch of new html docs in `docs/_build/html`.
@@ -11,4 +14,4 @@
 ## PDF Docs
 **Note: This has only been tested on macOS and requires mactex**
 1. Run `make latexpdf` from this directory
-2. Open `_build/latex/expanse.pdf`
+2. Open `_build/latex/xpanse.pdf`
