@@ -10,6 +10,8 @@ from xpanse.api.assets.v2.ip_range import IpRangeEndpoint
 from xpanse.api.assets.v2.ips import IpsEndpoint
 from xpanse.api.assets.v2.providers import ProvidersEndpoint
 from xpanse.api.assets.v2.regions import RegionsEndpoint
+from xpanse.api.assets.v2.certificate_issuers import CertificateIssuersEndpoint
+from xpanse.api.assets.v2.domain_registrars import DomainRegistrarsEndpoint
 
 
 class AccountIntegrationsApi(ExApi, AccountIntegrationsEndpoint):
@@ -155,7 +157,41 @@ class RegionsApi(ExApi, RegionsEndpoint):
         return RegionsEndpoint(self._api)
 
 
+class CertificateIssuersApi(ExApi, CertificateIssuersEndpoint):
+    def __init__(self, session):
+        super().__init__(session)
+
+    @property
+    def current_version(self):
+        return "v2"
+
+    @property
+    def v2(self):
+        return CertificateIssuersEndpoint(self._api)
+
+
+class DomainRegistrarsApi(ExApi, DomainRegistrarsEndpoint):
+    def __init__(self, session):
+        super().__init__(session)
+
+    @property
+    def current_version(self):
+        return "v2"
+
+    @property
+    def v2(self):
+        return DomainRegistrarsEndpoint(self._api)
+
+
 class AssetsApi(ExApi):
+    @property
+    def domain_registrars(self):
+        return DomainRegistrarsApi(self._api)
+
+    @property
+    def certificate_issuers(self):
+        return CertificateIssuersApi(self._api)
+
     @property
     def account_integrations(self):
         return AccountIntegrationsApi(self._api)
