@@ -1,6 +1,6 @@
 Xpanse Python SDK
 ==================
-.. image:: docs/_source/_static/xpanse_banner.png
+.. image:: https://github.com/PaloAltoNetworks/cortex-xpanse-python-sdk/blob/main/docs/_source/_static/xpanse_banner.png?raw=true
    :width: 800
    :target: https://expanse.co/
 
