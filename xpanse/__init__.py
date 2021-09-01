@@ -1,4 +1,4 @@
-__version__ = "1.0.5"
+__version__ = "1.0.0"
 __author__ = "Palo Alto Cortex Xpanse"
 __license__ = "ISC"
 __maintainer__ = "Palo Alto Cortex Xpanse"
