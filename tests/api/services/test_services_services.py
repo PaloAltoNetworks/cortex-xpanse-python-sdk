@@ -1,7 +1,7 @@
 import os
 import pytest
 
-from expanse.iterator import ExResultIterator
+from xpanse.iterator import ExResultIterator
 from conftest import TEST_SERVICE_ID
 
 

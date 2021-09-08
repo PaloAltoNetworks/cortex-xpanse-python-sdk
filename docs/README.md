@@ -11,4 +11,4 @@
 ## PDF Docs
 **Note: This has only been tested on macOS and requires mactex**
 1. Run `make latexpdf` from this directory
-2. Open `_build/latex/expanse.pdf`
+2. Open `_build/latex/xpanse.pdf`

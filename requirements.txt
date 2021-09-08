@@ -6,10 +6,10 @@
 #
 
 -i https://pypi.org/simple
-certifi==2020.12.5
-chardet==4.0.0
-deprecated==1.2.12
-idna==2.10
-requests==2.25.1
-urllib3==1.26.4
-wrapt==1.12.1
+certifi~=2020.12.5
+chardet~=4.0.0
+deprecated~=1.2.12
+idna~=2.10
+requests~=2.25.1
+urllib3~=1.26.5
+wrapt~=1.12.1

@@ -2,7 +2,7 @@ from csv import DictWriter
 from json import dump
 
 import click
-from expanse.client import ExClient
+from xpanse.client import ExClient
 
 
 def flatten(obj):
@@ -43,7 +43,7 @@ def flatten(obj):
     help='Whether or not severity details should be included with results.')
 def cli(file_name, tags, ip, include_attribution, include_location, include_annotation, include_registration, include_severity):
 
-    # Initialize the Expanse Client
+    # Initialize the Xpanse Client
     client = ExClient()
 
     # Prepare arguments

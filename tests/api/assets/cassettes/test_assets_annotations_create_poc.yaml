@@ -16,8 +16,8 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - 'Expanse (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST 2020; root:xnu-6153.81.5~1/RELEASE_X86_64)
-        Expanse SDK/0.0.1 Python/3.7.3'
+      - 'Xpanse (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST 2020; root:xnu-6153.81.5~1/RELEASE_X86_64)
+        Xpanse SDK/0.0.1 Python/3.7.3'
     method: POST
     uri: https://api.expander.expanse.co/api/v2/annotation/point-of-contact
   response:
@@ -81,8 +81,8 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - 'Expanse (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST 2020; root:xnu-6153.81.5~1/RELEASE_X86_64)
-        Expanse SDK/0.0.1 Python/3.7.3'
+      - 'Xpanse (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST 2020; root:xnu-6153.81.5~1/RELEASE_X86_64)
+        Xpanse SDK/0.0.1 Python/3.7.3'
     method: DELETE
     uri: https://api.expander.expanse.co/api/v2/annotation/point-of-contact/f073e7aa-efa8-4404-a4f9-184f5ca9ff3a
   response:
