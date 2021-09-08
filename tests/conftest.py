@@ -2,7 +2,7 @@ import os
 
 import pytest
 
-from expanse.client import ExClient
+from xpanse.client import ExClient
 
 TEST_POC_ID = "378de518-28c6-4600-ad6d-3ccc6bbbe35f"
 TEST_POC_EMAIL = "QA@testing.com"
@@ -11,6 +11,7 @@ TEST_TAG_NAME = "sdk_test"
 TEST_ISSUE_ID = "fe40de75-5e66-3b1f-a49d-898205b52a50"
 TEST_ISSUE_UPDATE_ID = "e3cf20be-ac1e-4d56-bf79-78c1161a7425"
 TEST_SERVICE_ID = "6c57a874-5f78-348f-ab87-08ffd249ccff"
+TEST_CONNECTOR_ACCOUNT_ID="e2154dbf-1e7e-4e25-9b88-0c43c98c9551"
 
 
 @pytest.fixture(scope="module")
@@ -23,5 +24,5 @@ def vcr_config():
 @pytest.fixture
 def api():
     return ExClient(
-        jwt=os.getenv("EXPANSE_TEST_JWT_TOKEN", "wwwwwwwwwwwwwwwwwwwwwwwwwwwww")
+        jwt=os.getenv("XPANSE_TEST_JWT_TOKEN", "wwwwwwwwwwwwwwwwwwwwwwwwwwwww")
     )

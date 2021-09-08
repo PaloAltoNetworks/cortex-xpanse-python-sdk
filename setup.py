@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-from expanse import __version__, __license__, __author__, __email__
+from xpanse import __version__, __license__, __author__, __email__
 
 try:
     description = open(
@@ -12,15 +12,15 @@ except:
     print("! could not read README.md file.")
 
 setup(
-    name="expanse",
+    name="xpanse",
     version=__version__,
-    description="Python library is an interface to the Expanse Expander API.",
+    description="Python library is an interface to the Xpanse Expander API.",
     author=__author__,
     long_description=description,
     author_email=__email__,
     license=__license__,
     classifiers=[
-        "Development Status :: 2 - Pre-Alpha",
+        "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
         "Topic :: Software Development",
         "Topic :: Software Development :: Libraries",
@@ -30,9 +30,9 @@ setup(
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
     ],
-    keywords="expanse iom",
+    keywords="xpanse iom",
     packages=["docs", "examples", *find_packages(exclude=["tests"])],
-    install_requires=["requests>=2.23.0", "deprecated>=1.2.0"],
+    install_requires=["requests>=2.25.1", "deprecated>=1.2.0"],
     include_package_data=True,
     python_requires=">=3.6",
 )

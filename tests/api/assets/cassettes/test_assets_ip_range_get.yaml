@@ -13,8 +13,8 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - 'Expanse (Darwin Kernel Version 18.5.0: Mon Mar 11 20:40:32 PDT 2019; root:xnu-4903.251.3~3/RELEASE_X86_64)
-        Expanse SDK/0.0.1 Python/3.7.4'
+      - 'Xpanse (Darwin Kernel Version 18.5.0: Mon Mar 11 20:40:32 PDT 2019; root:xnu-4903.251.3~3/RELEASE_X86_64)
+        Xpanse SDK/0.0.1 Python/3.7.4'
     method: GET
     uri: https://api.expander.expanse.co/api/v2/ip-range/75ebc9d8-db03-4c00-b44b-db458d72c817
   response:
