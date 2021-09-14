@@ -1,20 +1,23 @@
 Xpanse Python SDK
 ==================
-.. image:: https://github.com/PaloAltoNetworks/cortex-xpanse-python-sdk/blob/main/docs/_source/_static/xpanse_banner.png?raw=true
-   :width: 800
-   :target: https://expanse.co/
+![Xpanse](https://github.com/PaloAltoNetworks/cortex-xpanse-python-sdk/blob/main/docs/_source/_static/xpanse_banner.png?raw=true|width=400)
 
-.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
-   :target: https://github.com/psf/black
+
+[![Python versions](https://img.shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8-blueviolet)](https://pypi.python.org/pypi/xpanse)
+[![License](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![License](https://img.shields.io/pypi/l/xpanse)](https://github.com/PaloAltoNetworks/cortex-xpanse-python-sdk/blob/main/LICENSE)
+
+[![Documentation Status](https://img.shields.io/badge/docs-latest-brightgreen.svg)](http://cortex-xpanse-python-sdk.readthedocs.io/en/latest/?badge=latest)
+[![GitHub contributors](https://img.shields.io/github/contributors/PaloAltoNetworks/cortex-xpanse-python-sdk)](https://github.com/PaloAltoNetworks/cortex-xpanse-python-sdk/graphs/contributors)
+
 
 Overview
 --------
 
-This library is intended to be an interface to the `Xpanse Expander API <https://knowledgebase.xpanse.co/expander-apis/>`_.
+This library is intended to be an interface to the Xpanse Expander API [Xpanse Expander API](https://knowledgebase.xpanse.co/expander-apis/>).
 
 Install
 -------
-.. code-block:: python
 
     pip install xpanse
 
@@ -25,9 +28,7 @@ Python 3.6+
 
 Usage
 -----
-`Documentation <https://cortex-xpanse-python-sdk.readthedocs.io/en/latest/>`_
-
-.. code-block:: python
+Documentation: https://cortex-xpanse-python-sdk.readthedocs.io/en/latest/
 
     # Import client
     from xpanse.client import ExClient
@@ -38,7 +39,7 @@ Usage
     # get ip_range iterator object and dump to a list
     ranges = client.assets.ip_range.list().dump()
 
-You can view more example code in the `examples <https://github.com/PaloAltoNetworks/cortex-xpanse-python-sdk/tree/main/examples>`_ directory.
+You can view more example code in the [examples directory](https://github.com/PaloAltoNetworks/cortex-xpanse-python-sdk/tree/main/examples>).
 
 Configuration
 -------------
@@ -49,8 +50,6 @@ RECOMMENDED
 ***********
 You can supply them as environment variables using the variable names ``XPANSE_BEARER_TOKEN`` and/or ``XPANSE_JWT_TOKEN``.
 
-.. code-block:: python
-
     export XPANSE_BEARER_TOKEN=<Bearer Token>
     # or
     export XPANSE_JWT_TOKEN=<JWT>
@@ -60,8 +59,6 @@ NOT RECOMMENDED
 ***************
 You can also provided these keys directly at client initialization by doing
 
-.. code-block:: python
-
     client = ExClient(jwt=<JWT>)
     # or
     client = ExClient(bearer=<Bearer>) 
@@ -70,9 +67,7 @@ Logging
 -------
 Logging is handled through the python logging package. To enable different levels of verbosity in your scripts you can do the following:
 
-.. code-block:: python
-
     import logging
     logging.basicConfig(level=logging.DEBUG)
 
-You can read more at `<https://docs.python.org/3/library/logging.html>`_.
+You can read more at https://docs.python.org/3/library/logging.html.
