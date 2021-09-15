@@ -4,10 +4,10 @@ Xpanse Python SDK
 
 
 [![Python versions](https://img.shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8-blueviolet)](https://pypi.python.org/pypi/xpanse)
-[![License](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Code Style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![License](https://img.shields.io/pypi/l/xpanse)](https://github.com/PaloAltoNetworks/cortex-xpanse-python-sdk/blob/main/LICENSE)
 
-[![Documentation Status](https://img.shields.io/badge/docs-latest-brightgreen.svg)](http://cortex-xpanse-python-sdk.readthedocs.io/en/latest/?badge=latest)
+[![Documentation](https://img.shields.io/badge/docs-latest-brightgreen.svg)](http://cortex-xpanse-python-sdk.readthedocs.io/en/latest/?badge=latest)
 [![GitHub contributors](https://img.shields.io/github/contributors/PaloAltoNetworks/cortex-xpanse-python-sdk)](https://github.com/PaloAltoNetworks/cortex-xpanse-python-sdk/graphs/contributors)
 
 
@@ -61,7 +61,7 @@ You can also provided these keys directly at client initialization by doing
 
     client = ExClient(jwt=<JWT>)
     # or
-    client = ExClient(bearer=<Bearer>) 
+    client = ExClient(bearer_token=<BearerToken>) 
 
 Logging
 -------
