@@ -2,10 +2,9 @@ name: Python Package Release and Publish
 
 on:
   push:
-    branch:
-      - main
-    tags:
-      - '*'
+    branches:
+      - test
+
 
 jobs:
   build-n-publish:
