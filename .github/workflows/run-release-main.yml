@@ -2,7 +2,7 @@ name: Python Package Release and Publish
 
 on:
   push:
-    branch:
+    branches:
       - test
 
 jobs:
