@@ -3,9 +3,7 @@ name: Python Package Release and Publish
 on:
   push:
     branch:
-      - main
-    tags:
-      - '*'
+      - Main
 
 jobs:
   build-n-publish:
@@ -39,8 +37,8 @@ jobs:
           body: |
             Changes in this Release
             - Updates to match new logo and branding
-          draft: true
-          prerelease: true
+          draft: false
+          prerelease: false
       - name: Build distribution
         run: |
          python setup.py sdist bdist_wheel
