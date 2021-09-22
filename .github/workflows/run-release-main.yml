@@ -2,8 +2,8 @@ name: Python Package Release and Publish
 
 on:
   push:
-    branch:
-      - main_test
+    branches:
+      - test
 
 jobs:
   build-n-publish:
