@@ -3,8 +3,7 @@ name: Python Package Release and Publish
 on:
   push:
     branches:
-      - test
-
+      - main
 
 jobs:
   build-n-publish:
@@ -12,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.8, 3.9]
+        python-version: [3.9]
 
     steps:
       - uses: actions/checkout@v1
