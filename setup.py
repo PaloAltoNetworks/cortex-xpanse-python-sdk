@@ -5,11 +5,11 @@ from xpanse import __version__, __license__, __author__, __email__
 
 try:
     description = open(
-        os.path.join(os.path.abspath(os.path.dirname(__file__)), "README.md")
+        os.path.join(os.path.abspath(os.path.dirname(__file__)), "README.rst")
     ).read()
 except:
     description = "Please refer to https://knowledgebase.expanse.co/expander-apis/"
-    print("! could not read README.md file.")
+    print("! could not read README.rst file.")
 
 setup(
     name="xpanse",
