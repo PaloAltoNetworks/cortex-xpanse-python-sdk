@@ -2,15 +2,14 @@ Xpanse Python SDK
 ==================
 ![Xpanse](https://github.com/PaloAltoNetworks/cortex-xpanse-python-sdk/blob/main/docs/_source/_static/xpanse_banner.png?raw=true|width=400)
 
+Xpanse Python SDK
+==================
+.. image:: https://github.com/PaloAltoNetworks/cortex-xpanse-python-sdk/blob/main/docs/_source/_static/xpanse_banner.png?raw=true
+   :width: 800
+   :target: https://expanse.co/
 
-[![Python versions](https://img.shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8-blueviolet)](https://pypi.python.org/pypi/xpanse)
-[![Code Style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![License](https://img.shields.io/pypi/l/xpanse)](https://github.com/PaloAltoNetworks/cortex-xpanse-python-sdk/blob/main/LICENSE)
-
-[![Documentation](https://img.shields.io/badge/docs-latest-brightgreen.svg)](http://cortex-xpanse-python-sdk.readthedocs.io/en/latest/?badge=latest)
-[![GitHub contributors](https://img.shields.io/github/contributors/PaloAltoNetworks/cortex-xpanse-python-sdk)](https://github.com/PaloAltoNetworks/cortex-xpanse-python-sdk/graphs/contributors)
-
-
+.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
+   :target: https://github.com/psf/black
 Overview
 --------
 
