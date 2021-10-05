@@ -1,15 +1,7 @@
 Xpanse Python SDK
 ==================
-![Xpanse](https://github.com/PaloAltoNetworks/cortex-xpanse-python-sdk/blob/main/docs/_source/_static/xpanse_banner.png?raw=true|width=400)
+<img alt="Xpanse" src="https://github.com/PaloAltoNetworks/cortex-xpanse-python-sdk/blob/main/docs/_source/_static/xpanse_banner.png?raw=true|width=400"/>
 
-Xpanse Python SDK
-==================
-.. image:: https://github.com/PaloAltoNetworks/cortex-xpanse-python-sdk/blob/main/docs/_source/_static/xpanse_banner.png?raw=true
-   :width: 800
-   :target: https://expanse.co/
-
-.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
-   :target: https://github.com/psf/black
 Overview
 --------
 
