@@ -76,7 +76,7 @@ You can also provided these keys directly at client initialization by doing
 
     client = ExClient(jwt=<JWT>)
     # or
-    client = ExClient(bearer=<Bearer>)
+    client = ExClient(bearer_token=<BearerToken>)
 
 Logging
 -------
