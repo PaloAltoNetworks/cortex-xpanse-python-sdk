@@ -7,6 +7,10 @@ Xpanse Python SDK
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
    :target: https://github.com/psf/black
 
+.. image:: https://img.shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8-blueviolet
+   :target: https://pypi.python.org/pypi/xpanse
+
+
 Overview
 --------
 
