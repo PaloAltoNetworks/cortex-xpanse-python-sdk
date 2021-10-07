@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - Development
 
 jobs:
   build-n-publish:
@@ -36,7 +37,7 @@ jobs:
           release_name: Release ${{ github.ref }}
           body: |
             Changes in this Release
-            - Updates to match new logo and branding
+            - Minor updates to project description
           draft: false
           prerelease: false
       - name: Build distribution
