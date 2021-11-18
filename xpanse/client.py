@@ -14,7 +14,11 @@ from xpanse.const import (
     XPANSE_BEARER_TOKEN,
     XPANSE_JWT_TOKEN,
     HTTPVerb,
-    ID_TOKEN_URL, XPANSE_CLIENT_ID, XPANSE_CLIENT_SECRET, CLIENT_CREDENTIALS_SCOPE, CLIENT_CREDENTIALS_GRANT_TYPE,
+    ID_TOKEN_URL,
+    XPANSE_CLIENT_ID,
+    XPANSE_CLIENT_SECRET,
+    CLIENT_CREDENTIALS_SCOPE,
+    CLIENT_CREDENTIALS_GRANT_TYPE,
     CLIENT_CREDENTIALS_TOKEN_URL,
 )
 from xpanse.error import (
@@ -198,22 +202,30 @@ class ExClient:
         2. Bearer token (being deprecated)
         3. JWT
         """
-        if not self._bt and not self._jwt_valid and not self._client_id and not self._client_secret:
+        if (
+            not self._bt
+            and not self._jwt_valid
+            and not self._client_id
+            and not self._client_secret
+        ):
             raise UnexpectedValueError(
                 "A valid Xpanse Client credentials, Bearer token, or JWT token is required."
             )
-        elif (self._client_id and not self._client_secret) or (self._client_secret and not self._client_id):
+        elif (self._client_id and not self._client_secret) or (
+            self._client_secret and not self._client_id
+        ):
             raise UnexpectedValueError(
                 "A valid set of Xpanse Client credentials is required."
             )
         elif self._client_id and self._client_secret:
             self._auth_url = f"{self._panw_url}/{CLIENT_CREDENTIALS_TOKEN_URL}"
         elif self._bt:
-            logging.warning("Bearer Token will be deprecated in a coming release of the Xpanse SDK")
+            logging.warning(
+                "Bearer Token will be deprecated in a coming release of the Xpanse SDK"
+            )
             self._auth_url = f"{self._url}/{ID_TOKEN_URL}"
         else:
             logging.error("We shouldn't get to this log line, something went wrong")
-
 
     def _refresh_jwt(self, is_retry: bool = False):
         """
@@ -221,10 +233,14 @@ class ExClient:
         """
         try:
             if self._client_id and self._client_secret:
-                data = json.dumps({
-                    "client_id": self._client_id, "client_secret": self._client_secret,
-                    "grant_type": CLIENT_CREDENTIALS_GRANT_TYPE, "scope": CLIENT_CREDENTIALS_SCOPE
-                })
+                data = json.dumps(
+                    {
+                        "client_id": self._client_id,
+                        "client_secret": self._client_secret,
+                        "grant_type": CLIENT_CREDENTIALS_GRANT_TYPE,
+                        "scope": CLIENT_CREDENTIALS_SCOPE,
+                    }
+                )
                 resp = requests.post(
                     self._auth_url,
                     headers={
@@ -241,7 +257,7 @@ class ExClient:
                     )
                 else:
                     self._jwt_valid = True
-                    self._jwt = resp.json()['access_token']
+                    self._jwt = resp.json()["access_token"]
             elif self._bt is not None:
                 resp = requests.get(
                     self._auth_url,
@@ -276,7 +292,6 @@ class ExClient:
                 "Request returned an exception"
             ) from request_exception
 
-
     def _create_session(self, session: Optional[Any] = None):
         """
         Add JWT auth to session.
@@ -302,7 +317,9 @@ class ExClient:
         Refresh JWT auth if the old token expires.
         """
         if not self._bt and not self._client_id and not self._client_secret:
-            raise UnexpectedValueError("No valid Xpanse Bearer token or client credential was found.")
+            raise UnexpectedValueError(
+                "No valid Xpanse Bearer token or client credential was found."
+            )
         self._refresh_jwt()
         self._session.headers.update({"Authorization": f"Bearer {self._jwt}"})
 
@@ -361,7 +378,11 @@ class ExClient:
                     if self._check_response_for_invalid_session(resp):
                         # JWT has expired, try to generare a new one if a bearer token exists
                         # and retry the request without incrementing our retry counter.
-                        if self._bt is not None and self._client_id is not None and self._client_secret is not None:
+                        if (
+                            self._bt is not None
+                            and self._client_id is not None
+                            and self._client_secret is not None
+                        ):
                             self._refresh_session()
                             continue
                         else:

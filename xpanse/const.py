@@ -19,6 +19,7 @@ class HTTPVerb(Enum):
     HTTP_DELETE = "DELETE"
     """HTTP DELETE Verb"""
 
+
 XPANSE_CLIENT_ID = "XPANSE_CLIENT_ID"
 """Env Variable for Client ID"""
 
