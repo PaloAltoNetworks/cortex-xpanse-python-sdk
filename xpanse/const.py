@@ -19,6 +19,11 @@ class HTTPVerb(Enum):
     HTTP_DELETE = "DELETE"
     """HTTP DELETE Verb"""
 
+XPANSE_CLIENT_ID = "XPANSE_CLIENT_ID"
+"""Env Variable for Client ID"""
+
+XPANSE_CLIENT_SECRET = "XPANSE_CLIENT_SECRET"
+"""Env Variable for Client Secret"""
 
 XPANSE_BEARER_TOKEN = "XPANSE_BEARER_TOKEN"
 """Env Variable for Bearer Token"""
@@ -26,8 +31,17 @@ XPANSE_BEARER_TOKEN = "XPANSE_BEARER_TOKEN"
 XPANSE_JWT_TOKEN = "XPANSE_JWT_TOKEN"
 """Env Variable for JWT"""
 
+CLIENT_CREDENTIALS_TOKEN_URL = "api/oauth2/RequestToken"
+"""Token Refresh URL for Client Credentials"""
+
+CLIENT_CREDENTIALS_SCOPE = "scope-xpanse"
+"""Scope for Client Credentials"""
+
+CLIENT_CREDENTIALS_GRANT_TYPE = "client_credentials"
+"""Grant Type for Client Credentials"""
+
 ID_TOKEN_URL = "api/v1/idtoken"
-"""Token Refresh URL"""
+"""Token Refresh URL for Bearer token"""
 
 V1_PREFIX = "api/v1"
 """V1 URL Prefix"""

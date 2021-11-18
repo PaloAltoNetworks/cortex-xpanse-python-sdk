@@ -54,7 +54,21 @@ You can view more example code in the `examples <https://github.com/PaloAltoNetw
 
 Configuration
 -------------
+A valid Client ID and Secret is required for use. This is recommended over using a JWT, as they have limited lifespans.
+While a bearer token is supported in this version, this auth flow is being deprecated. Therefore, it is highly recommended to use Client Credentials.
 
+RECOMMENDED
+***********
+You can supply them as environment variables using the variable names ``XPANSE_CLIENT_ID`` AND ``XPANSE_CLIENT_SECRET`` and/or ``XPANSE_JWT_TOKEN``.
+
+.. code-block:: python
+
+    export XPANSE_CLIENT_ID=<Client ID>
+    export XPANSE_CLIENT_SECRET=<Client Secret>
+    # or
+    export XPANSE_JWT_TOKEN=<JWT>
+
+[Deprecated]
 A valid Bearer token or JWT is required for use. Bearer tokens are suggested as JWTs have a limited lifespan.
 
 RECOMMENDED
@@ -67,16 +81,6 @@ You can supply them as environment variables using the variable names ``XPANSE_B
     # or
     export XPANSE_JWT_TOKEN=<JWT>
 
-
-NOT RECOMMENDED
-***************
-You can also provided these keys directly at client initialization by doing
-
-.. code-block:: python
-
-    client = ExClient(jwt=<JWT>)
-    # or
-    client = ExClient(bearer_token=<BearerToken>)
 
 Logging
 -------
