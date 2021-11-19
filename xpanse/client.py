@@ -78,7 +78,7 @@ class ExClient:
     """Xpanse URL"""
     _url: str = "https://api.expander.expanse.co"
 
-    """Authentication URL for retrieving JWTs"""
+    """Authentication URL for retrieving JWTs via Client Credentials"""
     _panw_url: str = "https://api.paloaltonetworks.com"
 
     """Client ID"""
@@ -164,12 +164,14 @@ class ExClient:
         if client_id is not None and client_secret is not None:
             self._client_id = client_id
             self._client_secret = client_secret
+            self._auth_url = f"{self._panw_url}/{CLIENT_CREDENTIALS_TOKEN_URL}"
         else:
             self._client_id = os.environ.get(XPANSE_CLIENT_ID, None)
             self._client_secret = os.environ.get(XPANSE_CLIENT_SECRET, None)
 
         if bearer_token is not None:
             self._bt = bearer_token
+            self._auth_url=f"{self._url}/{ID_TOKEN_URL}"
         else:
             self._bt = os.environ.get(XPANSE_BEARER_TOKEN, None)
 
@@ -178,8 +180,6 @@ class ExClient:
 
         if isinstance(verify, bool):
             self._verify = verify
-
-        self._setup_auth()
 
         if jwt is not None:
             self._jwt = jwt
@@ -191,6 +191,8 @@ class ExClient:
                 self._jwt_valid = True
             else:
                 self._refresh_jwt()
+
+        self._setup_auth()
 
         # create Session
         self._create_session()
@@ -218,12 +220,11 @@ class ExClient:
                 "A valid set of Xpanse Client credentials is required."
             )
         elif self._client_id and self._client_secret:
-            self._auth_url = f"{self._panw_url}/{CLIENT_CREDENTIALS_TOKEN_URL}"
+            logging.debug("Using Client credential flow")
         elif self._bt:
             logging.warning(
                 "Bearer Token will be deprecated in a coming release of the Xpanse SDK"
             )
-            self._auth_url = f"{self._url}/{ID_TOKEN_URL}"
         else:
             logging.error("We shouldn't get to this log line, something went wrong")
 
@@ -231,55 +232,73 @@ class ExClient:
         """
         Refreshes JWT using Bearer token.
         """
+        if self._client_id and self._client_secret:
+            self._refresh_client_credentials_jwt(is_retry)
+        elif self._bt is not None:
+            self._refresh_bearer_token_jwt(is_retry)
+        else:
+            raise UnexpectedValueError(
+                "A valid Xpanse Bearer token or client credentials is required."
+            )
+
+    def _refresh_client_credentials_jwt(self, is_retry):
         try:
-            if self._client_id and self._client_secret:
-                data = json.dumps(
-                    {
-                        "client_id": self._client_id,
-                        "client_secret": self._client_secret,
-                        "grant_type": CLIENT_CREDENTIALS_GRANT_TYPE,
-                        "scope": CLIENT_CREDENTIALS_SCOPE,
-                    }
-                )
-                resp = requests.post(
-                    self._auth_url,
-                    headers={
-                        "Content-Type": "application/json",
-                    },
-                    data=data,
-                    timeout=30,
-                    proxies=self._proxies,
-                    verify=self._verify,
-                )
-                if resp.status_code != 200:
-                    raise UnexpectedValueError(
-                        f"API returned an error while refreshing JWT with client credentials: {resp.text}"
-                    )
-                else:
-                    self._jwt_valid = True
-                    self._jwt = resp.json()["access_token"]
-            elif self._bt is not None:
-                resp = requests.get(
-                    self._auth_url,
-                    headers={
-                        "Authorization": f"Bearer {self._bt}",
-                        "Content-Type": "application/json",
-                    },
-                    timeout=30,
-                    proxies=self._proxies,
-                    verify=self._verify,
-                ).json()
-                if "error" in resp or "token" not in resp:
-                    raise UnexpectedValueError(
-                        f"API returned an error while refreshing JWT: {resp['error']}"
-                    )
-                else:
-                    self._jwt_valid = True
-                    self._jwt = resp["token"]
-            else:
+            data = json.dumps(
+                {
+                    "client_id": self._client_id,
+                    "client_secret": self._client_secret,
+                    "grant_type": CLIENT_CREDENTIALS_GRANT_TYPE,
+                    "scope": CLIENT_CREDENTIALS_SCOPE,
+                }
+            )
+            resp = requests.post(
+                self._auth_url,
+                headers={
+                    "Content-Type": "application/json",
+                },
+                data=data,
+                timeout=30,
+                proxies=self._proxies,
+                verify=self._verify,
+            )
+            if resp.status_code != 200:
                 raise UnexpectedValueError(
-                    "A valid Xpanse Bearer token or client credentials is required."
+                    f"API returned an error while refreshing JWT with client credentials: {resp.text}"
                 )
+            else:
+                self._jwt_valid = True
+                self._jwt = resp.json()["access_token"]
+        except ConnectionError as request_exception:
+            if is_retry:
+                raise UnexpectedValueError(
+                    "Request returned an exception"
+                ) from request_exception
+            logging.warn(f"ConnectionError encountered during JWT refresh, will retry.")
+            self._refresh_jwt(is_retry=True)
+        except requests.RequestException as request_exception:
+            raise UnexpectedValueError(
+                "Request returned an exception"
+            ) from request_exception
+
+    def _refresh_bearer_token_jwt(self, is_retry):
+        try:
+            resp = requests.get(
+                self._auth_url,
+                headers={
+                    "Authorization": f"Bearer {self._bt}",
+                    "Content-Type": "application/json",
+                },
+                timeout=30,
+                proxies=self._proxies,
+                verify=self._verify,
+            ).json()
+            if "error" in resp or "token" not in resp:
+                raise UnexpectedValueError(
+                    f"API returned an error while refreshing JWT: {resp['error']}"
+                )
+            else:
+                self._jwt_valid = True
+                self._jwt = resp["token"]
         except ConnectionError as request_exception:
             if is_retry:
                 raise UnexpectedValueError(
