@@ -394,6 +394,7 @@ class IssuesEndpoint(ExEndpoint):
                 {
                     "issueId": id_,
                     "updateRequest": {"value": value, "updateType": updateType},
+                    "operationType": "Update"
                 }
             )
         return self._api.post(

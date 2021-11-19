@@ -63,8 +63,7 @@ class TagsEndpoint(ExEndpoint):
         ).json()
 
     def create(
-        self, name: str, description: Optional[str] = None, disabled: bool = False
-    ) -> Dict[str, Any]:
+        self, name: str, description: Optional[str] = None) -> Dict[str, Any]:
         """
         Create a new tag.
 
@@ -82,7 +81,7 @@ class TagsEndpoint(ExEndpoint):
             >>> # Create a new tag
             >>> tag = client.annotations.tags.v3.create(name="DMZ")
         """
-        payload = {"name": name, "description": description, "disabled": disabled}
+        payload = {"name": name, "description": description}
         return self._api.post(f"{V3_PREFIX}/annotations/tags", json=payload).json()
 
     def update(self, tag_id: str, **kwargs: Any) -> Dict[str, Any]:
