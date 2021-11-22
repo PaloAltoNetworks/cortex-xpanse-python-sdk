@@ -351,7 +351,7 @@ class ExClient:
                 resp_json = resp.json()
                 if (
                     "detail" in resp_json
-                    and resp_json["detail"] == "Signature has expired."
+                    and "Signature has expired." in resp_json["detail"]
                 ):
                     return True
             except ValueError:
@@ -398,9 +398,8 @@ class ExClient:
                         # JWT has expired, try to generare a new one if a bearer token exists
                         # and retry the request without incrementing our retry counter.
                         if (
-                            self._bt is not None
-                            and self._client_id is not None
-                            and self._client_secret is not None
+                            self._bt is not None or
+                                (self._client_id is not None and self._client_secret is not None)
                         ):
                             self._refresh_session()
                             continue
