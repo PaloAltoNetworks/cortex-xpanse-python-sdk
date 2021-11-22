@@ -181,27 +181,6 @@ class AnnotationsEndpoint(ExEndpoint):
         """
         return self._api.post(f"{V2_PREFIX}/annotation/tag", json={"name": name}).json()
 
-    def delete_tag(self, id: str) -> bool:
-        """
-        Delete the given tag, and all connections to other data.
-
-        Args:
-            id (str):
-                ID for the tag. Should be a UUID.
-
-        Returns:
-            :obj:`boolean`:
-                `True` if the tag was successfully deleted, otherwise `False`.
-
-        Examples:
-            >>> # Deletes a taf
-            >>> client.assets.annotations.v2.delete_tag(<id>)
-        """
-        return (
-            True
-            if self._api.delete(f"{V2_PREFIX}/annotation/tag/{id}").status_code == 204
-            else False
-        )
 
     def get_tag(self, id: str) -> Dict[str, str]:
         """
