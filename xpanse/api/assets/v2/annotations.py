@@ -181,7 +181,6 @@ class AnnotationsEndpoint(ExEndpoint):
         """
         return self._api.post(f"{V2_PREFIX}/annotation/tag", json={"name": name}).json()
 
-
     def get_tag(self, id: str) -> Dict[str, str]:
         """
         Returns the details for the given tag.
