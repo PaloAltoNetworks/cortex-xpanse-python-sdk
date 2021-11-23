@@ -62,8 +62,7 @@ class TagsEndpoint(ExEndpoint):
             f"{V3_PREFIX}/annotations/tags/{tag_id}", params=kwargs
         ).json()
 
-    def create(
-        self, name: str, description: Optional[str] = None) -> Dict[str, Any]:
+    def create(self, name: str, description: Optional[str] = None) -> Dict[str, Any]:
         """
         Create a new tag.
 

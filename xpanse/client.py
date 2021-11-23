@@ -171,7 +171,7 @@ class ExClient:
 
         if bearer_token is not None:
             self._bt = bearer_token
-            self._auth_url=f"{self._url}/{ID_TOKEN_URL}"
+            self._auth_url = f"{self._url}/{ID_TOKEN_URL}"
         else:
             self._bt = os.environ.get(XPANSE_BEARER_TOKEN, None)
 
@@ -397,9 +397,9 @@ class ExClient:
                     if self._check_response_for_invalid_session(resp):
                         # JWT has expired, try to generare a new one if a bearer token exists
                         # and retry the request without incrementing our retry counter.
-                        if (
-                            self._bt is not None or
-                                (self._client_id is not None and self._client_secret is not None)
+                        if self._bt is not None or (
+                            self._client_id is not None
+                            and self._client_secret is not None
                         ):
                             self._refresh_session()
                             continue
