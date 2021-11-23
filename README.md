@@ -77,7 +77,7 @@ To use a short lived JWT, you can supply the JWT as an environmental variable us
 [Deprecated]
 A valid Bearer token can be supplied as an environment variable
 
-To supply a valid bearer token as an environment variabl, you can use the variable names ``XPANSE_BEARER_TOKEN``.
+To supply a valid bearer token as an environment variable, you can use the variable names ``XPANSE_BEARER_TOKEN``.
 
 .. code-block:: python
 
