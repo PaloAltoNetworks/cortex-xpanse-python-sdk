@@ -48,7 +48,7 @@ class ConnectorsAccountsEndpoint(ExEndpoint):
 
         Examples:
             >>> # Return Issue.
-            >>> issue = client.connector.accounts.get(<id>)
+            >>> connector = client.connector.accounts.get(<id>)
         """
         return self._api.get(
             f"{V1_PREFIX}/connectors/accounts/{id}", params=kwargs

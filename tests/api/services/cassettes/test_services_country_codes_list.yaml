@@ -7,28 +7,30 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      - bearer wwwwwwwwwwwwwwwwwwwwwwwwwwwww
       Connection:
       - keep-alive
       Content-Type:
       - application/json
       User-Agent:
-      - 'Xpanse SDK/0.2.1 (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST
-        2020; root:xnu-6153.81.5~1/RELEASE_X86_64) Python/3.7.3 Xpanse'
+      - 'Xpanse SDK/1.0.12 (Darwin Kernel Version 19.6.0: Tue Oct 12 18:34:05 PDT
+        2021; root:xnu-6153.141.43~1/RELEASE_X86_64) Python/3.9.6 Xpanse'
     method: GET
     uri: https://api.expander.expanse.co/api/v1/services/countryCodes
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA22U0Y7aMBBFfyXyM1/AGwQEESzNxrBSW/VhIKPEWmccOfa2FPHv9XYreejOSxQl
-        Jzcz9874ploIoObfb+riIgV/LV2Laq4WvkMKhkDNFMHw91Gj7rNPXJyCB2s4dxK4JVBnocWpz4LL
-        lQRG24HnesuNgJVA0LKflgsJ6h8aKA8S46YARWMuXEzqtIxnjkhNltfRxyk3WH4VfrhBPwBdM7Va
-        C9TKDYZSUVQ0OMazNRf2wRfhg4Xt8MG21TeBWnfXMWSltWTtiUzAttgZ6lo3ZHizFAQ3fQqCMVuJ
-        iRBwAMu5o8BtHXXFLl2y3nYncNXkAW2Gqr0EUcuHqJKyrzwQk5FSrwJYllUl1a1dDH0q3CPrcCep
-        7U3oIxAvbC8pPjkKSNh5l8t7ksbkgKFHb4FaNnYHyY+6N9aMoyFkZC3FVcOrSTvBnKmlFJ7TweFz
-        ec/SAjZxmnizjbQ1GmJrioWHM0e1pKd/YousMC15otPgwpjSyMVpac61dW/4kIWuhEE69mDeDc5q
-        R8m1f1ujQ5p15vBJC5IvKdvfEflCvKROfszUCF06soJxpOY3RfgrqDlFa9Mbj28f9/eZGvD90P4A
-        aujw6F6TLYz87+H9/gefC8ti6QUAAA==
+        H4sIAAAAAAAAA3VVy47aQBD8FTRnhJUrNzAvL494sSEv5dDYLXu04xlnPMPCIv49g6LILdK5IAuK
+        6q7uKvdNlOBAjH/cRGG8dvYamxLFWMy+i6HQ0DyeJ6pCK0Hch8+oyZ6gbIXaSc3iDgTnO2dB8Xz5
+        E45FTWc9agq6UlBiVzPtTUl7UwsfUnGgJWHzqgJeajzpYTFoKDmd8Y6Aan4WMWkqNp2DwV4WLBkZ
+        WuxPLOQbqXdtre8YgbPPPWhmGqlDOT3YY+tPShbMH+ZkIvPq2joGs0h60oXUCnTJoYjWhQVdIAOa
+        zXuqJdoG9JVBLVcEVYcFcBhin6UHhw0oDrda91wro6vBOnwwfAlZZ6JL1owJkZgEiRzNpi+XdBaQ
+        s2FCek8cKG4GL2lP9AItW2xDeDbS1R402/f2a8+1xYssDNP5lqxma7RDjZXlgDsicYeuRvtwBOfG
+        lMw+hTcZAsDNLCXrTmupZNtKjSwhEZwa63wF3HxfSX5fwzvPMnL3JHF733Xs4DJClIEv5WBi4cRD
+        SZAyqStojeUSkJEwZcqckV/ZmlgtM97VwbcWOYNnZG/ZO5bIjTj/0jsgB/nO7iEne8hrkP8J+nLa
+        cx20dFgO1kFwaRpmzIfsH3DmQlq57R6JkmOw34dHNtJHEtWjRBdOl7j/HIoWqvAadtJoMb4JjRcn
+        xtorFX6xeP77XHhrw/EKt652ru3GUYSXEK8S7Sj4MzBUo19QSt+MCtNE0Mro/Cnq0J5lgV1ELudD
+        gmjwcVL/VEuhwty8hQWQsk9f3u+/AROrBFWHBwAA
     headers:
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
@@ -37,23 +39,23 @@ interactions:
       Content-Encoding:
       - gzip
       Content-Length:
-      - '478'
+      - '600'
       Content-Security-Policy:
       - 'default-src ''none''; connect-src ''self'' https://*.auth0.com https://www.google-analytics.com
-        https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com https://api.rollbar.com;
-        frame-src ''self'' https://qadium.auth0.com; font-src ''self'' data: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://qadium-staging-django-staticfiles-us-west-2.s3.amazonaws.com https://api.rollbar.com;
+        frame-src ''self'' https://qadium.auth0.com; font-src ''self'' data: https://qadium-staging-django-staticfiles-us-west-2.s3.amazonaws.com
         https://fonts.gstatic.com https://*.auth0.com; img-src ''self'' data: https://api.mapbox.com
         https://api.tiles.mapbox.com https://www.google-analytics.com https://www.gravatar.com
-        https://online.swagger.io https://cdn.auth0.com; script-src ''self'' https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://online.swagger.io https://cdn.auth0.com; script-src ''self'' https://qadium-staging-django-staticfiles-us-west-2.s3.amazonaws.com
         https://cdnjs.cloudflare.com https://unpkg.com https://cdn.polyfill.io https://cdn.rollbar.com
         https://*.duosecurity.com https://*.googleapis.com https://www.google-analytics.com
-        https://*.auth0.com; style-src ''self'' blob: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://*.auth0.com; style-src ''self'' blob: https://qadium-staging-django-staticfiles-us-west-2.s3.amazonaws.com
         https://cdnjs.cloudflare.com https://fonts.googleapis.com ''unsafe-inline'';
         frame-ancestors ''none'''
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Wed, 23 Dec 2020 18:24:23 GMT
+      - Mon, 22 Nov 2021 19:53:30 GMT
       Expires:
       - '0'
       Pragma:
@@ -61,7 +63,7 @@ interactions:
       Referrer-Policy:
       - same-origin
       Set-Cookie:
-      - JSESSIONID=3BE47F5CE095ABD16A0A1B852B592DB9; Path=/; HttpOnly
+      - JSESSIONID=E5D4009F37A23A5F32DE50BEDB5BCE1C; Path=/; HttpOnly
       Strict-Transport-Security:
       - '"max-age=31536000; includeSubDomains" always'
       X-Content-Type-Options:

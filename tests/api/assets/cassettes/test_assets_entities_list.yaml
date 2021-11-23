@@ -7,25 +7,23 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      - bearer wwwwwwwwwwwwwwwwwwwwwwwwwwwww
       Connection:
       - keep-alive
       Content-Type:
       - application/json
       User-Agent:
-      - 'Xpanse (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST 2020; root:xnu-6153.81.5~1/RELEASE_X86_64)
-        Xpanse SDK/0.0.1 Python/3.7.3'
+      - 'Xpanse SDK/1.0.12 (Darwin Kernel Version 19.6.0: Tue Oct 12 18:34:05 PDT
+        2021; root:xnu-6153.141.43~1/RELEASE_X86_64) Python/3.9.6 Xpanse'
     method: GET
     uri: https://api.expander.expanse.co/api/v2/assets/entities
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA6WR3W6CQBCFX6XZa5X/tJI0vdCGQBQiFRGaXiwwKUuXkbirgMZ37+oTNOndzDmT
-        b05mrqSikhL380pYRVyi24Vj2DpMiwLMqQXzcjq3jJcptebUKhz7GSqHTAjSFtT0juISOB2ffKxO
-        Qh4ZCGVKQIrS/zPu9jUhHf1mSCU7IHGvBGGQCl9L2bmaBkNHsYLj7FEImJUHjXZMO5saFQKk0AAl
-        k2r5m8LA9vAD+Apj0BRmzyIWdPnCF3471KUVp1l61/w+b96N0Ez6cNTNtbcxV9u4zreJjJacKc3O
-        LnEdecpfbsysWbPVIhDZPtR3HucbDHiWyv+wxnyf8xJD7jddm6XDJf/oWeHxEzVip/SSe+4o3tWJ
-        j7o6aXeEM3HxxPltQlq4f+zR/AJE3Bp/vwEAAA==
+        H4sIAAAAAAAAA42PTQ6CMBCFr2JmDVRQiOkN3BpdGRdDO8UmMiAdCIZwd8vCvbuX9/MlbwGLgqDv
+        C3gLGnIqbF44l+4r49JjjS49Ye3S8lCXJ2dKU2EBCTC2FNvX7hN2l90tREuIkeX8N2R9JNBj4xnF
+        dwx6AaZZQPP4esVkoOmnzTgMxDGCp0gftFI098iWhizIRmiyN1o/tpnpWoW9V1OhMASSoOLOi6cA
+        awItbU83/voFG1dSYfcAAAA=
     headers:
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
@@ -34,7 +32,7 @@ interactions:
       Content-Encoding:
       - gzip
       Content-Length:
-      - '313'
+      - '188'
       Content-Security-Policy:
       - 'default-src ''none''; connect-src ''self'' https://*.auth0.com https://www.google-analytics.com
         https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com https://api.rollbar.com;
@@ -46,11 +44,11 @@ interactions:
         https://*.duosecurity.com https://*.googleapis.com https://www.google-analytics.com
         https://*.auth0.com; style-src ''self'' blob: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
         https://cdnjs.cloudflare.com https://fonts.googleapis.com ''unsafe-inline'';
-        frame-ancestors ''none'''
+        frame-ancestors https://*.mil http://localhost'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Sun, 01 Mar 2020 15:29:43 GMT
+      - Mon, 22 Nov 2021 18:29:06 GMT
       Expires:
       - '0'
       Pragma:
@@ -58,7 +56,7 @@ interactions:
       Referrer-Policy:
       - same-origin
       Set-Cookie:
-      - JSESSIONID=D6062F08BAAF6BC09ADDAB46BAE658CC; Path=/; HttpOnly
+      - JSESSIONID=BDC83C62EFB756058843EF71453434F6; Path=/; HttpOnly
       Strict-Transport-Security:
       - '"max-age=31536000; includeSubDomains" always'
       X-Content-Type-Options:

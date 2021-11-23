@@ -1,48 +1,62 @@
 interactions:
 - request:
-    body: '{"name": "sdk_test4", "description": "This is a test tag created by the
-      SDK", "disabled": true}'
+    body: '{"name": "sdk_test_client_cred_2", "description": "This is a test tag created
+      by the SDK"}'
     headers:
       Accept:
       - '*/*'
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      - bearer wwwwwwwwwwwwwwwwwwwwwwwwwwwww
       Connection:
       - keep-alive
       Content-Length:
-      - '95'
+      - '90'
       Content-Type:
       - application/json
       User-Agent:
-      - 'Xpanse (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST 2020; root:xnu-6153.81.5~1/RELEASE_X86_64)
-        Xpanse SDK/0.0.7 Python/3.7.3'
+      - 'Xpanse SDK/1.0.12 (Darwin Kernel Version 19.6.0: Tue Oct 12 18:34:05 PDT
+        2021; root:xnu-6153.141.43~1/RELEASE_X86_64) Python/3.9.6 Xpanse'
     method: POST
     uri: https://api.expander.expanse.co/api/v3/annotations/tags
   response:
     body:
-      string: '{"id":"6f7ba05e-971b-3869-bea0-2634ae2e6ef6","tenantId":"04b5140e-bbe2-3e9c-9318-a39a3b547ed5","name":"sdk_test4","description":"This
-        is a test tag created by the SDK","disabled":true,"created":"2020-07-07T14:43:19.771496Z","modified":"2020-07-07T14:43:19.771496Z"}'
+      string: '{"id":"21befd57-fa75-3cef-af2e-5036bd2fa9b9","tenantId":"1e2d12ff-06cf-4baf-8abf-53b58fc5c6a2","name":"sdk_test_client_cred_2","description":"This
+        is a test tag created by the SDK","disabled":false,"created":"2021-11-22T18:27:30.922940Z","modified":"2021-11-22T18:27:30.922940Z"}'
     headers:
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Connection:
       - keep-alive
       Content-Length:
-      - '265'
+      - '279'
+      Content-Security-Policy:
+      - 'default-src ''none''; connect-src ''self'' https://*.auth0.com https://www.google-analytics.com
+        https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com https://api.rollbar.com;
+        frame-src ''self'' https://qadium.auth0.com; font-src ''self'' data: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://fonts.gstatic.com https://*.auth0.com; img-src ''self'' data: https://api.mapbox.com
+        https://api.tiles.mapbox.com https://www.google-analytics.com https://www.gravatar.com
+        https://online.swagger.io https://cdn.auth0.com; script-src ''self'' https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://cdnjs.cloudflare.com https://unpkg.com https://cdn.polyfill.io https://cdn.rollbar.com
+        https://*.duosecurity.com https://*.googleapis.com https://www.google-analytics.com
+        https://*.auth0.com; style-src ''self'' blob: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://cdnjs.cloudflare.com https://fonts.googleapis.com ''unsafe-inline'';
+        frame-ancestors https://*.mil http://localhost'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Tue, 07 Jul 2020 14:43:19 GMT
+      - Mon, 22 Nov 2021 18:27:30 GMT
       Expires:
       - '0'
       Location:
-      - https://api.expander.expanse.co/api/v3/annotations/tags/6f7ba05e-971b-3869-bea0-2634ae2e6ef6
+      - https://api.expander.expanse.co/api/v3/annotations/tags/21befd57-fa75-3cef-af2e-5036bd2fa9b9
       Pragma:
       - no-cache
+      Referrer-Policy:
+      - same-origin
       Set-Cookie:
-      - JSESSIONID=4A7A1C1709D730698EF45D70A677449D; Path=/; HttpOnly
+      - JSESSIONID=523C7F2B76EFE14C6CF5407BBB70CC7D; Path=/; HttpOnly
       Strict-Transport-Security:
       - '"max-age=31536000; includeSubDomains" always'
       X-Content-Type-Options:
@@ -53,5 +67,78 @@ interactions:
       - 1; mode=block
     status:
       code: 201
+      message: ''
+- request:
+    body: '{"disabled": true}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - bearer wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '18'
+      Content-Type:
+      - application/json
+      Cookie:
+      - JSESSIONID=523C7F2B76EFE14C6CF5407BBB70CC7D
+      User-Agent:
+      - 'Xpanse SDK/1.0.12 (Darwin Kernel Version 19.6.0: Tue Oct 12 18:34:05 PDT
+        2021; root:xnu-6153.141.43~1/RELEASE_X86_64) Python/3.9.6 Xpanse'
+    method: PUT
+    uri: https://api.expander.expanse.co/api/v3/annotations/tags/21befd57-fa75-3cef-af2e-5036bd2fa9b9
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA3WNSw7CMAxE75I1RrHbpJ8bsGfVTeUkthQBAbVhhbg76QFYWTPznvwxOZnZEAbR
+        5AZQHhx0URRYScDZzodEylOYzMlUKVzq5TBQKCGpgvVRoQ+sMHJQcF1wo0YXPVMzCj+k0Xu6rVX2
+        usZ7ltLOJmk99iR73PKr5mdp2FHkncNd2ou6veVkGsn1iIYsISAC0RXHmYa5s+eJaOrt0rzHM2XN
+        f0A89w49+cV8f68poj/xAAAA
+    headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '189'
+      Content-Security-Policy:
+      - 'default-src ''none''; connect-src ''self'' https://*.auth0.com https://www.google-analytics.com
+        https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com https://api.rollbar.com;
+        frame-src ''self'' https://qadium.auth0.com; font-src ''self'' data: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://fonts.gstatic.com https://*.auth0.com; img-src ''self'' data: https://api.mapbox.com
+        https://api.tiles.mapbox.com https://www.google-analytics.com https://www.gravatar.com
+        https://online.swagger.io https://cdn.auth0.com; script-src ''self'' https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://cdnjs.cloudflare.com https://unpkg.com https://cdn.polyfill.io https://cdn.rollbar.com
+        https://*.duosecurity.com https://*.googleapis.com https://www.google-analytics.com
+        https://*.auth0.com; style-src ''self'' blob: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://cdnjs.cloudflare.com https://fonts.googleapis.com ''unsafe-inline'';
+        frame-ancestors https://*.mil http://localhost'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Mon, 22 Nov 2021 18:27:31 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - same-origin
+      Set-Cookie:
+      - JSESSIONID=3E656DB3C33B1BB6E45FD2EB39E1CE23; Path=/; HttpOnly
+      Strict-Transport-Security:
+      - '"max-age=31536000; includeSubDomains" always'
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
       message: ''
 version: 1
