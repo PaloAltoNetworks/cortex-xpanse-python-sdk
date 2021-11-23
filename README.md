@@ -66,6 +66,8 @@ You can supply them as environment variables using the variable names ``XPANSE_C
     export XPANSE_CLIENT_ID=<Client ID>
     export XPANSE_CLIENT_SECRET=<Client Secret>
     
+NOT RECOMMENDED
+***********
 To use a short lived JWT, you can supply the JWT as an environmental variable using the name ``XPANSE_JWT_TOKEN``
 
 .. code-block:: python
