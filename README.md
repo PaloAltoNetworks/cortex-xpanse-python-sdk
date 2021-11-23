@@ -59,28 +59,27 @@ While a bearer token is supported in this version, this auth flow is being depre
 
 RECOMMENDED
 ***********
-You can supply them as environment variables using the variable names ``XPANSE_CLIENT_ID`` AND ``XPANSE_CLIENT_SECRET`` and/or ``XPANSE_JWT_TOKEN``.
+You can supply them as environment variables using the variable names ``XPANSE_CLIENT_ID`` AND ``XPANSE_CLIENT_SECRET``.
 
 .. code-block:: python
 
     export XPANSE_CLIENT_ID=<Client ID>
     export XPANSE_CLIENT_SECRET=<Client Secret>
-    # or
+    
+To use a short lived JWT, you can supply the JWT as an environmental variable using the name ``XPANSE_JWT_TOKEN``
+
+.. code-block:: python
+
     export XPANSE_JWT_TOKEN=<JWT>
 
 [Deprecated]
-A valid Bearer token or JWT is required for use. Bearer tokens are suggested as JWTs have a limited lifespan.
+A valid Bearer token can be supplied as an environment variable
 
-RECOMMENDED
-***********
-You can supply them as environment variables using the variable names ``XPANSE_BEARER_TOKEN`` and/or ``XPANSE_JWT_TOKEN``.
+To supply a valid bearer token as an environment variabl, you can use the variable names ``XPANSE_BEARER_TOKEN``.
 
 .. code-block:: python
 
     export XPANSE_BEARER_TOKEN=<Bearer Token>
-    # or
-    export XPANSE_JWT_TOKEN=<JWT>
-
 
 Logging
 -------
