@@ -7,32 +7,32 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      - bearer wwwwwwwwwwwwwwwwwwwwwwwwwwwww
       Connection:
       - keep-alive
       Content-Type:
       - application/json
       User-Agent:
-      - 'Xpanse SDK/0.3.1 (Darwin Kernel Version 19.6.0: Tue Nov 10 00:10:30 PST
-        2020; root:xnu-6153.141.10~1/RELEASE_X86_64) Python/3.7.3 Xpanse'
+      - 'Xpanse SDK/1.0.12 (Darwin Kernel Version 19.6.0: Tue Oct 12 18:34:05 PDT
+        2021; root:xnu-6153.141.43~1/RELEASE_X86_64) Python/3.9.6 Xpanse'
     method: GET
-    uri: https://api.expander.expanse.co/api/v1/behavior/risk-rules
+    uri: https://expander.staging.qadium.com/api/v1/behavior/risk-rules
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA62V204bMRCGX8XyTam0lvbgPeUyAdSIKkgcVKmIC3s9DhYbO/XuQlGUt+ob9MU6
-        G6ANkDZBzc2uDzPj8ed/7AVVohV0cLWgRtEBFbnO0iKWLCoLwXiRCFZoASzXIip1FKpMSxpQZTxU
-        rXEWXcaT4enl5BBHrZgBDozcbNZZU4neoCGtI+dQa3ZuphYUGYFvje5noekjQVN5M3+K9T5XzPzY
-        QK0aXPTqGoMJKT3cGQytJltyQWvZNcZC01xa02KIZwQhl2nEQ2BSQswSKCtWJlHBRFKKRKY8B5XS
-        5fUyeEKWc87LJK5YyDPF0DFhoqg0K8qQqzwVaSqg3+gastPLizfMrH0kugJ24fwGNptMdmKwwXFP
-        m894nvEs4kyVYcp4HiG2EDGUKecKpZQXWr/a/A56GXnTokJqFI6/M9VOQtnosxOd12p9irQ/hSSQ
-        yzILC5aUCceiEoKVVRoymURSRlEYp8XrotqqkBPRzME3tw/bdPLCcCceL9Sy7r4nzYRSxwmPE8Yr
-        LhlPKtRMxYHFUKZYW5DlenvBnHatdJ1V5Lh29w3R3s1WakEmb4j8w5YcwDQgx6YGcujube2EaojA
-        sF9AkqHH0MZOP/YRd0D313X2J6UwllmFRceyVKOUZFYyyWXIMi50wrWKZFz22a5dNkfji09HZzj4
-        +3p+ccD9Zlf0hrWobmvT4OVJRoi29WZj4b3DmxwMoRa+awIy+vmjBaI+jO8c5ob9ToqAHMLMVR4f
-        ioqcwbyTNTacJu0NYAp26gIy9sKuvt8C8tlI8AbdJs63N+TEecDOueuwc96p3vD597Cy+2pmUsh7
-        2PUAcc31W/gPmv8/wOuAzsXU2NWjSAcLauF7Swe2q2ucwVfrsb0M6Az6B3lBW9eKenUQdJAtl78A
-        MDkaOqoHAAA=
+        H4sIAAAAAAAAA62VS27bMBCGr0Jo0xQQAT2oB720k6BGCgdoEhRokAUpDh0iMulSUh4wfKveoBfr
+        yElaJ3FrB/VGEqmZ4fDjP8NFoEQrgsHlIjAqGASi0HlWJpLGvBSUlamgpRZACy1iruNI5VoGYaCM
+        h6o1zqLLeDI8vZgc4qwVM8CJkZvNOmsq0Rs0pHXkDGpNz8zUgiIj8K3R/V9o+kjQVN7Mn2K9zxUz
+        PzZQqwYXvbzCYEJKD7cGQ6vJllzQWnaNsdA0F9a0GOIZQcRkFrMIqJSQ0BR4RXkal1SkXKQyYwWo
+        LFheLcMnZAVjjKdJRSOWK4qOKRVlpWnJI6aKTGSZgH6ja8hOL87fMLP2kegK2LnzG9hsMtmJwQbH
+        PW0+Z0XO8phRxaOMsiJGbBFi4BljCqVUlFq/2vwOehl506JCanJ0P3dN53dSymannfi81utTqP1p
+        JIVC8jwqacpThmUlBOVVFlGZxlLGcZRk5euy2qqRE9HMwTc3D9uU8sJwJx4v9LLuvifVRFInKUtS
+        yiomKUsrVE3FgCbAM6wuyAu9vWROu1a6zipyXLu7hmjvZtho/C0yeUPkH7bkAKYhOTY1kEN3Z2sn
+        VEMEhv0Kkgw9hjZ2+rGPuAO6v66zPylFicwrLDuaZxqlJHNOJZMRzZnQKdMqlgnvs11rN0fj809H
+        X3Dyd4N+ccD9Zlf0hrWobmrTYPskI0TberOx8t7hTQ6GUAvfNSEZ/fzRAlEfxrcOc8NxJ0VIDmHm
+        Ko9XRUW+wLyTNX44TdprwBTs1IVk7IVdPb+H5LOR4A26TZxvr8mJ84CDM9fh4KxTveHz62Fl983M
+        pJB3sOsB4prrffgPmv8/wKswmIupsatrMRgsAgv3bTCwXV3jH7y3Hr+XYTCD/kpeBK1rRb06iGCQ
+        L5e/ACGkreysBwAA
     headers:
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
@@ -41,7 +41,7 @@ interactions:
       Content-Encoding:
       - gzip
       Content-Length:
-      - '692'
+      - '696'
       Content-Security-Policy:
       - 'default-src ''none''; connect-src ''self'' https://*.auth0.com https://www.google-analytics.com
         https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com https://api.rollbar.com;
@@ -53,11 +53,11 @@ interactions:
         https://*.duosecurity.com https://*.googleapis.com https://www.google-analytics.com
         https://*.auth0.com; style-src ''self'' blob: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
         https://cdnjs.cloudflare.com https://fonts.googleapis.com ''unsafe-inline'';
-        frame-ancestors https://*.mil'
+        frame-ancestors https://*.mil http://localhost'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Fri, 05 Mar 2021 18:44:01 GMT
+      - Mon, 22 Nov 2021 18:47:46 GMT
       Expires:
       - '0'
       Pragma:
@@ -65,7 +65,7 @@ interactions:
       Referrer-Policy:
       - same-origin
       Set-Cookie:
-      - JSESSIONID=90541C81F1EDC89D16EB8ED0BA7CF396; Path=/; HttpOnly
+      - JSESSIONID=F3CCB404900441812E6EC3D88882DBCD; Path=/; HttpOnly
       Strict-Transport-Security:
       - '"max-age=31536000; includeSubDomains" always'
       X-Content-Type-Options:

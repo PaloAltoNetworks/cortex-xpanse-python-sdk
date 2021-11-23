@@ -7,23 +7,22 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      - bearer wwwwwwwwwwwwwwwwwwwwwwwwwwwww
       Connection:
       - keep-alive
       Content-Type:
       - application/json
       User-Agent:
-      - 'Xpanse SDK/0.0.10 (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST
-        2020; root:xnu-6153.81.5~1/RELEASE_X86_64) Python/3.7.3 Xpanse'
+      - 'Xpanse SDK/1.0.12 (Darwin Kernel Version 19.6.0: Tue Oct 12 18:34:05 PDT
+        2021; root:xnu-6153.141.43~1/RELEASE_X86_64) Python/3.9.6 Xpanse'
     method: GET
-    uri: https://api.expander.expanse.co/api/v1/issues/issues/fe40de75-5e66-3b1f-a49d-898205b52a50/updates/e3cf20be-ac1e-4d56-bf79-78c1161a7425
+    uri: https://expander.staging.qadium.com/api/v1/issues/issues/3188ba60-4472-37a8-8a4f-ad8e2407b771/updates/c97038fc-c7a9-4100-8f9c-b8e4fed48d88
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAAyVOyw6CMBD8FbNnatpCKfZo4tWYSDx4K2UxJAhNH6gh/LtFT5N57c4CfQsKMDcd
-        pw0SbRiSohUlaTp5ILIyjJVMy4ILyCDaVgesPxZT5+Kmh0Pvr0GH6JM76yFuxhlfiVmHcz9Ff/ur
-        YxyGdMCjA7X8cNTPLX16Wz163B2nAGsGxmF6sW3ilFNCBWF5zZmihcr5nlZCCHmH9QsU+lrtuAAA
-        AA==
+        H4sIAAAAAAAAAyWOywrCMBBFf0Vm3UgSa51kKbgUXBQX7mIyhUAfIW2KpfTfTRUGLpzLucwK3oEG
+        qy78hI1l9mIUKwXnDBtl2RupbMiV6BChgBScmaheAmXnEf0Q/bRkPps27ehOzqcugxBp9kMan/+i
+        T22b7ZEi6PWXvel24fYJph/pcB0m2AqwkfL+/pDkUjCRT9VCaSG0rI7VWVbIX7B9ARH0afm1AAAA
     headers:
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
@@ -32,17 +31,17 @@ interactions:
       Content-Encoding:
       - gzip
       Content-Length:
-      - '172'
+      - '171'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Mon, 27 Jul 2020 18:55:29 GMT
+      - Mon, 22 Nov 2021 18:54:41 GMT
       Expires:
       - '0'
       Pragma:
       - no-cache
       Set-Cookie:
-      - JSESSIONID=33B509A1E310EB4AA7C2FE2B516E4BDE; Path=/; HttpOnly
+      - JSESSIONID=F2669A56103FA84E48563339E3956A48; Path=/; HttpOnly
       Strict-Transport-Security:
       - '"max-age=31536000; includeSubDomains" always'
       X-Content-Type-Options:

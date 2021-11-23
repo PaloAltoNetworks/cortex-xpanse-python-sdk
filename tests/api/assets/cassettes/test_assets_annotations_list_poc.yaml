@@ -7,25 +7,29 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      - bearer wwwwwwwwwwwwwwwwwwwwwwwwwwwww
       Connection:
       - keep-alive
       Content-Type:
       - application/json
       User-Agent:
-      - 'Xpanse (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST 2020; root:xnu-6153.81.5~1/RELEASE_X86_64)
-        Xpanse SDK/0.0.1 Python/3.7.3'
+      - 'Xpanse SDK/1.0.12 (Darwin Kernel Version 19.6.0: Tue Oct 12 18:34:05 PDT
+        2021; root:xnu-6153.141.43~1/RELEASE_X86_64) Python/3.9.6 Xpanse'
     method: GET
-    uri: https://api.expander.expanse.co/api/v2/annotation/point-of-contact
+    uri: https://expander.staging.qadium.com/api/v2/annotation/point-of-contact
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA32RTUvEMBCG/0vOm2WS5qPJSfDuQfakeJimyW6hbaTNilD6352qK4suHgKTN88b
-        eJiFtViQ+eeFdS3zLCknGhsTR9s4roxSHJMDXpk2AJpGAgDbsTBFLHErSBCOg+ZSHgC8dl7Weyec
-        cuaJuCG3Xer+A11lNzB101wecIj05SOGU+wp7PEnO8yYKXk95XFDlNAWjKmhojAO2PUUTp+9QmR9
-        d9yyfcgDvU+53zptanFOLVt3366q0hiEMTwhSK4UAnfaWR5icFpYBaESVL92lcAJFe4ghdfgK7sH
-        AWDrP643QVPp3670/5Ul3S6GNF68SpzLdm5JsfWFOnjsRixdHplf2BjfC/Pjue/pZYpvX/NKy4jb
-        phdWcsH+Pp9HwuS6fgD/tCLGAwIAAA==
+        H4sIAAAAAAAAA52US2vbQBCA/0rQOavs+yHc4NIeeiot5NQ0h9Fq5SzWI0iyazD+7x05kR+JMaVC
+        gt3VNys+zcxukwIGSLLHbRKLJEus05zSkhPplCfSgyPArCTGO5lzaqyAIrlNfBdgCGMAp8wRRgk1
+        D1RlVGZCpcIpKukv5Oq2iGW8Bgq7B8vY9cN3qANu+QO6ZcDgCg5LX2Ede1x6eW6bEbHHC1dDDbGa
+        AtNiZOdh8wJNH2LjU9/WCHVtNUY2YfjTdsubdh26qu2KZHf7pu6NpNwKRkqpHJHMKuKckKSQoJ1z
+        PmdljvtcV5dUcS3/QR1BTcUIlifqOD2xxtkkjMPJcgj9MF+MyudmRxNlcm99TgkDromkXhBrKScG
+        NHhmjLVO4oanJpwRhjcfk8hdxmjKpLSSfTC5BCol9srlicks1Pff4uJ5docD/NhlrffU5Ah9Mccn
+        7VYY+pa5c/aQNmN17gUqliGgrENPx0qDIw5gghC21FdkBc0oTa3izJmrsgdQmz14Kvs7ubufxXpx
+        7tn3nf+0GeWnLE7czfHVwXgOKZzU6WMVm+VTD8Xjh6CDOtc82IDFGgqPHVuWjIAzmgiuvCoKo7AP
+        L6pz/sCwU23GeSqscmZfiGfN+prnc1BLrf+nYn9+no9FG5vF+4p9wn8Di9jAENsmybbYnpshyZpV
+        VeGbLqxfxzs8ScJ4TG2ToR2g+tKuGsTUbvcXBnBKQcAEAAA=
     headers:
       Allow:
       - GET, POST, HEAD, OPTIONS
@@ -34,25 +38,23 @@ interactions:
       Content-Encoding:
       - gzip
       Content-Length:
-      - '307'
+      - '548'
       Content-Security-Policy:
-      - 'default-src ''none''; connect-src ''self'' https://heapanalytics.com https://*.auth0.com
-        https://www.google-analytics.com https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
-        https://api.rollbar.com; frame-src ''self'' https://qadium.auth0.com; font-src
-        ''self'' data: https://heapanalytics.com https://fonts.gstatic.com https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
-        https://*.auth0.com; img-src ''self'' data: https://heapanalytics.com https://api.mapbox.com
+      - 'default-src ''none''; connect-src ''self'' https://*.auth0.com https://www.google-analytics.com
+        https://qadium-staging.s3.amazonaws.com https://api.rollbar.com https://api.mapbox.com;
+        frame-src ''self'' https://qadium.auth0.com; font-src ''self'' data: https://qadium-staging.s3.amazonaws.com
+        https://fonts.gstatic.com https://*.auth0.com; img-src ''self'' data: https://api.mapbox.com
         https://api.tiles.mapbox.com https://www.google-analytics.com https://www.gravatar.com
-        https://online.swagger.io https://cdn.auth0.com; script-src ''self'' https://cdn.heapanalytics.com
-        https://heapanalytics.com https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://online.swagger.io https://cdn.auth0.com; script-src ''self'' https://qadium-staging.s3.amazonaws.com
         https://cdnjs.cloudflare.com https://unpkg.com https://cdn.polyfill.io https://cdn.rollbar.com
         https://*.duosecurity.com https://*.googleapis.com https://www.google-analytics.com
-        https://*.auth0.com; style-src ''self'' blob: https://heapanalytics.com https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://*.auth0.com; style-src ''self'' blob: https://qadium-staging.s3.amazonaws.com
         https://cdnjs.cloudflare.com https://fonts.googleapis.com ''unsafe-inline'';
-        frame-ancestors ''none'''
+        frame-ancestors https://*.mil http://localhost'
       Content-Type:
       - application/json
       Date:
-      - Mon, 09 Mar 2020 20:04:02 GMT
+      - Mon, 22 Nov 2021 18:28:55 GMT
       Referrer-Policy:
       - same-origin
       Server:

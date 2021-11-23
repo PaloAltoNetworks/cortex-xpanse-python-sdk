@@ -7,20 +7,20 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      - bearer wwwwwwwwwwwwwwwwwwwwwwwwwwwww
       Connection:
       - keep-alive
       Content-Type:
       - application/json
       User-Agent:
-      - 'Xpanse SDK/0.2.1 (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST
-        2020; root:xnu-6153.81.5~1/RELEASE_X86_64) Python/3.7.3 Xpanse'
+      - 'Xpanse SDK/1.0.12 (Darwin Kernel Version 19.6.0: Tue Oct 12 18:34:05 PDT
+        2021; root:xnu-6153.141.43~1/RELEASE_X86_64) Python/3.9.6 Xpanse'
     method: GET
-    uri: https://api.expander.expanse.co/api/v1/services/services/count?providerId=AWS
+    uri: https://expander.staging.qadium.com/api/v1/services/services/count?providerId=AWS
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA6tWSs4vzStRsjIx1FHKL0stSsvJL1eySkvMKU6tBQD/t3srHQAAAA==
+        H4sIAAAAAAAAA6tWSs4vzStRsjIxNrXUUcovSy1Ky8kvV7JKS8wpTq0FAIpUWcUfAAAA
     headers:
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
@@ -29,23 +29,23 @@ interactions:
       Content-Encoding:
       - gzip
       Content-Length:
-      - '49'
+      - '51'
       Content-Security-Policy:
       - 'default-src ''none''; connect-src ''self'' https://*.auth0.com https://www.google-analytics.com
-        https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com https://api.rollbar.com;
-        frame-src ''self'' https://qadium.auth0.com; font-src ''self'' data: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://qadium-staging-django-staticfiles-us-west-2.s3.amazonaws.com https://api.rollbar.com;
+        frame-src ''self'' https://qadium.auth0.com; font-src ''self'' data: https://qadium-staging-django-staticfiles-us-west-2.s3.amazonaws.com
         https://fonts.gstatic.com https://*.auth0.com; img-src ''self'' data: https://api.mapbox.com
         https://api.tiles.mapbox.com https://www.google-analytics.com https://www.gravatar.com
-        https://online.swagger.io https://cdn.auth0.com; script-src ''self'' https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://online.swagger.io https://cdn.auth0.com; script-src ''self'' https://qadium-staging-django-staticfiles-us-west-2.s3.amazonaws.com
         https://cdnjs.cloudflare.com https://unpkg.com https://cdn.polyfill.io https://cdn.rollbar.com
         https://*.duosecurity.com https://*.googleapis.com https://www.google-analytics.com
-        https://*.auth0.com; style-src ''self'' blob: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://*.auth0.com; style-src ''self'' blob: https://qadium-staging-django-staticfiles-us-west-2.s3.amazonaws.com
         https://cdnjs.cloudflare.com https://fonts.googleapis.com ''unsafe-inline'';
         frame-ancestors ''none'''
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Wed, 23 Dec 2020 18:40:13 GMT
+      - Mon, 22 Nov 2021 19:53:34 GMT
       Expires:
       - '0'
       Pragma:
@@ -53,7 +53,7 @@ interactions:
       Referrer-Policy:
       - same-origin
       Set-Cookie:
-      - JSESSIONID=EBC3B3FC3AA71DCF537C8554793F0B61; Path=/; HttpOnly
+      - JSESSIONID=6ECE5229DE45D08930436D5A86E1A7D9; Path=/; HttpOnly
       Strict-Transport-Security:
       - '"max-age=31536000; includeSubDomains" always'
       X-Content-Type-Options:

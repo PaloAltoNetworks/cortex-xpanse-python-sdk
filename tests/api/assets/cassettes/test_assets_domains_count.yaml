@@ -7,20 +7,20 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      - bearer wwwwwwwwwwwwwwwwwwwwwwwwwwwww
       Connection:
       - keep-alive
       Content-Type:
       - application/json
       User-Agent:
-      - 'Xpanse (Darwin Kernel Version 18.5.0: Mon Mar 11 20:40:32 PDT 2019; root:xnu-4903.251.3~3/RELEASE_X86_64)
-        Xpanse SDK/0.0.1 Python/3.7.4'
+      - 'Xpanse SDK/1.0.12 (Darwin Kernel Version 19.6.0: Tue Oct 12 18:34:05 PDT
+        2021; root:xnu-6153.141.43~1/RELEASE_X86_64) Python/3.9.6 Xpanse'
     method: GET
-    uri: https://api.expander.expanse.co/api/v2/assets/domains/count
+    uri: https://expander.staging.qadium.com/api/v2/assets/domains/count
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA6tWSs4vzStRsrI0N6kFAH8Rh7ANAAAA
+        H4sIAAAAAAAAA6tWSs4vzStRsjK0NK0FANsltmYNAAAA
     headers:
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
@@ -41,11 +41,11 @@ interactions:
         https://*.duosecurity.com https://*.googleapis.com https://www.google-analytics.com
         https://*.auth0.com; style-src ''self'' blob: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
         https://cdnjs.cloudflare.com https://fonts.googleapis.com ''unsafe-inline'';
-        frame-ancestors ''none'''
+        frame-ancestors https://*.mil http://localhost'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Sat, 08 Feb 2020 16:08:31 GMT
+      - Mon, 22 Nov 2021 18:29:37 GMT
       Expires:
       - '0'
       Pragma:
@@ -53,7 +53,7 @@ interactions:
       Referrer-Policy:
       - same-origin
       Set-Cookie:
-      - JSESSIONID=8BF87A3B5CE8C23AE38D64850A366151; Path=/; HttpOnly
+      - JSESSIONID=4CF4CE0F3C7FB26019CB2CC57A0A972E; Path=/; HttpOnly
       Strict-Transport-Security:
       - '"max-age=31536000; includeSubDomains" always'
       X-Content-Type-Options:

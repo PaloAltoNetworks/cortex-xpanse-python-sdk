@@ -3,55 +3,58 @@ interactions:
     body: null
     headers:
       Accept:
-      - '*/*'
+      - text/csv
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      - bearer wwwwwwwwwwwwwwwwwwwwwwwwwwwww
       Connection:
       - keep-alive
-      Content-Type:
-      - text/csv
       User-Agent:
-      - 'Xpanse (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST 2020; root:xnu-6153.81.5~1/RELEASE_X86_64)
-        Xpanse SDK/0.0.1 Python/3.7.3'
+      - 'Xpanse SDK/1.0.12 (Darwin Kernel Version 19.6.0: Tue Oct 12 18:34:05 PDT
+        2021; root:xnu-6153.141.43~1/RELEASE_X86_64) Python/3.9.6 Xpanse'
     method: GET
-    uri: https://api.expander.expanse.co/api/v2/assets/domains/csv?domainSearch=api
+    uri: https://expander.staging.qadium.com/api/v2/assets/domains/csv?domainSearch=api
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA+1YS2/jNhC+91cIPMsCqYdt6dSs7bYGEidYK02bogdaYmIiMmmQch672P/eoehY
-        tBxvG/SwRdeB4EjDGZKa+WY+jhYbzQXT+lrwekZXTPslrdlZWbLSL+WKcuHfcaXry4Vm6hGES6rP
-        uXhg5aiSm/Ij03KjCjDjeiSriq416FTUMVgr+chLpuzsit1zXSuqfGs4tmvUTFDRbMB/Wsqp/gH9
-        SsWYVfTFm67WUtW9ybP5h3wU4hD3cNQjUU7iLE4yQoI0CtNBcot8uua9kj0GipZc6iUtHoJCrvwQ
-        k7RHwh6JcxJlUZhFURBHw1v/jlaabX93E4c5jjKYO4yCwZDc+uhsRT9J4d2whTcHL3B4X9jIBVUP
-        FxL8JpU3FUWA/M6qzjuIcgNvzRu7zwjVrFgilMFdwesXuBObqvIREhCB9gksGKvb50JuRK0c9ca1
-        onBM7ujzbLNaMNVaraWuaTWSpaO2jcLLtHT0llKwrjEDBFSABgUQaVVhlckzhExzKVqpVPdU8E+0
-        3pOuzbRd7S/wrrRccWPdOgGhnyDE3g38gHdadyBkUeKdWRMY2bkGoQhj76MJ99yE2xtxVVQMVOBq
-        HYbQ9WyaT8bePD/LJ/Nm1PEeQvlvjcz1H0JkSAYxSfpJmFgL15UIDfoEh83A3/vzcLKOaxFS2iZc
-        45gf97H0ujnXkQj+4CU7bkfoZyaYopV3wxWrIG7e5RqeTVS0xamxOgiLmc2EpRRas6KNqt0TPMMG
-        95Jq++KaVZULt12C29BuVNXOtYU3OkwdsyVOBXUBCYWAa5NvzfQINc/BCrJuZbPOpHazC7rYaDaS
-        oqZFPTGIbZd0h64MFNuh150az0B14dZHYyh/Wx3jjlclYfLwBNWmCvxXoGrgZPFhatMfUCZmcxLk
-        Z7Px78Ho8qKBBohCV/QnxHSzNhxXbiONgFHI0DBKGOZhmJEkC/FtY1wo1uTNTpOkab+HQTnNcZxh
-        DJfVtFkyr2kNSNzuRj4gZJZ7LQ62iLkIfx1p0PeyW8XuB1YZuqt8QS4puoSyIy7LiGkWJQEeRHEa
-        ASMioMRgTVUNRSFYVLJ4gGSp4d4kz44YQ2yWiobGNErj48QYZphkBAdx3H8HMXbW9U/MCLg4KMHm
-        EGBqzlvMOBH3FXuSEggbNHaF1GLKEmNzroLDSKPhEGTax8SbB94FU7yEIut9qB5LmASudxDk6LKx
-        6BDkIMQJiYfDNG5G984aCA0xIe8gyM5kBwT5xBaWG0uul7vi3zmMHGPFDy30vSs4ssI5lot73zs/
-        H9mtd88p/4AQO7Bu5oGT0nfKiCeIwhnlm0D0gAhn8x4mwXg6/2VHhEYUHoqiQ1HsiI7QJZDgwDRg
-        OM1IH/qk43SZGLokiUtkUHfeosui4kzU0POxml0pueQLDiTtWXGuqNB3TB0MXDdc3or/JeVCg+gQ
-        +z7lfqUPTTIMxIgDHMcp7ts+9Gs9KIEGFNg2CHF0nGqjDENzGwdkCHx86kFPPehbFHvqQeF8/b0y
-        7ulzCXyf/LafSw6o9//eg/4F/vZTtTEWAAA=
+        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
+        AAA=
     headers:
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Connection:
       - keep-alive
       Content-Disposition:
-      - attachment; filename=expanse-domain-assets-export-1584116298316.csv
+      - attachment; filename=expanse-domain-assets-export-1637605780305.csv
       Content-Encoding:
       - gzip
       Content-Length:
-      - '1166'
+      - '1427'
       Content-Security-Policy:
       - 'default-src ''none''; connect-src ''self'' https://*.auth0.com https://www.google-analytics.com
         https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com https://api.rollbar.com;
@@ -63,11 +66,11 @@ interactions:
         https://*.duosecurity.com https://*.googleapis.com https://www.google-analytics.com
         https://*.auth0.com; style-src ''self'' blob: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
         https://cdnjs.cloudflare.com https://fonts.googleapis.com ''unsafe-inline'';
-        frame-ancestors ''none'''
+        frame-ancestors https://*.mil http://localhost'
       Content-Type:
       - text/csv
       Date:
-      - Fri, 13 Mar 2020 16:18:17 GMT
+      - Mon, 22 Nov 2021 18:29:40 GMT
       Expires:
       - '0'
       Pragma:
@@ -75,7 +78,7 @@ interactions:
       Referrer-Policy:
       - same-origin
       Set-Cookie:
-      - JSESSIONID=A2DBEBD1784FFC0D1B5DB0A835CA06B4; Path=/; HttpOnly
+      - JSESSIONID=7FF84B09648E8CAB5ED4DD136A0A398C; Path=/; HttpOnly
       Strict-Transport-Security:
       - '"max-age=31536000; includeSubDomains" always'
       X-Content-Type-Options:

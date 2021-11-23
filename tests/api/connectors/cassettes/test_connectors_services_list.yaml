@@ -7,22 +7,25 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      - bearer wwwwwwwwwwwwwwwwwwwwwwwwwwwww
       Connection:
       - keep-alive
       Content-Type:
       - application/json
       User-Agent:
-      - 'Xpanse SDK/0.3.5 (Darwin Kernel Version 19.6.0: Tue Jun 22 19:49:55 PDT 2021;
-        root:xnu-6153.141.35~1/RELEASE_X86_64) Python/3.9.6 Xpanse'
+      - 'Xpanse SDK/1.0.12 (Darwin Kernel Version 19.6.0: Tue Oct 12 18:34:05 PDT
+        2021; root:xnu-6153.141.43~1/RELEASE_X86_64) Python/3.9.6 Xpanse'
     method: GET
-    uri: https://api.expander.expanse.co/api/v1/connectors/services
+    uri: https://expander.staging.qadium.com/api/v1/connectors/services
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA12OQQqDMBBFryKzNqCNmphtL+Ciu9LF2EwlVBOJsRQkd29aFwV3f/57DH8DjQFB
-        XTcwGhSU2EtRiIKJR9OzivOG9bUsWS2kbDmvTm1dQg4WJ0p2580yYXYe3apTq2m5ezMH4+wBZsYG
-        Gjz+ULzlMONg7H6qDSy9Ayi7jmMinl57jjlM9B23Cx0OdHFPSr//5qGM8QOXe7UZ0QAAAA==
+        H4sIAAAAAAAAA2WRUW/CIBSF/wrhWWzLaoG+LeqDb2b6sGTZA4XbjsxCB9SYGP/7ULdp5hu554Tv
+        nHuPWMsocf12xEbjGisNomBVRQRQQcq8YIRXTUk4VZozoZUUOZ5gK3tI7uf1Ci3pEm0hxIAW6Se0
+        caNXkCwagvJmiMbZ5Dw77g3IWLSJsjO2u4wbGQCfJj8pQJZKUNoSkEqSstKMNJQqMoNZ2TLBW6bu
+        Usydj3BAr4uXB+xNQisbofPykucPJDhvaFO0RLD8iZS0rEijZznhOZe5aBkXmt7qrr0JvUTznRv1
+        A+peTO3uYO8TPJybXtn1EVs4RFzbcbdLiof971uN3oNNEv6IcQh1lsFhkFaDn4brrqZfUpuxnyrX
+        Z3Iw2b7IlLMWVHQ+ZAH83igIaZG4h/NZr6y17GDrPiEd4gb9NzydvgHJKt9rCwIAAA==
     headers:
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
@@ -31,23 +34,23 @@ interactions:
       Content-Encoding:
       - gzip
       Content-Length:
-      - '166'
+      - '334'
       Content-Security-Policy:
       - 'default-src ''none''; connect-src ''self'' https://*.auth0.com https://www.google-analytics.com
-        https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com https://api.rollbar.com;
-        frame-src ''self'' https://qadium.auth0.com; font-src ''self'' data: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://qadium-staging-django-staticfiles-us-west-2.s3.amazonaws.com https://api.rollbar.com;
+        frame-src ''self'' https://qadium.auth0.com; font-src ''self'' data: https://qadium-staging-django-staticfiles-us-west-2.s3.amazonaws.com
         https://fonts.gstatic.com https://*.auth0.com; img-src ''self'' data: https://api.mapbox.com
         https://api.tiles.mapbox.com https://www.google-analytics.com https://www.gravatar.com
-        https://online.swagger.io https://cdn.auth0.com; script-src ''self'' https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://online.swagger.io https://cdn.auth0.com; script-src ''self'' https://qadium-staging-django-staticfiles-us-west-2.s3.amazonaws.com
         https://cdnjs.cloudflare.com https://unpkg.com https://cdn.polyfill.io https://cdn.rollbar.com
         https://*.duosecurity.com https://*.googleapis.com https://www.google-analytics.com
-        https://*.auth0.com; style-src ''self'' blob: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://*.auth0.com; style-src ''self'' blob: https://qadium-staging-django-staticfiles-us-west-2.s3.amazonaws.com
         https://cdnjs.cloudflare.com https://fonts.googleapis.com ''unsafe-inline'';
         frame-ancestors ''none'''
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 26 Aug 2021 19:46:53 GMT
+      - Mon, 22 Nov 2021 18:51:30 GMT
       Expires:
       - '0'
       Pragma:
@@ -55,7 +58,7 @@ interactions:
       Referrer-Policy:
       - same-origin
       Set-Cookie:
-      - JSESSIONID=38728A4EA04E6DF4078B0D2CB9B69820; Path=/; HttpOnly
+      - JSESSIONID=C2FA11DCC7FA8A92ECD0546C0DABFA7D; Path=/; HttpOnly
       Strict-Transport-Security:
       - '"max-age=31536000; includeSubDomains" always'
       X-Content-Type-Options:

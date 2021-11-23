@@ -7,38 +7,26 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      - bearer wwwwwwwwwwwwwwwwwwwwwwwwwwwww
       Connection:
       - keep-alive
       Content-Type:
       - application/json
       User-Agent:
-      - 'Xpanse SDK/0.3.7 (Darwin Kernel Version 19.6.0: Tue Jun 22 19:49:55 PDT 2021;
-        root:xnu-6153.141.35~1/RELEASE_X86_64) Python/3.9.5 Xpanse'
+      - 'Xpanse SDK/1.0.12 (Darwin Kernel Version 19.6.0: Tue Oct 12 18:34:05 PDT
+        2021; root:xnu-6153.141.43~1/RELEASE_X86_64) Python/3.9.6 Xpanse'
     method: GET
-    uri: https://api.expander.expanse.co/api/v2/assets/certificate-issuers
+    uri: https://expander.staging.qadium.com/api/v2/assets/certificate-issuers
   response:
     body:
       string: !!binary |
-        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
+        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
+        FQ6FMQ519zS0xs7UXavzFyeYvx/iAgAA
     headers:
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
@@ -47,7 +35,7 @@ interactions:
       Content-Encoding:
       - gzip
       Content-Length:
-      - '1081'
+      - '366'
       Content-Security-Policy:
       - 'default-src ''none''; connect-src ''self'' https://*.auth0.com https://www.google-analytics.com
         https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com https://api.rollbar.com;
@@ -59,11 +47,11 @@ interactions:
         https://*.duosecurity.com https://*.googleapis.com https://www.google-analytics.com
         https://*.auth0.com; style-src ''self'' blob: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
         https://cdnjs.cloudflare.com https://fonts.googleapis.com ''unsafe-inline'';
-        frame-ancestors https://*.mil'
+        frame-ancestors https://*.mil http://localhost'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Tue, 31 Aug 2021 15:48:08 GMT
+      - Mon, 22 Nov 2021 18:29:08 GMT
       Expires:
       - '0'
       Pragma:
@@ -71,7 +59,7 @@ interactions:
       Referrer-Policy:
       - same-origin
       Set-Cookie:
-      - JSESSIONID=683BAB5674C59A22358FB7B9C84DC5F2; Path=/; HttpOnly
+      - JSESSIONID=243FD39A0FD694AA4289CB287FE1F365; Path=/; HttpOnly
       Strict-Transport-Security:
       - '"max-age=31536000; includeSubDomains" always'
       X-Content-Type-Options:

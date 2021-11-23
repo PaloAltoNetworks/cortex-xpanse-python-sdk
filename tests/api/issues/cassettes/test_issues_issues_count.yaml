@@ -7,20 +7,20 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      - bearer wwwwwwwwwwwwwwwwwwwwwwwwwwwww
       Connection:
       - keep-alive
       Content-Type:
       - application/json
       User-Agent:
-      - 'Xpanse SDK/0.0.10 (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST
-        2020; root:xnu-6153.81.5~1/RELEASE_X86_64) Python/3.7.3 Xpanse'
+      - 'Xpanse SDK/1.0.12 (Darwin Kernel Version 19.6.0: Tue Oct 12 18:34:05 PDT
+        2021; root:xnu-6153.141.43~1/RELEASE_X86_64) Python/3.9.6 Xpanse'
     method: GET
-    uri: https://api.expander.expanse.co/api/v1/issues/issues/count?providerId=AWS
+    uri: https://expander.staging.qadium.com/api/v1/issues/issues/count?providerId=AWS
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA6tWyi9LLUrLyS9XskpLzClO1VFKzi/NK1GyMjGoBQC/eq11HQAAAA==
+        H4sIAAAAAAAAA6tWyi9LLUrLyS9XskpLzClO1VFKzi/NK1GyMjQ0rgUA5Rn7/x4AAAA=
     headers:
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
@@ -29,17 +29,17 @@ interactions:
       Content-Encoding:
       - gzip
       Content-Length:
-      - '49'
+      - '50'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Mon, 27 Jul 2020 18:49:48 GMT
+      - Mon, 22 Nov 2021 18:54:35 GMT
       Expires:
       - '0'
       Pragma:
       - no-cache
       Set-Cookie:
-      - JSESSIONID=DF372F3A5743CDD38DBA5AF4F49032A6; Path=/; HttpOnly
+      - JSESSIONID=81021C7D42005B45FB954209D07DAACE; Path=/; HttpOnly
       Strict-Transport-Security:
       - '"max-age=31536000; includeSubDomains" always'
       X-Content-Type-Options:
