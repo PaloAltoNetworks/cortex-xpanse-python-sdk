@@ -7,24 +7,25 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      - bearer wwwwwwwwwwwwwwwwwwwwwwwwwwwww
       Connection:
       - keep-alive
       Content-Type:
       - application/json
       User-Agent:
-      - 'Xpanse SDK/0.0.10 (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST
-        2020; root:xnu-6153.81.5~1/RELEASE_X86_64) Python/3.7.3 Xpanse'
+      - 'Xpanse SDK/1.0.12 (Darwin Kernel Version 19.6.0: Tue Oct 12 18:34:05 PDT
+        2021; root:xnu-6153.141.43~1/RELEASE_X86_64) Python/3.9.6 Xpanse'
     method: GET
     uri: https://api.expander.expanse.co/api/v1/issues/businessUnits
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA12QwWqEQAyGX2XJ2YBjRmfGW6E9FHootPRSeshoXKQ6ijsWF/Hd67IFoaeE5MvH
-        T1aoOTKUnyu0NZSQap8rnQp6LxmSuAodKYtMjsnn2kidQwKBe9npDw6P0vH19Bzq+RKnVi6wJX+q
-        whuSpqjQZ5QiGWfQU6aw0kw6VYUTbw7VQ9XL6YWjLKe3eRy76yFi1aQNOY8N5RapsnsmbTy6rLDW
-        WKO8tYfoyNSPwxTxabkV2L4SGPncBo7tEKBcIcgSoQxz1+2bSX7u/ZZAL7eP3IFXPsv78C37xUH+
-        G27bLwe4/ytGAQAA
+        H4sIAAAAAAAAA12RTU+EMBCG/wrpebtQWmjLzbh7MPFgsurFeJjCsDZCQVo2mA3/XYgajKeZzDt5
+        3vm4kgoCkOLlSmxFCpIIkzGRIDUGU8pRl1RzpihwDdxkQmKVkR1x0OLS/QzugA18RneuGn0YLHoy
+        735QTKEWkOQ0q3hJBUe5oERNE+A1UzJVRskNdTpGB2y76LYb+o2RG8mxzktqUp5QLrWkhqeMlgK4
+        SFiu0fxh3JQtRvcQcIpOY983nxsIWJ3UXBta80xRXqplLyEN1WmulFSSGaW2Yba92r4bAj1OayDz
+        6470cLYOgu0cKa7E4RRI4camWZQBL795OQ4DukUibyH0vohjnHpwFQ57H1bCef8BlR3bfdm1MfQ2
+        vrDYej+ij83orUPvn5wN6zlJi+uHvs0e4IyP3Tsu7pvrv+I8fwHv+vDJ1gEAAA==
     headers:
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
@@ -33,17 +34,17 @@ interactions:
       Content-Encoding:
       - gzip
       Content-Length:
-      - '240'
+      - '331'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Mon, 27 Jul 2020 19:42:38 GMT
+      - Mon, 22 Nov 2021 18:54:32 GMT
       Expires:
       - '0'
       Pragma:
       - no-cache
       Set-Cookie:
-      - JSESSIONID=38B21D7945018FC7E26EDA7FC04D3DCC; Path=/; HttpOnly
+      - JSESSIONID=D4344A5E5BF0EC4871F79A88DFC8D9D9; Path=/; HttpOnly
       Strict-Transport-Security:
       - '"max-age=31536000; includeSubDomains" always'
       X-Content-Type-Options:

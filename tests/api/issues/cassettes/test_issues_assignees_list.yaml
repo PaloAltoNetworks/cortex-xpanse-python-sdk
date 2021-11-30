@@ -7,22 +7,28 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      - bearer wwwwwwwwwwwwwwwwwwwwwwwwwwwww
       Connection:
       - keep-alive
       Content-Type:
       - application/json
       User-Agent:
-      - 'Xpanse SDK/0.0.10 (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST
-        2020; root:xnu-6153.81.5~1/RELEASE_X86_64) Python/3.7.3 Xpanse'
+      - 'Xpanse SDK/1.0.12 (Darwin Kernel Version 19.6.0: Tue Oct 12 18:34:05 PDT
+        2021; root:xnu-6153.141.43~1/RELEASE_X86_64) Python/3.9.6 Xpanse'
     method: GET
     uri: https://api.expander.expanse.co/api/v1/issues/assignees
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA12NQQrCMBRE7zJbgwfIyiO40JWI/DafGJr8X5JUhJC729KF6G6YeY9pcFQJ9taw
-        FM5CiWFRw6B54jxoGZ+HbXjMWd3JJwrxOGpCNz/CVaiU4IUd+t1gJh+EalCBbRB+V1hZYlyXzK89
-        d4PE2/UOnMnzRSdejS/5V/b+AfM+Jl6vAAAA
+        H4sIAAAAAAAAA61Wy27bMBD8F15jUHBy00mf0EN7KgpjTW2kTailTC79gOF/79qxgDY9hJJ7EiFh
+        Zpb7mNXZtCBg6p9nkxNGhgFNbWC9AQZ/StK4nCQMGFNw1oXBrAxE19MeW1O/gk94WX2GOoySNoMy
+        dBiXEPSZZRnyAdHRw2mZ6H5A7ohxCdo6lZXANrkg0nQDkC/LM7cRDw0cA1NOhRBioPemRR9IBItA
+        W0EYNhEHbAkkzK9ni0N4chChT+FV+2k6FanfwFO88wK/QfE4AidsOh+24C2LfNnAf+FoO5THucsY
+        T0Ab0u7tIggFbu7vykkSRa1n8/HQgStH7oE1U3BqukwtjkHDSOhyJDktIJEIDl8WAA8HKULdS3NN
+        dwPOIUuOZS35J9Lp9cipDwnE+brjoczUeoipB5uPMwb0DRhtG3DdTIUhbtVMI2HZuE4E9q1bTBF6
+        fiyGO8GzfX40hv9wjeUhMEgPbF0Ebt6RGWZNhg+Z1EQGFNgqclfU36MaXXfFxMAetslS+NJ7ZEQR
+        SvOM7ofeJlHHupH/Xc6/VmYEXU43NzL12TAexdScvdcvEffTWY0i6gzq8u9FxlRX1W3MWoxWZ0sZ
+        OruDlvLNkCoYqdqvK0opY6ru+pjMZWWuWZqEvukfwPegCZ9UroqfXl4uvwFAJFPmhAgAAA==
     headers:
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
@@ -31,17 +37,17 @@ interactions:
       Content-Encoding:
       - gzip
       Content-Length:
-      - '141'
+      - '508'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Mon, 27 Jul 2020 19:42:38 GMT
+      - Mon, 22 Nov 2021 18:54:30 GMT
       Expires:
       - '0'
       Pragma:
       - no-cache
       Set-Cookie:
-      - JSESSIONID=AED42EB0A68A5050FF973864218C08CA; Path=/; HttpOnly
+      - JSESSIONID=E22D5BE4759B9D1B523D03A1FAD6B8C9; Path=/; HttpOnly
       Strict-Transport-Security:
       - '"max-age=31536000; includeSubDomains" always'
       X-Content-Type-Options:

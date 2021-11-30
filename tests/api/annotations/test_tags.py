@@ -18,18 +18,19 @@ def test_annotations_tags_get(api):
     tag = api.annotations.tags.get(tag_id=TEST_TAG_ID)
     assert isinstance(tag, dict), "Expected instance of `dict` to be returned."
     assert tag["id"] == TEST_TAG_ID
-    assert tag["name"] == TEST_TAG_NAME
+    assert tag["name"] == "sdk_test_cc"
 
 
 @pytest.mark.vcr()
 def test_annotations_tags_create(api):
     # We will disable this initially because tags cannot be deleted.
     tag = api.annotations.tags.create(
-        name="sdk_test4",
-        description="This is a test tag created by the SDK",
-        disabled=True,
+        name="sdk_test_client_cred_2",
+        description="This is a test tag created by the SDK"
     )
     assert isinstance(tag, dict), "Expected instance of `dict` to be returned."
+    assert tag["disabled"] == False
+    tag = api.annotations.tags.update(tag_id=tag["id"], disabled=True)
     assert tag["disabled"] == True
 
 

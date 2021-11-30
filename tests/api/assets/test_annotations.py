@@ -1,7 +1,7 @@
 import pytest
 
 from xpanse.iterator import ExResultIterator
-from conftest import TEST_TAG_NAME
+from conftest import TEST_TAG_NAME_ASSET_ANNOTATIONS, TEST_ASSETS_TAG_ID
 
 
 @pytest.mark.vcr()
@@ -15,32 +15,16 @@ def test_assets_annotations_list_tag(api):
 
 @pytest.mark.vcr()
 def test_assets_annotations_create_tag(api):
-    tag = api.assets.annotations.v2.create_tag(TEST_TAG_NAME)
+    tag = api.assets.annotations.v2.create_tag(f"{TEST_TAG_NAME_ASSET_ANNOTATIONS}")
     assert isinstance(tag, dict), "Expected instance of `dict` to be returned."
-    assert tag["name"] == TEST_TAG_NAME
+    assert tag["name"] == f"{TEST_TAG_NAME_ASSET_ANNOTATIONS}"
     assert tag["id"] is not None
-    assert api.assets.annotations.v2.delete_tag(tag["id"]), "Error cleaning up tag"
 
 
 @pytest.mark.vcr()
 def test_assets_annotations_get_tag(api):
-    tag = api.assets.annotations.v2.create_tag(TEST_TAG_NAME)
-    assert tag["id"] is not None
-    tag_get = api.assets.annotations.v2.get_tag(tag["id"])
+    tag_get = api.assets.annotations.v2.get_tag(TEST_ASSETS_TAG_ID)
     assert isinstance(tag_get, dict), "Expected instance of `dict` to be returned."
-    for key in tag.keys() & tag_get.keys():
-        assert tag[key] == tag_get[key]
-    assert api.assets.annotations.v2.delete_tag(tag["id"]), "Error cleaning up tag"
-
-
-@pytest.mark.vcr()
-def test_assets_annotations_delete_tag(api):
-    tag = api.assets.annotations.v2.create_tag(TEST_TAG_NAME)
-    assert tag["id"] is not None
-    assert api.assets.annotations.v2.delete_tag(tag["id"])
-    assert not api.assets.annotations.v2.delete_tag(
-        tag["id"]
-    ), "Expected `False` to be returned for non-existant tag id."
 
 
 @pytest.mark.vcr()

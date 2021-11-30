@@ -7,23 +7,24 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      - bearer wwwwwwwwwwwwwwwwwwwwwwwwwwwww
       Connection:
       - keep-alive
       Content-Type:
       - application/json
       User-Agent:
-      - 'Xpanse SDK/0.3.7 (Darwin Kernel Version 19.6.0: Tue Jun 22 19:49:55 PDT 2021;
-        root:xnu-6153.141.35~1/RELEASE_X86_64) Python/3.9.5 Xpanse'
+      - 'Xpanse SDK/1.0.12 (Darwin Kernel Version 19.6.0: Tue Oct 12 18:34:05 PDT
+        2021; root:xnu-6153.141.43~1/RELEASE_X86_64) Python/3.9.6 Xpanse'
     method: GET
     uri: https://api.expander.expanse.co/api/v2/assets/domain-registrars
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA6tWSkksSVSyiq5WykvMTVWyUnLOz1XwSSxNSVWq1YELuhZkZit45iXrIQu657sk
-        pqRUIgv5JhZl++bnZZbkFyELh+Zl5+WX5yELPe2Z/mTXmmfTNjzfO/HZ1A3PFzQ+2b/wWeP6Z10N
-        z+asfzan8+XMCU9b1zzt34Gs6+WM/S/be57smvhi3cLn66YjK3u/p+PJjnagae/3dCrVxuooFSSm
-        Z+YllmTm5ylZAT2SWlGiZJVXmpMDlClKLYOwa3WUclNB/gdJ1AIAjkiTaA0BAAA=
+        H4sIAAAAAAAAA22QT0sDMRDFv0qYc92Ax72JFZVaD/4BQTxMN8M27GYmTrJrpfS7my1VtuAlhDeP
+        9+Y3e3CYEer3PTAGghquer/BDcJh8SddSzAPODg6FzWKYvbC5pl09A2ZYozI33PbTfSdueemmou3
+        skTnznx3wq1ZTc9SAno2j2Ud80StT/nU8k/6GrVbC/ssOs9/5Y7li+fS2xRJ2bxQs2XppS3tHwuI
+        2Ho+QkBdeGmXoeah78tEafz9N4MqcRnBNueYamtpV0AdaZXylNBWn+j8EKpGgsXo7XhpMSXKyboj
+        zoWeSDSVrSDQdPSp6PADnzGC+YIBAAA=
     headers:
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
@@ -32,7 +33,7 @@ interactions:
       Content-Encoding:
       - gzip
       Content-Length:
-      - '218'
+      - '251'
       Content-Security-Policy:
       - 'default-src ''none''; connect-src ''self'' https://*.auth0.com https://www.google-analytics.com
         https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com https://api.rollbar.com;
@@ -44,11 +45,11 @@ interactions:
         https://*.duosecurity.com https://*.googleapis.com https://www.google-analytics.com
         https://*.auth0.com; style-src ''self'' blob: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
         https://cdnjs.cloudflare.com https://fonts.googleapis.com ''unsafe-inline'';
-        frame-ancestors https://*.mil'
+        frame-ancestors https://*.mil http://localhost'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Tue, 31 Aug 2021 15:49:14 GMT
+      - Mon, 22 Nov 2021 18:29:33 GMT
       Expires:
       - '0'
       Pragma:
@@ -56,7 +57,7 @@ interactions:
       Referrer-Policy:
       - same-origin
       Set-Cookie:
-      - JSESSIONID=B6A98FD10AE06B295BE5C0BFB4D67587; Path=/; HttpOnly
+      - JSESSIONID=D85870B3480DF409A4400F7BBFCDCF39; Path=/; HttpOnly
       Strict-Transport-Security:
       - '"max-age=31536000; includeSubDomains" always'
       X-Content-Type-Options:

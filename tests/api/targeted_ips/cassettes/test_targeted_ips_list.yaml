@@ -7,22 +7,21 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      - bearer wwwwwwwwwwwwwwwwwwwwwwwwwwwww
       Connection:
       - keep-alive
       Content-Type:
       - application/json
       User-Agent:
-      - 'Xpanse SDK/0.1.2 (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST
-        2020; root:xnu-6153.81.5~1/RELEASE_X86_64) Python/3.7.3 Xpanse'
+      - 'Xpanse SDK/1.0.12 (Darwin Kernel Version 19.6.0: Tue Oct 12 18:34:05 PDT
+        2021; root:xnu-6153.141.43~1/RELEASE_X86_64) Python/3.9.6 Xpanse'
     method: GET
     uri: https://api.expander.expanse.co/api/v1/targetedIps
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA4WQSwrCQAxA75J1m+Yz6bRzDt0oLgodQXBRbBeF0rs7ogu1Mi7DS+DlLXDtxmk/
-        9N0UewggJFSSL4V3IkEpEB2ggOEWz5c5jhCOy2tIy+wVuRVk16C1lQqsxQd2qB65YdQcdDloOVhv
-        oBFKklJDMc7SrdL77S+nP8+mDmSphUeqxH2lcA6bGh/BnvC03gESpTnPegEAAA==
+        H4sIAAAAAAAAA6tWykksLgktSEksSU1RslIyMjAy0DU00DUwCjG0sDI2sDIwiFLSUSooSk3LrEgt
+        VrKKroZygIoNzY30DA1M9QxNzPUM9I1MlGp1kGVNTPQszPQMzY2hkrG1AI4lMVduAAAA
     headers:
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
@@ -31,17 +30,31 @@ interactions:
       Content-Encoding:
       - gzip
       Content-Length:
-      - '160'
+      - '108'
+      Content-Security-Policy:
+      - 'default-src ''none''; connect-src ''self'' https://*.auth0.com https://www.google-analytics.com
+        https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com https://api.rollbar.com;
+        frame-src ''self'' https://qadium.auth0.com; font-src ''self'' data: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://fonts.gstatic.com https://*.auth0.com; img-src ''self'' data: https://api.mapbox.com
+        https://api.tiles.mapbox.com https://www.google-analytics.com https://www.gravatar.com
+        https://online.swagger.io https://cdn.auth0.com; script-src ''self'' https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://cdnjs.cloudflare.com https://unpkg.com https://cdn.polyfill.io https://cdn.rollbar.com
+        https://*.duosecurity.com https://*.googleapis.com https://www.google-analytics.com
+        https://*.auth0.com; style-src ''self'' blob: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://cdnjs.cloudflare.com https://fonts.googleapis.com ''unsafe-inline'';
+        frame-ancestors https://*.mil http://localhost'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Tue, 29 Sep 2020 16:22:09 GMT
+      - Mon, 22 Nov 2021 19:53:49 GMT
       Expires:
       - '0'
       Pragma:
       - no-cache
+      Referrer-Policy:
+      - same-origin
       Set-Cookie:
-      - JSESSIONID=787AB225D90178EA6C267CF2A0472EA4; Path=/; HttpOnly
+      - JSESSIONID=C6EAB00F12EC40E9B1096F55F7F511CA; Path=/; HttpOnly
       Strict-Transport-Security:
       - '"max-age=31536000; includeSubDomains" always'
       X-Content-Type-Options:
