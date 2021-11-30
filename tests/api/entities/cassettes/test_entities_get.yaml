@@ -7,22 +7,21 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      - bearer wwwwwwwwwwwwwwwwwwwwwwwwwwwww
       Connection:
       - keep-alive
       Content-Type:
       - application/json
       User-Agent:
-      - 'Xpanse (Darwin Kernel Version 18.5.0: Mon Mar 11 20:40:32 PDT 2019; root:xnu-4903.251.3~3/RELEASE_X86_64)
-        Xpanse SDK/0.0.1 Python/3.7.4'
+      - 'Xpanse SDK/1.0.12 (Darwin Kernel Version 19.6.0: Tue Oct 12 18:34:05 PDT
+        2021; root:xnu-6153.141.43~1/RELEASE_X86_64) Python/3.9.6 Xpanse'
     method: GET
     uri: https://api.expander.expanse.co/api/v1/Entity/04b5140e-bae2-3e9c-9318-a39a3b547ed5/
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAAyWLuw4CIRBFf8XQKmZ4ZYHaxlpjPyxjQgKsYdliY/x3MZb3nHPfLEXmGehghAbi
-        IZDkitzMnRKWo3KogtETRcNOrCwxPRP9HhIkcJBc6LvQXk9e2rNxFgCOAB5g1BULjfKB9UIZ98O1
-        xm3tLdE65Asb1c583XIeq6WCbb/R3Jf2h58viCYEtJsAAAA=
+        H4sIAAAAAAAAA6tWSkktSczMUbJSCslIVShKLSxNLS5JTQGyivNLi5JTFVLyU4sV8vJLFFIrMotL
+        9JRqAWcLDtgzAAAA
     headers:
       Allow:
       - GET, HEAD, OPTIONS
@@ -31,25 +30,23 @@ interactions:
       Content-Encoding:
       - gzip
       Content-Length:
-      - '149'
+      - '69'
       Content-Security-Policy:
-      - 'default-src ''none''; connect-src ''self'' https://heapanalytics.com https://*.auth0.com
-        https://www.google-analytics.com https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
-        https://api.rollbar.com; frame-src ''self'' https://qadium.auth0.com; font-src
-        ''self'' data: https://heapanalytics.com https://fonts.gstatic.com https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
-        https://*.auth0.com; img-src ''self'' data: https://heapanalytics.com https://api.mapbox.com
+      - 'default-src ''none''; connect-src ''self'' https://*.auth0.com https://www.google-analytics.com
+        https://qadium-staging.s3.amazonaws.com https://api.rollbar.com https://api.mapbox.com;
+        frame-src ''self'' https://qadium.auth0.com; font-src ''self'' data: https://qadium-staging.s3.amazonaws.com
+        https://fonts.gstatic.com https://*.auth0.com; img-src ''self'' data: https://api.mapbox.com
         https://api.tiles.mapbox.com https://www.google-analytics.com https://www.gravatar.com
-        https://online.swagger.io https://cdn.auth0.com; script-src ''self'' https://cdn.heapanalytics.com
-        https://heapanalytics.com https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://online.swagger.io https://cdn.auth0.com; script-src ''self'' https://qadium-staging.s3.amazonaws.com
         https://cdnjs.cloudflare.com https://unpkg.com https://cdn.polyfill.io https://cdn.rollbar.com
         https://*.duosecurity.com https://*.googleapis.com https://www.google-analytics.com
-        https://*.auth0.com; style-src ''self'' blob: https://heapanalytics.com https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://*.auth0.com; style-src ''self'' blob: https://qadium-staging.s3.amazonaws.com
         https://cdnjs.cloudflare.com https://fonts.googleapis.com ''unsafe-inline'';
-        frame-ancestors ''none'''
+        frame-ancestors https://*.mil http://localhost'
       Content-Type:
       - application/json
       Date:
-      - Sat, 15 Feb 2020 13:51:46 GMT
+      - Mon, 22 Nov 2021 18:52:18 GMT
       Referrer-Policy:
       - same-origin
       Server:
@@ -65,6 +62,6 @@ interactions:
       x-xss-protection:
       - 1; mode=block
     status:
-      code: 200
-      message: OK
+      code: 404
+      message: Not Found
 version: 1

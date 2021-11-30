@@ -7,7 +7,7 @@ from xpanse.iterator import ExResultIterator
 def test_issues_updates_list(api):
     i = api.issues.updates.v1.list(
         createdAfter="2020-07-20T00:00:00Z",
-        createdBefore="2020-07-21T00:00:00Z",
+        createdBefore="2020-07-22T00:00:00Z",
         limit=5,
     )
     assert isinstance(

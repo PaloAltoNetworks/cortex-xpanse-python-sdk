@@ -7,64 +7,52 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      - bearer wwwwwwwwwwwwwwwwwwwwwwwwwwwww
       Connection:
       - keep-alive
       Content-Type:
       - application/json
       User-Agent:
-      - 'Xpanse SDK/0.0.10 (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST
-        2020; root:xnu-6153.81.5~1/RELEASE_X86_64) Python/3.7.3 Xpanse'
+      - 'Xpanse SDK/1.0.12 (Darwin Kernel Version 19.6.0: Tue Oct 12 18:34:05 PDT
+        2021; root:xnu-6153.141.43~1/RELEASE_X86_64) Python/3.9.6 Xpanse'
     method: GET
-    uri: https://api.expander.expanse.co/api/v1/issues/issues/fe40de75-5e66-3b1f-a49d-898205b52a50
+    uri: https://api.expander.expanse.co/api/v1/issues/issues/3188ba60-4472-37a8-8a4f-ad8e2407b771
   response:
     body:
       string: !!binary |
-        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
+        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
+        yf5FoY7//+NFof64Qv36f0/MkzRsGgAA
     headers:
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
@@ -73,17 +61,17 @@ interactions:
       Content-Encoding:
       - gzip
       Content-Length:
-      - '2558'
+      - '1848'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Mon, 27 Jul 2020 18:49:48 GMT
+      - Mon, 22 Nov 2021 18:54:39 GMT
       Expires:
       - '0'
       Pragma:
       - no-cache
       Set-Cookie:
-      - JSESSIONID=D0D14D08DE99BA2CB9B81D69E06A30AD; Path=/; HttpOnly
+      - JSESSIONID=E272D43A0E41F770B6103AF494DE9156; Path=/; HttpOnly
       Strict-Transport-Security:
       - '"max-age=31536000; includeSubDomains" always'
       X-Content-Type-Options:

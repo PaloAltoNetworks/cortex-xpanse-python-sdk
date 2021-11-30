@@ -7,7 +7,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      - bearer wwwwwwwwwwwwwwwwwwwwwwwwwwwww
       Connection:
       - keep-alive
       Content-Length:
@@ -15,14 +15,14 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - 'Xpanse SDK/0.0.10 (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST
-        2020; root:xnu-6153.81.5~1/RELEASE_X86_64) Python/3.7.3 Xpanse'
+      - 'Xpanse SDK/1.0.12 (Darwin Kernel Version 19.6.0: Tue Oct 12 18:34:05 PDT
+        2021; root:xnu-6153.141.43~1/RELEASE_X86_64) Python/3.9.6 Xpanse'
     method: POST
-    uri: https://api.expander.expanse.co/api/v1/issues/issues/fe40de75-5e66-3b1f-a49d-898205b52a50/updates
+    uri: https://api.expander.expanse.co/api/v1/issues/issues/3188ba60-4472-37a8-8a4f-ad8e2407b771/updates
   response:
     body:
-      string: '{"id":"088d5914-257c-466f-a828-7138d5fea971","updateType":"Comment","value":"SDK
-        TEST Comment","previousValue":null,"user":{"username":"andrew.scott@expanseinc.com"},"created":"2020-07-27T19:00:32.601588Z"}'
+      string: '{"id":"8a74c944-0126-4578-bcbc-41dc4c857479","updateType":"Comment","value":"SDK
+        TEST Comment","previousValue":null,"user":{"username":"xpanse_expander_sdk_testing"},"created":"2021-11-22T22:09:08.263999Z"}'
     headers:
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
@@ -33,15 +33,15 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Mon, 27 Jul 2020 19:00:32 GMT
+      - Mon, 22 Nov 2021 22:09:08 GMT
       Expires:
       - '0'
       Location:
-      - http://api.expander.expanse.co/api/v1/issues/issues/fe40de75-5e66-3b1f-a49d-898205b52a50/updates/088d5914-257c-466f-a828-7138d5fea971
+      - http://expander.staging.qadium.com/api/v1/issues/issues/3188ba60-4472-37a8-8a4f-ad8e2407b771/updates/8a74c944-0126-4578-bcbc-41dc4c857479
       Pragma:
       - no-cache
       Set-Cookie:
-      - JSESSIONID=200C11A60E6582085D7D85A181820082; Path=/; HttpOnly
+      - JSESSIONID=236185E72A70E0E167DF532A5F000637; Path=/; HttpOnly
       Strict-Transport-Security:
       - '"max-age=31536000; includeSubDomains" always'
       X-Content-Type-Options:
@@ -61,25 +61,25 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      - bearer wwwwwwwwwwwwwwwwwwwwwwwwwwwww
       Connection:
       - keep-alive
       Content-Type:
       - application/json
       Cookie:
-      - JSESSIONID=200C11A60E6582085D7D85A181820082
+      - JSESSIONID=236185E72A70E0E167DF532A5F000637
       User-Agent:
-      - 'Xpanse SDK/0.0.10 (Darwin Kernel Version 19.3.0: Thu Jan  9 20:58:23 PST
-        2020; root:xnu-6153.81.5~1/RELEASE_X86_64) Python/3.7.3 Xpanse'
+      - 'Xpanse SDK/1.0.12 (Darwin Kernel Version 19.6.0: Tue Oct 12 18:34:05 PDT
+        2021; root:xnu-6153.141.43~1/RELEASE_X86_64) Python/3.9.6 Xpanse'
     method: GET
-    uri: https://api.expander.expanse.co/api/v1/issues/issues/fe40de75-5e66-3b1f-a49d-898205b52a50/updates/088d5914-257c-466f-a828-7138d5fea971
+    uri: https://api.expander.expanse.co/api/v1/issues/issues/3188ba60-4472-37a8-8a4f-ad8e2407b771/updates/8a74c944-0126-4578-bcbc-41dc4c857479
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA0VOuwqDMBT9FbmzkSQ+Ep0KbaeOhg7dQryCoFFMtC3ivze2Q6cD571B10AFVMom
-        L1lGeC4MyYqiJVpySQRLg9CiLgWDGJap0R7Ve8KQOY/DgNYHetX9cjD15Rapa62ivzTNuHbj4u4/
-        i136PtQ4nKHavmj1cES1bWZ8Js6M3p/wNWnrsLMmMeMAewxmxjB8POWUU0IF4UKxsqK0SnlSUJZL
-        +YD9A6H4VOLOAAAA
+        H4sIAAAAAAAAA0VOuw6CMBT9FXJnamgtj7KqkyPEwYWU9sYQoZC2EA3h36U6OJ3kvFfoNJRQyJwr
+        wTlJKMsIT/OCtKpVhFOtuCrSnOcCYpgnLT3W7wn3zGkcBjR+pxfZz4GpzteovlR19Jcmi0s3zu72
+        s5i57/cahxbK9YtGDiH6mqRx2GBAjbZx+tl4dL4zD9hiUBb34fCUJYwSSgljNWNlIsqkOLDsKIS4
+        w/YB2hcRQM4AAAA=
     headers:
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
@@ -88,15 +88,17 @@ interactions:
       Content-Encoding:
       - gzip
       Content-Length:
-      - '183'
+      - '182'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Mon, 27 Jul 2020 19:00:32 GMT
+      - Mon, 22 Nov 2021 22:09:08 GMT
       Expires:
       - '0'
       Pragma:
       - no-cache
+      Set-Cookie:
+      - JSESSIONID=76B795F4AF872AE2662DF5E8B2A00153; Path=/; HttpOnly
       Strict-Transport-Security:
       - '"max-age=31536000; includeSubDomains" always'
       X-Content-Type-Options:

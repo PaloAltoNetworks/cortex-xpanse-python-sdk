@@ -7,38 +7,38 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - JWT wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      - bearer wwwwwwwwwwwwwwwwwwwwwwwwwwwww
       Connection:
       - keep-alive
       Content-Type:
       - application/json
       User-Agent:
-      - 'Xpanse (Darwin Kernel Version 18.5.0: Mon Mar 11 20:40:32 PDT 2019; root:xnu-4903.251.3~3/RELEASE_X86_64)
-        Xpanse SDK/0.0.1 Python/3.7.4'
+      - 'Xpanse SDK/1.0.12 (Darwin Kernel Version 19.6.0: Tue Oct 12 18:34:05 PDT
+        2021; root:xnu-6153.141.43~1/RELEASE_X86_64) Python/3.9.6 Xpanse'
     method: GET
-    uri: https://api.expander.expanse.co/api/v2/assets/domains/www.blockbuster.com
+    uri: https://api.expander.expanse.co/api/v2/assets/domains/link.toysrus.com
   response:
     body:
       string: !!binary |
-        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
+        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
+        t4fF8AoAAA==
     headers:
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
@@ -49,7 +49,7 @@ interactions:
       Content-Encoding:
       - gzip
       Content-Length:
-      - '1057'
+      - '1033'
       Content-Security-Policy:
       - 'default-src ''none''; connect-src ''self'' https://*.auth0.com https://www.google-analytics.com
         https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com https://api.rollbar.com;
@@ -61,11 +61,11 @@ interactions:
         https://*.duosecurity.com https://*.googleapis.com https://www.google-analytics.com
         https://*.auth0.com; style-src ''self'' blob: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
         https://cdnjs.cloudflare.com https://fonts.googleapis.com ''unsafe-inline'';
-        frame-ancestors ''none'''
+        frame-ancestors https://*.mil http://localhost'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Sat, 08 Feb 2020 16:16:54 GMT
+      - Mon, 22 Nov 2021 21:42:06 GMT
       Expires:
       - '0'
       Pragma:
@@ -73,7 +73,7 @@ interactions:
       Referrer-Policy:
       - same-origin
       Set-Cookie:
-      - JSESSIONID=EC032500A0703FE760DB6F0C96BD8B5E; Path=/; HttpOnly
+      - JSESSIONID=064B2447746D28D3FD14FEEF67A93357; Path=/; HttpOnly
       Strict-Transport-Security:
       - '"max-age=31536000; includeSubDomains" always'
       X-Content-Type-Options:

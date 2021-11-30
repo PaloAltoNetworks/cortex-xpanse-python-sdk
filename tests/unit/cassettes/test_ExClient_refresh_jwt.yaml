@@ -7,24 +7,24 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - JWT expired-jwt
+      - bearer wwwwwwwwwwwwwwwwwwwwwwwwwwwww
       Connection:
       - keep-alive
       Content-Type:
       - application/json
       User-Agent:
-      - 'Xpanse SDK/0.0.10 (Darwin Kernel Version 19.4.0: Wed Mar  4 22:28:40 PST
-        2020; root:xnu-6153.101.6~15/RELEASE_X86_64) Python/3.7.3 Xpanse'
+      - 'Xpanse SDK/1.0.12 (Darwin Kernel Version 19.6.0: Tue Oct 12 18:34:05 PDT
+        2021; root:xnu-6153.141.43~1/RELEASE_X86_64) Python/3.9.6 Xpanse'
     method: GET
     uri: https://api.expander.expanse.co/api/v2/assets/domains/count
   response:
     body:
-      string: '{"detail":"Signature has expired."}'
+      string: '{"detail":"PANW Signature has expired."}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '35'
+      - '40'
       Content-Security-Policy:
       - 'default-src ''none''; connect-src ''self'' https://*.auth0.com https://www.google-analytics.com
         https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com https://api.rollbar.com;
@@ -36,9 +36,9 @@ interactions:
         https://*.duosecurity.com https://*.googleapis.com https://www.google-analytics.com
         https://*.auth0.com; style-src ''self'' blob: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
         https://cdnjs.cloudflare.com https://fonts.googleapis.com ''unsafe-inline'';
-        frame-ancestors ''none'''
+        frame-ancestors https://*.mil'
       Date:
-      - Thu, 23 Jul 2020 20:22:59 GMT
+      - Mon, 22 Nov 2021 22:58:30 GMT
       Referrer-Policy:
       - same-origin
       Strict-Transport-Security:
@@ -56,13 +56,13 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer bearer-token
+      - bearer wwwwwwwwwwwwwwwwwwwwwwwwwwwww
       Connection:
       - keep-alive
       Content-Type:
       - application/json
       User-Agent:
-      - python-requests/2.24.0
+      - python-requests/2.25.1
     method: GET
     uri: https://api.expander.expanse.co/api/v1/idtoken
   response:
@@ -75,8 +75,9 @@ interactions:
       - '0'
       Content-Security-Policy:
       - 'default-src ''none''; connect-src ''self'' https://*.auth0.com https://www.google-analytics.com
-        https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com https://api.rollbar.com;
-        frame-src ''self'' https://qadium.auth0.com; font-src ''self'' data: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com https://api.rollbar.com
+        https://api.mapbox.com; frame-src ''self'' https://qadium.auth0.com; font-src
+        ''self'' data: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
         https://fonts.gstatic.com https://*.auth0.com; img-src ''self'' data: https://api.mapbox.com
         https://api.tiles.mapbox.com https://www.google-analytics.com https://www.gravatar.com
         https://online.swagger.io https://cdn.auth0.com; script-src ''self'' https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
@@ -84,11 +85,11 @@ interactions:
         https://*.duosecurity.com https://*.googleapis.com https://www.google-analytics.com
         https://*.auth0.com; style-src ''self'' blob: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
         https://cdnjs.cloudflare.com https://fonts.googleapis.com ''unsafe-inline'';
-        frame-ancestors ''none'''
+        frame-ancestors https://*.mil'
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Thu, 23 Jul 2020 20:23:00 GMT
+      - Mon, 22 Nov 2021 22:58:30 GMT
       Location:
       - /api/v1/idtoken/
       Referrer-Policy:
@@ -114,17 +115,22 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer bearer-token
+      - bearer wwwwwwwwwwwwwwwwwwwwwwwwwwwww
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.24.0
+      - python-requests/2.25.1
     method: GET
     uri: https://api.expander.expanse.co/api/v1/idtoken/
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAA/6tWKsnPTs1TslLKSy3XzSovUaoFACICsYQTAAAA
+        H4sIAAAAAAAAA5WQW26DMBBF98ICIh6BJv1LeZpg0wABzB8QGgw2oYIUTNW9F7qDfo1mdHXP0XwL
+        46OtOuFVqLhbF3ZJfOKC6wIkRMAAukAtdaCBtk9j3T3u1hAtEqsvtiOr+8K2eBWqQ5WoTW6+0cp5
+        q4sO0XzdPYa+inAtYfGIEzqkSkZLRlmexC1oeoaTecnCieQpWkDzILkTiKUDNY8fZ5wE/S0RnziN
+        xdw4PbF8HD2+CSEJk41tSTf7Pn0YMUWyyTHLGI5O+6yBHNqoxVFNITOlTN/41jY1QMt9KO+VIgrO
+        kXVDKHEvAXXPgRW0uSzhqIO8imsRGjUFZCJZWk+r14waqKDmqviROXu62+P0QvzGlOFSyrAxVRiZ
+        G0P7e9R/GJ24cw7EGRFRfKPy0Iv8+OTTGQeuf1hsMkt3/13dW2JX2oMFhJ9fl2bB36wBAAA=
     headers:
       Allow:
       - GET, HEAD, OPTIONS
@@ -133,11 +139,12 @@ interactions:
       Content-Encoding:
       - gzip
       Content-Length:
-      - '348'
+      - '338'
       Content-Security-Policy:
       - 'default-src ''none''; connect-src ''self'' https://*.auth0.com https://www.google-analytics.com
-        https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com https://api.rollbar.com;
-        frame-src ''self'' https://qadium.auth0.com; font-src ''self'' data: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
+        https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com https://api.rollbar.com
+        https://api.mapbox.com; frame-src ''self'' https://qadium.auth0.com; font-src
+        ''self'' data: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
         https://fonts.gstatic.com https://*.auth0.com; img-src ''self'' data: https://api.mapbox.com
         https://api.tiles.mapbox.com https://www.google-analytics.com https://www.gravatar.com
         https://online.swagger.io https://cdn.auth0.com; script-src ''self'' https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
@@ -145,11 +152,11 @@ interactions:
         https://*.duosecurity.com https://*.googleapis.com https://www.google-analytics.com
         https://*.auth0.com; style-src ''self'' blob: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
         https://cdnjs.cloudflare.com https://fonts.googleapis.com ''unsafe-inline'';
-        frame-ancestors ''none'''
+        frame-ancestors https://*.mil'
       Content-Type:
       - application/json
       Date:
-      - Thu, 23 Jul 2020 20:23:00 GMT
+      - Mon, 22 Nov 2021 22:58:31 GMT
       Referrer-Policy:
       - same-origin
       Server:
@@ -175,20 +182,20 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - JWT new-jwt
+      - bearer wwwwwwwwwwwwwwwwwwwwwwwwwwwww
       Connection:
       - keep-alive
       Content-Type:
       - application/json
       User-Agent:
-      - 'Xpanse SDK/0.0.10 (Darwin Kernel Version 19.4.0: Wed Mar  4 22:28:40 PST
-        2020; root:xnu-6153.101.6~15/RELEASE_X86_64) Python/3.7.3 Xpanse'
+      - 'Xpanse SDK/1.0.12 (Darwin Kernel Version 19.6.0: Tue Oct 12 18:34:05 PDT
+        2021; root:xnu-6153.141.43~1/RELEASE_X86_64) Python/3.9.6 Xpanse'
     method: GET
     uri: https://api.expander.expanse.co/api/v2/assets/domains/count
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA6tWSs4vzStRsrIwMKoFABnHLlsNAAAA
+        H4sIAAAAAAAAA6tWSs4vzStRsjI0M68FAGQA3F8NAAAA
     headers:
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
@@ -209,11 +216,11 @@ interactions:
         https://*.duosecurity.com https://*.googleapis.com https://www.google-analytics.com
         https://*.auth0.com; style-src ''self'' blob: https://qadium-prod-django-staticfiles-us-west-2.s3.amazonaws.com
         https://cdnjs.cloudflare.com https://fonts.googleapis.com ''unsafe-inline'';
-        frame-ancestors ''none'''
+        frame-ancestors https://*.mil'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 23 Jul 2020 20:23:01 GMT
+      - Mon, 22 Nov 2021 22:58:31 GMT
       Expires:
       - '0'
       Pragma:
@@ -221,7 +228,7 @@ interactions:
       Referrer-Policy:
       - same-origin
       Set-Cookie:
-      - JSESSIONID=31439C72E0C957D92DCC45BB455B5F77; Path=/; HttpOnly
+      - JSESSIONID=4F445068A00CEEEDECB28E81779F63F1; Path=/; HttpOnly
       Strict-Transport-Security:
       - '"max-age=31536000; includeSubDomains" always'
       X-Content-Type-Options:

@@ -24,9 +24,9 @@ def test_assets_domains_count(api):
 
 @pytest.mark.vcr()
 def test_assets_domains_get(api):
-    domain = api.assets.domains.v2.get("www.blockbuster.com")
+    domain = api.assets.domains.v2.get("link.toysrus.com")
     assert isinstance(domain, dict)
-    assert domain.get("domain") == "www.blockbuster.com"
+    assert domain.get("domain") == "link.toysrus.com"
 
 
 @pytest.mark.vcr()
@@ -42,13 +42,13 @@ def test_assets_domains_csv(api):
 def test_assets_domains_bulk_tag(api):
     assert api.assets.domains.v2.bulk_tag(
         operation="ASSIGN",
-        asset_ids=["e5bdc732-522a-3864-8ff3-307d35f0f0a0"],
-        tag_ids=[TEST_TAG_ID],
+        asset_ids=["6b389e0e-a8ce-3821-b534-b2c7cd490efb"],
+        tag_ids=["23eb806c-f99e-3f0f-8dd1-f6ded17d7d13"],
     )
     assert api.assets.domains.v2.bulk_tag(
         operation="UNASSIGN",
-        asset_ids=["e5bdc732-522a-3864-8ff3-307d35f0f0a0"],
-        tag_ids=[TEST_TAG_ID],
+        asset_ids=["6b389e0e-a8ce-3821-b534-b2c7cd490efb"],
+        tag_ids=["23eb806c-f99e-3f0f-8dd1-f6ded17d7d13"],
     )
 
 
@@ -56,12 +56,12 @@ def test_assets_domains_bulk_tag(api):
 def test_assets_domains_bulk_poc(api):
     assert api.assets.domains.v2.bulk_poc(
         operation="ASSIGN",
-        asset_ids=["e5bdc732-522a-3864-8ff3-307d35f0f0a0"],
+        asset_ids=["6b389e0e-a8ce-3821-b534-b2c7cd490efb"],
         contact_ids=[TEST_POC_ID],
     )
     assert api.assets.domains.v2.bulk_poc(
         operation="UNASSIGN",
-        asset_ids=["e5bdc732-522a-3864-8ff3-307d35f0f0a0"],
+        asset_ids=["6b389e0e-a8ce-3821-b534-b2c7cd490efb"],
         contact_ids=[TEST_POC_ID],
     )
 
@@ -78,6 +78,6 @@ def test_assets_domains_annotation_update(api):
     assert len(resp["contacts"]) == 1
     assert resp["contacts"][0]["email"] == TEST_POC_EMAIL
 
-    domain = api.assets.domains.v2.get("www.blockbuster.com")
+    domain = api.assets.domains.v2.get("e5bdc732-522a-3864-8ff3-307d35f0f0a0")
     assert domain["annotations"] is not None
     assert domain["annotations"]["contacts"][0]["email"] == TEST_POC_EMAIL
