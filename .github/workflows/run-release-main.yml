@@ -15,6 +15,7 @@ jobs:
     strategy:
       matrix:
         python-version: [3.9]
+        release-version: [1.1.1-post-6]
 
     steps:
       - uses: actions/checkout@v1
@@ -37,8 +38,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ steps.vars.outputs.tag }}
-          release_name: Release ${{ steps.vars.outputs.tag }}
+          tag_name: ${{ matrix.release-version }}
+          release_name: Release ${{ matrix.release-version}}
           body: |
             Changes in this Release
             - Minor updates to project description
