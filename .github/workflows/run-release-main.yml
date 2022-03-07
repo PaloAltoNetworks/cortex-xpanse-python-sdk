@@ -18,6 +18,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+      - name: Get tag version
+        - run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v1
         with:
@@ -31,7 +33,7 @@ jobs:
           python -m pip install --upgrade build
       - name: Create Release
         id: create_release
-        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+        uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
