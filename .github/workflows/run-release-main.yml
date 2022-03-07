@@ -32,7 +32,6 @@ jobs:
       - name: Create Release
         id: create_release
         run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
-        uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
