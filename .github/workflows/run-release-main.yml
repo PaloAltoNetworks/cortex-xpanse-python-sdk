@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Get tag version
-        - run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v1
         with:
