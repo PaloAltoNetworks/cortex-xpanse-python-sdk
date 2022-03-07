@@ -5,6 +5,8 @@ on:
     branches:
       - main
       - Development
+    tags:
+      - 'v*.*.*'
 
 jobs:
   build-n-publish:
@@ -29,12 +31,13 @@ jobs:
           python -m pip install --upgrade build
       - name: Create Release
         id: create_release
+        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
+          tag_name: ${{ steps.vars.outputs.tag }}
+          release_name: Release ${{ steps.vars.outputs.tag }}
           body: |
             Changes in this Release
             - Minor updates to project description
