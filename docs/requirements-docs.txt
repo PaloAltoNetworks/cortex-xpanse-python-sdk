@@ -11,7 +11,7 @@ jinja2==3.0.0a1
 markupsafe==2.0.0a1
 packaging==20.4
 pdfrw==0.4
-pillow==8.3.2
+pillow>=9.0.0
 pygments==2.7.4
 pyparsing==3.0.0a2
 pytz==2020.1
