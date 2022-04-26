@@ -14,7 +14,7 @@ Install
 .. code-block:: python
 
 
-    pip install xpanse-<version>.tar.gz
+    pip install xpanse
 
 
 Requirements
