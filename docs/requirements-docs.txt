@@ -15,7 +15,7 @@ pillow>=9.0.0
 pygments==2.7.4
 pyparsing==3.0.0a2
 pytz==2020.1
-reportlab==3.5.46
+reportlab==3.5.55
 requests==2.26.0
 rst2pdf==0.97
 six==1.15.0

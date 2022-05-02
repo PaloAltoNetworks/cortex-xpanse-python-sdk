@@ -1,6 +1,6 @@
-__version__ = "1.1.1"
+__version__ = "1.3.0"
 __author__ = "Palo Alto Cortex Xpanse"
 __license__ = "ISC"
 __maintainer__ = "Palo Alto Cortex Xpanse"
-__email__ = "help@expanseinc.com"
+__email__ = "xpanse-integrations@paloaltonetworks.com"
 __status__ = "Production"
