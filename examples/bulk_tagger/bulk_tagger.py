@@ -38,7 +38,7 @@ def assign_tags(client, assetType, assetKey, tags, tag_map, operation):
     elif assetType == "certificate":
         assetID = client.assets.certificates.get(pemMd5Hash=assetKey).get("id")
     elif assetType == "cloud-resource":
-        asseteID == client.assets.cloud_resources.get(cloudResourceId=assetKey).get("id")
+        assetID == client.assets.cloud_resources.get(cloudResourceId=assetKey).get("id")
 
     tag_list, tag_map = build_tag_id_list(client, tags, tag_map)
 
