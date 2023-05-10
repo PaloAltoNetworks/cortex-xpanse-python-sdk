@@ -21,13 +21,16 @@ class HTTPVerb(Enum):
 
 
 class PublicApiFields:
-    """Keys for PAPI Response Objects"""
+    """Keys for PAPI Requests and Responses"""
+
+    REQUEST_DATA = "request_data"
+    """Common Field For Providing Request Data"""
+
+    USE_PAGE_TOKEN = "use_page_token"
+    """Common Field To Use Pagination"""
 
     REPLY = "reply"
     """Common Top-Level Response Key"""
-
-    USE_PAGE_TOKEN = "use_page_token"
-    """Common Field To Set Pagination"""
 
     NEXT_PAGE_TOKEN = "next_page_token"
     """Common Pagination Token Field"""

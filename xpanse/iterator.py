@@ -10,7 +10,7 @@ class XpanseResultIterator:
     Iterator for paging though results.
     """
 
-    # Total number of results - may not be available
+    # Total number of results - may not be available - limit is 9,999 results
     _total: int = 0
 
     # Pages seen so far
@@ -19,11 +19,11 @@ class XpanseResultIterator:
     # Next page token
     _next_page_token: Optional[str] = None
 
-    def __init__(self, api: Any, path: str, data: Any, data_key: str):
+    def __init__(self, api: Any, path: str, data_key: str, **kwargs):
         self._api = api
         self._path = path
-        self._data = data
         self._data_key = data_key
+        self._kwargs = kwargs
         self._log = logging.getLogger(
             "{}.{}".format(self.__module__, self.__class__.__name__)
         )
@@ -61,10 +61,17 @@ class XpanseResultIterator:
         Returns the next page of data
         """
         try:
+            self._kwargs["data"] = self._kwargs.get("data", {})
+            self._kwargs["data"][PublicApiFields.REQUEST_DATA] =\
+                self._kwargs["data"].get(PublicApiFields.REQUEST_DATA, {})
+
             if self._pages >= 1:
-                resp = self._api.post(self._path, data={PublicApiFields.NEXT_PAGE_TOKEN: self._next_page_token})
+                self._kwargs["data"][PublicApiFields.REQUEST_DATA][PublicApiFields.NEXT_PAGE_TOKEN] =\
+                    self._next_page_token
+                resp = self._api.post(self._path, **self._kwargs)
             else:
-                resp = self._api.post(self._path, data={**self._data, PublicApiFields.USE_PAGE_TOKEN: True})
+                self._kwargs["data"][PublicApiFields.REQUEST_DATA][PublicApiFields.USE_PAGE_TOKEN] = True
+                resp = self._api.post(self._path, **self._kwargs)
 
             resp_as_json = resp.json()  # type: ignore
 
