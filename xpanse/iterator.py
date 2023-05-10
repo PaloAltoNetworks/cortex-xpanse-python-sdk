@@ -1,10 +1,11 @@
 import logging
 from typing import Any, Dict, List, Optional
 
+from xpanse.const import PublicApiFields
 from xpanse.error import UnexpectedResponseError
 
 
-class ExResultIterator:
+class XpanseResultIterator:
     """
     Iterator for paging though results.
     """
@@ -15,13 +16,14 @@ class ExResultIterator:
     # Pages seen so far
     _pages: int = 0
 
-    # Location of next page
-    _next_url: Optional[str] = None
+    # Next page token
+    _next_page_token: Optional[str] = None
 
-    def __init__(self, api: Any, path: str, args: Dict[str, Any]):
+    def __init__(self, api: Any, path: str, data: Any, data_key: str):
         self._api = api
         self._path = path
-        self._params = self._clean_params(args)
+        self._data = data
+        self._data_key = data_key
         self._log = logging.getLogger(
             "{}.{}".format(self.__module__, self.__class__.__name__)
         )
@@ -40,10 +42,13 @@ class ExResultIterator:
         """
         Fetches the result from pagination.next, if a value exists.
         """
-        if self._next_url is None and self._pages >= 1:
+        if self._next_page_token is None and self._pages >= 1:
             raise StopIteration("Pagination exhausted")
 
         return self._get_data()
+
+    def has_next(self) -> bool:
+        return self._pages == 0 or self._next_page_token is not None
 
     def dump(self) -> List[Any]:
         """
@@ -57,28 +62,22 @@ class ExResultIterator:
         """
         try:
             if self._pages >= 1:
-                resp = self._api.direct_get(self._next_url)
+                resp = self._api.post(self._path, data={PublicApiFields.NEXT_PAGE_TOKEN: self._next_page_token})
             else:
-                resp = self._api.get(self._path, params=self._params)
+                resp = self._api.post(self._path, data={**self._data, PublicApiFields.USE_PAGE_TOKEN: True})
+
             resp_as_json = resp.json()  # type: ignore
 
             self._pages += 1
-            self._next_url = resp_as_json.get("pagination", {}).get("next", None)
-            self._total = (
-                resp_as_json.get("meta").get("totalCount", 0)
-                if resp_as_json.get("meta") is not None
-                else 0
-            )
-            return resp_as_json["data"]
+
+            self._next_page_token = resp_as_json.get(PublicApiFields.REPLY, {})\
+                .get(PublicApiFields.NEXT_PAGE_TOKEN, None)
+
+            self._total = resp_as_json.get(PublicApiFields.REPLY, {})\
+                .get(PublicApiFields.TOTAL_COUNT, 0)
+
+            return resp_as_json[PublicApiFields.REPLY][self._data_key]
         except KeyError as err:
             raise UnexpectedResponseError(
-                "ExResultIterator received unexpected response"
+                "XpanseResultIterator received unexpected response"
             ) from err
-
-    def _clean_params(self, params: Dict[str, Any]) -> Dict[str, Any]:
-        """
-        Some param names utilize python required keywords.
-        """
-        if "type_" in params:
-            params["type"] = params.pop("type_")
-        return params

@@ -1,5 +1,4 @@
 import logging
-from typing import Optional
 
 from requests import Response
 
@@ -41,9 +40,9 @@ class UnexpectedResponseError(XpanseException):
     pass
 
 
-class JWTExpiredError(XpanseException):
+class InvalidApiCredentials(XpanseException):
     """
-    JWT has expired.
+    Response from the server was unexpected and requires further investigation.
     """
 
     pass

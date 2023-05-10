@@ -1,6 +1,6 @@
-class ExEndpoint:
+class XpanseEndpoint:
     """
-    The ExEndpoint class is used as a base class for all endpoints.
+    The XpanseEndpoint class is used as a base class for all endpoints.
     Any additional logic that is desired to be present on all endpoints, but is
     outside of the scope of the session or client can be added here.
     """

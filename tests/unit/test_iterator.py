@@ -1,30 +1,45 @@
+from typing import Any, List
 from unittest.mock import MagicMock
 
 import pytest
 
-from xpanse.client import ExClient
-from xpanse.iterator import ExResultIterator
+from xpanse.const import PublicApiFields
+from xpanse.iterator import XpanseResultIterator
 
 
-def test_ExResultIterator_clean_params(api):
+@pytest.mark.vcr()
+def test_XpanseResultIterator_clean_params(api):
     params = {"type_": "Test Value"}
-    i = ExResultIterator(api, "fake/route", params)
+    i = XpanseResultIterator(api, "fake/route", params, "data")
     assert i._params.get("type") == "Test Value"
 
 
-def test_ExResultIterator_next():
-    mock_api = ExClient(jwt="1234")
-    mock_api.get = MagicMock(return_value=MockResponse(1, "next"))
-    mock_api.direct_get = MagicMock(return_value=MockResponse(2))
-    i = ExResultIterator(mock_api, "fake/route", {})
+@pytest.mark.vcr()
+def test_XpanseResultIterator_next(api):
+    api.post = MagicMock(return_value=MockResponse("data", 1, "_next_page_token"))
+    i = XpanseResultIterator(api, "fake/route", {}, "data")
     assert i.next() == 1
+    api.post = MagicMock(return_value=MockResponse("data", 2))
     assert i.next() == 2
 
 
-def test_ExResultIterator_next_exhausted():
-    mock_api = ExClient(jwt="1234")
-    mock_api.get = MagicMock(return_value=MockResponse(1))
-    i = ExResultIterator(mock_api, "fake/route", {})
+@pytest.mark.vcr()
+def test_XpanseResultIterator_has_next(api):
+    api.post = MagicMock(return_value=MockResponse("data", 1, "_next_page_token"))
+    i = XpanseResultIterator(api, "fake/route", {}, "data")
+    assert i.has_next()
+    assert i.next() == 1
+    assert i.has_next()
+
+    api.post = MagicMock(return_value=MockResponse("data", 2))
+    assert i.next() == 2
+    assert not i.has_next()
+
+
+@pytest.mark.vcr()
+def test_XpanseResultIterator_next_exhausted(api):
+    api.post = MagicMock(return_value=MockResponse("data", 1))
+    i = XpanseResultIterator(api, "fake/route", {}, "data")
     assert i.next() == 1
     with pytest.raises(StopIteration) as ex:
         i.next()
@@ -32,9 +47,17 @@ def test_ExResultIterator_next_exhausted():
 
 
 class MockResponse:
-    def __init__(self, val, next_=None):
+    def __init__(self, key: str, val: List[Any], next_page_token=None):
+        self._key = key
         self._val = val
-        self._next = next_
+        self._next = next_page_token
 
     def json(self):
-        return {"data": self._val, "pagination": {"next": self._next}}
+        return {
+            "reply": {
+                PublicApiFields.TOTAL_COUNT: 6036,
+                PublicApiFields.RESULTS_COUNT: 1000,
+                self._key: self._val,
+                PublicApiFields.NEXT_PAGE_TOKEN: self._next,
+            }
+        }

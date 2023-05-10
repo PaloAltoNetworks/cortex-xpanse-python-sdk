@@ -2,7 +2,7 @@ from csv import DictWriter
 from json import dump
 
 import click
-from xpanse.client import ExClient
+from xpanse.client import XpanseClient
 
 
 def flatten(obj):
@@ -44,7 +44,7 @@ def flatten(obj):
 def cli(file_name, tags, ip, include_attribution, include_location, include_annotation, include_registration, include_severity):
 
     # Initialize the Xpanse Client
-    client = ExClient()
+    client = XpanseClient()
 
     # Prepare arguments
     include = []

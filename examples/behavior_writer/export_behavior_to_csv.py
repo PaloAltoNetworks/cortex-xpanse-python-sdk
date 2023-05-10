@@ -2,7 +2,7 @@ from sys import exit
 from csv import DictWriter
 
 import click
-from xpanse.client import ExClient
+from xpanse.client import XpanseClient
 
 
 def flatten_rf(flow):
@@ -41,7 +41,7 @@ def flatten_rf(flow):
 def cli(file_name, created_before, created_after, tags, ip):
 
     # Initialize the Xpanse Client
-    client = ExClient()
+    client = XpanseClient()
 
     # Filter and dump all Risky Flows into a list
     behavior = client.behavior.risky_flows.list(created_after=created_after,

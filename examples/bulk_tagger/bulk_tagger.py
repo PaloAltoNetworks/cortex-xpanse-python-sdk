@@ -1,7 +1,7 @@
 from csv import reader
 
 import click
-from xpanse.client import ExClient
+from xpanse.client import XpanseClient
 
 
 
@@ -67,7 +67,7 @@ def assign_tags(client, assetType, assetKey, tags, tag_map, operation):
 def cli(file_name):
 
     # Initialize the Xpanse Client
-    client = ExClient()
+    client = XpanseClient()
 
     # Populate our tag map from name to id
     tag_map = {tag["name"]: tag["id"] for tag in fetch_tags(client)}
