@@ -10,11 +10,12 @@ class AttackSurfaceRulesApi(XpanseEndpoint):
     Part of the Alerts v2 Public API for handling Alerts Multi-Events v2.
     See: TODO:// https://jira-hq.paloaltonetworks.local/browse/EXPANDR-3062
     """
+
     def list(self, **kwargs: Any) -> XpanseResultIterator:
-        pass
+        raise NotImplementedError()
 
     def get(self, rule_ids: List[str], **kwargs: Any) -> Any:
-        pass
+        raise NotImplementedError()
 
     def count(self, **kwargs: Any) -> int:
-        pass
+        raise NotImplementedError()

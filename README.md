@@ -7,7 +7,7 @@ Xpanse Python SDK
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
    :target: https://github.com/psf/black
 
-.. image:: https://img.shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8-blueviolet
+.. image:: https://img.shields.io/badge/python-3.7%20%7C%203.8%20%7C%203.9%20%7C%203.10-blueviolet
    :target: https://pypi.python.org/pypi/xpanse
 
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
@@ -33,7 +33,7 @@ Install
 Requirements
 ------------
 
-Python 3.6+
+Python 3.7+
 
 Usage
 -----
