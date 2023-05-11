@@ -34,6 +34,22 @@ def test_XpanseClient_missing_host():
            in str(e.value)
 
 
+def test_XpanseClient_missing_api_key():
+    with pytest.raises(ValueError) as e:
+        XpanseClient(url=os.getenv("TEST_CORTEX_FQDN", "ben-expander.crtx-qa2-uat.us.paloaltonetworks.com"),
+                     api_key_id=os.getenv("TEST_CORTEX_API_KEY_ID", 1))
+    assert "An 'api_key' must be provided. Set the 'api_key' parameter or set the 'CORTEX_API_KEY' environment variable." \
+           in str(e.value)
+
+
+def test_XpanseClient_missing_api_key_id():
+    with pytest.raises(ValueError) as e:
+        XpanseClient(url=os.getenv("TEST_CORTEX_FQDN", "ben-expander.crtx-qa2-uat.us.paloaltonetworks.com"),
+                     api_key=os.getenv("TEST_CORTEX_API_KEY", "wwwwwwwwwwwwwwwwwwwwwwww"))
+    assert "An 'api_key_id' must be provided. Set the 'api_key_id' parameter or set the 'CORTEX_API_KEY_ID' environment variable." \
+           in str(e.value)
+
+
 @pytest.mark.vcr()
 def test_XpanseClient_valid_standard_auth_via_params():
     XpanseClient(use_advanced_auth=False,
