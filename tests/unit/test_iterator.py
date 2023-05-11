@@ -40,16 +40,23 @@ def test_XpanseResultIterator_next_exhausted(api):
 
 
 class MockResponse:
-    def __init__(self, key: str, val: List[Any], next_page_token=None):
+    def __init__(self,
+                 key: str,
+                 val: List[Any],
+                 next_page_token: str = None,
+                 total_count: int = 1000,
+                 results_count: int = 100):
         self._key = key
         self._val = val
         self._next = next_page_token
+        self._total_count = total_count
+        self._results_count = results_count
 
     def json(self):
         return {
             "reply": {
-                PublicApiFields.TOTAL_COUNT: 6036,
-                PublicApiFields.RESULTS_COUNT: 1000,
+                PublicApiFields.TOTAL_COUNT: self._total_count,
+                PublicApiFields.RESULTS_COUNT: self._results_count,
                 self._key: self._val,
                 PublicApiFields.NEXT_PAGE_TOKEN: self._next,
             }

@@ -26,6 +26,9 @@ class PublicApiFields:
     REQUEST_DATA = "request_data"
     """Common Field For Providing Request Data"""
 
+    FILTERS = "filters"
+    """Common Field For Providing Request Data"""
+
     USE_PAGE_TOKEN = "use_page_token"
     """Common Field To Use Pagination"""
 
@@ -41,6 +44,9 @@ class PublicApiFields:
     RESULTS_COUNT = "results_count"
     """Common Field for Page Size Count"""
 
+
+DEFAULT_REQUEST_PAYLOAD_FIELD = "json"
+"""Default Parameter Used by the Requests Library for the Payload"""
 
 CORTEX_FQDN = "CORTEX_FQDN"
 """Env Variable for API Host (Fully Qualified Domain Name)"""
