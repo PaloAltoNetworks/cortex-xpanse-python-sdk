@@ -42,7 +42,7 @@ def build_request_payload(
         **(request_data if isinstance(request_data, dict) else {}),
     }
 
-    if filters is not None:
+    if isinstance(filters, list):
         kwargs[payload_field][PublicApiFields.REQUEST_DATA][
             PublicApiFields.FILTERS
         ] = kwargs[payload_field][PublicApiFields.REQUEST_DATA].get(
@@ -53,7 +53,7 @@ def build_request_payload(
             PublicApiFields.FILTERS
         ] += filters
 
-    if extra_request_data is not None:
+    if isinstance(extra_request_data, dict):
         kwargs[payload_field][PublicApiFields.REQUEST_DATA].update(extra_request_data)
 
     return kwargs
