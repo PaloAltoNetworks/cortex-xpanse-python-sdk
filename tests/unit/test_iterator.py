@@ -8,16 +8,9 @@ from xpanse.iterator import XpanseResultIterator
 
 
 @pytest.mark.vcr()
-def test_XpanseResultIterator_clean_params(api):
-    params = {"type_": "Test Value"}
-    i = XpanseResultIterator(api, "fake/route", params, "data")
-    assert i._params.get("type") == "Test Value"
-
-
-@pytest.mark.vcr()
 def test_XpanseResultIterator_next(api):
     api.post = MagicMock(return_value=MockResponse("data", 1, "_next_page_token"))
-    i = XpanseResultIterator(api, "fake/route", {}, "data")
+    i = XpanseResultIterator(api=api, path="fake/route", data_key="data")
     assert i.next() == 1
     api.post = MagicMock(return_value=MockResponse("data", 2))
     assert i.next() == 2
@@ -26,7 +19,7 @@ def test_XpanseResultIterator_next(api):
 @pytest.mark.vcr()
 def test_XpanseResultIterator_has_next(api):
     api.post = MagicMock(return_value=MockResponse("data", 1, "_next_page_token"))
-    i = XpanseResultIterator(api, "fake/route", {}, "data")
+    i = XpanseResultIterator(api=api, path="fake/route", data_key="data")
     assert i.has_next()
     assert i.next() == 1
     assert i.has_next()
@@ -39,7 +32,7 @@ def test_XpanseResultIterator_has_next(api):
 @pytest.mark.vcr()
 def test_XpanseResultIterator_next_exhausted(api):
     api.post = MagicMock(return_value=MockResponse("data", 1))
-    i = XpanseResultIterator(api, "fake/route", {}, "data")
+    i = XpanseResultIterator(api=api, path="fake/route", data_key="data")
     assert i.next() == 1
     with pytest.raises(StopIteration) as ex:
         i.next()
