@@ -11,11 +11,12 @@ class ExternalIpRangesApi(XpanseEndpoint):
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-All-External-IP-Address-Ranges
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-External-IP-Address-Range
     """
+
     def list(self, **kwargs: Any) -> XpanseResultIterator:
-        pass
+        raise NotImplementedError()
 
     def get(self, range_ids: List[str], **kwargs: Any) -> Any:
-        pass
+        raise NotImplementedError()
 
     def count(self, **kwargs: Any) -> int:
-        pass
+        raise NotImplementedError()

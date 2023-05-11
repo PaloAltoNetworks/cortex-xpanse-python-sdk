@@ -11,11 +11,12 @@ class ServicesApi(XpanseEndpoint):
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-All-External-Services
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-External-Service
     """
+
     def list(self, **kwargs: Any) -> XpanseResultIterator:
-        pass
+        raise NotImplementedError()
 
     def get(self, service_ids: List[str], **kwargs: Any) -> Any:
-        pass
+        raise NotImplementedError()
 
     def count(self, **kwargs: Any) -> int:
-        pass
+        raise NotImplementedError()

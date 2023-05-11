@@ -62,26 +62,32 @@ class XpanseResultIterator:
         """
         try:
             self._kwargs["data"] = self._kwargs.get("data", {})
-            self._kwargs["data"][PublicApiFields.REQUEST_DATA] =\
-                self._kwargs["data"].get(PublicApiFields.REQUEST_DATA, {})
+            self._kwargs["data"][PublicApiFields.REQUEST_DATA] = self._kwargs[
+                "data"
+            ].get(PublicApiFields.REQUEST_DATA, {})
 
             if self._pages >= 1:
-                self._kwargs["data"][PublicApiFields.REQUEST_DATA][PublicApiFields.NEXT_PAGE_TOKEN] =\
-                    self._next_page_token
+                self._kwargs["data"][PublicApiFields.REQUEST_DATA][
+                    PublicApiFields.NEXT_PAGE_TOKEN
+                ] = self._next_page_token
                 resp = self._api.post(self._path, **self._kwargs)
             else:
-                self._kwargs["data"][PublicApiFields.REQUEST_DATA][PublicApiFields.USE_PAGE_TOKEN] = True
+                self._kwargs["data"][PublicApiFields.REQUEST_DATA][
+                    PublicApiFields.USE_PAGE_TOKEN
+                ] = True
                 resp = self._api.post(self._path, **self._kwargs)
 
             resp_as_json = resp.json()  # type: ignore
 
             self._pages += 1
 
-            self._next_page_token = resp_as_json.get(PublicApiFields.REPLY, {})\
-                .get(PublicApiFields.NEXT_PAGE_TOKEN, None)
+            self._next_page_token = resp_as_json.get(PublicApiFields.REPLY, {}).get(
+                PublicApiFields.NEXT_PAGE_TOKEN, None
+            )
 
-            self._total = resp_as_json.get(PublicApiFields.REPLY, {})\
-                .get(PublicApiFields.TOTAL_COUNT, 0)
+            self._total = resp_as_json.get(PublicApiFields.REPLY, {}).get(
+                PublicApiFields.TOTAL_COUNT, 0
+            )
 
             return resp_as_json[PublicApiFields.REPLY][self._data_key]
         except KeyError as err:

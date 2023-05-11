@@ -16,10 +16,13 @@ from urllib3.exceptions import NewConnectionError
 from . import __version__
 from xpanse.const import (
     HTTPVerb,
-    CORTEX_FQDN, CORTEX_API_KEY, CORTEX_API_KEY_ID,
+    CORTEX_FQDN,
+    CORTEX_API_KEY,
+    CORTEX_API_KEY_ID,
 )
 from xpanse.error import (
-    XpanseException, InvalidApiCredentials,
+    XpanseException,
+    InvalidApiCredentials,
 )
 
 from xpanse.utils import normalize_param_names
@@ -115,13 +118,13 @@ class XpanseClient:
 
     def __init__(
         self,
-        url: str = None,
-        api_key_id: Union[str, int] = None,
-        api_key: str = None,
+        url: Optional[str] = None,
+        api_key_id: Optional[Union[str, int]] = None,
+        api_key: Optional[str] = None,
         use_advanced_auth: bool = True,
-        custom_ua=None,
-        proxies=None,
-        verify=True,
+        custom_ua: Optional[str] = None,
+        proxies: Optional[MutableMapping[str, str]] = None,
+        verify: bool = True,
     ):
         # Format logger
         self._log = logging.getLogger(
@@ -137,13 +140,16 @@ class XpanseClient:
             self._product += f"+{custom_ua}"
 
         # Configure URL
+        env_url = os.getenv(CORTEX_FQDN)
         if url is not None:
             self._url = url
-        elif os.getenv(CORTEX_FQDN) is not None:
-            self._url = os.getenv(CORTEX_FQDN)
+        elif env_url is not None:
+            self._url = env_url
         else:
-            raise ValueError("A 'url' must be provided. Set the 'url' client parameter or set the 'CORTEX_FQDN' "
-                             "environment variable.")
+            raise ValueError(
+                "A 'url' must be provided. Set the 'url' client parameter or set the 'CORTEX_FQDN' "
+                "environment variable."
+            )
 
         if not self._url.startswith("http"):
             self._url = f"https://{self._url}"
@@ -155,8 +161,12 @@ class XpanseClient:
             self._url = f"https://api-{host}"
 
         # Configure Auth Session
-        self._api_key_id = api_key_id
-        self._api_key = api_key
+        if api_key_id is not None:
+            self._api_key_id = str(api_key_id)
+
+        if api_key is not None:
+            self._api_key = api_key
+
         self._proxies = proxies
 
         if isinstance(verify, bool):
@@ -165,9 +175,11 @@ class XpanseClient:
         if isinstance(use_advanced_auth, bool):
             self._use_advanced_auth = use_advanced_auth
         if not self._use_advanced_auth:
-            self._log.warning("'Advanced Authentication' is disabled, your requests may be vulnerable to replay attacks. "
-                              "See https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-Started-with-APIs "
-                              "for more information.")
+            self._log.warning(
+                "'Advanced Authentication' is disabled, your requests may be vulnerable to replay attacks. "
+                "See https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-Started-with-APIs "
+                "for more information."
+            )
 
         self._setup_auth()
 
@@ -180,22 +192,28 @@ class XpanseClient:
         if self._api_key is None and os.getenv(CORTEX_API_KEY) is not None:
             self._api_key = os.getenv(CORTEX_API_KEY)
         elif self._api_key is None:
-            raise ValueError("An 'api_key' must be provided. Set the 'api_key' parameter or set the 'CORTEX_API_KEY' "
-                             "environment variable.")
-        
+            raise ValueError(
+                "An 'api_key' must be provided. Set the 'api_key' parameter or set the 'CORTEX_API_KEY' "
+                "environment variable."
+            )
+
         if self._api_key_id is None and os.getenv(CORTEX_API_KEY_ID) is not None:
             self._api_key_id = os.getenv(CORTEX_API_KEY_ID)
         elif self._api_key_id is None:
-            raise ValueError("An 'api_key_id' must be provided. Set the 'api_key_id' parameter or set the "
-                             "'CORTEX_API_KEY_ID' environment variable.")
+            raise ValueError(
+                "An 'api_key_id' must be provided. Set the 'api_key_id' parameter or set the "
+                "'CORTEX_API_KEY_ID' environment variable."
+            )
 
         self._create_session()
 
         if not self._validate_auth():
-            key_type = 'Advanced' if self._use_advanced_auth else 'Standard'
-            raise InvalidApiCredentials("Failed to authenticate with the provided 'api_key' and 'api_key_id' using "
-                                        f"'{key_type}' authentication.")
-        
+            key_type = "Advanced" if self._use_advanced_auth else "Standard"
+            raise InvalidApiCredentials(
+                "Failed to authenticate with the provided 'api_key' and 'api_key_id' using "
+                f"'{key_type}' authentication."
+            )
+
     def _validate_auth(self) -> bool:
         """
         Validates the provided API Keys
@@ -219,15 +237,20 @@ class XpanseClient:
         """
         if self._use_advanced_auth:
             # Generate a 64 bytes random string
-            nonce = "".join([secrets.choice(string.ascii_letters + string.digits) for _ in range(64)])
+            nonce = "".join(
+                [
+                    secrets.choice(string.ascii_letters + string.digits)
+                    for _ in range(64)
+                ]
+            )
             # Get the current timestamp as milliseconds.
             timestamp = int(datetime.now(timezone.utc).timestamp()) * 1000
-            # Generate the auth key:
+            # Generate the auth key
             auth_key = "%s%s%s" % (self._api_key, nonce, timestamp)
             # Convert to bytes object
-            auth_key = auth_key.encode("utf-8")
+            auth_key_bytes = auth_key.encode("utf-8")
             # Calculate sha256:
-            api_key_hash = hashlib.sha256(auth_key).hexdigest()
+            api_key_hash = hashlib.sha256(auth_key_bytes).hexdigest()
             return {
                 "x-xdr-timestamp": str(timestamp),
                 "x-xdr-nonce": nonce,
@@ -244,8 +267,8 @@ class XpanseClient:
         """
         Refresh auth in session.
         """
-        self._session.headers.pop('x-xdr-timestamp', None)
-        self._session.headers.pop('x-xdr-nonce', None)
+        self._session.headers.pop("x-xdr-timestamp", None)
+        self._session.headers.pop("x-xdr-nonce", None)
         self._session.headers.update(self._get_auth_headers())
 
     def _create_session(self):

@@ -11,11 +11,12 @@ class AssetsApi(XpanseEndpoint):
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-All-Assets
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-Asset
     """
+
     def list(self, **kwargs: Any) -> XpanseResultIterator:
-        pass
+        raise NotImplementedError()
 
     def get(self, asset_ids: List[str], **kwargs: Any) -> Any:
-        pass
+        raise NotImplementedError()
 
     def count(self, **kwargs: Any) -> int:
-        pass
+        raise NotImplementedError()

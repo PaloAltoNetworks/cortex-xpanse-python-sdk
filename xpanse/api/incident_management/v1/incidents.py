@@ -11,14 +11,15 @@ class IncidentsApi(XpanseEndpoint):
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-Incidents
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Update-an-Incident
     """
+
     def list(self, **kwargs: Any) -> XpanseResultIterator:
-        pass
+        raise NotImplementedError()
 
     def get(self, incident_ids: List[str], **kwargs: Any) -> Any:
-        pass
+        raise NotImplementedError()
 
     def count(self, **kwargs: Any) -> int:
-        pass
+        raise NotImplementedError()
 
     def update(self, incident_id: str, update_data: Any, **kwargs: Any) -> Any:
-        pass
+        raise NotImplementedError()
