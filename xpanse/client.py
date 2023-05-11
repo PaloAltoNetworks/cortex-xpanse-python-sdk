@@ -161,12 +161,6 @@ class XpanseClient:
             self._url = f"https://api-{host}"
 
         # Configure Auth Session
-        if api_key_id is not None:
-            self._api_key_id = str(api_key_id)
-
-        if api_key is not None:
-            self._api_key = api_key
-
         self._proxies = proxies
 
         if isinstance(verify, bool):
@@ -181,25 +175,31 @@ class XpanseClient:
                 "for more information."
             )
 
-        self._setup_auth()
+        self._setup_auth(api_key=api_key, api_key_id=api_key_id)
 
-    def _setup_auth(self):
+    def _setup_auth(
+        self, api_key: Optional[str], api_key_id: Optional[Union[str, int]]
+    ):
         """
         Check for a valid set of authentication inputs. This can be one of the following (in order of priority):
         1. Setting api_key_id and api_key from the XpanseClient constructor
         2. Setting the CORTEX_API_KEY_ID and CORTEX_API_KEY environment variables
         """
-        if self._api_key is None and os.getenv(CORTEX_API_KEY) is not None:
-            self._api_key = os.getenv(CORTEX_API_KEY)
-        elif self._api_key is None:
+        if api_key is not None:
+            self._api_key = api_key
+        elif os.getenv(CORTEX_API_KEY) is not None:
+            self._api_key = str(os.getenv(CORTEX_API_KEY))
+        else:
             raise ValueError(
                 "An 'api_key' must be provided. Set the 'api_key' parameter or set the 'CORTEX_API_KEY' "
                 "environment variable."
             )
 
-        if self._api_key_id is None and os.getenv(CORTEX_API_KEY_ID) is not None:
-            self._api_key_id = os.getenv(CORTEX_API_KEY_ID)
-        elif self._api_key_id is None:
+        if api_key_id is not None:
+            self._api_key_id = str(api_key_id)
+        elif os.getenv(CORTEX_API_KEY_ID) is not None:
+            self._api_key_id = str(os.getenv(CORTEX_API_KEY_ID))
+        else:
             raise ValueError(
                 "An 'api_key_id' must be provided. Set the 'api_key_id' parameter or set the "
                 "'CORTEX_API_KEY_ID' environment variable."
