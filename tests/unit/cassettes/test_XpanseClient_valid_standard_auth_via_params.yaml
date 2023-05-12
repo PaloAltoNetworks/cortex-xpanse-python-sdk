@@ -1,0 +1,57 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-requests/2.25.1
+      x-xdr-auth-id:
+      - 1
+    method: POST
+    uri: https://api-ben-expander.crtx-qa2-uat.us.paloaltonetworks.com/api_keys/validate/
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAyspKk0FAI1M/P0EAAAA
+    headers:
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '24'
+      Content-Security-Policy:
+      - 'script-src ''self'' ''unsafe-inline'' ''unsafe-eval'' app.pendo.io pendo-io-static.storage.googleapis.com
+        cdn.pendo.io pendo-static-5664029141630976.storage.googleapis.com data.pendo.io
+        www.youtube.com; style-src ''self'' ''unsafe-inline'' app.pendo.io cdn.pendo.io
+        pendo-static-5664029141630976.storage.googleapis.com; img-src ''self'' data:
+        cdn.pendo.io app.pendo.io pendo-static-5664029141630976.storage.googleapis.com
+        data.pendo.io storage.googleapis.com/marketplace-v2-dist/content/packs/ https://github.com/demisto/content/raw/
+        raw.githubusercontent.com/demisto/content/; frame-ancestors ''self'' app.pendo.io;
+        child-src ''self'' app.pendo.io www.youtube.com; report-uri /api/report-csp-violations/'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 May 2023 16:54:44 GMT
+      Set-Cookie:
+      - XSRF-TOKEN=he13h1xIruwXgvj6O48DnrmZBqEJieXjGWB0BV5NSnTriNhAFFAOWIMgq4AOJbYmJK1iEP77Uvzu4RHz5wBaJqsbgWYqKlsURhea8CKZXwSZ5iHFDc6Memm2F7FHT3e3;
+        secure;Path=/
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Frame-Options:
+      - sameorigin
+    status:
+      code: 200
+      message: OK
+version: 1

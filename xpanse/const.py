@@ -20,35 +20,39 @@ class HTTPVerb(Enum):
     """HTTP DELETE Verb"""
 
 
-XPANSE_CLIENT_ID = "XPANSE_CLIENT_ID"
-"""Env Variable for Client ID"""
+class PublicApiFields:
+    """Keys for PAPI Requests and Responses"""
 
-XPANSE_CLIENT_SECRET = "XPANSE_CLIENT_SECRET"
-"""Env Variable for Client Secret"""
+    REQUEST_DATA = "request_data"
+    """Common Field For Providing Request Data"""
 
-XPANSE_BEARER_TOKEN = "XPANSE_BEARER_TOKEN"
-"""Env Variable for Bearer Token"""
+    USE_PAGE_TOKEN = "use_page_token"
+    """Common Field To Use Pagination"""
 
-XPANSE_JWT_TOKEN = "XPANSE_JWT_TOKEN"
-"""Env Variable for JWT"""
+    REPLY = "reply"
+    """Common Top-Level Response Key"""
 
-CLIENT_CREDENTIALS_TOKEN_URL = "api/oauth2/RequestToken"
-"""Token Refresh URL for Client Credentials"""
+    NEXT_PAGE_TOKEN = "next_page_token"
+    """Common Pagination Token Field"""
 
-CLIENT_CREDENTIALS_SCOPE = "scope-xpanse"
-"""Scope for Client Credentials"""
+    TOTAL_COUNT = "total_count"
+    """Common Field for Total Results Count - Limit is 9,999"""
 
-CLIENT_CREDENTIALS_GRANT_TYPE = "client_credentials"
-"""Grant Type for Client Credentials"""
+    RESULTS_COUNT = "results_count"
+    """Common Field for Page Size Count"""
 
-ID_TOKEN_URL = "api/v1/idtoken"
-"""Token Refresh URL for Bearer token"""
 
-V1_PREFIX = "api/v1"
+CORTEX_FQDN = "CORTEX_FQDN"
+"""Env Variable for API Host (Fully Qualified Domain Name)"""
+
+CORTEX_API_KEY_ID = "CORTEX_API_KEY_ID"
+"""Env Variable for Cortex Public API Key ID"""
+
+CORTEX_API_KEY = "CORTEX_API_KEY"
+"""Env Variable for Cortex Public API Key"""
+
+V1_PREFIX = "public_api/v1"
 """V1 URL Prefix"""
 
-V2_PREFIX = "api/v2"
+V2_PREFIX = "public_api/v2"
 """V2 URL Prefix"""
-
-V3_PREFIX = "api/v3"
-"""V3 URL Prefix"""
