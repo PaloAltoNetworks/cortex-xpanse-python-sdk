@@ -56,6 +56,3 @@ V1_PREFIX = "public_api/v1"
 
 V2_PREFIX = "public_api/v2"
 """V2 URL Prefix"""
-
-V3_PREFIX = "public_api/v3"
-"""V3 URL Prefix"""
