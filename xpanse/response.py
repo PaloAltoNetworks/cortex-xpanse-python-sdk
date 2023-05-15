@@ -26,13 +26,13 @@ class XpanseResponse:
     @property
     def data(self) -> Any:
         response_data = self.response.json()
+
+        if not isinstance(response_data, dict):
+            return response_data
+
         if self._data_key is not None and self._data_key in response_data.get(
             PublicApiFields.REPLY, {}
         ):
             return response_data[PublicApiFields.REPLY][self._data_key]
 
-        return (
-            response_data.get(PublicApiFields.REPLY, response_data)
-            if isinstance(response_data, dict)
-            else response_data
-        )
+        return response_data.get(PublicApiFields.REPLY, response_data)
