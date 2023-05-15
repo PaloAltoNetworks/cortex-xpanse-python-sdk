@@ -7,7 +7,7 @@ from xpanse.iterator import XpanseResultIterator
 # TODO:// Implement External IP Ranges https://jira-hq.paloaltonetworks.local/browse/EXPANDR-3832
 class ExternalIpRangesApi(XpanseEndpoint):
     """
-    Part of the Alerts v2 Public API for handling Alerts Multi-Events v2.
+    Part of the Public API for handling External IP Ranges.
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-All-External-IP-Address-Ranges
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-External-IP-Address-Range
     """

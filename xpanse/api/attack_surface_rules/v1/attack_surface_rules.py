@@ -7,7 +7,7 @@ from xpanse.iterator import XpanseResultIterator
 # TODO:// Implement Attack Surface Rules https://jira-hq.paloaltonetworks.local/browse/EXPANDR-2602
 class AttackSurfaceRulesApi(XpanseEndpoint):
     """
-    Part of the Alerts v2 Public API for handling Alerts Multi-Events v2.
+    Part of the Public API for handling Attack Surface Rules.
     See: TODO:// https://jira-hq.paloaltonetworks.local/browse/EXPANDR-3062
     """
 

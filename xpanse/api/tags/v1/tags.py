@@ -7,7 +7,7 @@ from xpanse.iterator import XpanseResultIterator
 # TODO:// Implement Tags https://jira-hq.paloaltonetworks.local/browse/EXPANDR-2603
 class TagsApi(XpanseEndpoint):
     """
-    Part of the Alerts v2 Public API for handling Alerts Multi-Events v2.
+    Part of the Public API for handling Tags.
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-Alerts-Multi-Events
     """
 

@@ -9,7 +9,7 @@ from xpanse.utils import build_request_payload
 
 class AlertsApi(XpanseEndpoint):
     """
-    Part of the Alerts v2 Public API for handling Alerts Multi-Events v2.
+    Part of the Public API for handling Alerts Multi-Events v2.
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-Alerts-Multi-Events
     """
 

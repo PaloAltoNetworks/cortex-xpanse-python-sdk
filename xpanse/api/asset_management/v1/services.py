@@ -7,7 +7,7 @@ from xpanse.iterator import XpanseResultIterator
 # TODO:// Implement Services https://jira-hq.paloaltonetworks.local/browse/EXPANDR-2600
 class ServicesApi(XpanseEndpoint):
     """
-    Part of the Alerts v2 Public API for handling Alerts Multi-Events v2.
+    Part of the Public API for handling Services.
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-All-External-Services
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-External-Service
     """
