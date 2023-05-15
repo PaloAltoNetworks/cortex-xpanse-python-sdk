@@ -22,7 +22,9 @@ class AlertsApi(XpanseEndpoint):
             api=self._api, path=self.ENDPOINT, data_key=self.DATA_KEY, **kwargs
         )
 
-    def get(self, alert_ids: List[str], request_data: Any = None, **kwargs: Any) -> XpanseResponse:
+    def get(
+        self, alert_ids: List[str], request_data: Any = None, **kwargs: Any
+    ) -> XpanseResponse:
         filters = [{"field": "alert_id_list", "operator": "in", "value": alert_ids}]
         kwargs = build_request_payload(
             request_data=request_data, filters=filters, **kwargs
