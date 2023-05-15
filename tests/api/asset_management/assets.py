@@ -3,7 +3,7 @@ from unittest.mock import MagicMock
 import pytest
 
 from tests.unit.test_iterator import MockResponse
-from xpanse.const import DEFAULT_REQUEST_PAYLOAD_FIELD, PublicApiFields
+from xpanse.const import DEFAULT_REQUEST_PAYLOAD_FIELD, PublicApiFields, AssetType
 from xpanse.iterator import XpanseResultIterator
 from xpanse.response import XpanseResponse
 
@@ -21,7 +21,9 @@ def test_AssetsApi_list(api):
 
     expected_kwargs = {
         DEFAULT_REQUEST_PAYLOAD_FIELD: {
-            PublicApiFields.REQUEST_DATA: {},
+            PublicApiFields.REQUEST_DATA: {
+                PublicApiFields.FILTERS: [],
+            },
         },
     }
     assert actual_kwargs == expected_kwargs
@@ -66,10 +68,70 @@ def test_AssetsApi_count(api):
 
     expected_kwargs = {
         DEFAULT_REQUEST_PAYLOAD_FIELD: {
-            PublicApiFields.REQUEST_DATA: {},
+            PublicApiFields.REQUEST_DATA: {
+                PublicApiFields.FILTERS: [],
+                PublicApiFields.SEARCH_FROM: 0,
+                PublicApiFields.SEARCH_TO: 1,
+            },
         },
     }
 
     assert actual_kwargs == expected_kwargs
     assert isinstance(actual_count, XpanseResponse)
     assert actual_count.data == expected_count
+
+
+@pytest.mark.vcr()
+def test_AssetsApi_asset_type_count(api):
+    _api = api.assets
+
+    expected_count = 1_111
+    api.post = MagicMock(return_value=MockResponse(_api.LIST_DATA_KEY, None, total_count=expected_count))
+
+    actual_kwargs = {DEFAULT_REQUEST_PAYLOAD_FIELD: {}}
+    actual_count = _api.count(asset_types=[AssetType.DOMAIN, AssetType.CERTIFICATE], **actual_kwargs)
+
+    expected_kwargs = {
+        DEFAULT_REQUEST_PAYLOAD_FIELD: {
+            PublicApiFields.REQUEST_DATA: {
+                PublicApiFields.FILTERS: [{"field": "type", "operator": "in", "value": ["domain", "certificate"]}],
+                PublicApiFields.SEARCH_FROM: 0,
+                PublicApiFields.SEARCH_TO: 1,
+            },
+        },
+    }
+
+    assert actual_kwargs == expected_kwargs
+    assert isinstance(actual_count, XpanseResponse)
+    assert actual_count.data == expected_count
+
+
+@pytest.mark.vcr()
+def test_AssetsApi_asset_type_list(api):
+    _api = api.assets_api = api.assets
+
+    expected_data = ["asset1", "asset2"]
+    api.post = MagicMock(return_value=MockResponse(_api.LIST_DATA_KEY, expected_data))
+    actual_kwargs = {DEFAULT_REQUEST_PAYLOAD_FIELD: {}}
+
+    iterator = _api.list(asset_types=[AssetType.RESPONSIVE_IP, AssetType.CLOUD_RESOURCES], **actual_kwargs)
+    assert isinstance(iterator, XpanseResultIterator)
+
+    expected_kwargs = {
+        DEFAULT_REQUEST_PAYLOAD_FIELD: {
+            PublicApiFields.REQUEST_DATA: {
+                PublicApiFields.FILTERS: [
+                    {
+                        "field": "type",
+                        "operator": "in",
+                        "value": ["unassociated_responsive_ip", "cloud_compute_instance"]
+                    },
+                ],
+            },
+        },
+    }
+    assert actual_kwargs == expected_kwargs
+
+    actual_data = iterator.next()
+    assert actual_data == expected_data
+

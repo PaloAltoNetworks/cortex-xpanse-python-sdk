@@ -21,7 +21,9 @@ def test_ExternalIpRangesApi_list(api):
 
     expected_kwargs = {
         DEFAULT_REQUEST_PAYLOAD_FIELD: {
-            PublicApiFields.REQUEST_DATA: {},
+            PublicApiFields.REQUEST_DATA: {
+                PublicApiFields.FILTERS: [],
+            },
         },
     }
     assert actual_kwargs == expected_kwargs
@@ -66,7 +68,10 @@ def test_ExternalIpRangesApi_count(api):
 
     expected_kwargs = {
         DEFAULT_REQUEST_PAYLOAD_FIELD: {
-            PublicApiFields.REQUEST_DATA: {},
+            PublicApiFields.REQUEST_DATA: {
+                PublicApiFields.SEARCH_FROM: 0,
+                PublicApiFields.SEARCH_TO: 1,
+            },
         },
     }
 

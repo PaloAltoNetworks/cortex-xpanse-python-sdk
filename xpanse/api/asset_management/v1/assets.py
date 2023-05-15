@@ -1,6 +1,7 @@
-from typing import Any, List
+from typing import Any, List, Optional
 
 from xpanse.api.asset_management.assets_management_v1 import AssetsManagementV1
+from xpanse.const import AssetType
 from xpanse.iterator import XpanseResultIterator
 from xpanse.response import XpanseResponse
 
@@ -12,9 +13,15 @@ class AssetsApi(AssetsManagementV1):
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-Asset
     """
 
-    def list(self, request_data: Any = None, **kwargs: Any) -> XpanseResultIterator:
+    def list(
+        self,
+        asset_types: Optional[List[AssetType]] = None,
+        request_data: Any = None,
+        **kwargs: Any,
+    ) -> XpanseResultIterator:
         return super(AssetsApi, self)._list(
             f"{self.ENDPOINT}/get_assets_internet_exposure/",
+            asset_types=asset_types,
             request_data=request_data,
             **kwargs,
         )
@@ -30,9 +37,15 @@ class AssetsApi(AssetsManagementV1):
             **kwargs,
         )
 
-    def count(self, request_data: Any = None, **kwargs: Any) -> XpanseResponse:
-        return super(AssetsApi, self)._count(
+    def count(
+        self,
+        asset_types: Optional[List[AssetType]] = None,
+        request_data: Any = None,
+        **kwargs: Any,
+    ) -> XpanseResponse:
+        return super(AssetsApi, self)._asset_count(
             f"{self.ENDPOINT}/get_assets_internet_exposure/",
+            asset_types=asset_types,
             request_data=request_data,
             **kwargs,
         )

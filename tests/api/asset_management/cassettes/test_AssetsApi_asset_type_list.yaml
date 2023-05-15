@@ -45,9 +45,9 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 15 May 2023 19:08:29 GMT
+      - Mon, 15 May 2023 20:54:24 GMT
       Set-Cookie:
-      - XSRF-TOKEN=b3840650b7c6eac571037051e1900c52c20a50ff111e6134e2b81d3e3a32511e;
+      - XSRF-TOKEN=6316b7ec61d7e4797393665da843f9bab65611a41342a91768615b92dfe4d5c5;
         secure;Path=/
       Strict-Transport-Security:
       - max-age=15724800; includeSubDomains

@@ -17,7 +17,10 @@ class XpanseEndpoint:
 
     def _count(self, path: str, request_data: Any = None, **kwargs):
         # Performance enhancement for count endpoint
-        extra_request_data = {"search_from": 0, "search_to": 1}
+        extra_request_data = {
+            PublicApiFields.SEARCH_FROM: 0,
+            PublicApiFields.SEARCH_TO: 1,
+        }
         kwargs = build_request_payload(
             request_data=request_data, extra_request_data=extra_request_data, **kwargs
         )
