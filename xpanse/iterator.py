@@ -3,6 +3,7 @@ from typing import Any, Dict, List, Optional
 
 from xpanse.const import PublicApiFields
 from xpanse.error import UnexpectedResponseError
+from xpanse.utils import build_request_payload
 
 
 class XpanseResultIterator:
@@ -61,20 +62,19 @@ class XpanseResultIterator:
         Returns the next page of data
         """
         try:
-            self._kwargs["data"] = self._kwargs.get("data", {})
-            self._kwargs["data"][PublicApiFields.REQUEST_DATA] = self._kwargs[
-                "data"
-            ].get(PublicApiFields.REQUEST_DATA, {})
-
             if self._pages >= 1:
-                self._kwargs["data"][PublicApiFields.REQUEST_DATA][
-                    PublicApiFields.NEXT_PAGE_TOKEN
-                ] = self._next_page_token
+                extra_request_data: Dict[str, Any] = {
+                    "next_page_token": self._next_page_token
+                }
+                self._kwargs = build_request_payload(
+                    extra_request_data=extra_request_data, **self._kwargs
+                )
                 resp = self._api.post(self._path, **self._kwargs)
             else:
-                self._kwargs["data"][PublicApiFields.REQUEST_DATA][
-                    PublicApiFields.USE_PAGE_TOKEN
-                ] = True
+                extra_request_data = {"use_page_token": True}
+                self._kwargs = build_request_payload(
+                    extra_request_data=extra_request_data, **self._kwargs
+                )
                 resp = self._api.post(self._path, **self._kwargs)
 
             resp_as_json = resp.json()  # type: ignore
@@ -92,5 +92,5 @@ class XpanseResultIterator:
             return resp_as_json[PublicApiFields.REPLY][self._data_key]
         except KeyError as err:
             raise UnexpectedResponseError(
-                "XpanseResultIterator received unexpected response"
+                f"XpanseResultIterator received unexpected response: {resp_as_json}"
             ) from err
