@@ -1,6 +1,6 @@
 from typing import Any, List
 
-from xpanse.const import V1_PREFIX, PublicApiFields
+from xpanse.const import V1_PREFIX
 from xpanse.endpoint import XpanseEndpoint
 from xpanse.iterator import XpanseResultIterator
 from xpanse.response import XpanseResponse
@@ -39,9 +39,9 @@ class IncidentsApi(XpanseEndpoint):
         return XpanseResponse(response, data_key=self.DATA_KEY)
 
     def count(self, request_data: Any = None, **kwargs: Any) -> XpanseResponse:
-        kwargs = build_request_payload(request_data=request_data, **kwargs)
-        response = self._api.post(f"{self.ENDPOINT}/get_incidents/", **kwargs)
-        return XpanseResponse(response, data_key=PublicApiFields.TOTAL_COUNT)
+        return super(IncidentsApi, self)._count(
+            f"{self.ENDPOINT}/get_incidents/", request_data=request_data, **kwargs
+        )
 
     def update(
         self, incident_ids: List[str], update_data: Any, **kwargs: Any

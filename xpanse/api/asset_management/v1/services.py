@@ -1,22 +1,40 @@
 from typing import Any, List
 
-from xpanse.endpoint import XpanseEndpoint
+from xpanse.api.asset_management.assets_management_v1 import AssetsManagementV1
 from xpanse.iterator import XpanseResultIterator
 
 
-# TODO:// Implement Services https://jira-hq.paloaltonetworks.local/browse/EXPANDR-2600
-class ServicesApi(XpanseEndpoint):
+from xpanse.response import XpanseResponse
+
+
+class ServicesApi(AssetsManagementV1):
     """
     Part of the Public API for handling Services.
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-All-External-Services
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-External-Service
     """
 
-    def list(self, **kwargs: Any) -> XpanseResultIterator:
-        raise NotImplementedError()
+    def list(self, request_data: Any = None, **kwargs: Any) -> XpanseResultIterator:
+        return super(ServicesApi, self)._list(
+            f"{self.ENDPOINT}/get_external_services/",
+            request_data=request_data,
+            **kwargs,
+        )
 
-    def get(self, service_ids: List[str], **kwargs: Any) -> Any:
-        raise NotImplementedError()
+    def get(
+        self, service_ids: List[str], request_data: Any = None, **kwargs: Any
+    ) -> XpanseResponse:
+        extra_request_data = {"service_id_list": service_ids}
+        return super(ServicesApi, self)._get(
+            f"{self.ENDPOINT}/get_external_service/",
+            extra_request_data=extra_request_data,
+            request_data=request_data,
+            **kwargs,
+        )
 
-    def count(self, **kwargs: Any) -> int:
-        raise NotImplementedError()
+    def count(self, request_data: Any = None, **kwargs: Any) -> XpanseResponse:
+        return super(ServicesApi, self)._count(
+            f"{self.ENDPOINT}/get_external_services/",
+            request_data=request_data,
+            **kwargs,
+        )
