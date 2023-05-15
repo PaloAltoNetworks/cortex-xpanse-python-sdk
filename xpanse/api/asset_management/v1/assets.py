@@ -4,6 +4,7 @@ from xpanse.api.asset_management.assets_management_v1 import AssetsManagementV1
 from xpanse.const import AssetType
 from xpanse.iterator import XpanseResultIterator
 from xpanse.response import XpanseResponse
+from xpanse.utils import build_request_payload
 
 
 class AssetsApi(AssetsManagementV1):
@@ -43,9 +44,15 @@ class AssetsApi(AssetsManagementV1):
         request_data: Any = None,
         **kwargs: Any,
     ) -> XpanseResponse:
-        return super(AssetsApi, self)._asset_count(
+        filters = []
+        if asset_types is not None:
+            value = [t.value for t in asset_types]
+            filters.append({"field": "type", "operator": "in", "value": value})
+
+        kwargs = build_request_payload(filters=filters, **kwargs)
+
+        return super(AssetsManagementV1, self)._count(
             f"{self.ENDPOINT}/get_assets_internet_exposure/",
-            asset_types=asset_types,
             request_data=request_data,
             **kwargs,
         )

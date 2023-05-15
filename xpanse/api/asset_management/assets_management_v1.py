@@ -52,21 +52,3 @@ class AssetsManagementV1(XpanseEndpoint):
         )
         response = self._api.post(path, **kwargs)
         return XpanseResponse(response, data_key=self.GET_DATA_KEY)
-
-    def _asset_count(
-        self,
-        path: str,
-        asset_types: Optional[List[AssetType]] = None,
-        request_data: Any = None,
-        **kwargs: Any,
-    ):
-        filters = []
-        if asset_types is not None:
-            value = [t.value for t in asset_types]
-            filters.append({"field": "type", "operator": "in", "value": value})
-
-        kwargs = build_request_payload(filters=filters, **kwargs)
-
-        return super(AssetsManagementV1, self)._count(
-            path, request_data=request_data, **kwargs
-        )
