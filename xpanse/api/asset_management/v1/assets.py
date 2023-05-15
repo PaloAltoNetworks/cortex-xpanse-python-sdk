@@ -51,7 +51,7 @@ class AssetsApi(AssetsManagementV1):
 
         kwargs = build_request_payload(filters=filters, **kwargs)
 
-        return super(AssetsManagementV1, self)._count(
+        return super(AssetsApi, self)._count(
             f"{self.ENDPOINT}/get_assets_internet_exposure/",
             request_data=request_data,
             **kwargs,
