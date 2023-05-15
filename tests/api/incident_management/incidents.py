@@ -5,6 +5,7 @@ import pytest
 from tests.unit.test_iterator import MockResponse
 from xpanse.const import DEFAULT_REQUEST_PAYLOAD_FIELD, PublicApiFields
 from xpanse.iterator import XpanseResultIterator
+from xpanse.response import XpanseResponse
 
 
 @pytest.mark.vcr()
@@ -49,7 +50,8 @@ def test_IncidentsApi_get(api):
     }
 
     assert actual_kwargs == expected_kwargs
-    assert actual_data == expected_data
+    assert isinstance(actual_data, XpanseResponse)
+    assert actual_data.data == expected_data
 
 
 @pytest.mark.vcr()
@@ -69,7 +71,8 @@ def test_IncidentsApi_count(api):
     }
 
     assert actual_kwargs == expected_kwargs
-    assert actual_count == expected_count
+    assert isinstance(actual_count, XpanseResponse)
+    assert actual_count.data == expected_count
 
 
 @pytest.mark.vcr()
@@ -77,7 +80,12 @@ def test_IncidentsApi_update(api):
     _api = api.incidents
 
     expected_response = True
-    api.post = MagicMock(return_value=expected_response)
+
+    class MockUpdateResponse:
+        def json(self):
+            return expected_response
+
+    api.post = MagicMock(return_value=MockUpdateResponse())
 
     actual_kwargs = {DEFAULT_REQUEST_PAYLOAD_FIELD: {}}
 
@@ -95,4 +103,5 @@ def test_IncidentsApi_update(api):
     }
 
     assert actual_kwargs == expected_kwargs
-    assert actual_response == expected_response
+    assert isinstance(actual_response, XpanseResponse)
+    assert actual_response.data == expected_response
