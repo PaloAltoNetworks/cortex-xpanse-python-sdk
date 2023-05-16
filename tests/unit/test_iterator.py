@@ -54,7 +54,7 @@ class MockResponse:
 
     def json(self):
         return {
-            "reply": {
+            PublicApiFields.REPLY: {
                 PublicApiFields.TOTAL_COUNT: self._total_count,
                 PublicApiFields.RESULTS_COUNT: self._results_count,
                 self._key: self._val,
