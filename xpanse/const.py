@@ -35,7 +35,7 @@ class AssetType(Enum):
     CLOUD_RESOURCES = "cloud_compute_instance"
     """"Cloud Compute Instance Type"""
 
-    PRISMA_CLOUD_RESOURCE = "CLOUD_INTEGRATION"
+    PRISMA_CLOUD_RESOURCE = "cloud_integration"
     """"Cloud Integration Type"""
 
 
