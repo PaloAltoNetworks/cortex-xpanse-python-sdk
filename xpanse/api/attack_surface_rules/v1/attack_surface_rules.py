@@ -21,9 +21,18 @@ class AttackSurfaceRulesApi(XpanseEndpoint):
         return XpanseResponse(response, self.DATA_KEY)
 
     def get(
-        self, attack_surface_rule_ids: List[str], request_data: Any = None, **kwargs: Any
+        self,
+        attack_surface_rule_ids: List[str],
+        request_data: Any = None,
+        **kwargs: Any,
     ) -> XpanseResponse:
-        filters = [{"field": "attack_surface_rule_id", "operator": "in", "value": attack_surface_rule_ids}]
+        filters = [
+            {
+                "field": "attack_surface_rule_id",
+                "operator": "in",
+                "value": attack_surface_rule_ids,
+            }
+        ]
         kwargs = build_request_payload(
             request_data=request_data, filters=filters, **kwargs
         )
