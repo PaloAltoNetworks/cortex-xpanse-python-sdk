@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 
-from xpanse.const import V1_PREFIX, AssetType
+from xpanse.const import V1_PREFIX
 from xpanse.endpoint import XpanseEndpoint
 from xpanse.iterator import XpanseResultIterator
 from xpanse.response import XpanseResponse
@@ -21,15 +21,10 @@ class AssetsManagementV1(XpanseEndpoint):
     def _list(
         self,
         path: str,
-        asset_types: Optional[List[AssetType]] = None,
         request_data: Any = None,
+        filters: Optional[List[Any]] = None,
         **kwargs: Any,
     ) -> XpanseResultIterator:
-        filters = []
-        if asset_types is not None:
-            value = [t.value for t in asset_types]
-            filters.append({"field": "type", "operator": "in", "value": value})
-
         kwargs = build_request_payload(
             request_data=request_data, filters=filters, **kwargs
         )

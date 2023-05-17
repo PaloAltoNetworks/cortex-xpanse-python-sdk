@@ -14,9 +14,12 @@ class ServicesApi(AssetsManagementV1):
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-External-Service
     """
 
+    LIST_ENDPOINT = f"{AssetsManagementV1.ENDPOINT}/get_external_services/"
+    GET_ENDPOINT = f"{AssetsManagementV1.ENDPOINT}/get_external_service/"
+
     def list(self, request_data: Any = None, **kwargs: Any) -> XpanseResultIterator:
         return super(ServicesApi, self)._list(
-            f"{self.ENDPOINT}/get_external_services/",
+            self.LIST_ENDPOINT,
             request_data=request_data,
             **kwargs,
         )
@@ -26,7 +29,7 @@ class ServicesApi(AssetsManagementV1):
     ) -> XpanseResponse:
         extra_request_data = {"service_id_list": service_ids}
         return super(ServicesApi, self)._get(
-            f"{self.ENDPOINT}/get_external_service/",
+            self.GET_ENDPOINT,
             extra_request_data=extra_request_data,
             request_data=request_data,
             **kwargs,
@@ -34,7 +37,7 @@ class ServicesApi(AssetsManagementV1):
 
     def count(self, request_data: Any = None, **kwargs: Any) -> XpanseResponse:
         return super(ServicesApi, self)._count(
-            f"{self.ENDPOINT}/get_external_services/",
+            self.LIST_ENDPOINT,
             request_data=request_data,
             **kwargs,
         )

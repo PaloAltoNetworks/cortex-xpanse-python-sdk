@@ -9,10 +9,10 @@ from xpanse.response import XpanseResponse
 
 
 @pytest.mark.vcr()
-def test_ServicesApi_list(api):
-    _api = api.services
+def test_ExternalIpRangesApi_list(api):
+    _api = api.external_ip_ranges
 
-    expected_data = ["service1", "service2"]
+    expected_data = ["range1", "range2"]
     api.post = MagicMock(return_value=MockResponse(_api.LIST_DATA_KEY, expected_data))
     actual_kwargs = {DEFAULT_REQUEST_PAYLOAD_FIELD: {}}
 
@@ -21,9 +21,7 @@ def test_ServicesApi_list(api):
 
     expected_kwargs = {
         DEFAULT_REQUEST_PAYLOAD_FIELD: {
-            PublicApiFields.REQUEST_DATA: {
-                PublicApiFields.FILTERS: [],
-            },
+            PublicApiFields.REQUEST_DATA: {},
         },
     }
     assert actual_kwargs == expected_kwargs
@@ -33,20 +31,20 @@ def test_ServicesApi_list(api):
 
 
 @pytest.mark.vcr()
-def test_ServicesApi_get(api):
-    _api = api.services
+def test_ExternalIpRangesApi_get(api):
+    _api = api.external_ip_ranges
 
-    expected_data = ["service1", "service2"]
+    expected_data = ["range1", "range2"]
     api.post = MagicMock(return_value=MockResponse(_api.GET_DATA_KEY, expected_data))
 
     actual_kwargs = {DEFAULT_REQUEST_PAYLOAD_FIELD: {}}
     object_ids = ["1", "2"]
-    actual_data = _api.get(service_ids=object_ids, **actual_kwargs)
+    actual_data = _api.get(ip_range_ids=object_ids, **actual_kwargs)
 
     expected_kwargs = {
         DEFAULT_REQUEST_PAYLOAD_FIELD: {
             PublicApiFields.REQUEST_DATA: {
-                "service_id_list": object_ids,
+                "range_id_list": object_ids,
             },
         },
     }
@@ -57,8 +55,8 @@ def test_ServicesApi_get(api):
 
 
 @pytest.mark.vcr()
-def test_ServicesApi_count(api):
-    _api = api.services
+def test_ExternalIpRangesApi_count(api):
+    _api = api.external_ip_ranges
 
     expected_count = 1_111
     api.post = MagicMock(return_value=MockResponse(_api.LIST_DATA_KEY, None, total_count=expected_count))

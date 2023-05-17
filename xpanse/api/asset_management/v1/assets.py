@@ -1,4 +1,4 @@
-from typing import Any, List, Optional
+from typing import Any, List, Optional, Set
 
 from xpanse.api.asset_management.assets_management_v1 import AssetsManagementV1
 from xpanse.const import AssetType
@@ -14,16 +14,20 @@ class AssetsApi(AssetsManagementV1):
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-Asset
     """
 
+    LIST_ENDPOINT = f"{AssetsManagementV1.ENDPOINT}/get_assets_internet_exposure/"
+    GET_ENDPOINT = f"{AssetsManagementV1.ENDPOINT}/get_asset_internet_exposure/"
+
     def list(
         self,
-        asset_types: Optional[List[AssetType]] = None,
+        asset_types: Optional[Set[AssetType]] = None,
         request_data: Any = None,
         **kwargs: Any,
     ) -> XpanseResultIterator:
+        filters = self._build_asset_type_filters(asset_types=asset_types)
         return super(AssetsApi, self)._list(
-            f"{self.ENDPOINT}/get_assets_internet_exposure/",
-            asset_types=asset_types,
+            self.LIST_ENDPOINT,
             request_data=request_data,
+            filters=filters,
             **kwargs,
         )
 
@@ -32,7 +36,7 @@ class AssetsApi(AssetsManagementV1):
     ) -> XpanseResponse:
         extra_request_data = {"asm_id_list": asset_ids}
         return super(AssetsApi, self)._get(
-            f"{self.ENDPOINT}/get_asset_internet_exposure/",
+            self.GET_ENDPOINT,
             extra_request_data=extra_request_data,
             request_data=request_data,
             **kwargs,
@@ -40,19 +44,37 @@ class AssetsApi(AssetsManagementV1):
 
     def count(
         self,
-        asset_types: Optional[List[AssetType]] = None,
+        asset_types: Optional[Set[AssetType]] = None,
         request_data: Any = None,
         **kwargs: Any,
     ) -> XpanseResponse:
-        filters = []
-        if asset_types is not None:
-            value = [t.value for t in asset_types]
-            filters.append({"field": "type", "operator": "in", "value": value})
-
+        filters = self._build_asset_type_filters(asset_types=asset_types)
         kwargs = build_request_payload(filters=filters, **kwargs)
-
         return super(AssetsApi, self)._count(
-            f"{self.ENDPOINT}/get_assets_internet_exposure/",
+            self.LIST_ENDPOINT,
             request_data=request_data,
             **kwargs,
         )
+
+    @staticmethod
+    def _build_asset_type_filters(asset_types: Optional[Set[AssetType]] = None) -> List[Any]:
+        """
+        Helper method to construct the Asset Type filter for Asset endpoints.
+        Args:
+            asset_types (Set[AssetType]):
+                A set of Asset Types from the AssetType enum
+
+        Returns:
+            :List[Any]: A list of the Asset Type filters for the request_data query
+        """
+        filters = []
+        if asset_types is not None:
+            value = []
+            for t in asset_types:
+                if t not in AssetType:
+                    raise ValueError(f"Invalid AssetType provided: {t}")
+                value.append(t.value)
+
+            filters.append({"field": "type", "operator": "in", "value": value})
+
+        return filters
