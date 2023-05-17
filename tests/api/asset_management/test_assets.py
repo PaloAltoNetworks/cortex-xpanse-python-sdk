@@ -1,8 +1,10 @@
+from enum import Enum
 from unittest.mock import MagicMock
 
 import pytest
 
 from tests.unit.test_iterator import MockResponse
+from xpanse.api.asset_management.v1.assets import AssetsApi
 from xpanse.const import DEFAULT_REQUEST_PAYLOAD_FIELD, PublicApiFields, AssetType
 from xpanse.iterator import XpanseResultIterator
 from xpanse.response import XpanseResponse
@@ -135,3 +137,30 @@ def test_AssetsApi_asset_type_list(api):
     actual_data = iterator.next()
     assert actual_data == expected_data
 
+
+@pytest.mark.vcr()
+def test_AssetsApi_build_asset_type_filters_none():
+    filters = AssetsApi._build_asset_type_filters()
+    assert filters == []
+
+
+@pytest.mark.vcr()
+def test_AssetsApi_build_asset_type_filters_success():
+    asset_types = {AssetType.DOMAIN, AssetType.CERTIFICATE}
+    filters = AssetsApi._build_asset_type_filters(asset_types=asset_types)
+    assert len(filters) == 1
+    assert filters[0]['field'] == 'type'
+    assert filters[0]['operator'] == 'in'
+    assert set(filters[0]['value']) == {'domain', 'certificate'}
+
+
+@pytest.mark.vcr()
+def test_AssetsApi_build_asset_type_filters_invalid():
+    class FakeTypes(Enum):
+        FAKE_TYPE = 'look_at_me_im_fake'
+
+    asset_types = {AssetType.DOMAIN, AssetType.CERTIFICATE, FakeTypes.FAKE_TYPE}
+
+    with pytest.raises(ValueError) as e:
+        AssetsApi._build_asset_type_filters(asset_types=asset_types)
+        assert str(e.value) == "Invalid AssetType provided: look_at_me_im_fake"

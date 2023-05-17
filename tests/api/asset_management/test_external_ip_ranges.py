@@ -21,9 +21,7 @@ def test_ExternalIpRangesApi_list(api):
 
     expected_kwargs = {
         DEFAULT_REQUEST_PAYLOAD_FIELD: {
-            PublicApiFields.REQUEST_DATA: {
-                PublicApiFields.FILTERS: [],
-            },
+            PublicApiFields.REQUEST_DATA: {},
         },
     }
     assert actual_kwargs == expected_kwargs

@@ -14,9 +14,12 @@ class ExternalIpRangesApi(AssetsManagementV1):
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-External-IP-Address-Range
     """
 
+    LIST_ENDPOINT = f"{AssetsManagementV1.ENDPOINT}/get_external_ip_address_ranges/"
+    GET_ENDPOINT = f"{AssetsManagementV1.ENDPOINT}/get_external_ip_address_range/"
+
     def list(self, request_data: Any = None, **kwargs: Any) -> XpanseResultIterator:
         return super(ExternalIpRangesApi, self)._list(
-            f"{self.ENDPOINT}/get_external_ip_address_ranges/",
+            self.LIST_ENDPOINT,
             request_data=request_data,
             **kwargs,
         )
@@ -26,7 +29,7 @@ class ExternalIpRangesApi(AssetsManagementV1):
     ) -> XpanseResponse:
         extra_request_data = {"range_id_list": ip_range_ids}
         return super(ExternalIpRangesApi, self)._get(
-            f"{self.ENDPOINT}/get_external_ip_address_range/",
+            self.GET_ENDPOINT,
             extra_request_data=extra_request_data,
             request_data=request_data,
             **kwargs,
@@ -34,7 +37,7 @@ class ExternalIpRangesApi(AssetsManagementV1):
 
     def count(self, request_data: Any = None, **kwargs: Any) -> XpanseResponse:
         return super(ExternalIpRangesApi, self)._count(
-            f"{self.ENDPOINT}/get_external_ip_address_ranges/",
+            self.LIST_ENDPOINT,
             request_data=request_data,
             **kwargs,
         )
