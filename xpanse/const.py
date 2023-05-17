@@ -41,10 +41,10 @@ class AssetType(Enum):
 
 class TaggableDataType(Enum):
     ASSETS = "assets_internet_exposure"
-    """Asset Data Type for Tag Management"""
+    """Asset Data Type for AT Tag Management"""
 
     EXTERNAL_IP_RANGES = "external_ip_address_ranges"
-    """Asset Data Type for Tag Management"""
+    """External IP Range Data Type for IPR Tag Management"""
 
 
 class PublicApiFields:
