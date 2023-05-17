@@ -91,7 +91,7 @@ def test_AssetsApi_asset_type_count(api):
     api.post = MagicMock(return_value=MockResponse(_api.LIST_DATA_KEY, None, total_count=expected_count))
 
     actual_kwargs = {DEFAULT_REQUEST_PAYLOAD_FIELD: {}}
-    actual_count = _api.count(asset_types={AssetType.DOMAIN, AssetType.CERTIFICATE}, **actual_kwargs)
+    actual_count = _api.count(asset_types=[AssetType.DOMAIN, AssetType.CERTIFICATE], **actual_kwargs)
 
     expected_kwargs = {
         DEFAULT_REQUEST_PAYLOAD_FIELD: {
@@ -116,7 +116,7 @@ def test_AssetsApi_asset_type_list(api):
     api.post = MagicMock(return_value=MockResponse(_api.LIST_DATA_KEY, expected_data))
     actual_kwargs = {DEFAULT_REQUEST_PAYLOAD_FIELD: {}}
 
-    iterator = _api.list(asset_types={AssetType.RESPONSIVE_IP, AssetType.CLOUD_RESOURCES}, **actual_kwargs)
+    iterator = _api.list(asset_types=[AssetType.RESPONSIVE_IP, AssetType.CLOUD_RESOURCES], **actual_kwargs)
     assert isinstance(iterator, XpanseResultIterator)
 
     expected_kwargs = {

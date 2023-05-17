@@ -57,7 +57,9 @@ class AssetsApi(AssetsManagementV1):
         )
 
     @staticmethod
-    def _build_asset_type_filters(asset_types: Optional[Set[AssetType]] = None) -> List[Any]:
+    def _build_asset_type_filters(
+        asset_types: Optional[Set[AssetType]] = None,
+    ) -> List[Any]:
         """
         Helper method to construct the Asset Type filter for Asset endpoints.
         Args:
