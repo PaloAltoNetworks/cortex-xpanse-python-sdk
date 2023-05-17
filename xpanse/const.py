@@ -39,6 +39,14 @@ class AssetType(Enum):
     """"Cloud Integration Type"""
 
 
+class TaggableDataType(Enum):
+    ASSETS = "assets_internet_exposure"
+    """Asset Data Type for Tag Management"""
+
+    EXTERNAL_IP_RANGES = "external_ip_address_ranges"
+    """Asset Data Type for Tag Management"""
+
+
 class PublicApiFields:
     """Keys for PAPI Requests and Responses"""
 
@@ -46,6 +54,9 @@ class PublicApiFields:
     """Common Field For Providing Request Data"""
 
     FILTERS = "filters"
+    """Common Field For Providing Request Data"""
+
+    TAGS = "tags"
     """Common Field For Providing Request Data"""
 
     SEARCH_FROM = "search_from"
