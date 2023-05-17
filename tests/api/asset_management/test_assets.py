@@ -139,13 +139,13 @@ def test_AssetsApi_asset_type_list(api):
 
 
 @pytest.mark.vcr()
-def test_AssetsApi_build_asset_type_filters_none(api):
+def test_AssetsApi_build_asset_type_filters_none():
     filters = AssetsApi._build_asset_type_filters()
     assert filters == []
 
 
 @pytest.mark.vcr()
-def test_AssetsApi_build_asset_type_filters_success(api):
+def test_AssetsApi_build_asset_type_filters_success():
     asset_types = {AssetType.DOMAIN, AssetType.CERTIFICATE}
     filters = AssetsApi._build_asset_type_filters(asset_types=asset_types)
     assert len(filters) == 1
@@ -155,7 +155,7 @@ def test_AssetsApi_build_asset_type_filters_success(api):
 
 
 @pytest.mark.vcr()
-def test_AssetsApi_build_asset_type_filters_invalid(api):
+def test_AssetsApi_build_asset_type_filters_invalid():
     class FakeTypes(Enum):
         FAKE_TYPE = 'look_at_me_im_fake'
 
