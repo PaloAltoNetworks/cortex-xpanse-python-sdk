@@ -66,7 +66,10 @@ def test_IncidentsApi_count(api):
 
     expected_kwargs = {
         DEFAULT_REQUEST_PAYLOAD_FIELD: {
-            PublicApiFields.REQUEST_DATA: {},
+            PublicApiFields.REQUEST_DATA: {
+                PublicApiFields.SEARCH_FROM: 0,
+                PublicApiFields.SEARCH_TO: 1,
+            },
         },
     }
 

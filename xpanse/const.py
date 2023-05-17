@@ -20,6 +20,25 @@ class HTTPVerb(Enum):
     """HTTP DELETE Verb"""
 
 
+class AssetType(Enum):
+    """Enums for Asset Types"""
+
+    DOMAIN = "domain"
+    """Domain Type"""
+
+    CERTIFICATE = "certificate"
+    """Certificate Type"""
+
+    RESPONSIVE_IP = "unassociated_responsive_ip"
+    """Unassociated Responsive IP Type"""
+
+    CLOUD_RESOURCES = "cloud_compute_instance"
+    """"Cloud Compute Instance Type"""
+
+    PRISMA_CLOUD_RESOURCE = "cloud_integration"
+    """"Cloud Integration Type"""
+
+
 class PublicApiFields:
     """Keys for PAPI Requests and Responses"""
 
@@ -28,6 +47,12 @@ class PublicApiFields:
 
     FILTERS = "filters"
     """Common Field For Providing Request Data"""
+
+    SEARCH_FROM = "search_from"
+    """Common Field For Query Offset"""
+
+    SEARCH_TO = "search_to"
+    """Common Field For Calculating Query Limit"""
 
     USE_PAGE_TOKEN = "use_page_token"
     """Common Field To Use Pagination"""
