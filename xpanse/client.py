@@ -179,8 +179,14 @@ class XpanseClient:
     ):
         """
         Check for a valid set of authentication inputs. This can be one of the following (in order of priority):
-        1. Setting api_key_id and api_key from the XpanseClient constructor
-        2. Setting the CORTEX_API_KEY_ID and CORTEX_API_KEY environment variables
+            1. Setting api_key_id and api_key from the XpanseClient constructor
+            2. Setting the CORTEX_API_KEY_ID and CORTEX_API_KEY environment variables
+
+        Args:
+            api_key (str, Optional):
+                The api_key provided from the constructor
+            api_key_id (str, Optional):
+                The api_key_id provided from the constructor
         """
         if api_key is not None:
             self._api_key = api_key
@@ -269,6 +275,9 @@ class XpanseClient:
         self._session.headers.update(self._get_auth_headers())
 
     def _create_session(self):
+        """
+        Creates a request session with auth.
+        """
         self._session = requests.Session()
 
         if self._proxies is not None:

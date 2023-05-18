@@ -42,7 +42,7 @@ class UnexpectedResponseError(XpanseException):
 
 class InvalidApiCredentials(XpanseException):
     """
-    Response from the server was unexpected and requires further investigation.
+    Thrown when credentials are invalid and need to be rotated.
     """
 
     pass
