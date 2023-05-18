@@ -1,13 +1,6 @@
-import sys
-
 from typing import Any, List
 
-from xpanse.const import FilterOperator
-
-if sys.version_info >= (3, 11):
-    from typing import TypedDict, NotRequired
-else:
-    from typing_extensions import TypedDict, NotRequired
+from typing_extensions import NotRequired, TypedDict
 
 
 class Filter(TypedDict):
