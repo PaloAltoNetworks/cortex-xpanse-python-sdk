@@ -37,6 +37,9 @@ class XpanseResultIterator:
 
     @property
     def total(self) -> int:
+        """
+        Returns the total number of results. (Max for most data types is 9_999).
+        """
         return self._total
 
     def next(self) -> Dict[str, Any]:

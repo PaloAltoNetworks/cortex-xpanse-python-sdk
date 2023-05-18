@@ -13,6 +13,11 @@ class XpanseResponse:
     Usages:
         > To see the raw response from the request, access the "response" attribute: xpanse_response.response
         > To grab the parsed data from the response, access the "data" attribute: xpanse_response.data
+
+    Examples:
+        >>> assets = client.assets.get(asset_ids=["id1"])
+        >>> if assets.response.status_code < 300:
+        >>>     results = assets.data
     """
 
     def __init__(self, response: Response, data_key: Optional[str] = None):
@@ -21,10 +26,16 @@ class XpanseResponse:
 
     @property
     def response(self) -> Response:
+        """
+        Defines the raw `requests.Response` property
+        """
         return self._response
 
     @property
     def data(self) -> Any:
+        """
+        Parses the response body and returns it under the `data` property
+        """
         response_data = self.response.json()
 
         if not isinstance(response_data, dict):
