@@ -8,7 +8,7 @@ try:
         os.path.join(os.path.abspath(os.path.dirname(__file__)), "README.md")
     ).read()
 except:
-    description = "Please refer to https://knowledgebase.expanse.co/expander-apis/"
+    description = "Please refer to https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference"
     print("! could not read README.md file.")
 
 setup(

@@ -1,5 +1,5 @@
-Xpanse
-=======
+xpanse
+======
 
 .. toctree::
    :maxdepth: 4

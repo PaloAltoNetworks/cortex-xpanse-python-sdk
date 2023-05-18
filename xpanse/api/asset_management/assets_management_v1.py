@@ -7,7 +7,7 @@ from xpanse.response import XpanseResponse
 from xpanse.utils import build_request_payload
 
 
-class AssetsManagementV1(XpanseEndpoint):
+class AssetsManagementV1Endpoint(XpanseEndpoint):
     """
     Part of the Public API for handling all things relating to Asset Management. This class is wrapped by the
     specific data type implementations in the client endpoints.
@@ -25,6 +25,29 @@ class AssetsManagementV1(XpanseEndpoint):
         filters: Optional[List[Any]] = None,
         **kwargs: Any,
     ) -> XpanseResultIterator:
+        """
+
+        Args:
+            path (str):
+                The endpoint used to make the request for each respective data type.
+            request_data (RequestData, Optional):
+                Any supplemental request_data to be included with your request. This is needed to
+                implement any additional filters, offsets, limits, or sort ordering.
+            filters:
+                A list of filter objects to be applied to the query. In this context, this is used
+                to support the built-in "asset_types" filter for the Assets data type.
+            **kwargs:
+                Any extraneous parameters you would like to include when executing your
+                request with the Requests.request module. Note: By default, all payload data
+                is sent under the "json" keyword for your request.
+
+        Returns:
+            :obj:`XpanseResponse`:
+                An object containing the raw requests.Response and parsed data results.
+                The raw response can be accessed with `<xpanse_reponse>.response` attribute.
+                The parsed results can be accessed with the `<xpanse_response>.data` attribute.
+
+        """
         kwargs = build_request_payload(
             request_data=request_data, filters=filters, **kwargs
         )
@@ -38,10 +61,32 @@ class AssetsManagementV1(XpanseEndpoint):
     def _get(
         self,
         path: str,
-        extra_request_data: Dict[str, list],
+        extra_request_data: Dict[str, List],
         request_data: Any = None,
         **kwargs: Any,
     ) -> XpanseResponse:
+        """
+        Helper method to list or get any Asset Management data (Assets, External IP Ranges, Services).
+
+        Args:
+            path (str):
+                The endpoint used to make the request for each respective data type.
+            extra_request_data (Dict[str, List]):
+                The request data used to filter on a set of object ids.
+            request_data (RequestData, Optional):
+                Any supplemental request_data to be included with your request. This is needed to
+                implement any additional filters, offsets, limits, or sort ordering.
+            **kwargs:
+                Any extraneous parameters you would like to include when executing your
+                request with the Requests.request module. Note: By default, all payload data
+                is sent under the "json" keyword for your request.
+
+        Returns:
+            :obj:`XpanseResponse`:
+                An object containing the raw requests.Response and parsed data results.
+                The raw response can be accessed with `<xpanse_reponse>.response` attribute.
+                The parsed results can be accessed with the `<xpanse_response>.data` attribute.
+        """
         kwargs = build_request_payload(
             request_data=request_data, extra_request_data=extra_request_data, **kwargs
         )

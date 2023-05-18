@@ -26,13 +26,10 @@ from xpanse.error import (
 )
 
 from xpanse.utils import normalize_param_names
-from .api.asset_management.v1.assets import AssetsApi
-from .api.asset_management.v1.external_ip_ranges import ExternalIpRangesApi
-from .api.asset_management.v1.services import ServicesApi
-from .api.attack_surface_rules.v1.attack_surface_rules import AttackSurfaceRulesApi
-from .api.incident_management.v1.incidents import IncidentsApi
-from .api.incident_management.v2.alerts import AlertsApi
-from .api.tags.v1.tags import TagsApi
+from xpanse.api.asset_management import ServicesApi, ExternalIpRangesApi, AssetsApi
+from xpanse.api.attack_surface_rules import AttackSurfaceRulesApi
+from xpanse.api.incident_management import AlertsApi, IncidentsApi
+from xpanse.api.tags import TagsApi
 
 
 class XpanseClient:

@@ -3,6 +3,11 @@
 ## Install Dependencies
 1. Install `requirements-docs.txt` using `pip install -r requirements-docs.txt`.
 
+## Sphinx Sources
+1. Run `sphinx-apidoc -o _source/ ../xpanse` from this directory.
+2. You should see a bunch of new `.rst` docs in `docs/_source`.
+3. Use these to generate human-readable docs with the commands below.
+
 ## HTML Docs
 1. Run `make html` from this directory.
 2. You should see a bunch of new html docs in `docs/_build/html`.
