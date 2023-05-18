@@ -18,7 +18,7 @@ class AttackSurfaceRulesApi(XpanseEndpoint):
     def list(self, request_data: Any = None, **kwargs: Any) -> XpanseResponse:
         kwargs = build_request_payload(request_data=request_data, **kwargs)
         response = self._api.post(path=self.ENDPOINT, **kwargs)
-        return XpanseResponse(response, self.DATA_KEY)
+        return XpanseResponse(response, data_key=self.DATA_KEY)
 
     def get(
         self,
