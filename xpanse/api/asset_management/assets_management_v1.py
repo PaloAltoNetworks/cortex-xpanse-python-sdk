@@ -4,6 +4,7 @@ from xpanse.const import V1_PREFIX
 from xpanse.endpoint import XpanseEndpoint
 from xpanse.iterator import XpanseResultIterator
 from xpanse.response import XpanseResponse
+from xpanse.types import RequestData, Filter
 from xpanse.utils import build_request_payload
 
 
@@ -21,8 +22,8 @@ class AssetsManagementV1(XpanseEndpoint):
     def _list(
         self,
         path: str,
-        request_data: Any = None,
-        filters: Optional[List[Any]] = None,
+        request_data: Optional[RequestData] = None,
+        filters: Optional[List[Filter]] = None,
         **kwargs: Any,
     ) -> XpanseResultIterator:
         kwargs = build_request_payload(
@@ -39,7 +40,7 @@ class AssetsManagementV1(XpanseEndpoint):
         self,
         path: str,
         extra_request_data: Dict[str, list],
-        request_data: Any = None,
+        request_data: Optional[RequestData] = None,
         **kwargs: Any,
     ) -> XpanseResponse:
         kwargs = build_request_payload(

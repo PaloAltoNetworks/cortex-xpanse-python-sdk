@@ -1,9 +1,10 @@
-from typing import Any, List
+from typing import Any, List, Optional
 
-from xpanse.const import V2_PREFIX
+from xpanse.const import V2_PREFIX, PublicApiFields, FilterOperator
 from xpanse.endpoint import XpanseEndpoint
 from xpanse.iterator import XpanseResultIterator
 from xpanse.response import XpanseResponse
+from xpanse.types import RequestData, Filter
 from xpanse.utils import build_request_payload
 
 
@@ -16,23 +17,36 @@ class AlertsApi(XpanseEndpoint):
     ENDPOINT = f"{V2_PREFIX}/alerts/get_alerts_multi_events/"
     DATA_KEY = "data"
 
-    def list(self, request_data: Any = None, **kwargs: Any) -> XpanseResultIterator:
+    def list(
+        self, request_data: Optional[RequestData] = None, **kwargs: Any
+    ) -> XpanseResultIterator:
         kwargs = build_request_payload(request_data=request_data, **kwargs)
         return XpanseResultIterator(
             api=self._api, path=self.ENDPOINT, data_key=self.DATA_KEY, **kwargs
         )
 
     def get(
-        self, alert_ids: List[str], request_data: Any = None, **kwargs: Any
+        self,
+        alert_ids: List[str],
+        request_data: Optional[RequestData] = None,
+        **kwargs: Any,
     ) -> XpanseResponse:
-        filters = [{"field": "alert_id_list", "operator": "in", "value": alert_ids}]
+        filters: List[Filter] = [
+            {
+                "field": "alert_id_list",
+                "operator": FilterOperator.IN.value,
+                "value": alert_ids,
+            }
+        ]
         kwargs = build_request_payload(
             request_data=request_data, filters=filters, **kwargs
         )
         response = self._api.post(self.ENDPOINT, **kwargs)
         return XpanseResponse(response, data_key=self.DATA_KEY)
 
-    def count(self, request_data: Any = None, **kwargs: Any) -> XpanseResponse:
+    def count(
+        self, request_data: Optional[RequestData] = None, **kwargs: Any
+    ) -> XpanseResponse:
         return super(AlertsApi, self)._count(
             self.ENDPOINT, request_data=request_data, **kwargs
         )
