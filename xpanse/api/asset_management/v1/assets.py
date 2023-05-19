@@ -10,7 +10,7 @@ from xpanse.types import RequestData, Filter
 from xpanse.utils import build_request_payload
 
 
-class AssetsApi(AssetsManagementBaseEndpoint):
+class AssetsEndpoint(AssetsManagementBaseEndpoint):
     """
     Part of the Public API for handling Assets.
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-All-Assets
