@@ -1,4 +1,4 @@
-xpanse
+Xpanse
 ======
 
 .. toctree::

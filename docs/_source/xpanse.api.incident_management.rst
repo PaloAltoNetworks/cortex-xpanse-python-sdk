@@ -1,19 +1,18 @@
-xpanse.api.incident\_management package
-=======================================
+Xpanse Incident Management API
+==========================================
 
-Subpackages
------------
+xpanse.api.incident\_management.v1.incidents module
+---------------------------------------------------
 
-.. toctree::
-   :maxdepth: 4
+.. automodule:: xpanse.api.incident_management.v1.incidents
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
-   xpanse.api.incident_management.v1
-   xpanse.api.incident_management.v2
+xpanse.api.incident\_management.v2.alerts module
+------------------------------------------------
 
-Module contents
----------------
-
-.. automodule:: xpanse.api.incident_management
+.. automodule:: xpanse.api.incident_management.v2.alerts
    :members:
    :undoc-members:
    :show-inheritance:

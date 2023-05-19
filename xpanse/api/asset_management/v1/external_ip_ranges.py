@@ -35,7 +35,7 @@ class ExternalIpRangesEndpoint(AssetsManagementV1Endpoint):
                 is sent under the "json" keyword for your request.
 
         Returns:
-            :obj:`XpanseIterator`:
+            :obj:`XpanseResultIterator`:
                 An iterator containing all of the External IP Ranges results. Results can be iterated
                 or called by page using `<iterator>.next()`.
 

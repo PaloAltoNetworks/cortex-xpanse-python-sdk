@@ -7,6 +7,7 @@ from xpanse.endpoint import XpanseEndpoint
 from xpanse.response import XpanseResponse
 from xpanse.utils import build_request_payload
 
+
 # TODO:// Add documentation link from https://jira-hq.paloaltonetworks.local/browse/EXPANDR-3062
 class TagsEndpoint(XpanseEndpoint):
     """

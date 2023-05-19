@@ -1,30 +1,27 @@
-xpanse.api.asset\_management package
-====================================
+Xpanse Asset Management API
+=======================================
 
-Subpackages
------------
+xpanse.api.asset\_management.v1.assets module
+---------------------------------------------
 
-.. toctree::
-   :maxdepth: 4
-
-   xpanse.api.asset_management.v1
-
-Submodules
-----------
-
-xpanse.api.asset\_management.assets\_management\_v1 module
-----------------------------------------------------------
-
-.. automodule:: xpanse.api.asset_management.assets_management_v1
+.. automodule:: xpanse.api.asset_management.v1.assets
    :members:
    :undoc-members:
    :show-inheritance:
 
+xpanse.api.asset\_management.v1.external\_ip\_ranges module
+-----------------------------------------------------------
 
-Module contents
----------------
-
-.. automodule:: xpanse.api.asset_management
+.. automodule:: xpanse.api.asset_management.v1.external_ip_ranges
    :members:
    :undoc-members:
    :show-inheritance:
+
+xpanse.api.asset\_management.v1.services module
+-----------------------------------------------
+
+.. automodule:: xpanse.api.asset_management.v1.services
+   :members:
+   :undoc-members:
+   :show-inheritance:
+

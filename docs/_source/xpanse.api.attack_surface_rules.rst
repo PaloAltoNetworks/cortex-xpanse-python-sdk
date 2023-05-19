@@ -1,18 +1,10 @@
-xpanse.api.attack\_surface\_rules package
-=========================================
+Xpanse Attack Surface Rules API
+============================================
 
-Subpackages
------------
+xpanse.api.attack\_surface\_rules.v1.attack\_surface\_rules module
+------------------------------------------------------------------
 
-.. toctree::
-   :maxdepth: 4
-
-   xpanse.api.attack_surface_rules.v1
-
-Module contents
----------------
-
-.. automodule:: xpanse.api.attack_surface_rules
+.. automodule:: xpanse.api.attack_surface_rules.v1.attack_surface_rules
    :members:
    :undoc-members:
    :show-inheritance:

@@ -5,6 +5,7 @@ from xpanse.endpoint import XpanseEndpoint
 from xpanse.response import XpanseResponse
 from xpanse.utils import build_request_payload
 
+
 # TODO:// Add documentation link from https://jira-hq.paloaltonetworks.local/browse/EXPANDR-3062
 class AttackSurfaceRulesEndpoint(XpanseEndpoint):
     """
@@ -28,7 +29,7 @@ class AttackSurfaceRulesEndpoint(XpanseEndpoint):
                 is sent under the "json" keyword for your request.
 
         Returns:
-            :obj:`XpanseIterator`:
+            :obj:`XpanseResultIterator`:
                 An iterator containing all of the Attack Surface Rules results. Results can be iterated
                 or called by page using `<iterator>.next()`.
 

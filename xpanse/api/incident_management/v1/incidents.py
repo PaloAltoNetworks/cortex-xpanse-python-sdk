@@ -14,7 +14,8 @@ class IncidentsEndpoint(XpanseEndpoint):
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Update-an-Incident
     """
 
-    ENDPOINT = f"{V1_PREFIX}/incidents"
+    LIST_ENDPOINT = f"{V1_PREFIX}/incidents/get_incidents/"
+    UPDATE_ENDPOINT = f"{V1_PREFIX}/incidents/update_incident/"
     DATA_KEY = "incidents"
 
     def list(self, request_data: Any = None, **kwargs: Any) -> XpanseResultIterator:
@@ -31,7 +32,7 @@ class IncidentsEndpoint(XpanseEndpoint):
                 is sent under the "json" keyword for your request.
 
         Returns:
-            :obj:`XpanseIterator`:
+            :obj:`XpanseResultIterator`:
                 An iterator containing all of the Incident results. Results can be iterated
                 or called by page using `<iterator>.next()`.
 
@@ -42,7 +43,7 @@ class IncidentsEndpoint(XpanseEndpoint):
         kwargs = build_request_payload(request_data=request_data, **kwargs)
         return XpanseResultIterator(
             api=self._api,
-            path=f"{self.ENDPOINT}/get_incidents/",
+            path=self.LIST_ENDPOINT,
             data_key=self.DATA_KEY,
             **kwargs,
         )
@@ -83,7 +84,7 @@ class IncidentsEndpoint(XpanseEndpoint):
         kwargs = build_request_payload(
             request_data=request_data, filters=filters, **kwargs
         )
-        response = self._api.post(f"{self.ENDPOINT}/get_incidents/", **kwargs)
+        response = self._api.post(self.LIST_ENDPOINT, **kwargs)
         return XpanseResponse(response, data_key=self.DATA_KEY)
 
     def count(self, request_data: Any = None, **kwargs: Any) -> XpanseResponse:
@@ -112,7 +113,7 @@ class IncidentsEndpoint(XpanseEndpoint):
             >>>     count = incidents.data
         """
         return super(IncidentsEndpoint, self)._count(
-            f"{self.ENDPOINT}/get_incidents/", request_data=request_data, **kwargs
+            self.LIST_ENDPOINT, request_data=request_data, **kwargs
         )
 
     def update(
@@ -150,5 +151,5 @@ class IncidentsEndpoint(XpanseEndpoint):
             "update_data": update_data,
         }
         kwargs = build_request_payload(extra_request_data=extra_request_data, **kwargs)
-        response = self._api.post(f"{self.ENDPOINT}/update_incident/", **kwargs)
+        response = self._api.post(self.UPDATE_ENDPOINT, **kwargs)
         return XpanseResponse(response)
