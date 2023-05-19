@@ -30,7 +30,7 @@ def build_request_payload(
     **kwargs
 ) -> Dict:
     """
-    Updates the existing request_data to include overridden or appended data to the request payload.
+    Updates the existing `request_data` to include overridden or appended data to the request payload.
 
     Args:
         request_data (RequestData, Optional):
@@ -42,14 +42,14 @@ def build_request_payload(
             A dictionary of any extra root level "request_data" to be provided in the payload.
         payload_field (str):
             The name of the kwarg used by the requests library when making the request.
-            Default is "json", but is sometimes set to "data".
+            Default is "json", but can be set to "data".
         **kwargs:
             Any extraneous parameters you would like to include when executing your
             request with the Requests.request module. Note: By default, all payload data
             is sent under the "json" keyword for your request (see payload_field above).
 
     Returns:
-        :dict: A reference to the original request_data with the updated payload.
+        :dict: A reference to the original `kwargs` with the updated `request_data` payload.
     """
 
     kwargs[payload_field] = kwargs.get(payload_field, {})

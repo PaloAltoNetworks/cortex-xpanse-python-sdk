@@ -4,7 +4,7 @@ from unittest.mock import MagicMock
 import pytest
 
 from tests.unit.test_iterator import MockResponse
-from xpanse.api.asset_management.v1.assets import AssetsApi
+from xpanse.api.asset_management import AssetsApi
 from xpanse.const import DEFAULT_REQUEST_PAYLOAD_FIELD, PublicApiFields, AssetType
 from xpanse.iterator import XpanseResultIterator
 from xpanse.response import XpanseResponse

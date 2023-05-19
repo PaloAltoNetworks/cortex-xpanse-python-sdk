@@ -39,15 +39,15 @@ class XpanseClient:
     Args:
         url (str, required):
             The base URL that the paths will be appended onto. This field is required to be set either during
-            instantiation, or using the environment variable "CORTEX_FQDN".
+            instantiation, or using the environment variable `CORTEX_FQDN`.
         api_key_id (Union[str, int], required):
             The API Key ID associated with the generated credentials. This can be located after generating
             the credentials in the API Keys table under the 'ID' column. i.e. 1, 2, 3, etc. This field is required
-            to be set either during instantiation, or using the environment variable "CORTEX_API_KEY_ID".
+            to be set either during instantiation, or using the environment variable `CORTEX_API_KEY_ID`.
         api_key (str, required):
             The API Key generated when provisioning the credentials in your product. It is recommended that
             the API Key defaults are kept (i.e. using Advanced keys). This field is required to be set either during
-            instantiation, or using the environment variable "CORTEX_API_KEY".
+            instantiation, or using the environment variable `CORTEX_API_KEY`.
         use_advanced_auth (bool, optional):
             A flag used to determine which type of API Key is being used. 'Advanced' is used when True,
             'Standard' is used when False. This is configured when generating your API Keys is in the product.

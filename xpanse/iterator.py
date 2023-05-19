@@ -52,6 +52,9 @@ class XpanseResultIterator:
         return self._get_data()
 
     def has_next(self) -> bool:
+        """
+        True when there's another page of data, False when pagination is complete.
+        """
         return self._pages == 0 or self._next_page_token is not None
 
     def dump(self) -> List[Any]:
