@@ -1,23 +1,26 @@
-from typing import Any, List
+from typing import Any, List, Optional
 
-from xpanse.api.asset_management.assets_management_v1 import AssetsManagementV1Endpoint
+from xpanse.api.asset_management.assets_management_base import (
+    AssetsManagementBaseEndpoint,
+)
 from xpanse.iterator import XpanseResultIterator
-
-
 from xpanse.response import XpanseResponse
+from xpanse.types import RequestData
 
 
-class ServicesEndpoint(AssetsManagementV1Endpoint):
+class ServicesEndpoint(AssetsManagementBaseEndpoint):
     """
     Part of the Public API for handling Services.
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-All-External-Services
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-External-Service
     """
 
-    LIST_ENDPOINT = f"{AssetsManagementV1Endpoint.ENDPOINT}/get_external_services/"
-    GET_ENDPOINT = f"{AssetsManagementV1Endpoint.ENDPOINT}/get_external_service/"
+    LIST_ENDPOINT = f"{AssetsManagementBaseEndpoint.ENDPOINT}/get_external_services/"
+    GET_ENDPOINT = f"{AssetsManagementBaseEndpoint.ENDPOINT}/get_external_service/"
 
-    def list(self, request_data: Any = None, **kwargs: Any) -> XpanseResultIterator:
+    def list(
+        self, request_data: Optional[RequestData] = None, **kwargs: Any
+    ) -> XpanseResultIterator:
         """
         This endpoint will return a paginated list of Services.
 
@@ -46,7 +49,10 @@ class ServicesEndpoint(AssetsManagementV1Endpoint):
         )
 
     def get(
-        self, service_ids: List[str], request_data: Any = None, **kwargs: Any
+        self,
+        service_ids: List[str],
+        request_data: Optional[RequestData] = None,
+        **kwargs: Any,
     ) -> XpanseResponse:
         """
         This endpoint will return details for a list of Service ids. Arguments should be passed as keyword args using
@@ -83,7 +89,9 @@ class ServicesEndpoint(AssetsManagementV1Endpoint):
             **kwargs,
         )
 
-    def count(self, request_data: Any = None, **kwargs: Any) -> XpanseResponse:
+    def count(
+        self, request_data: Optional[RequestData] = None, **kwargs: Any
+    ) -> XpanseResponse:
         """
         This endpoint will return a count of Services.
 

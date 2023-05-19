@@ -4,10 +4,11 @@ from xpanse.const import V1_PREFIX
 from xpanse.endpoint import XpanseEndpoint
 from xpanse.iterator import XpanseResultIterator
 from xpanse.response import XpanseResponse
+from xpanse.types import RequestData, Filter
 from xpanse.utils import build_request_payload
 
 
-class AssetsManagementV1Endpoint(XpanseEndpoint):
+class AssetsManagementBaseEndpoint(XpanseEndpoint):
     """
     Part of the Public API for handling all things relating to Asset Management. This class is wrapped by the
     specific data type implementations in the client endpoints.
@@ -21,8 +22,8 @@ class AssetsManagementV1Endpoint(XpanseEndpoint):
     def _list(
         self,
         path: str,
-        request_data: Any = None,
-        filters: Optional[List[Any]] = None,
+        request_data: Optional[RequestData] = None,
+        filters: Optional[List[Filter]] = None,
         **kwargs: Any,
     ) -> XpanseResultIterator:
         """
@@ -62,7 +63,7 @@ class AssetsManagementV1Endpoint(XpanseEndpoint):
         self,
         path: str,
         extra_request_data: Dict[str, List],
-        request_data: Any = None,
+        request_data: Optional[RequestData] = None,
         **kwargs: Any,
     ) -> XpanseResponse:
         """

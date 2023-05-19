@@ -1,8 +1,9 @@
-from typing import Any, List
+from typing import Any, List, Optional
 
-from xpanse.const import V1_PREFIX
+from xpanse.const import V1_PREFIX, FilterOperator
 from xpanse.endpoint import XpanseEndpoint
 from xpanse.response import XpanseResponse
+from xpanse.types import RequestData, Filter
 from xpanse.utils import build_request_payload
 
 
@@ -15,7 +16,9 @@ class AttackSurfaceRulesEndpoint(XpanseEndpoint):
     ENDPOINT = f"{V1_PREFIX}/get_attack_surface_rules/"
     DATA_KEY = "attack_surface_rules"
 
-    def list(self, request_data: Any = None, **kwargs: Any) -> XpanseResponse:
+    def list(
+        self, request_data: Optional[RequestData] = None, **kwargs: Any
+    ) -> XpanseResponse:
         """
         This endpoint will return a paginated list of Attack Surface Rules.
 
@@ -44,7 +47,7 @@ class AttackSurfaceRulesEndpoint(XpanseEndpoint):
     def get(
         self,
         attack_surface_rule_ids: List[str],
-        request_data: Any = None,
+        request_data: Optional[RequestData] = None,
         **kwargs: Any,
     ) -> XpanseResponse:
         """
@@ -74,10 +77,10 @@ class AttackSurfaceRulesEndpoint(XpanseEndpoint):
             >>> if attack_surface_rules.response.status_code < 300:
             >>>     results = attack_surface_rules.data
         """
-        filters = [
+        filters: List[Filter] = [
             {
                 "field": "attack_surface_rule_id",
-                "operator": "in",
+                "operator": FilterOperator.IN.value,
                 "value": attack_surface_rule_ids,
             }
         ]
@@ -87,7 +90,9 @@ class AttackSurfaceRulesEndpoint(XpanseEndpoint):
         response = self._api.post(self.ENDPOINT, **kwargs)
         return XpanseResponse(response, data_key=self.DATA_KEY)
 
-    def count(self, request_data: Any = None, **kwargs: Any) -> XpanseResponse:
+    def count(
+        self, request_data: Optional[RequestData] = None, **kwargs: Any
+    ) -> XpanseResponse:
         """
         This endpoint will return a count of Attack Surface Rules.
 

@@ -1,13 +1,16 @@
 from typing import Any, List, Optional, Set
 
-from xpanse.api.asset_management.assets_management_v1 import AssetsManagementV1Endpoint
-from xpanse.const import AssetType
+from xpanse.api.asset_management.assets_management_base import (
+    AssetsManagementBaseEndpoint,
+)
+from xpanse.const import AssetType, FilterOperator
 from xpanse.iterator import XpanseResultIterator
 from xpanse.response import XpanseResponse
+from xpanse.types import RequestData, Filter
 from xpanse.utils import build_request_payload
 
 
-class AssetsEndpoint(AssetsManagementV1Endpoint):
+class AssetsApi(AssetsManagementBaseEndpoint):
     """
     Part of the Public API for handling Assets.
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-All-Assets
@@ -15,14 +18,16 @@ class AssetsEndpoint(AssetsManagementV1Endpoint):
     """
 
     LIST_ENDPOINT = (
-        f"{AssetsManagementV1Endpoint.ENDPOINT}/get_assets_internet_exposure/"
+        f"{AssetsManagementBaseEndpoint.ENDPOINT}/get_assets_internet_exposure/"
     )
-    GET_ENDPOINT = f"{AssetsManagementV1Endpoint.ENDPOINT}/get_asset_internet_exposure/"
+    GET_ENDPOINT = (
+        f"{AssetsManagementBaseEndpoint.ENDPOINT}/get_asset_internet_exposure/"
+    )
 
     def list(
         self,
         asset_types: Optional[Set[AssetType]] = None,
-        request_data: Any = None,
+        request_data: Optional[RequestData] = None,
         **kwargs: Any,
     ) -> XpanseResultIterator:
         """
@@ -57,7 +62,10 @@ class AssetsEndpoint(AssetsManagementV1Endpoint):
         )
 
     def get(
-        self, asset_ids: List[str], request_data: Any = None, **kwargs: Any
+        self,
+        asset_ids: List[str],
+        request_data: Optional[RequestData] = None,
+        **kwargs: Any,
     ) -> XpanseResponse:
         """
         This endpoint will return details for a list of Asset ids. Arguments should be passed
@@ -97,7 +105,7 @@ class AssetsEndpoint(AssetsManagementV1Endpoint):
     def count(
         self,
         asset_types: Optional[Set[AssetType]] = None,
-        request_data: Any = None,
+        request_data: Optional[RequestData] = None,
         **kwargs: Any,
     ) -> XpanseResponse:
         """
@@ -137,7 +145,7 @@ class AssetsEndpoint(AssetsManagementV1Endpoint):
     @staticmethod
     def _build_asset_type_filters(
         asset_types: Optional[Set[AssetType]] = None,
-    ) -> List[Any]:
+    ) -> List[Filter]:
         """
         Helper method to construct the Asset Type filter for Asset endpoints.
         Args:
@@ -145,9 +153,9 @@ class AssetsEndpoint(AssetsManagementV1Endpoint):
                 A set of Asset Types from the AssetType enum
 
         Returns:
-            :list:`Any`: A list of the Asset Type filters for the request_data query
+            :List[Filter]: A list of the Asset Type filters for the request_data query
         """
-        filters = []
+        filters: List[Filter] = []
         if asset_types is not None:
             value = []
             for t in asset_types:
@@ -155,6 +163,8 @@ class AssetsEndpoint(AssetsManagementV1Endpoint):
                     raise ValueError(f"Invalid AssetType provided: {t}")
                 value.append(t.value)
 
-            filters.append({"field": "type", "operator": "in", "value": value})
+            filters.append(
+                {"field": "type", "operator": FilterOperator.IN.value, "value": value}
+            )
 
         return filters

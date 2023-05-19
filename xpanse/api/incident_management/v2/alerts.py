@@ -1,9 +1,10 @@
-from typing import Any, List
+from typing import Any, List, Optional
 
-from xpanse.const import V2_PREFIX
+from xpanse.const import V2_PREFIX, PublicApiFields, FilterOperator
 from xpanse.endpoint import XpanseEndpoint
 from xpanse.iterator import XpanseResultIterator
 from xpanse.response import XpanseResponse
+from xpanse.types import RequestData, Filter
 from xpanse.utils import build_request_payload
 
 
@@ -16,7 +17,9 @@ class AlertsEndpoint(XpanseEndpoint):
     ENDPOINT = f"{V2_PREFIX}/alerts/get_alerts_multi_events/"
     DATA_KEY = "data"
 
-    def list(self, request_data: Any = None, **kwargs: Any) -> XpanseResultIterator:
+    def list(
+        self, request_data: Optional[RequestData] = None, **kwargs: Any
+    ) -> XpanseResultIterator:
         """
         This endpoint will return a paginated list of Alerts.
 
@@ -44,7 +47,10 @@ class AlertsEndpoint(XpanseEndpoint):
         )
 
     def get(
-        self, alert_ids: List[str], request_data: Any = None, **kwargs: Any
+        self,
+        alert_ids: List[str],
+        request_data: Optional[RequestData] = None,
+        **kwargs: Any,
     ) -> XpanseResponse:
         """
         This endpoint will return details for a list of Alert ids. Arguments should be passed as keyword args using
@@ -73,14 +79,22 @@ class AlertsEndpoint(XpanseEndpoint):
             >>> if alerts.response.status_code < 300:
             >>>     results = alerts.data
         """
-        filters = [{"field": "alert_id_list", "operator": "in", "value": alert_ids}]
+        filters: List[Filter] = [
+            {
+                "field": "alert_id_list",
+                "operator": FilterOperator.IN.value,
+                "value": alert_ids,
+            }
+        ]
         kwargs = build_request_payload(
             request_data=request_data, filters=filters, **kwargs
         )
         response = self._api.post(self.ENDPOINT, **kwargs)
         return XpanseResponse(response, data_key=self.DATA_KEY)
 
-    def count(self, request_data: Any = None, **kwargs: Any) -> XpanseResponse:
+    def count(
+        self, request_data: Optional[RequestData] = None, **kwargs: Any
+    ) -> XpanseResponse:
         """
         This endpoint will return a count of Alerts.
 

@@ -1,6 +1,7 @@
 from typing import Any, Dict, List, Optional
 
 from xpanse.const import PublicApiFields, DEFAULT_REQUEST_PAYLOAD_FIELD
+from xpanse.types import RequestData, Filter
 
 
 def normalize_param_names(kwargs: Dict[str, Any]) -> Dict[str, Any]:
@@ -23,8 +24,8 @@ def normalize_param_names(kwargs: Dict[str, Any]) -> Dict[str, Any]:
 
 
 def build_request_payload(
-    request_data: Optional[dict] = None,
-    filters: Optional[List[dict]] = None,
+    request_data: Optional[RequestData] = None,
+    filters: Optional[List[Filter]] = None,
     extra_request_data: Optional[dict] = None,
     payload_field: str = DEFAULT_REQUEST_PAYLOAD_FIELD,
     **kwargs

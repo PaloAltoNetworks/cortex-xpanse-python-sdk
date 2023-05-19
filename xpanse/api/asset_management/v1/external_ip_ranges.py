@@ -1,13 +1,14 @@
-from typing import Any, List
+from typing import Any, List, Optional
 
-from xpanse.api.asset_management.assets_management_v1 import AssetsManagementV1Endpoint
+from xpanse.api.asset_management.assets_management_base import (
+    AssetsManagementBaseEndpoint,
+)
 from xpanse.iterator import XpanseResultIterator
-
-
 from xpanse.response import XpanseResponse
+from xpanse.types import RequestData
 
 
-class ExternalIpRangesEndpoint(AssetsManagementV1Endpoint):
+class ExternalIpRangesEndpoint(AssetsManagementBaseEndpoint):
     """
     Part of the Public API for handling External IP Ranges.
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-All-External-IP-Address-Ranges
@@ -15,13 +16,15 @@ class ExternalIpRangesEndpoint(AssetsManagementV1Endpoint):
     """
 
     LIST_ENDPOINT = (
-        f"{AssetsManagementV1Endpoint.ENDPOINT}/get_external_ip_address_ranges/"
+        f"{AssetsManagementBaseEndpoint.ENDPOINT}/get_external_ip_address_ranges/"
     )
     GET_ENDPOINT = (
-        f"{AssetsManagementV1Endpoint.ENDPOINT}/get_external_ip_address_range/"
+        f"{AssetsManagementBaseEndpoint.ENDPOINT}/get_external_ip_address_range/"
     )
 
-    def list(self, request_data: Any = None, **kwargs: Any) -> XpanseResultIterator:
+    def list(
+        self, request_data: Optional[RequestData] = None, **kwargs: Any
+    ) -> XpanseResultIterator:
         """
         This endpoint will return a paginated list of External IP Ranges.
 
@@ -50,7 +53,10 @@ class ExternalIpRangesEndpoint(AssetsManagementV1Endpoint):
         )
 
     def get(
-        self, ip_range_ids: List[str], request_data: Any = None, **kwargs: Any
+        self,
+        ip_range_ids: List[str],
+        request_data: Optional[RequestData] = None,
+        **kwargs: Any,
     ) -> XpanseResponse:
         """
         This endpoint will return details for a list of External IP Range ids. Arguments should be passed as keyword args using
@@ -87,7 +93,9 @@ class ExternalIpRangesEndpoint(AssetsManagementV1Endpoint):
             **kwargs,
         )
 
-    def count(self, request_data: Any = None, **kwargs: Any) -> XpanseResponse:
+    def count(
+        self, request_data: Optional[RequestData] = None, **kwargs: Any
+    ) -> XpanseResponse:
         """
         This endpoint will return a count of External IP Ranges.
 
