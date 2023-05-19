@@ -53,7 +53,7 @@ def test_TagsApi_assign_ip_range_tags(api):
     tags = ["tag1", "tag2"]
     filters = [{"field": "range_id_list", "operator": "in", "value": object_ids}]
     actual_data = _api.assign(
-        data_type=TaggableDataType.EXTERNAL_IP_RANGES,
+        data_type=TaggableDataType.OWNED_IP_RANGES,
         tags=tags,
         filters=filters,
         **actual_kwargs,
@@ -130,7 +130,7 @@ def test_TagsApi_remove_ip_range_tags(api):
     tags = ["tag1", "tag2"]
     filters = [{"field": "range_id_list", "operator": "in", "value": object_ids}]
     actual_data = _api.remove(
-        data_type=TaggableDataType.EXTERNAL_IP_RANGES,
+        data_type=TaggableDataType.OWNED_IP_RANGES,
         tags=tags,
         filters=filters,
         **actual_kwargs,

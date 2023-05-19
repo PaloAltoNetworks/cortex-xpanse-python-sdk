@@ -26,7 +26,7 @@ from xpanse.error import (
 )
 
 from xpanse.utils import normalize_param_names
-from xpanse.api.asset_management import ServicesApi, ExternalIpRangesApi, AssetsApi
+from xpanse.api.asset_management import ServicesApi, OwnedIpRangesApi, AssetsApi
 from xpanse.api.attack_surface_rules import AttackSurfaceRulesApi
 from xpanse.api.incident_management import AlertsApi, IncidentsApi
 from xpanse.api.tags import TagsApi
@@ -444,9 +444,9 @@ class XpanseClient:
         return AssetsApi(self)
 
     @property
-    def external_ip_ranges(self):
-        """External IP Ranges API"""
-        return ExternalIpRangesApi(self)
+    def owned_ip_ranges(self):
+        """Owned IP Ranges API"""
+        return OwnedIpRangesApi(self)
 
     @property
     def services(self):

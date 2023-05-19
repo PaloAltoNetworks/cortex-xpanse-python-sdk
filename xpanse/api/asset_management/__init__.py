@@ -1,5 +1,5 @@
 from xpanse.api.asset_management.v1.assets import AssetsEndpoint
-from xpanse.api.asset_management.v1.external_ip_ranges import ExternalIpRangesEndpoint
+from xpanse.api.asset_management.v1.owned_ip_ranges import OwnedIpRangesEndpoint
 from xpanse.api.asset_management.v1.services import ServicesEndpoint
 
 
@@ -16,7 +16,7 @@ class AssetsApi(AssetsEndpoint):
         return AssetsEndpoint(self._api)
 
 
-class ExternalIpRangesApi(ExternalIpRangesEndpoint):
+class OwnedIpRangesApi(OwnedIpRangesEndpoint):
     def __init__(self, session):
         super().__init__(session)
 
@@ -26,7 +26,7 @@ class ExternalIpRangesApi(ExternalIpRangesEndpoint):
 
     @property
     def v1(self):
-        return ExternalIpRangesEndpoint(self._api)
+        return OwnedIpRangesEndpoint(self._api)
 
 
 class ServicesApi(ServicesEndpoint):

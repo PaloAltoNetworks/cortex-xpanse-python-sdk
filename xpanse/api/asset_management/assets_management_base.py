@@ -67,7 +67,7 @@ class AssetsManagementBaseEndpoint(XpanseEndpoint):
         **kwargs: Any,
     ) -> XpanseResponse:
         """
-        Helper method to list or get any Asset Management data (Assets, External IP Ranges, Services).
+        Helper method to list or get any Asset Management data (Assets, Owned IP Ranges, Services).
 
         Args:
             path (str):

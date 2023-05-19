@@ -35,7 +35,7 @@ class TagsEndpoint(XpanseEndpoint):
         Args:
             data_type (TaggableDataType):
                 The data type you would like to tag. Currently only supports tagging
-                Assets and External IP Ranges
+                Assets and Owned IP Ranges
             tags (List[str]):
                 A list of the new or existing tag names you would like to attach.
             filters (List[Filter]):
@@ -83,7 +83,7 @@ class TagsEndpoint(XpanseEndpoint):
         Args:
             data_type (TaggableDataType):
                 The data type from which you would like to remove tags. Currently only supports removing tags from
-                Assets and External IP Ranges
+                Assets and Owned IP Ranges
             tags (List[str]):
                 A list of the existing tag names you would like to remove.
             filters (List[Filter]):
@@ -126,7 +126,7 @@ class TagsEndpoint(XpanseEndpoint):
         **kwargs,
     ) -> XpanseResponse:
         """
-        Helper method to assign and remove tags on Assets and External IP Ranges.
+        Helper method to assign and remove tags on Assets and Owned IP Ranges.
 
         Args:
             path (str):

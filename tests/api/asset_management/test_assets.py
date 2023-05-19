@@ -116,7 +116,7 @@ def test_AssetsApi_asset_type_list(api):
     api.post = MagicMock(return_value=MockResponse(_api.LIST_DATA_KEY, expected_data))
     actual_kwargs = {DEFAULT_REQUEST_PAYLOAD_FIELD: {}}
 
-    iterator = _api.list(asset_types=[AssetType.RESPONSIVE_IP, AssetType.CLOUD_RESOURCES], **actual_kwargs)
+    iterator = _api.list(asset_types=[AssetType.OWNED_RESPONSIVE_IP, AssetType.CLOUD_RESOURCES], **actual_kwargs)
     assert isinstance(iterator, XpanseResultIterator)
 
     expected_kwargs = {

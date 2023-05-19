@@ -60,6 +60,14 @@ xpanse.response module
    :undoc-members:
    :show-inheritance:
 
+xpanse.types module
+-------------------
+
+.. automodule:: xpanse.types
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 xpanse.utils module
 -------------------
 

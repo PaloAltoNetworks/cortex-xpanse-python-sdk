@@ -8,9 +8,9 @@ from xpanse.response import XpanseResponse
 from xpanse.types import RequestData
 
 
-class ExternalIpRangesEndpoint(AssetsManagementBaseEndpoint):
+class OwnedIpRangesEndpoint(AssetsManagementBaseEndpoint):
     """
-    Part of the Public API for handling External IP Ranges.
+    Part of the Public API for handling Owned IP Ranges.
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-All-External-IP-Address-Ranges
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-External-IP-Address-Range
     """
@@ -26,7 +26,7 @@ class ExternalIpRangesEndpoint(AssetsManagementBaseEndpoint):
         self, request_data: Optional[RequestData] = None, **kwargs: Any
     ) -> XpanseResultIterator:
         """
-        This endpoint will return a paginated list of External IP Ranges.
+        This endpoint will return a paginated list of Owned IP Ranges.
 
         Args:
             request_data (RequestData, Optional):
@@ -39,14 +39,14 @@ class ExternalIpRangesEndpoint(AssetsManagementBaseEndpoint):
 
         Returns:
             :obj:`XpanseResultIterator`:
-                An iterator containing all of the External IP Ranges results. Results can be iterated
+                An iterator containing all of the Owned IP Ranges results. Results can be iterated
                 or called by page using `<iterator>.next()`.
 
         Examples:
-            >>> # Return all External IP Ranges dumped to a list:
-            >>> ip_ranges =  client.external_ip_ranges.list().dump()
+            >>> # Return all Owned IP Ranges dumped to a list:
+            >>> ip_ranges =  client.owned_ip_ranges.list().dump()
         """
-        return super(ExternalIpRangesEndpoint, self)._list(
+        return super(OwnedIpRangesEndpoint, self)._list(
             self.LIST_ENDPOINT,
             request_data=request_data,
             **kwargs,
@@ -59,12 +59,12 @@ class ExternalIpRangesEndpoint(AssetsManagementBaseEndpoint):
         **kwargs: Any,
     ) -> XpanseResponse:
         """
-        This endpoint will return details for a list of External IP Range ids. Arguments should be passed as keyword args using
+        This endpoint will return details for a list of Owned IP Range ids. Arguments should be passed as keyword args using
         the names below.
 
         Args:
             ip_range_ids (List[str]):
-                The lists of External IP Range ids to retrieve with your request.
+                The lists of Owned IP Range ids to retrieve with your request.
             request_data (RequestData, Optional):
                 Any supplemental request_data to be included with your request. This is needed to
                 implement any additional filters, offsets, limits, or sort ordering.
@@ -80,13 +80,13 @@ class ExternalIpRangesEndpoint(AssetsManagementBaseEndpoint):
                 The parsed results can be accessed with the `<xpanse_response>.data` attribute.
 
         Examples:
-            >>> # Get External IP Ranges with specified ids to a list:
-            >>> ip_ranges =  client.external_ip_ranges.get(ip_range_ids=["id1", "id2"])
+            >>> # Get Owned IP Ranges with specified ids to a list:
+            >>> ip_ranges =  client.owned_ip_ranges.get(ip_range_ids=["id1", "id2"])
             >>> if ip_ranges.response.status_code < 300:
             >>>     results = ip_ranges.data
         """
         extra_request_data = {"range_id_list": ip_range_ids}
-        return super(ExternalIpRangesEndpoint, self)._get(
+        return super(OwnedIpRangesEndpoint, self)._get(
             self.GET_ENDPOINT,
             extra_request_data=extra_request_data,
             request_data=request_data,
@@ -97,7 +97,7 @@ class ExternalIpRangesEndpoint(AssetsManagementBaseEndpoint):
         self, request_data: Optional[RequestData] = None, **kwargs: Any
     ) -> XpanseResponse:
         """
-        This endpoint will return a count of External IP Ranges.
+        This endpoint will return a count of Owned IP Ranges.
 
         Args:
             request_data (RequestData, Optional):
@@ -115,12 +115,12 @@ class ExternalIpRangesEndpoint(AssetsManagementBaseEndpoint):
                 The parsed results can be accessed with the `<xpanse_response>.data` attribute.
 
         Examples:
-            >>> # Get External IP Ranges total count:
-            >>> ip_ranges =  client.external_ip_ranges.count()
+            >>> # Get Owned IP Ranges total count:
+            >>> ip_ranges =  client.owned_ip_ranges.count()
             >>> if ip_ranges.response.status_code < 300:
             >>>     count = ip_ranges.data
         """
-        return super(ExternalIpRangesEndpoint, self)._count(
+        return super(OwnedIpRangesEndpoint, self)._count(
             self.LIST_ENDPOINT,
             request_data=request_data,
             **kwargs,

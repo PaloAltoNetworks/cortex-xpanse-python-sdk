@@ -9,8 +9,8 @@ from xpanse.response import XpanseResponse
 
 
 @pytest.mark.vcr()
-def test_ExternalIpRangesApi_list(api):
-    _api = api.external_ip_ranges
+def test_OwnedIpRangesApi_list(api):
+    _api = api.owned_ip_ranges
 
     expected_data = ["range1", "range2"]
     api.post = MagicMock(return_value=MockResponse(_api.LIST_DATA_KEY, expected_data))
@@ -31,8 +31,8 @@ def test_ExternalIpRangesApi_list(api):
 
 
 @pytest.mark.vcr()
-def test_ExternalIpRangesApi_get(api):
-    _api = api.external_ip_ranges
+def test_OwnedIpRangesApi_get(api):
+    _api = api.owned_ip_ranges
 
     expected_data = ["range1", "range2"]
     api.post = MagicMock(return_value=MockResponse(_api.GET_DATA_KEY, expected_data))
@@ -55,8 +55,8 @@ def test_ExternalIpRangesApi_get(api):
 
 
 @pytest.mark.vcr()
-def test_ExternalIpRangesApi_count(api):
-    _api = api.external_ip_ranges
+def test_OwnedIpRangesApi_count(api):
+    _api = api.owned_ip_ranges
 
     expected_count = 1_111
     api.post = MagicMock(return_value=MockResponse(_api.LIST_DATA_KEY, None, total_count=expected_count))
