@@ -1,22 +1,26 @@
 from typing import Any, List, Optional
 
-from xpanse.api.asset_management.assets_management_v1 import AssetsManagementV1
+from xpanse.api.asset_management.assets_management_base import (
+    AssetsManagementBaseEndpoint,
+)
 from xpanse.iterator import XpanseResultIterator
-
-
 from xpanse.response import XpanseResponse
 from xpanse.types import RequestData
 
 
-class ExternalIpRangesApi(AssetsManagementV1):
+class ExternalIpRangesApi(AssetsManagementBaseEndpoint):
     """
     Part of the Public API for handling External IP Ranges.
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-All-External-IP-Address-Ranges
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-External-IP-Address-Range
     """
 
-    LIST_ENDPOINT = f"{AssetsManagementV1.ENDPOINT}/get_external_ip_address_ranges/"
-    GET_ENDPOINT = f"{AssetsManagementV1.ENDPOINT}/get_external_ip_address_range/"
+    LIST_ENDPOINT = (
+        f"{AssetsManagementBaseEndpoint.ENDPOINT}/get_external_ip_address_ranges/"
+    )
+    GET_ENDPOINT = (
+        f"{AssetsManagementBaseEndpoint.ENDPOINT}/get_external_ip_address_range/"
+    )
 
     def list(
         self, request_data: Optional[RequestData] = None, **kwargs: Any

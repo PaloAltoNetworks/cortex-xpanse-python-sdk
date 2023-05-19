@@ -8,7 +8,7 @@ from xpanse.types import RequestData, Filter
 from xpanse.utils import build_request_payload
 
 
-class AssetsManagementV1(XpanseEndpoint):
+class AssetsManagementBaseEndpoint(XpanseEndpoint):
     """
     Part of the Public API for handling all things relating to Asset Management. This class is wrapped by the
     specific data type implementations in the client endpoints.

@@ -1,6 +1,8 @@
 from typing import Any, List, Optional, Set
 
-from xpanse.api.asset_management.assets_management_v1 import AssetsManagementV1
+from xpanse.api.asset_management.assets_management_base import (
+    AssetsManagementBaseEndpoint,
+)
 from xpanse.const import AssetType, FilterOperator
 from xpanse.iterator import XpanseResultIterator
 from xpanse.response import XpanseResponse
@@ -8,15 +10,19 @@ from xpanse.types import RequestData, Filter
 from xpanse.utils import build_request_payload
 
 
-class AssetsApi(AssetsManagementV1):
+class AssetsApi(AssetsManagementBaseEndpoint):
     """
     Part of the Public API for handling Assets.
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-All-Assets
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-Asset
     """
 
-    LIST_ENDPOINT = f"{AssetsManagementV1.ENDPOINT}/get_assets_internet_exposure/"
-    GET_ENDPOINT = f"{AssetsManagementV1.ENDPOINT}/get_asset_internet_exposure/"
+    LIST_ENDPOINT = (
+        f"{AssetsManagementBaseEndpoint.ENDPOINT}/get_assets_internet_exposure/"
+    )
+    GET_ENDPOINT = (
+        f"{AssetsManagementBaseEndpoint.ENDPOINT}/get_asset_internet_exposure/"
+    )
 
     def list(
         self,

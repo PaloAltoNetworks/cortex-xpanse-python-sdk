@@ -1,22 +1,22 @@
 from typing import Any, List, Optional
 
-from xpanse.api.asset_management.assets_management_v1 import AssetsManagementV1
+from xpanse.api.asset_management.assets_management_base import (
+    AssetsManagementBaseEndpoint,
+)
 from xpanse.iterator import XpanseResultIterator
-
-
 from xpanse.response import XpanseResponse
 from xpanse.types import RequestData
 
 
-class ServicesApi(AssetsManagementV1):
+class ServicesApi(AssetsManagementBaseEndpoint):
     """
     Part of the Public API for handling Services.
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-All-External-Services
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-External-Service
     """
 
-    LIST_ENDPOINT = f"{AssetsManagementV1.ENDPOINT}/get_external_services/"
-    GET_ENDPOINT = f"{AssetsManagementV1.ENDPOINT}/get_external_service/"
+    LIST_ENDPOINT = f"{AssetsManagementBaseEndpoint.ENDPOINT}/get_external_services/"
+    GET_ENDPOINT = f"{AssetsManagementBaseEndpoint.ENDPOINT}/get_external_service/"
 
     def list(
         self, request_data: Optional[RequestData] = None, **kwargs: Any
