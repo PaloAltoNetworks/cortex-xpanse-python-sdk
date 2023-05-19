@@ -1,10 +1,11 @@
-from typing import Any, List
+from typing import List
 
 from xpanse.const import V1_PREFIX, TaggableDataType, PublicApiFields
 from xpanse.endpoint import XpanseEndpoint
 
 
 from xpanse.response import XpanseResponse
+from xpanse.types import Filter
 from xpanse.utils import build_request_payload
 
 
@@ -20,7 +21,11 @@ class TagsApi(XpanseEndpoint):
     REMOVE_DATA_KEY = "remove_tags"
 
     def assign(
-        self, data_type: TaggableDataType, tags: List[str], filters: List[Any], **kwargs
+        self,
+        data_type: TaggableDataType,
+        tags: List[str],
+        filters: List[Filter],
+        **kwargs,
     ) -> XpanseResponse:
         return self._request(
             endpoint=self.ASSIGN_ENDPOINT,
@@ -32,7 +37,11 @@ class TagsApi(XpanseEndpoint):
         )
 
     def remove(
-        self, data_type: TaggableDataType, tags: List[str], filters: List[Any], **kwargs
+        self,
+        data_type: TaggableDataType,
+        tags: List[str],
+        filters: List[Filter],
+        **kwargs,
     ) -> XpanseResponse:
         return self._request(
             endpoint=self.REMOVE_ENDPOINT,
@@ -49,7 +58,7 @@ class TagsApi(XpanseEndpoint):
         data_key: str,
         data_type: TaggableDataType,
         tags: List[str],
-        filters: List[Any],
+        filters: List[Filter],
         **kwargs,
     ) -> XpanseResponse:
         """

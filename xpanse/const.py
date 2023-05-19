@@ -47,6 +47,44 @@ class TaggableDataType(Enum):
     """External IP Range Data Type for IPR Tag Management"""
 
 
+class FilterOperator(Enum):
+    """Enum for Filter Operators"""
+
+    EQ = "eq"
+    """Equals"""
+
+    NEQ = "neq"
+    """Not Equals"""
+
+    GTE = "gte"
+    """Greater Than or Equal To"""
+
+    LTE = "lte"
+    """Less Than or Equal To"""
+
+    IN = "in"
+    """Includes"""
+
+    NIN = "nin"
+    """Not Includes"""
+
+    CONTAINS = "contains"
+    """Contains"""
+
+    NOT_CONTAINS = "not_contains"
+    """Not Contains"""
+
+
+class SortOrder(Enum):
+    """Enum for Sort Order"""
+
+    ASC = "asc"
+    """Ascending"""
+
+    DESC = "desc"
+    """Descending"""
+
+
 class PublicApiFields:
     """Keys for PAPI Requests and Responses"""
 
@@ -55,6 +93,21 @@ class PublicApiFields:
 
     FILTERS = "filters"
     """Common Field For Providing Request Data"""
+
+    FILED = "field"
+    """Common Field For Providing Request Data"""
+
+    OPERATOR = "operator"
+    """Common Field For Filter Operator in Request Data"""
+
+    VALUE = "value"
+    """Common Field For Filter Value in Request Data"""
+
+    SORT = "sort"
+    """Common Field For Sorting in Request Data"""
+
+    KEYWORD = "keyword"
+    """Common Field For Sorting Keyword in Request Data"""
 
     TAGS = "tags"
     """Common Field For Providing Request Data"""

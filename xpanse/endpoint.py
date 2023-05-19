@@ -1,7 +1,8 @@
-from typing import Any
+from typing import Optional
 
 from xpanse.const import PublicApiFields
 from xpanse.response import XpanseResponse
+from xpanse.types import RequestData
 from xpanse.utils import build_request_payload
 
 
@@ -15,7 +16,7 @@ class XpanseEndpoint:
     def __init__(self, session):
         self._api = session
 
-    def _count(self, path: str, request_data: Any = None, **kwargs):
+    def _count(self, path: str, request_data: Optional[RequestData] = None, **kwargs):
         # Performance enhancement for count endpoint
         extra_request_data = {
             PublicApiFields.SEARCH_FROM: 0,
