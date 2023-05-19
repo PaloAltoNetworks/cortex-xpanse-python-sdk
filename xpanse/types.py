@@ -8,7 +8,7 @@ class Filter(TypedDict):
     """Field on Data Set to Filter"""
 
     operator: str
-    """Filter Operator - Use SortOrder Enum for Values"""
+    """Filter Operator - Use FilterOperator Enum for Values"""
 
     value: Any
     """Filter Value"""
