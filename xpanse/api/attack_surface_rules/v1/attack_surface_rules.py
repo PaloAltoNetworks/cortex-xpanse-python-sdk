@@ -5,11 +5,10 @@ from xpanse.endpoint import XpanseEndpoint
 from xpanse.response import XpanseResponse
 from xpanse.utils import build_request_payload
 
-
+# TODO:// Add documentation link from https://jira-hq.paloaltonetworks.local/browse/EXPANDR-3062
 class AttackSurfaceRulesEndpoint(XpanseEndpoint):
     """
     Part of the Public API for handling Attack Surface Rules.
-    See: TODO:// https://jira-hq.paloaltonetworks.local/browse/EXPANDR-3062
     """
 
     ENDPOINT = f"{V1_PREFIX}/get_attack_surface_rules/"
