@@ -94,7 +94,7 @@ class PublicApiFields:
     FILTERS = "filters"
     """Common Field For Providing Request Data"""
 
-    FILED = "field"
+    FIELD = "field"
     """Common Field For Providing Request Data"""
 
     OPERATOR = "operator"
