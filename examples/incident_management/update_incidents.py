@@ -54,14 +54,9 @@ def cli(attack_surface_rules, status, severity):
     # Map attack surface rule names to ids
     rules = client.attack_surface_rules.list(
         request_data={"search_from": 0, "search_to": 500}
-    )
-    status_code = rules.response.status_code
-    if status_code >= 400:
-        raise UnexpectedResponseError(f"Unexpected status code {status_code}.")
+    ).dump()
 
-    attack_surface_rule_names = [
-        rule["attack_surface_rule_name"] for rule in rules.data
-    ]
+    attack_surface_rule_names = [rule["attack_surface_rule_name"] for rule in rules]
     for rule in attack_surface_rules:
         if rule not in attack_surface_rule_names:
             raise ValueError(
