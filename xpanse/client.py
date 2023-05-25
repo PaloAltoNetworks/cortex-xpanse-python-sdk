@@ -26,31 +26,28 @@ from xpanse.error import (
 )
 
 from xpanse.utils import normalize_param_names
-from .api.asset_management.v1.assets import AssetsApi
-from .api.asset_management.v1.external_ip_ranges import ExternalIpRangesApi
-from .api.asset_management.v1.services import ServicesApi
-from .api.attack_surface_rules.v1.attack_surface_rules import AttackSurfaceRulesApi
-from .api.incident_management.v1.incidents import IncidentsApi
-from .api.incident_management.v2.alerts import AlertsApi
-from .api.tags.v1.tags import TagsApi
+from xpanse.api.asset_management import ServicesApi, OwnedIpRangesApi, AssetsApi
+from xpanse.api.attack_surface_rules import AttackSurfaceRulesApi
+from xpanse.api.incident_management import AlertsApi, IncidentsApi
+from xpanse.api.tags import TagsApi
 
 
 class XpanseClient:
     """
-    Interface for Xpanse APIs.
+    Interface for Cortex Xpanse APIs.
 
     Args:
         url (str, required):
             The base URL that the paths will be appended onto. This field is required to be set either during
-            instantiation, or using the environment variable "CORTEX_FQDN".
+            instantiation, or using the environment variable `CORTEX_FQDN`.
         api_key_id (Union[str, int], required):
             The API Key ID associated with the generated credentials. This can be located after generating
             the credentials in the API Keys table under the 'ID' column. i.e. 1, 2, 3, etc. This field is required
-            to be set either during instantiation, or using the environment variable "CORTEX_API_KEY_ID".
+            to be set either during instantiation, or using the environment variable `CORTEX_API_KEY_ID`.
         api_key (str, required):
             The API Key generated when provisioning the credentials in your product. It is recommended that
             the API Key defaults are kept (i.e. using Advanced keys). This field is required to be set either during
-            instantiation, or using the environment variable "CORTEX_API_KEY".
+            instantiation, or using the environment variable `CORTEX_API_KEY`.
         use_advanced_auth (bool, optional):
             A flag used to determine which type of API Key is being used. 'Advanced' is used when True,
             'Standard' is used when False. This is configured when generating your API Keys is in the product.
@@ -182,8 +179,14 @@ class XpanseClient:
     ):
         """
         Check for a valid set of authentication inputs. This can be one of the following (in order of priority):
-        1. Setting api_key_id and api_key from the XpanseClient constructor
-        2. Setting the CORTEX_API_KEY_ID and CORTEX_API_KEY environment variables
+            1. Setting api_key_id and api_key from the XpanseClient constructor
+            2. Setting the CORTEX_API_KEY_ID and CORTEX_API_KEY environment variables
+
+        Args:
+            api_key (str, Optional):
+                The api_key provided from the constructor
+            api_key_id (str, Optional):
+                The api_key_id provided from the constructor
         """
         if api_key is not None:
             self._api_key = api_key
@@ -272,6 +275,9 @@ class XpanseClient:
         self._session.headers.update(self._get_auth_headers())
 
     def _create_session(self):
+        """
+        Creates a request session with auth.
+        """
         self._session = requests.Session()
 
         if self._proxies is not None:
@@ -438,9 +444,9 @@ class XpanseClient:
         return AssetsApi(self)
 
     @property
-    def external_ip_ranges(self):
-        """External IP Ranges API"""
-        return ExternalIpRangesApi(self)
+    def owned_ip_ranges(self):
+        """Owned IP Ranges API"""
+        return OwnedIpRangesApi(self)
 
     @property
     def services(self):

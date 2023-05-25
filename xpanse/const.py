@@ -29,7 +29,7 @@ class AssetType(Enum):
     CERTIFICATE = "certificate"
     """Certificate Type"""
 
-    RESPONSIVE_IP = "unassociated_responsive_ip"
+    OWNED_RESPONSIVE_IP = "unassociated_responsive_ip"
     """Unassociated Responsive IP Type"""
 
     CLOUD_RESOURCES = "cloud_compute_instance"
@@ -43,8 +43,8 @@ class TaggableDataType(Enum):
     ASSETS = "assets_internet_exposure"
     """Asset Data Type for AT Tag Management"""
 
-    EXTERNAL_IP_RANGES = "external_ip_address_ranges"
-    """External IP Range Data Type for IPR Tag Management"""
+    OWNED_IP_RANGES = "external_ip_address_ranges"
+    """Owned IP Range Data Type for IPR Tag Management"""
 
 
 class FilterOperator(Enum):
@@ -94,7 +94,7 @@ class PublicApiFields:
     FILTERS = "filters"
     """Common Field For Providing Request Data"""
 
-    FILED = "field"
+    FIELD = "field"
     """Common Field For Providing Request Data"""
 
     OPERATOR = "operator"

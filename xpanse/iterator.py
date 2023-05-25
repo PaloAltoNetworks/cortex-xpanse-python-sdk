@@ -37,6 +37,9 @@ class XpanseResultIterator:
 
     @property
     def total(self) -> int:
+        """
+        Returns the total number of results. (Max for most data types is 9_999).
+        """
         return self._total
 
     def next(self) -> Dict[str, Any]:
@@ -49,6 +52,9 @@ class XpanseResultIterator:
         return self._get_data()
 
     def has_next(self) -> bool:
+        """
+        True when there's another page of data, False when pagination is complete.
+        """
         return self._pages == 0 or self._next_page_token is not None
 
     def dump(self) -> List[Any]:

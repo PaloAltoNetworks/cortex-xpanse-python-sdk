@@ -1,95 +1,101 @@
-Xpanse Python SDK
+Cortex Xpanse Python SDK
 ==================
-.. image:: https://github.com/PaloAltoNetworks/cortex-xpanse-python-sdk/blob/main/docs/_source/_static/xpanse_banner.png?raw=true
-   :width: 800
-   :target: https://expanse.co/
+<p align="center">
+    <a href="https://expanse.co/">
+        <img src="https://github.com/PaloAltoNetworks/cortex-xpanse-python-sdk/blob/main/docs/_source/_static/xpanse_banner.png?raw=true"/>
+    </a>
+</p>
 
-.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
-   :target: https://github.com/psf/black
-
-.. image:: https://img.shields.io/badge/python-3.7%20%7C%203.8%20%7C%203.9%20%7C%203.10-blueviolet
-   :target: https://pypi.python.org/pypi/xpanse
-
-.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
-   :target: https://github.com/psf/black
-
-.. image:: https://img.shields.io/pypi/l/xpanse
-   :target: https://github.com/PaloAltoNetworks/cortex-xpanse-python-sdk/blob/main/LICENSE
-
-.. image:: https://img.shields.io/github/contributors/PaloAltoNetworks/cortex-xpanse-python-sdk
-   :target: https://github.com/PaloAltoNetworks/cortex-xpanse-python-sdk/graphs/contributors
+<p align="center">
+    <a href="https://github.com/psf/black">
+        <img src="https://img.shields.io/badge/code%20style-black-000000.svg"/>
+    </a>
+    <a href="https://pypi.python.org/pypi/xpanse">
+        <img src="https://img.shields.io/badge/python-3.7%20%7C%203.8%20%7C%203.9%20%7C%203.10-blueviolet"/>
+    </a>
+    <a href="https://github.com/PaloAltoNetworks/cortex-xpanse-python-sdk/blob/main/LICENSE">
+        <img src="https://img.shields.io/pypi/l/xpanse"/>
+    </a>
+    <a href="https://github.com/PaloAltoNetworks/cortex-xpanse-python-sdk/graphs/contributors">
+        <img src="https://img.shields.io/github/contributors/PaloAltoNetworks/cortex-xpanse-python-sdk"/>
+    </a>
+</p>
 
 Overview
 --------
 
-This library is intended to be an interface to the `Xpanse Expander API <https://knowledgebase.xpanse.co/expander-apis/>`_.
+This library is intended to be an interface to the
+<a href="https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference">Cortex Xpanse Public API</a>.
 
 Install
 -------
-.. code-block:: python
-
-    pip install xpanse
+```python
+pip install xpanse
+```
 
 Requirements
 ------------
 
-Python 3.7+
+`Python 3.7+`
 
 Usage
 -----
-`Documentation <https://cortex-xpanse-python-sdk.readthedocs.io/en/latest/>`_
+<a href="https://cortex-xpanse-python-sdk.readthedocs.io/en/latest/">Cortex Xpanse Public API Documentation</a>
 
-.. code-block:: python
+```python
+# Import client
+from xpanse.client import XpanseClient
 
-    # Import client
-    from xpanse.client import ExClient
+# Initialize client
+client = XpanseClient()
 
-    # initialize client
-    client = ExClient()
+# Get assets iterator object and dump to a list
+assets = client.assets.list().dump()
+```
 
-    # get ip_range iterator object and dump to a list
-    ranges = client.assets.ip_range.list().dump()
-
-You can view more example code in the `examples <https://github.com/PaloAltoNetworks/cortex-xpanse-python-sdk/tree/main/examples>`_ directory.
+You can view more example code in the <a href="https://github.com/PaloAltoNetworks/cortex-xpanse-python-sdk/tree/main/examples">examples</a> directory.
 
 Configuration
 -------------
-A valid Client ID and Secret is required for use. This is recommended over using a JWT, as they have limited lifespans.
-While a bearer token is supported in this version, this auth flow is being deprecated. Therefore, it is highly recommended to use Client Credentials.
+A valid `API Key`, `API Key ID`, and `Fully Qualified Domain Name (FQDN)` are required for use.
 
-RECOMMENDED
+Reference the docs for more information with <a href="https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-Started-with-APIs">Getting Started</a>.
+
+#### RECOMMENDED
 ***********
-You can supply them as environment variables using the variable names ``XPANSE_CLIENT_ID`` AND ``XPANSE_CLIENT_SECRET``.
+You can supply them as environment variables.
 
-.. code-block:: python
-
-    export XPANSE_CLIENT_ID=<Client ID>
-    export XPANSE_CLIENT_SECRET=<Client Secret>
+```shell script
+export CORTEX_FQDN=<Your Xpanse Instance URL>
+export CORTEX_API_KEY=<API Key>
+export CORTEX_API_KEY_ID=<API Key ID>
+```
     
-NOT RECOMMENDED
+#### NOT RECOMMENDED
 ***************
-To use a short lived JWT, you can supply the JWT as an environmental variable using the name ``XPANSE_JWT_TOKEN``
+The following parameters can be set inline using the `XpanseClient` constructor.
 
-.. code-block:: python
+_This is not recommended, as it easily exposes sensitive credentials in your source code._ 
 
-    export XPANSE_JWT_TOKEN=<JWT>
+```python
+# Import client
+from xpanse.client import XpanseClient
 
-[Deprecated]
-A valid Bearer token can be supplied as an environment variable
-
-To supply a valid bearer token as an environment variable, you can use the variable names ``XPANSE_BEARER_TOKEN``.
-
-.. code-block:: python
-
-    export XPANSE_BEARER_TOKEN=<Bearer Token>
+# Initialize client - THIS IS NOT RECOMMENDED, SET ENVIRONMENT VARIABLES INSTEAD
+client = XpanseClient(url="https://my-company.crtx.us.paloaltonetworks.com",
+                      api_key="xxxxxxxxxxxxxxxApiKeyxxxxxxxxxxxxxxx",
+                      api_key_id=1)
+```
 
 Logging
 -------
 Logging is handled through the python logging package. To enable different levels of verbosity in your scripts you can do the following:
 
-.. code-block:: python
+```python
+import logging
 
-    import logging
-    logging.basicConfig(level=logging.DEBUG)
+# Set the logging level
+logging.basicConfig(level=logging.DEBUG)
+```
 
-You can read more at `<https://docs.python.org/3/library/logging.html>`_.
+You can read more at <https://docs.python.org/3/library/logging.html>.

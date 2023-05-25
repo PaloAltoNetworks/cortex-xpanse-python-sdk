@@ -4,7 +4,7 @@ from unittest.mock import MagicMock
 import pytest
 
 from tests.unit.test_iterator import MockResponse
-from xpanse.api.asset_management.v1.assets import AssetsApi
+from xpanse.api.asset_management import AssetsApi
 from xpanse.const import DEFAULT_REQUEST_PAYLOAD_FIELD, PublicApiFields, AssetType
 from xpanse.iterator import XpanseResultIterator
 from xpanse.response import XpanseResponse
@@ -116,7 +116,7 @@ def test_AssetsApi_asset_type_list(api):
     api.post = MagicMock(return_value=MockResponse(_api.LIST_DATA_KEY, expected_data))
     actual_kwargs = {DEFAULT_REQUEST_PAYLOAD_FIELD: {}}
 
-    iterator = _api.list(asset_types=[AssetType.RESPONSIVE_IP, AssetType.CLOUD_RESOURCES], **actual_kwargs)
+    iterator = _api.list(asset_types=[AssetType.OWNED_RESPONSIVE_IP, AssetType.CLOUD_RESOURCES], **actual_kwargs)
     assert isinstance(iterator, XpanseResultIterator)
 
     expected_kwargs = {

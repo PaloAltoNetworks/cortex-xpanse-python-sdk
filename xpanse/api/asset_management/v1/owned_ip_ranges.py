@@ -1,26 +1,32 @@
 from typing import Any, List, Optional
 
-from xpanse.const import V1_PREFIX, FilterOperator
-from xpanse.endpoint import XpanseEndpoint
+from xpanse.api.asset_management.assets_management_base import (
+    AssetsManagementBaseEndpoint,
+)
+from xpanse.iterator import XpanseResultIterator
 from xpanse.response import XpanseResponse
-from xpanse.types import RequestData, Filter
-from xpanse.utils import build_request_payload
+from xpanse.types import RequestData
 
 
-# TODO:// Add documentation link from https://jira-hq.paloaltonetworks.local/browse/EXPANDR-3062
-class AttackSurfaceRulesEndpoint(XpanseEndpoint):
+class OwnedIpRangesEndpoint(AssetsManagementBaseEndpoint):
     """
-    Part of the Public API for handling Attack Surface Rules.
+    Part of the Public API for handling Owned IP Ranges.
+    See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-All-External-IP-Address-Ranges
+    See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-External-IP-Address-Range
     """
 
-    ENDPOINT = f"{V1_PREFIX}/get_attack_surface_rules/"
-    DATA_KEY = "attack_surface_rules"
+    LIST_ENDPOINT = (
+        f"{AssetsManagementBaseEndpoint.ENDPOINT}/get_external_ip_address_ranges/"
+    )
+    GET_ENDPOINT = (
+        f"{AssetsManagementBaseEndpoint.ENDPOINT}/get_external_ip_address_range/"
+    )
 
     def list(
         self, request_data: Optional[RequestData] = None, **kwargs: Any
-    ) -> XpanseResponse:
+    ) -> XpanseResultIterator:
         """
-        This endpoint will return a paginated list of Attack Surface Rules.
+        This endpoint will return a paginated list of Owned IP Ranges.
 
         Args:
             request_data (RequestData, Optional):
@@ -33,30 +39,32 @@ class AttackSurfaceRulesEndpoint(XpanseEndpoint):
 
         Returns:
             :obj:`XpanseResultIterator`:
-                An iterator containing all of the Attack Surface Rules results. Results can be iterated
+                An iterator containing all of the Owned IP Ranges results. Results can be iterated
                 or called by page using `<iterator>.next()`.
 
         Examples:
-            >>> # Return all attack surface rules dumped to a list:
-            >>> attack_surface_rules =  client.attack_surface_rules.list().dump()
+            >>> # Return all Owned IP Ranges dumped to a list:
+            >>> ip_ranges =  client.owned_ip_ranges.list().dump()
         """
-        kwargs = build_request_payload(request_data=request_data, **kwargs)
-        response = self._api.post(path=self.ENDPOINT, **kwargs)
-        return XpanseResponse(response, data_key=self.DATA_KEY)
+        return super(OwnedIpRangesEndpoint, self)._list(
+            self.LIST_ENDPOINT,
+            request_data=request_data,
+            **kwargs,
+        )
 
     def get(
         self,
-        attack_surface_rule_ids: List[str],
+        ip_range_ids: List[str],
         request_data: Optional[RequestData] = None,
         **kwargs: Any,
     ) -> XpanseResponse:
         """
-        This endpoint will return details for a list of Attack Surface Rule ids. Arguments should be passed as keyword args using
+        This endpoint will return details for a list of Owned IP Range ids. Arguments should be passed as keyword args using
         the names below.
 
         Args:
-            attack_surface_rule_ids (List[str]):
-                The lists of Attack Surface Rule ids to retrieve with your request.
+            ip_range_ids (List[str]):
+                The lists of Owned IP Range ids to retrieve with your request.
             request_data (RequestData, Optional):
                 Any supplemental request_data to be included with your request. This is needed to
                 implement any additional filters, offsets, limits, or sort ordering.
@@ -72,29 +80,24 @@ class AttackSurfaceRulesEndpoint(XpanseEndpoint):
                 The parsed results can be accessed with the `<xpanse_response>.data` attribute.
 
         Examples:
-            >>> # Get attack surface rules with specified ids to a list:
-            >>> attack_surface_rules =  client.attack_surface_rules.get(attack_surface_rule_ids=["id1", "id2"])
-            >>> if attack_surface_rules.response.status_code < 300:
-            >>>     results = attack_surface_rules.data
+            >>> # Get Owned IP Ranges with specified ids to a list:
+            >>> ip_ranges =  client.owned_ip_ranges.get(ip_range_ids=["id1", "id2"])
+            >>> if ip_ranges.response.status_code < 300:
+            >>>     results = ip_ranges.data
         """
-        filters: List[Filter] = [
-            {
-                "field": "attack_surface_rule_id",
-                "operator": FilterOperator.IN.value,
-                "value": attack_surface_rule_ids,
-            }
-        ]
-        kwargs = build_request_payload(
-            request_data=request_data, filters=filters, **kwargs
+        extra_request_data = {"range_id_list": ip_range_ids}
+        return super(OwnedIpRangesEndpoint, self)._get(
+            self.GET_ENDPOINT,
+            extra_request_data=extra_request_data,
+            request_data=request_data,
+            **kwargs,
         )
-        response = self._api.post(self.ENDPOINT, **kwargs)
-        return XpanseResponse(response, data_key=self.DATA_KEY)
 
     def count(
         self, request_data: Optional[RequestData] = None, **kwargs: Any
     ) -> XpanseResponse:
         """
-        This endpoint will return a count of Attack Surface Rules.
+        This endpoint will return a count of Owned IP Ranges.
 
         Args:
             request_data (RequestData, Optional):
@@ -112,11 +115,13 @@ class AttackSurfaceRulesEndpoint(XpanseEndpoint):
                 The parsed results can be accessed with the `<xpanse_response>.data` attribute.
 
         Examples:
-            >>> # Get attack surface rules total count:
-            >>> attack_surface_rules =  client.attack_surface_rules.count()
-            >>> if attack_surface_rules.response.status_code < 300:
-            >>>     count = attack_surface_rules.data
+            >>> # Get Owned IP Ranges total count:
+            >>> ip_ranges =  client.owned_ip_ranges.count()
+            >>> if ip_ranges.response.status_code < 300:
+            >>>     count = ip_ranges.data
         """
-        return super(AttackSurfaceRulesEndpoint, self)._count(
-            self.ENDPOINT, request_data=request_data, **kwargs
+        return super(OwnedIpRangesEndpoint, self)._count(
+            self.LIST_ENDPOINT,
+            request_data=request_data,
+            **kwargs,
         )
