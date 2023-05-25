@@ -34,7 +34,7 @@ from xpanse.api.tags import TagsApi
 
 class XpanseClient:
     """
-    Interface for Xpanse APIs.
+    Interface for Cortex Xpanse APIs.
 
     Args:
         url (str, required):

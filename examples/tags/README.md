@@ -1,4 +1,4 @@
-# Xpanse Tag Management
+# Cortex Xpanse Tag Management
 This script assigns and removes tags from a set of 100 Assets or Owned IP Ranges.
 
 This example uses:

@@ -1,4 +1,4 @@
-Xpanse APIs
+Cortex Xpanse APIs
 ==================
 
 Subpackages

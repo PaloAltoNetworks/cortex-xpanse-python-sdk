@@ -1,4 +1,4 @@
-Xpanse Attack Surface Rules API
+Cortex Xpanse Attack Surface Rules API
 ============================================
 
 xpanse.api.attack\_surface\_rules.v1.attack\_surface\_rules module

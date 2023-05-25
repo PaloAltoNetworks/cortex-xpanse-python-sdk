@@ -1,4 +1,4 @@
-Xpanse Python SDK
+Cortex Xpanse Python SDK
 ==================
 <p align="center">
     <a href="https://expanse.co/">
@@ -25,7 +25,7 @@ Overview
 --------
 
 This library is intended to be an interface to the
-<a href="https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference">Xpanse Expander Public API</a>.
+<a href="https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference">Cortex Xpanse Public API</a>.
 
 Install
 -------
@@ -40,7 +40,7 @@ Requirements
 
 Usage
 -----
-<a href="https://cortex-xpanse-python-sdk.readthedocs.io/en/latest/">Xpanse Expander Public API Documentation</a>
+<a href="https://cortex-xpanse-python-sdk.readthedocs.io/en/latest/">Cortex Xpanse Public API Documentation</a>
 
 ```python
 # Import client

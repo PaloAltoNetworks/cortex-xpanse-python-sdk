@@ -1,4 +1,4 @@
-# Xpanse Asset Management
+# Cortex Xpanse Asset Management
 This script gets a list of Services determined by its underlying Asset(s).
 
 This example uses:

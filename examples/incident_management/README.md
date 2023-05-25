@@ -1,4 +1,4 @@
-# Xpanse Incident Management
+# Cortex Xpanse Incident Management
 This script updates a set of Incidents' severity and status whose Alerts contain specific Attack Surface Rules.
 
 This example uses:

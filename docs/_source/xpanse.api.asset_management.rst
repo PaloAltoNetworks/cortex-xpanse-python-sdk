@@ -1,4 +1,4 @@
-Xpanse Asset Management API
+Cortex Xpanse Asset Management API
 =======================================
 
 xpanse.api.asset\_management.v1.assets module

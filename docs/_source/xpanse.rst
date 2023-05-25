@@ -1,4 +1,4 @@
-Xpanse Public API SDK
+Cortex Xpanse Public API SDK
 ==============
 
 Subpackages

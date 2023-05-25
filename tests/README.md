@@ -1,1 +1,1 @@
-# Testing Xpanse Python SDK
+# Testing Cortex Xpanse Python SDK

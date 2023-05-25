@@ -1,4 +1,4 @@
-Xpanse Incident Management API
+Cortex Xpanse Incident Management API
 ==========================================
 
 xpanse.api.incident\_management.v1.incidents module

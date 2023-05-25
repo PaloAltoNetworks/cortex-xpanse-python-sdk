@@ -1,4 +1,4 @@
-Xpanse Tags API
+Cortex Xpanse Tags API
 ==========================
 
 xpanse.api.tags.v1.tags module

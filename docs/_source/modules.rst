@@ -1,4 +1,4 @@
-Xpanse
+Cortex Xpanse
 ======
 
 .. toctree::

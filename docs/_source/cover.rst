@@ -1,4 +1,4 @@
-Xpanse Python SDK
+Cortex Xpanse Python SDK
 ==================
 .. image:: _static/xpanse_banner.png
    :width: 600
@@ -7,7 +7,7 @@ Xpanse Python SDK
 Overview
 --------
 
-This library is intended to be an interface to the `Xpanse Expander Public API <https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference>`_.
+This library is intended to be an interface to the `Cortex Xpanse Public API <https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference>`_.
 
 Install
 -------

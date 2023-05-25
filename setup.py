@@ -14,7 +14,7 @@ except:
 setup(
     name="xpanse",
     version=__version__,
-    description="Python library is an interface to the Xpanse Expander API.",
+    description="Python library is an interface to the Cortex Xpanse API.",
     author=__author__,
     long_description=description,
     author_email=__email__,
