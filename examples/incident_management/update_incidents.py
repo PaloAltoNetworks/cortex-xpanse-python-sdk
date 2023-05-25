@@ -51,7 +51,7 @@ def cli(attack_surface_rules, status, severity):
     # Set CORTEX_FQDN, CORTEX_API_KEY, and CORTEX_API_KEY_ID environment variables
     client = XpanseClient()
 
-    # Map attack surface rule names to ids
+    # Get attack surface rule names
     rules = client.attack_surface_rules.list(
         request_data={"search_from": 0, "search_to": 500}
     ).dump()
