@@ -137,6 +137,15 @@ class PublicApiFields:
 DEFAULT_REQUEST_PAYLOAD_FIELD = "json"
 """Default Parameter Used by the Requests Library for the Payload"""
 
+DEFAULT_SEARCH_FROM = 0
+"""Default `search_from` Field for Limit-Offset Pagination"""
+
+DEFAULT_SEARCH_TO = 100
+"""Default `search_to` Field for Limit-Offset Pagination"""
+
+MAX_TOTAL_COUNT = 9_999
+"""Maximum `total_count` in the `reply` for Most Endpoints"""
+
 CORTEX_FQDN = "CORTEX_FQDN"
 """Env Variable for API Host (Fully Qualified Domain Name)"""
 

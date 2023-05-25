@@ -4,6 +4,7 @@ import pytest
 
 from tests.unit.test_iterator import MockResponse
 from xpanse.const import DEFAULT_REQUEST_PAYLOAD_FIELD, PublicApiFields
+from xpanse.iterator import XpanseResultIterator
 from xpanse.response import XpanseResponse
 
 
@@ -12,21 +13,41 @@ def test_AttackSurfaceRulesApi_list(api):
     _api = api.attack_surface_rules
 
     expected_data = ["rule1", "rule2"]
-    api.post = MagicMock(return_value=MockResponse(_api.DATA_KEY, expected_data))
-    actual_kwargs = {DEFAULT_REQUEST_PAYLOAD_FIELD: {}}
+    api.post = MagicMock(return_value=MockResponse(_api.DATA_KEY, [expected_data[0]], results_count=1, total_count=2))
+    actual_kwargs = {
+        DEFAULT_REQUEST_PAYLOAD_FIELD: {}
+    }
+    request_data = {
+        PublicApiFields.SEARCH_FROM: 0,
+        PublicApiFields.SEARCH_TO: 1,
+    }
 
-    actual_response = _api.list(**actual_kwargs)
+    i = _api.list(request_data=request_data, **actual_kwargs)
 
     expected_kwargs = {
         DEFAULT_REQUEST_PAYLOAD_FIELD: {
-            PublicApiFields.REQUEST_DATA: {},
+            PublicApiFields.REQUEST_DATA: {
+                PublicApiFields.SEARCH_FROM: 0,
+                PublicApiFields.SEARCH_TO: 1,
+            },
         },
     }
-    assert actual_kwargs == expected_kwargs
 
     assert actual_kwargs == expected_kwargs
-    assert isinstance(actual_response, XpanseResponse)
-    assert actual_response.data == expected_data
+    assert isinstance(i, XpanseResultIterator)
+
+    assert i._search_from == 0
+    assert i._search_to == 1
+    assert i.has_next()
+    assert i.next() == [expected_data[0]]
+
+    api.post = MagicMock(return_value=MockResponse(_api.DATA_KEY, [expected_data[1]], results_count=1, total_count=2))
+    assert i._search_from == 1
+    assert i._search_to == 2
+    assert i.has_next()
+    assert i.next() == [expected_data[1]]
+
+    assert not i.has_next()
 
 
 @pytest.mark.vcr()

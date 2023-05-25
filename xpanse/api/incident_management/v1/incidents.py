@@ -1,6 +1,6 @@
 from typing import Any, List, Optional
 
-from xpanse.const import V1_PREFIX, FilterOperator
+from xpanse.const import V1_PREFIX, FilterOperator, PublicApiFields
 from xpanse.endpoint import XpanseEndpoint
 from xpanse.iterator import XpanseResultIterator
 from xpanse.response import XpanseResponse
@@ -44,10 +44,21 @@ class IncidentsEndpoint(XpanseEndpoint):
             >>> incidents =  client.incidents.list().dump()
         """
         kwargs = build_request_payload(request_data=request_data, **kwargs)
+
+        # Use user provided `search_from` and `search_to` if provided in `request_data`, otherwise use default
+        search_from = (request_data or {}).get(PublicApiFields.SEARCH_FROM)
+        search_to = (request_data or {}).get(PublicApiFields.SEARCH_TO)
+        kwargs = {
+            **kwargs,
+            **({"search_from": search_from} if search_from is not None else {}),
+            **({"search_to": search_to} if search_to is not None else {}),
+        }
+
         return XpanseResultIterator(
             api=self._api,
             path=self.LIST_ENDPOINT,
             data_key=self.DATA_KEY,
+            use_page_token=False,
             **kwargs,
         )
 
