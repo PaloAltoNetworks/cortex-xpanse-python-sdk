@@ -48,8 +48,12 @@ class AttackSurfaceRulesEndpoint(XpanseEndpoint):
             >>> attack_surface_rules =  client.attack_surface_rules.list().dump()
         """
         kwargs = build_request_payload(request_data=request_data, **kwargs)
-        search_from = (request_data or {}).get(PublicApiFields.SEARCH_FROM, DEFAULT_SEARCH_FROM)
-        search_to = (request_data or {}).get(PublicApiFields.SEARCH_TO, DEFAULT_SEARCH_TO)
+        search_from = (request_data or {}).get(
+            PublicApiFields.SEARCH_FROM, DEFAULT_SEARCH_FROM
+        )
+        search_to = (request_data or {}).get(
+            PublicApiFields.SEARCH_TO, DEFAULT_SEARCH_TO
+        )
         return XpanseResultIterator(
             api=self._api,
             path=self.ENDPOINT,
