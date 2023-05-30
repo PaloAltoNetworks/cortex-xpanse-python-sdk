@@ -17,6 +17,7 @@ setup(
     description="Python library is an interface to the Cortex Xpanse API.",
     author=__author__,
     long_description=description,
+    long_description_content_type="text/markdown",
     author_email=__email__,
     license=__license__,
     classifiers=[

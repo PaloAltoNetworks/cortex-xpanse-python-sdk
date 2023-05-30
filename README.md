@@ -1,5 +1,5 @@
 Cortex Xpanse Python SDK
-==================
+========================
 <p align="center">
     <a href="https://expanse.co/">
         <img src="https://github.com/PaloAltoNetworks/cortex-xpanse-python-sdk/blob/main/docs/_source/_static/xpanse_banner.png?raw=true"/>
