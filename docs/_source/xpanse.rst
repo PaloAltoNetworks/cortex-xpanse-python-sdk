@@ -1,5 +1,5 @@
 Cortex Xpanse Public API SDK
-==============
+============================
 
 Subpackages
 -----------

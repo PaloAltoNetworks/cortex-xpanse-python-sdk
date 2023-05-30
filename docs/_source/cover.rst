@@ -1,5 +1,5 @@
 Cortex Xpanse Python SDK
-==================
+========================
 .. image:: _static/xpanse_banner.png
    :width: 600
    :target: https://expanse.co/

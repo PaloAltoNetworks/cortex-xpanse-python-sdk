@@ -1,5 +1,5 @@
 Cortex Xpanse
-======
+=============
 
 .. toctree::
    :maxdepth: 4
