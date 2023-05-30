@@ -10,7 +10,7 @@ xpanse.api.asset\_management.v1.assets module
    :show-inheritance:
 
 xpanse.api.asset\_management.v1.owned\_ip\_ranges module
------------------------------------------------------------
+--------------------------------------------------------
 
 .. automodule:: xpanse.api.asset_management.v1.owned_ip_ranges
    :members:
