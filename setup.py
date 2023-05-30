@@ -34,7 +34,7 @@ setup(
     ],
     keywords="xpanse iom",
     packages=["docs", "examples", *find_packages(exclude=["tests"])],
-    install_requires=["requests>=2.25.1", "deprecated>=1.2.0"],
+    install_requires=["requests>=2.25.1", "deprecated>=1.2.0", "typing_extensions>=4.5.0"],
     include_package_data=True,
     python_requires=">=3.7",
 )
