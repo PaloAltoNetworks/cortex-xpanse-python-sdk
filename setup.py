@@ -17,6 +17,7 @@ setup(
     description="Python library is an interface to the Cortex Xpanse API.",
     author=__author__,
     long_description=description,
+    long_description_content_type="text/markdown",
     author_email=__email__,
     license=__license__,
     classifiers=[
@@ -33,7 +34,7 @@ setup(
     ],
     keywords="xpanse iom",
     packages=["docs", "examples", *find_packages(exclude=["tests"])],
-    install_requires=["requests>=2.25.1", "deprecated>=1.2.0"],
+    install_requires=["requests>=2.25.1", "deprecated>=1.2.0", "typing_extensions>=4.5.0"],
     include_package_data=True,
     python_requires=">=3.7",
 )

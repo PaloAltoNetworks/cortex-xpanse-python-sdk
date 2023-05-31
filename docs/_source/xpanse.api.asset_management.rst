@@ -1,5 +1,5 @@
 Cortex Xpanse Asset Management API
-=======================================
+==================================
 
 xpanse.api.asset\_management.v1.assets module
 ---------------------------------------------
@@ -9,10 +9,10 @@ xpanse.api.asset\_management.v1.assets module
    :undoc-members:
    :show-inheritance:
 
-xpanse.api.asset\_management.v1.external\_ip\_ranges module
------------------------------------------------------------
+xpanse.api.asset\_management.v1.owned\_ip\_ranges module
+--------------------------------------------------------
 
-.. automodule:: xpanse.api.asset_management.v1.external_ip_ranges
+.. automodule:: xpanse.api.asset_management.v1.owned_ip_ranges
    :members:
    :undoc-members:
    :show-inheritance:
