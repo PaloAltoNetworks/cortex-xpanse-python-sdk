@@ -144,16 +144,16 @@ class IncidentsEndpoint(XpanseEndpoint):
         )
 
     def update(
-        self, incident_ids: List[str], update_data: Any, **kwargs: Any
+        self, incident_id: str, update_data: Any, **kwargs: Any
     ) -> XpanseResponse:
         """
         This endpoint will update a set of Incidents' data.
 
         Args:
-            incident_ids (List[str]):
-                The list of Incident ids to modify with your request data.
+            incident_id (str):
+                The Incident id to modify with your request data.
             update_data (Any):
-                The data with which to update the set of Incidents.
+                The data with which to update the Incident.
             **kwargs:
                 Any extraneous parameters you would like to include when executing your
                 request with the Requests.request module. Note: By default, all payload data
@@ -167,14 +167,14 @@ class IncidentsEndpoint(XpanseEndpoint):
 
         Examples:
             >>> # Update Incidents with new assignee:
-            >>> incidents =  client.incidents.update(incident_ids=["id1", "id2"],
+            >>> incidents =  client.incidents.update(incident_id="id1",
             >>>                                      update_data={"assigned_user_mail": "new@mail.com"})
             >>> if incidents.response.status_code < 300:
             >>>     results = incidents.data
 
         """
         extra_request_data = {
-            "incident_id_list": incident_ids,
+            "incident_id": incident_id,
             "update_data": update_data,
         }
         kwargs = build_request_payload(extra_request_data=extra_request_data, **kwargs)

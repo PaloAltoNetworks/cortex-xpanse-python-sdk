@@ -99,14 +99,17 @@ def cli(attack_surface_rules, status, severity):
     }
 
     # Run bulk update
-    update_results = client.incidents.update(
-        incident_ids=incidents_to_update, update_data=update_data
-    )
-    status_code = update_results.response.status_code
-    if status_code >= 400:
-        raise UnexpectedResponseError(f"Unexpected status code {status_code}.")
+    for incident_id in incidents_to_update:
+        update_results = client.incidents.update(
+            incident_id=incident_id, update_data=update_data
+        )
+        status_code = update_results.response.status_code
+        if status_code >= 400:
+            raise UnexpectedResponseError(f"Unexpected status code {status_code}.")
 
-    print(f"Update {'succeeded' if update_results.data else 'failed'}.")
+        print(
+            f"Update for incident_id={incident_id} {'succeeded' if update_results.data else 'failed'}."
+        )
 
 
 if __name__ == "__main__":
