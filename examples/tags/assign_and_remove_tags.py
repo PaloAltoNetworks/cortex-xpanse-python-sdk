@@ -75,7 +75,7 @@ def cli(data_type, tags):
         data_type=TaggableDataType[data_type], tags=tags, filters=filters
     )
     status_code = assign_tags.response.status_code
-    if status_code >= 400:
+    if status_code >= 300:
         raise UnexpectedResponseError(f"Unexpected status code {status_code}.")
 
     print(f"Assigned tags: {assign_tags.data}")
@@ -85,7 +85,7 @@ def cli(data_type, tags):
         data_type=TaggableDataType[data_type], tags=tags, filters=filters
     )
     status_code = remove_tags.response.status_code
-    if status_code >= 400:
+    if status_code >= 300:
         raise UnexpectedResponseError(f"Unexpected status code {status_code}.")
 
     print(f"Remove tags: {remove_tags.data}")

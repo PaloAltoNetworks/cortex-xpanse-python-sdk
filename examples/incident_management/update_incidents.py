@@ -104,7 +104,7 @@ def cli(attack_surface_rules, status, severity):
             incident_id=incident_id, update_data=update_data
         )
         status_code = update_results.response.status_code
-        if status_code >= 400:
+        if status_code >= 300:
             raise UnexpectedResponseError(f"Unexpected status code {status_code}.")
 
         print(
