@@ -99,13 +99,13 @@ def test_IncidentsApi_update(api):
     actual_kwargs = {DEFAULT_REQUEST_PAYLOAD_FIELD: {}}
 
     update_data = {"test": "data"}
-    update_ids = ["1", "2"]
-    actual_response = _api.update(incident_ids=update_ids, update_data=update_data, **actual_kwargs)
+    update_id = "1"
+    actual_response = _api.update(incident_id=update_id, update_data=update_data, **actual_kwargs)
 
     expected_kwargs = {
         DEFAULT_REQUEST_PAYLOAD_FIELD: {
             PublicApiFields.REQUEST_DATA: {
-                "incident_id_list": update_ids,
+                "incident_id": update_id,
                 "update_data": update_data,
             },
         },

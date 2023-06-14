@@ -102,7 +102,7 @@ def _paginate_details(
     for chunk in id_chunks:
         detail = get_details(chunk)
         status_code = detail.response.status_code
-        if status_code >= 400:
+        if status_code >= 300:
             raise UnexpectedResponseError(f"Unexpected status code {status_code}.")
         details += detail.data
 
