@@ -15,7 +15,7 @@ class AlertsEndpoint(XpanseEndpoint):
     """
 
     ENDPOINT = f"{V2_PREFIX}/alerts/get_alerts_multi_events/"
-    DATA_KEY = "data"
+    DATA_KEY = "alerts"
 
     def list(
         self, request_data: Optional[RequestData] = None, **kwargs: Any
