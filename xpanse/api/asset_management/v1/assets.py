@@ -24,6 +24,8 @@ class AssetsEndpoint(AssetsManagementBaseEndpoint):
         f"{AssetsManagementBaseEndpoint.ENDPOINT}/get_asset_internet_exposure/"
     )
 
+    LIST_DATA_KEY = "assets_internet_exposure"
+
     def list(
         self,
         asset_types: Optional[Set[AssetType]] = None,

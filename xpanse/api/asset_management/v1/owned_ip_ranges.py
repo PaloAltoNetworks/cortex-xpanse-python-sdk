@@ -15,6 +15,8 @@ class OwnedIpRangesEndpoint(AssetsManagementBaseEndpoint):
     See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-External-IP-Address-Range
     """
 
+    LIST_DATA_KEY = "external_ip_address_ranges"
+
     LIST_ENDPOINT = (
         f"{AssetsManagementBaseEndpoint.ENDPOINT}/get_external_ip_address_ranges/"
     )
