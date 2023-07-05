@@ -18,6 +18,8 @@ class ServicesEndpoint(AssetsManagementBaseEndpoint):
     LIST_ENDPOINT = f"{AssetsManagementBaseEndpoint.ENDPOINT}/get_external_services/"
     GET_ENDPOINT = f"{AssetsManagementBaseEndpoint.ENDPOINT}/get_external_service/"
 
+    LIST_DATA_KEY = "external_services"
+
     def list(
         self, request_data: Optional[RequestData] = None, **kwargs: Any
     ) -> XpanseResultIterator:
