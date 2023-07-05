@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         python-version: [3.9]
-        release-version: ["2.0.0-rc7"]
+        release-version: ["2.0.0-rc8"]
     steps:
       - uses: actions/checkout@v1
       - name: Get tag version
