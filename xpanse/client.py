@@ -1,9 +1,13 @@
+import hashlib
 import logging
 import os
 import platform
-from typing import Any, List, MutableMapping, Optional
+import secrets
+import string
 import sys
-import json
+from datetime import datetime, timezone
+from typing import Any, List, Optional, Union, MutableMapping
+from urllib.parse import urlparse
 
 import requests
 from requests.exceptions import ConnectionError
@@ -11,60 +15,48 @@ from urllib3.exceptions import NewConnectionError
 
 from . import __version__
 from xpanse.const import (
-    XPANSE_BEARER_TOKEN,
-    XPANSE_JWT_TOKEN,
     HTTPVerb,
-    ID_TOKEN_URL,
-    XPANSE_CLIENT_ID,
-    XPANSE_CLIENT_SECRET,
-    CLIENT_CREDENTIALS_SCOPE,
-    CLIENT_CREDENTIALS_GRANT_TYPE,
-    CLIENT_CREDENTIALS_TOKEN_URL,
+    CORTEX_FQDN,
+    CORTEX_API_KEY,
+    CORTEX_API_KEY_ID,
 )
 from xpanse.error import (
-    UnexpectedValueError,
-    JWTExpiredError,
     XpanseException,
+    InvalidApiCredentials,
 )
-from xpanse.api.annotations import AnnotationsApi
-from xpanse.api.assets import AssetsApi
-from xpanse.api.behavior import BehaviorApi
-from xpanse.api.entities import EntitiesApi
-from xpanse.api.issues import IssuesApi
-from xpanse.api.services import ServicesApi
-from xpanse.api.targeted_ips import TargetedIPsApi
-from xpanse.api.connectors import ConnectorsApi
+
 from xpanse.utils import normalize_param_names
+from xpanse.api.asset_management import ServicesApi, OwnedIpRangesApi, AssetsApi
+from xpanse.api.attack_surface_rules import AttackSurfaceRulesApi
+from xpanse.api.incident_management import AlertsApi, IncidentsApi
+from xpanse.api.tags import TagsApi
 
 
-class ExClient:
+class XpanseClient:
     """
-    Interface for Xpanse APIs.
+    Interface for Cortex Xpanse APIs.
 
     Args:
-        panw_url (str, optional):
-            The URL that the auth will go through.  The default
-            is ``https://api.paloaltonetworks.com``
-        url (str, optional):
-            The base URL that the paths will be appended onto.  The default
-            is ``https://api.expander.expanse.co``
-        client_id (str, optional):
-            The Client ID for the Xpanse API, which is used to request emphemeral JWT tokens.
-            More details at ``https://knowledgebase.expanse.co/expander-apis/#getting``
-        client_secret (str, optional):
-            The Client Secret for the Xpanse API, which is used to request emphemeral JWT tokens.
-            More details at ``https://knowledgebase.expanse.co/expander-apis/#getting``
-        bearer_token (str, optional):
-            The Bearer token for the Xpanse API, which is used to request emphemeral JWT tokens.
-            More details at ``https://knowledgebase.expanse.co/expander-apis/#getting``
-        jwt (str, optional):
-            The JWT for the Xpanse API. Note JWTs are temporary so they are not intended for use
-            with long-running applications.
-            More details at ``https://knowledgebase.expanse.co/expander-apis/#getting``
+        url (str, required):
+            The base URL that the paths will be appended onto. This field is required to be set either during
+            instantiation, or using the environment variable `CORTEX_FQDN`.
+        api_key_id (Union[str, int], required):
+            The API Key ID associated with the generated credentials. This can be located after generating
+            the credentials in the API Keys table under the 'ID' column. i.e. 1, 2, 3, etc. This field is required
+            to be set either during instantiation, or using the environment variable `CORTEX_API_KEY_ID`.
+        api_key (str, required):
+            The API Key generated when provisioning the credentials in your product. It is recommended that
+            the API Key defaults are kept (i.e. using Advanced keys). This field is required to be set either during
+            instantiation, or using the environment variable `CORTEX_API_KEY`.
+        use_advanced_auth (bool, optional):
+            A flag used to determine which type of API Key is being used. 'Advanced' is used when True,
+            'Standard' is used when False. This is configured when generating your API Keys is in the product.
+            The default is True.
+            See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-Started-with-APIs
         custom_ua (str, optional):
             A custom string can be provided that will be sent within the user-agent header on all
             requests to Xpanse. Final format will be `Xpanse SDK+<custom_ua>/__version__ ...`
-        proxies (dict, optional):
+        proxies (MutableMapping[str, str], optional):
             A dictionary detailing what proxy should be used for what transport protocol.
             This value will be passed to the session object after it has been either attached or
             created. For details on the structure of this dictionary, consult the
@@ -75,32 +67,25 @@ class ExClient:
             See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings InsecureRequestWarning
     """
 
-    """Xpanse URL"""
-    _url: str = "https://api.expander.expanse.co"
+    """Xpanse URL - Default is set by the CORTEX_FQDN_URL environment variable"""
+    _url: str
 
-    """Authentication URL for retrieving JWTs via Client Credentials"""
-    _panw_url: str = "https://api.paloaltonetworks.com"
+    """Public API Key ID"""
+    _api_key_id: str
 
-    """Client ID"""
-    _client_id: Optional[str] = None
+    """Public API Key"""
+    _api_key: str
 
-    """Client Secret"""
-    _client_secret: Optional[str] = None
-
-    """Bearer Token"""
-    _bt: Optional[str] = None
-
-    """JWT"""
-    _jwt: Optional[str] = None
+    """Uses a nonce and timestamp when true.
+       See: https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-Started-with-APIs
+    """
+    _use_advanced_auth: bool = True
 
     """Proxies"""
-    _proxies: Optional[str] = None
+    _proxies: Optional[MutableMapping[str, str]] = None
 
     """Verify SSL"""
     _verify = True
-
-    """JWT is valid"""
-    _jwt_valid: bool = False
 
     """Max Retry Count"""
     _max_retries: int = 1
@@ -130,17 +115,14 @@ class ExClient:
 
     def __init__(
         self,
-        url=None,
-        panw_url=None,
-        client_id=None,
-        client_secret=None,
-        bearer_token=None,
-        jwt=None,
-        custom_ua=None,
-        proxies=None,
-        verify=True,
+        url: Optional[str] = None,
+        api_key_id: Optional[Union[str, int]] = None,
+        api_key: Optional[str] = None,
+        use_advanced_auth: bool = True,
+        custom_ua: Optional[str] = None,
+        proxies: Optional[MutableMapping[str, str]] = None,
+        verify: bool = True,
     ):
-
         # Format logger
         self._log = logging.getLogger(
             "{}.{}".format(self.__module__, self.__class__.__name__)
@@ -154,210 +136,156 @@ class ExClient:
         if custom_ua is not None:
             self._product += f"+{custom_ua}"
 
-        # Configure URL and Auth tokens
+        # Configure URL
+        env_url = os.getenv(CORTEX_FQDN)
         if url is not None:
             self._url = url
-
-        if panw_url is not None:
-            self._panw_url = panw_url
-
-        if client_id is not None and client_secret is not None:
-            self._client_id = client_id
-            self._client_secret = client_secret
-            self._auth_url = f"{self._panw_url}/{CLIENT_CREDENTIALS_TOKEN_URL}"
+        elif env_url is not None:
+            self._url = env_url
         else:
-            self._client_id = os.environ.get(XPANSE_CLIENT_ID, None)
-            self._client_secret = os.environ.get(XPANSE_CLIENT_SECRET, None)
+            raise ValueError(
+                "A 'url' must be provided. Set the 'url' client parameter or set the 'CORTEX_FQDN' "
+                "environment variable."
+            )
 
-        if bearer_token is not None:
-            self._bt = bearer_token
-            self._auth_url = f"{self._url}/{ID_TOKEN_URL}"
+        if not self._url.startswith("http"):
+            self._url = f"https://{self._url}"
+
+        host = urlparse(self._url).netloc
+        if host.startswith("api-"):
+            self._url = f"https://{host}"
         else:
-            self._bt = os.environ.get(XPANSE_BEARER_TOKEN, None)
+            self._url = f"https://api-{host}"
 
-        if proxies is not None:
-            self._proxies = proxies
+        # Configure Auth Session
+        self._proxies = proxies
 
         if isinstance(verify, bool):
             self._verify = verify
 
-        if jwt is not None:
-            self._jwt = jwt
-            self._jwt_valid = True
-        else:
-            env_jwt = os.environ.get(XPANSE_JWT_TOKEN, None)
-            if env_jwt is not None:
-                self._jwt = env_jwt
-                self._jwt_valid = True
-            else:
-                self._refresh_jwt()
+        if isinstance(use_advanced_auth, bool):
+            self._use_advanced_auth = use_advanced_auth
+        if not self._use_advanced_auth:
+            self._log.warning(
+                "'Advanced Authentication' is disabled, your requests may be vulnerable to replay attacks. "
+                "See https://docs-cortex.paloaltonetworks.com/r/Cortex-XPANSE/Cortex-Xpanse-API-Reference/Get-Started-with-APIs "
+                "for more information."
+            )
 
-        self._setup_auth()
+        self._setup_auth(api_key=api_key, api_key_id=api_key_id)
 
-        # create Session
-        self._create_session()
-
-    def _setup_auth(self):
+    def _setup_auth(
+        self, api_key: Optional[str], api_key_id: Optional[Union[str, int]]
+    ):
         """
         Check for a valid set of authentication inputs. This can be one of the following (in order of priority):
-        1. Client ID & Client Secret (needs both)
-        2. Bearer token (being deprecated)
-        3. JWT
+            1. Setting api_key_id and api_key from the XpanseClient constructor
+            2. Setting the CORTEX_API_KEY_ID and CORTEX_API_KEY environment variables
+
+        Args:
+            api_key (str, Optional):
+                The api_key provided from the constructor
+            api_key_id (str, Optional):
+                The api_key_id provided from the constructor
         """
-        if (
-            not self._bt
-            and not self._jwt_valid
-            and not self._client_id
-            and not self._client_secret
-        ):
-            raise UnexpectedValueError(
-                "A valid Xpanse Client credentials, Bearer token, or JWT token is required."
-            )
-        elif (self._client_id and not self._client_secret) or (
-            self._client_secret and not self._client_id
-        ):
-            raise UnexpectedValueError(
-                "A valid set of Xpanse Client credentials is required."
-            )
-        elif self._client_id and self._client_secret:
-            logging.debug("Using Client credential flow")
-        elif self._bt:
-            logging.warning(
-                "Bearer Token will be deprecated in a coming release of the Xpanse SDK"
-            )
+        if api_key is not None:
+            self._api_key = api_key
+        elif os.getenv(CORTEX_API_KEY) is not None:
+            self._api_key = str(os.getenv(CORTEX_API_KEY))
         else:
-            logging.error("We shouldn't get to this log line, something went wrong")
+            raise ValueError(
+                "An 'api_key' must be provided. Set the 'api_key' parameter or set the 'CORTEX_API_KEY' "
+                "environment variable."
+            )
 
-    def _refresh_jwt(self, is_retry: bool = False):
-        """
-        Refreshes JWT using Bearer token.
-        """
-        if self._client_id and self._client_secret:
-            self._refresh_client_credentials_jwt(is_retry)
-        elif self._bt is not None:
-            self._refresh_bearer_token_jwt(is_retry)
+        if api_key_id is not None:
+            self._api_key_id = str(api_key_id)
+        elif os.getenv(CORTEX_API_KEY_ID) is not None:
+            self._api_key_id = str(os.getenv(CORTEX_API_KEY_ID))
         else:
-            raise UnexpectedValueError(
-                "A valid Xpanse Bearer token or client credentials is required."
+            raise ValueError(
+                "An 'api_key_id' must be provided. Set the 'api_key_id' parameter or set the "
+                "'CORTEX_API_KEY_ID' environment variable."
             )
 
-    def _refresh_client_credentials_jwt(self, is_retry):
-        try:
-            data = json.dumps(
-                {
-                    "client_id": self._client_id,
-                    "client_secret": self._client_secret,
-                    "grant_type": CLIENT_CREDENTIALS_GRANT_TYPE,
-                    "scope": CLIENT_CREDENTIALS_SCOPE,
-                }
-            )
-            resp = requests.post(
-                self._auth_url,
-                headers={
-                    "Content-Type": "application/json",
-                },
-                data=data,
-                timeout=30,
-                proxies=self._proxies,
-                verify=self._verify,
-            )
-            if resp.status_code != 200:
-                raise UnexpectedValueError(
-                    f"API returned an error while refreshing JWT with client credentials: {resp.text}"
-                )
-            else:
-                self._jwt_valid = True
-                self._jwt = resp.json()["access_token"]
-        except ConnectionError as request_exception:
-            if is_retry:
-                raise UnexpectedValueError(
-                    "Request returned an exception"
-                ) from request_exception
-            logging.warn(f"ConnectionError encountered during JWT refresh, will retry.")
-            self._refresh_jwt(is_retry=True)
-        except requests.RequestException as request_exception:
-            raise UnexpectedValueError(
-                "Request returned an exception"
-            ) from request_exception
+        self._create_session()
 
-    def _refresh_bearer_token_jwt(self, is_retry):
-        try:
-            resp = requests.get(
-                self._auth_url,
-                headers={
-                    "Authorization": f"Bearer {self._bt}",
-                    "Content-Type": "application/json",
-                },
-                timeout=30,
-                proxies=self._proxies,
-                verify=self._verify,
-            ).json()
-            if "error" in resp or "token" not in resp:
-                raise UnexpectedValueError(
-                    f"API returned an error while refreshing JWT: {resp['error']}"
-                )
-            else:
-                self._jwt_valid = True
-                self._jwt = resp["token"]
-        except ConnectionError as request_exception:
-            if is_retry:
-                raise UnexpectedValueError(
-                    "Request returned an exception"
-                ) from request_exception
-            logging.warn(f"ConnectionError encountered during JWT refresh, will retry.")
-            self._refresh_jwt(is_retry=True)
-        except requests.RequestException as request_exception:
-            raise UnexpectedValueError(
-                "Request returned an exception"
-            ) from request_exception
+        if not self._validate_auth():
+            key_type = "Advanced" if self._use_advanced_auth else "Standard"
+            raise InvalidApiCredentials(
+                "Failed to authenticate with the provided 'api_key' and 'api_key_id' using "
+                f"'{key_type}' authentication."
+            )
 
-    def _create_session(self, session: Optional[Any] = None):
+    def _validate_auth(self) -> bool:
         """
-        Add JWT auth to session.
+        Validates the provided API Keys
+
+        Returns:
+            :bool: True when the keys are valid, False when the keys are invalid or expired.
         """
-        if session is not None:
-            self._session = session
-        self._session = requests.Session()
-        self._session.headers.update(
-            {
-                "User-Agent": self._generate_user_agent(),
-                "Content-Type": "application/json",
-                "Authorization": f"Bearer {self._jwt}",
+        res = self.post("api_keys/validate/")
+
+        if res is None or res.status_code == 401:
+            return False
+
+        return res.json()
+
+    def _get_auth_headers(self) -> dict:
+        """
+        Generates authorization headers for both Standard and Advanced API Keys
+
+        Returns:
+            :dict: Authorization headers
+        """
+        if self._use_advanced_auth:
+            # Generate a 64 bytes random string
+            nonce = "".join(
+                [
+                    secrets.choice(string.ascii_letters + string.digits)
+                    for _ in range(64)
+                ]
+            )
+            # Get the current timestamp as milliseconds.
+            timestamp = int(datetime.now(timezone.utc).timestamp()) * 1000
+            # Generate the auth key
+            auth_key = "%s%s%s" % (self._api_key, nonce, timestamp)
+            # Convert to bytes object
+            auth_key_bytes = auth_key.encode("utf-8")
+            # Calculate sha256:
+            api_key_hash = hashlib.sha256(auth_key_bytes).hexdigest()
+            return {
+                "x-xdr-timestamp": str(timestamp),
+                "x-xdr-nonce": nonce,
+                "x-xdr-auth-id": str(self._api_key_id),
+                "Authorization": api_key_hash,
             }
-        )
+        else:
+            return {
+                "x-xdr-auth-id": str(self._api_key_id),
+                "Authorization": self._api_key,
+            }
+
+    def _refresh_auth(self):
+        """
+        Refresh auth in session.
+        """
+        self._session.headers.pop("x-xdr-timestamp", None)
+        self._session.headers.pop("x-xdr-nonce", None)
+        self._session.headers.update(self._get_auth_headers())
+
+    def _create_session(self):
+        """
+        Creates a request session with auth.
+        """
+        self._session = requests.Session()
 
         if self._proxies is not None:
-            self._session.proxies.update(self._proxies)  # type: ignore
+            self._session.proxies.update(self._proxies)
 
         self._session.verify = self._verify
 
-    def _refresh_session(self):
-        """
-        Refresh JWT auth if the old token expires.
-        """
-        if not self._bt and not self._client_id and not self._client_secret:
-            raise UnexpectedValueError(
-                "No valid Xpanse Bearer token or client credential was found."
-            )
-        self._refresh_jwt()
-        self._session.headers.update({"Authorization": f"Bearer {self._jwt}"})
-
-    def _check_response_for_invalid_session(self, resp: requests.Response) -> bool:
-        """
-        Check response for expired JWT.
-        """
-        if resp.status_code == 401:
-            try:
-                resp_json = resp.json()
-                if (
-                    "detail" in resp_json
-                    and "Signature has expired." in resp_json["detail"]
-                ):
-                    return True
-            except ValueError:
-                # Some 401 responses are returned without a body
-                pass
-        return False
+        self._session.headers.update(self._get_auth_headers())
 
     def _set_current_python_version(self):
         """
@@ -386,6 +314,9 @@ class ExClient:
         retries = 0
         while retries <= self._max_retries:
             try:
+                if self._use_advanced_auth:
+                    self._refresh_auth()
+
                 kwargs = normalize_param_names(kwargs)
                 self._log.debug(
                     f"REQUEST TO: {method} {self._url}/{path} WITH PAYLOAD: {kwargs}"
@@ -394,24 +325,12 @@ class ExClient:
                 if resp.status_code < 400:
                     return resp
                 else:
-                    if self._check_response_for_invalid_session(resp):
-                        # JWT has expired, try to generare a new one if a bearer token exists
-                        # and retry the request without incrementing our retry counter.
-                        if self._bt is not None or (
-                            self._client_id is not None
-                            and self._client_secret is not None
-                        ):
-                            self._refresh_session()
-                            continue
-                        else:
-                            raise JWTExpiredError("JWT has expired", resp)
+                    if resp.status_code in self._retry_error_codes:
+                        retries += 1
+                        continue
                     else:
-                        if resp.status_code in self._retry_error_codes:
-                            retries += 1
-                            continue
-                        else:
-                            self._log.error(f"Error response: {resp.text}")
-                            return resp
+                        self._log.error(f"Error response: {resp.text}")
+                        return resp
             except (
                 ConnectionError,
                 NewConnectionError,
@@ -423,13 +342,6 @@ class ExClient:
                 self._log.error(err)
                 break
         return None
-
-    def direct_get(self, url: str, **kwargs: Any) -> Optional[requests.Response]:
-        """
-        Fetches direct without url formatting.
-        """
-        resp = self._session.request(HTTPVerb.HTTP_GET.value, url, **kwargs)
-        return resp
 
     def get(self, path: str, **kwargs: Any) -> Optional[requests.Response]:
         """
@@ -522,56 +434,9 @@ class ExClient:
         """
         return self._request(HTTPVerb.HTTP_DELETE.value, path)
 
-    def csv(self, path: str, file_: str, **kwargs: Any) -> bool:
-        """
-        Initiates an HTTP GET request using the specified path with special handling
-        for downloading a csv file. Refer to :obj:`requests.request` for more detailed
-        information on what keyword arguments can be passed:
-
-        Args:
-            path (str):
-                The path to be appended onto the base URL for the request.
-            file_ (str):
-                The file name with path where the resulting csv file should be saved.
-            **kwargs (dict):
-                Keyword arguments to be passed to the Requests Sessions request
-                method.
-
-        Returns:
-            :obj:`boolean`:
-                `True` if the download was successful, otherwise `False`.
-        """
-        try:
-            with requests.Session() as s:
-                s.headers.update(
-                    {
-                        "User-Agent": self._generate_user_agent(),
-                        "Accept": "text/csv",
-                        "Authorization": f"Bearer {self._jwt}",
-                    }
-                )
-                resp = s.get(f"{self._url}/{path}", params=kwargs, stream=True)
-                if resp.status_code < 400:
-                    with open(file_, "wb") as f:
-                        for chunk in resp.iter_content(1024 * 1024):
-                            f.write(chunk)
-                            self._log.debug(f"Writing {path} output to {file_}")
-                    return True
-                else:
-                    self._log.error(f"Error response: {resp.text}")
-                    return False
-        except requests.exceptions.RequestException:
-            self._log.exception(f"Error response")
-            return False
-
     ############################################
     # API Definitions
     ###########################################
-
-    @property
-    def annotations(self):
-        """Annotations API"""
-        return AnnotationsApi(self)
 
     @property
     def assets(self):
@@ -579,19 +444,9 @@ class ExClient:
         return AssetsApi(self)
 
     @property
-    def behavior(self):
-        """Behavior API"""
-        return BehaviorApi(self)
-
-    @property
-    def entities(self):
-        """Entities API"""
-        return EntitiesApi(self)
-
-    @property
-    def issues(self):
-        """Issues API"""
-        return IssuesApi(self)
+    def owned_ip_ranges(self):
+        """Owned IP Ranges API"""
+        return OwnedIpRangesApi(self)
 
     @property
     def services(self):
@@ -599,11 +454,21 @@ class ExClient:
         return ServicesApi(self)
 
     @property
-    def targeted_ips(self):
-        """Targeted IPs API"""
-        return TargetedIPsApi(self)
+    def attack_surface_rules(self):
+        """Attack Surface Rules API"""
+        return AttackSurfaceRulesApi(self)
 
     @property
-    def connectors(self):
-        """Connectors API"""
-        return ConnectorsApi(self)
+    def incidents(self):
+        """Incidents API"""
+        return IncidentsApi(self)
+
+    @property
+    def alerts(self):
+        """Alerts V2 API"""
+        return AlertsApi(self)
+
+    @property
+    def tags(self):
+        """Tags API"""
+        return TagsApi(self)

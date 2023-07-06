@@ -77,7 +77,7 @@ napoleon_numpy_docstring = False
 # -- Options for HTML output -------------------------------------------------
 
 html_theme_options = {
-    "description": "The Python interface to the Xpanse Expander API",
+    "description": "The Python interface to the Cortex Xpanse API",
     "fixed_sidebar": False,
     "logo": "xpanse_banner.png",
     "touch_icon": "xpanse_banner.png",

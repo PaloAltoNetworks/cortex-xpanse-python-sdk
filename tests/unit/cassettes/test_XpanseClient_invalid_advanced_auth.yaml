@@ -1,0 +1,45 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - wwwwwwwwwwwwwwwwwwwwwwwwwwwww
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-requests/2.25.1
+      x-xdr-auth-id:
+      - 1
+      x-xdr-nonce:
+      - yyyyyyyyyyyyyyyyyyyyyyyyyyy
+      x-xdr-timestamp:
+      - '1000000000000'
+    method: POST
+    uri: https://api-ben-expander.crtx-qa2-uat.us.paloaltonetworks.com/api_keys/validate/
+  response:
+    body:
+      string: '{"reply": {"err_code": 401, "err_msg": "Public API request unauthorized",
+        "err_extra": null}}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '93'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 May 2023 16:39:02 GMT
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Public-Api-Body:
+      - '1'
+    status:
+      code: 401
+      message: Unauthorized
+version: 1

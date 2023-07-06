@@ -3,13 +3,9 @@
    :hidden:
 
    xpanse
-   xpanse.api.annotations
-   xpanse.api.assets
-   xpanse.api.behavior
-   xpanse.api.entities
-   xpanse.api.issues
-   xpanse.api.services
-   xpanse.api.targeted_ips
-   xpanse.api.connectors
+   xpanse.api.asset_management
+   xpanse.api.attack_surface_rules
+   xpanse.api.incident_management
+   xpanse.api.tags
 
 .. include:: cover.rst
