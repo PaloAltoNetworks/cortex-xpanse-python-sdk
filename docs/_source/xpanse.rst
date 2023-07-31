@@ -1,5 +1,5 @@
-xpanse package
-==============
+Cortex Xpanse Public API SDK
+============================
 
 Subpackages
 -----------
@@ -72,14 +72,6 @@ xpanse.utils module
 -------------------
 
 .. automodule:: xpanse.utils
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-Module contents
----------------
-
-.. automodule:: xpanse
    :members:
    :undoc-members:
    :show-inheritance:

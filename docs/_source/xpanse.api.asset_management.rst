@@ -1,29 +1,27 @@
-xpanse.api.asset\_management package
-====================================
+Cortex Xpanse Asset Management API
+==================================
 
-Subpackages
------------
+xpanse.api.asset\_management.v1.assets module
+---------------------------------------------
 
-.. toctree::
-   :maxdepth: 4
-
-   xpanse.api.asset_management.v1
-
-Submodules
-----------
-
-xpanse.api.asset\_management.assets\_management\_base module
-------------------------------------------------------------
-
-.. automodule:: xpanse.api.asset_management.assets_management_base
+.. automodule:: xpanse.api.asset_management.v1.assets
    :members:
    :undoc-members:
    :show-inheritance:
 
-Module contents
----------------
+xpanse.api.asset\_management.v1.owned\_ip\_ranges module
+--------------------------------------------------------
 
-.. automodule:: xpanse.api.asset_management
+.. automodule:: xpanse.api.asset_management.v1.owned_ip_ranges
    :members:
    :undoc-members:
    :show-inheritance:
+
+xpanse.api.asset\_management.v1.services module
+-----------------------------------------------
+
+.. automodule:: xpanse.api.asset_management.v1.services
+   :members:
+   :undoc-members:
+   :show-inheritance:
+

@@ -1,18 +1,10 @@
-xpanse.api.tags package
-=======================
+Cortex Xpanse Tags API
+==========================
 
-Subpackages
------------
+xpanse.api.tags.v1.tags module
+------------------------------
 
-.. toctree::
-   :maxdepth: 4
-
-   xpanse.api.tags.v1
-
-Module contents
----------------
-
-.. automodule:: xpanse.api.tags
+.. automodule:: xpanse.api.tags.v1.tags
    :members:
    :undoc-members:
    :show-inheritance:
