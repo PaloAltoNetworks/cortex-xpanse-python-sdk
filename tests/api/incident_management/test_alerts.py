@@ -76,3 +76,35 @@ def test_AlertsApi_count(api):
     assert actual_kwargs == expected_kwargs
     assert isinstance(actual_count, XpanseResponse)
     assert actual_count.data == expected_count
+
+
+@pytest.mark.vcr()
+def test_AlertsApiV1_update(api):
+    _api = api.alerts.v1
+
+    expected_response = True
+
+    class MockUpdateResponse:
+        def json(self):
+            return expected_response
+
+    api.post = MagicMock(return_value=MockUpdateResponse())
+
+    actual_kwargs = {DEFAULT_REQUEST_PAYLOAD_FIELD: {}}
+
+    update_data = {"test": "data"}
+    update_ids = ["1"]
+    actual_response = _api.update(alert_id_list=update_ids, update_data=update_data, **actual_kwargs)
+
+    expected_kwargs = {
+        DEFAULT_REQUEST_PAYLOAD_FIELD: {
+            PublicApiFields.REQUEST_DATA: {
+                "alert_id_list": update_ids,
+                "update_data": update_data,
+            },
+        },
+    }
+
+    assert actual_kwargs == expected_kwargs
+    assert isinstance(actual_response, XpanseResponse)
+    assert actual_response.data == expected_response

@@ -1,5 +1,6 @@
 from xpanse.api.incident_management.v1.incidents import IncidentsEndpoint
 from xpanse.api.incident_management.v2.alerts import AlertsEndpoint
+from xpanse.api.incident_management.v1.alerts import AlertsEndpointV1
 
 
 class IncidentsApi(IncidentsEndpoint):
@@ -26,3 +27,7 @@ class AlertsApi(AlertsEndpoint):
     @property
     def v2(self):
         return AlertsEndpoint(self._api)
+
+    @property
+    def v1(self):
+        return AlertsEndpointV1(self._api)
