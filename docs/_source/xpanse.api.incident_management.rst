@@ -1,18 +1,19 @@
-Cortex Xpanse Incident Management API
-==========================================
+xpanse.api.incident\_management package
+=======================================
 
-xpanse.api.incident\_management.v1.incidents module
----------------------------------------------------
+Subpackages
+-----------
 
-.. automodule:: xpanse.api.incident_management.v1.incidents
-   :members:
-   :undoc-members:
-   :show-inheritance:
+.. toctree::
+   :maxdepth: 4
 
-xpanse.api.incident\_management.v2.alerts module
-------------------------------------------------
+   xpanse.api.incident_management.v1
+   xpanse.api.incident_management.v2
 
-.. automodule:: xpanse.api.incident_management.v2.alerts
+Module contents
+---------------
+
+.. automodule:: xpanse.api.incident_management
    :members:
    :undoc-members:
    :show-inheritance:

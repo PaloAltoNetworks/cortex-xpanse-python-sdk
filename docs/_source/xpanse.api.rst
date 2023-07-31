@@ -1,4 +1,4 @@
-Cortex Xpanse APIs
+xpanse.api package
 ==================
 
 Subpackages
@@ -12,22 +12,10 @@ Subpackages
    xpanse.api.incident_management
    xpanse.api.tags
 
-.. automodule:: xpanse.api.asset_management
-   :members:
-   :undoc-members:
-   :show-inheritance:
+Module contents
+---------------
 
-.. automodule:: xpanse.api.attack_surface_rules
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-.. automodule:: xpanse.api.incident_management
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-.. automodule:: xpanse.api.tags
+.. automodule:: xpanse.api
    :members:
    :undoc-members:
    :show-inheritance:
