@@ -16,7 +16,7 @@ class AlertsEndpointV1(XpanseEndpoint):
     UPDATE_DATA_KEY = "alerts_ids"
 
     def update(
-            self, alert_id_list: List[str], update_data: Any, **kwargs: Any
+        self, alert_id_list: List[str], update_data: Any, **kwargs: Any
     ) -> XpanseResponse:
         """
         This endpoint will update a set of Incidents' data.
