@@ -19,11 +19,11 @@ class AlertsEndpointV1(XpanseEndpoint):
         self, alert_id_list: List[str], update_data: Any, **kwargs: Any
     ) -> XpanseResponse:
         """
-        This endpoint will update a set of Incidents' data.
+        This endpoint will update a set of Alerts' data.
 
         Args:
             alert_id_list (List[str]):
-                The Incident id to modify with your request data.
+                The list of Alert ids to modify with your request data.
             update_data (Any):
                 The data with which to update the Alerts.
             **kwargs:
@@ -39,7 +39,7 @@ class AlertsEndpointV1(XpanseEndpoint):
 
         Examples:
             >>> # Update Incidents with new assignee:
-            >>> alerts =  client.alerts.update(alert_id_id="id1",
+            >>> alerts =  client.alerts.update(alert_id_list=[1],
             >>>                                update_data={"comment": "alert has changed"})
             >>> if alerts.response.status_code < 300:
             >>>     results = alerts.data
