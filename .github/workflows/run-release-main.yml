@@ -17,11 +17,11 @@ jobs:
         python-version: [3.9]
         release-version: [2.1.0]
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@50fbc622fc4ef5163becd7fab6573eac35f8462e # v1
       - name: Get tag version
         run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@0f07f7f756721ebd886c2462646a35f78a8bc4de # v1
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install dependencies
@@ -33,7 +33,7 @@ jobs:
           python -m pip install --upgrade build
       - name: Create Release
         id: create_release
-        uses: actions/create-release@v1
+        uses: actions/create-release@0cb9c9b65d5d1901c1f53e5e66eaf4afd303e70e # v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
